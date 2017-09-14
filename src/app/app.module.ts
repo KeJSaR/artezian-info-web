@@ -11,6 +11,7 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { InfoComponent } from './pages/info/info.component';
 import { IntroComponent } from './pages/intro/intro.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RulesComponent } from './pages/rules/rules.component';
 
 import { ArticleContentComponent } from './parts/article-content/article-content.component';
@@ -30,6 +31,7 @@ import { GetDataService } from './services/get-data.service';
     GalleryComponent,
     InfoComponent,
     IntroComponent,
+    NotFoundComponent,
     RulesComponent,
     ArticleContentComponent,
     ArticlesListComponent,

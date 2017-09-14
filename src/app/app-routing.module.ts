@@ -9,6 +9,7 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { RulesComponent } from './pages/rules/rules.component';
 import { ApplicationComponent } from './pages/application/application.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/intro', pathMatch: 'full' },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'rules', component: RulesComponent },
   { path: 'rules/:id', component: ArticleComponent },
   { path: 'application', component: ApplicationComponent },
-  { path: 'contacts', component: ContactsComponent }
+  { path: 'contacts', component: ContactsComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
