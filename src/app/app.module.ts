@@ -18,6 +18,8 @@ import { ArticlesListComponent } from './parts/articles-list/articles-list.compo
 import { HeaderComponent } from './parts/header/header.component';
 import { FooterComponent } from './parts/footer/footer.component';
 
+import { GetDataService } from './services/get-data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,7 @@ import { FooterComponent } from './parts/footer/footer.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [GetDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
