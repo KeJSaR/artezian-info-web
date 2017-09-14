@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
     <p>
       article Works!
     </p>
+    <p>
+      The article is {{link}}
+    </p>
     <app-article-content></app-article-content>
     <app-footer></app-footer>
   `,
@@ -14,9 +18,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 
-  constructor() { }
+  link:string;
+
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit() {
+    this.link = this.route.snapshot.params['id'];
+    console.log(this.link);
   }
 
 }
