@@ -17,6 +17,7 @@ import { RulesComponent } from './pages/rules/rules.component';
 import { ArticleContentComponent } from './parts/article-content/article-content.component';
 import { ArticlesListComponent } from './parts/articles-list/articles-list.component';
 import { HeaderComponent } from './parts/header/header.component';
+import { NavComponent } from './parts/nav/nav.component';
 import { FooterComponent } from './parts/footer/footer.component';
 
 import { GetDataService } from './services/get-data.service';
@@ -36,6 +37,7 @@ import { GetDataService } from './services/get-data.service';
     ArticleContentComponent,
     ArticlesListComponent,
     HeaderComponent,
+    NavComponent,
     FooterComponent
   ],
   imports: [

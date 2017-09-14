@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <p>
       intro Works!
     </p>
-    <app-header></app-header>
+    <app-nav></app-nav>
   `,
   styles: []
 })
