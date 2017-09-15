@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
       <a routerLink="/articles">Статьи</a>
       <a routerLink="/gallery">Фото</a>
       <a routerLink="/rules">Информация</a>
-      <a routerLink="/application">Заявка</a>
       <a routerLink="/contacts">Контакты</a>
     </nav>
   `,
