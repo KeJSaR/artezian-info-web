@@ -16,9 +16,10 @@ import { RulesComponent } from './pages/rules/rules.component';
 
 import { ArticleContentComponent } from './parts/article-content/article-content.component';
 import { ArticlesListComponent } from './parts/articles-list/articles-list.component';
+import { FooterComponent } from './parts/footer/footer.component';
 import { HeaderComponent } from './parts/header/header.component';
 import { NavComponent } from './parts/nav/nav.component';
-import { FooterComponent } from './parts/footer/footer.component';
+import { SocialComponent } from './parts/social/social.component';
 
 import { GetDataService } from './services/get-data.service';
 
@@ -36,9 +37,10 @@ import { GetDataService } from './services/get-data.service';
     RulesComponent,
     ArticleContentComponent,
     ArticlesListComponent,
+    FooterComponent,
     HeaderComponent,
     NavComponent,
-    FooterComponent
+    SocialComponent
   ],
   imports: [
     BrowserModule,
