@@ -2,19 +2,20 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  template: `
-    <p>
-      header Works!
-    </p>
-    <app-nav></app-nav>
-  `,
-  styles: []
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
+
+  menuSelected: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(): void {
+    this.menuSelected = !this.menuSelected;
   }
 
 }
