@@ -2,13 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-intro',
-  template: `
-    <p>
-      intro Works!
-    </p>
-    <app-nav></app-nav>
-  `,
-  styles: []
+  templateUrl: './intro.component.html',
+  styleUrls: ['./intro.component.sass']
 })
 export class IntroComponent implements OnInit {
 
