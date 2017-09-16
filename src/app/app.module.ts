@@ -1,6 +1,13 @@
 import { BrowserModule }           from '@angular/platform-browser';
 import { NgModule }                from '@angular/core';
 
+import { MdNativeDateModule,
+         MdDatepickerModule,
+         MdButtonModule,
+         MdInputModule,
+         MdCheckboxModule }        from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppComponent }            from './app.component';
 import { AppRoutingModule }        from './app-routing.module';
 
@@ -44,9 +51,19 @@ import { GetDataService }          from './services/get-data.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MdNativeDateModule,
+    MdDatepickerModule,
+    MdButtonModule,
+    MdInputModule,
+    MdCheckboxModule
   ],
-  providers: [GetDataService],
-  bootstrap: [AppComponent]
+  providers: [
+    GetDataService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
