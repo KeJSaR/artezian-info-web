@@ -1,23 +1,11 @@
-<div class="container">
-  <div class="content">
-    <div class="columns">
-      <div class="column has-text-left">
-        <a class="button" (click)="onSelect()">
-          <span class="icon">
-            <i class="fa" [ngClass]="menuSelected ? 'fa-times' : 'fa-bars'"></i>
-          </span>
-          <span>меню</span>
-        </a>
-      </div>
-      <div class="column is-two-thirds has-text-centered">
-        <app-nav *ngIf="menuSelected; else title"></app-nav>
-        <ng-template #title>
-          <a routerLink="/intro" class="button">Артезианская Археологическая Экспедиция</a>
-        </ng-template>
-      </div>
-      <div class="column has-text-right">
-        <a routerLink="/application" class="button">подать заявку</a>
-      </div>
-    </div>
-  </div>
-</div>
+<a (click)="onSelect()">
+<i class="fa" [ngClass]="menuSelected ? 'fa-times' : 'fa-bars'"></i>
+меню
+</a>
+
+<app-nav *ngIf="menuSelected; else title"></app-nav>
+<ng-template #title>
+<a routerLink="/intro" class="button">Артезианская Археологическая Экспедиция</a>
+</ng-template>
+
+<a routerLink="/application">подать заявку</a>

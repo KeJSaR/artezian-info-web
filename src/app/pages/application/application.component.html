@@ -1,245 +1,223 @@
 <app-header></app-header>
 
-<div class="section">
-  <div class="container">
-    <div class="content">
-      <div class="columns is-centered">
-        <div class="column is-half">
+<h1>Электронная заявка</h1>
+<h2>Для участия в Артезианской Археологической Экспедиции (ААЭ)</h2>
+<p>Если вы желаете принять участие в Артезианской Археологической Экспедиции, пожалуйста, заполните все основные разделы и нажмите кнопку «Отправить» внизу страницы.</p>
+<p>Данная электронная заявка обеспечивает резервирование за Вами места в ААЭ.</p>
+<p>Перед заполнением заявки внимательно прочитайте разделы «Список документов для участников археологической экспедиции», «Примерный список вещей для экспедиции» и «Правила поведения в экспедиции»</p>
+<p>Поля, перед которыми стоят "галочки" (  ) – обязательны к заполнению!</p>
 
-          <h1>Электронная заявка</h1>
-          <h2>Для участия в Артезианской Археологической Экспедиции (ААЭ)</h2>
-          <p>Если вы желаете принять участие в Артезианской Археологической Экспедиции, пожалуйста, заполните все основные разделы и нажмите кнопку «Отправить» внизу страницы.</p>
-          <p>Данная электронная заявка обеспечивает резервирование за Вами места в ААЭ.</p>
-          <p>Перед заполнением заявки внимательно прочитайте разделы «Список документов для участников археологической экспедиции», «Примерный список вещей для экспедиции» и «Правила поведения в экспедиции»</p>
-          <p>Поля, перед которыми стоят "галочки" (  ) – обязательны к заполнению!</p>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="last"
+  placeholder="фамилия">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="last"
-            placeholder="фамилия">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="first"
+  placeholder="имя">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="first"
-            placeholder="имя">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="middle"
+  placeholder="отчество">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="middle"
-            placeholder="отчество">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="dob"
+  placeholder="дата рождения"
+  [mdDatepicker]="dob">
+<md-datepicker-toggle mdSuffix [for]="dob"></md-datepicker-toggle>
+<md-datepicker #dob></md-datepicker>
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="dob"
-            placeholder="дата рождения"
-            [mdDatepicker]="dob">
-          <md-datepicker-toggle mdSuffix [for]="dob"></md-datepicker-toggle>
-          <md-datepicker #dob></md-datepicker>
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="pob"
+  placeholder="место рождения">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="pob"
-            placeholder="место рождения">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="email"
+  name="email"
+  placeholder="email">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="email"
-            name="email"
-            placeholder="email">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="residence"
+  placeholder="город проживания">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="residence"
-            placeholder="город проживания">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="blog"
+  placeholder="адрес web-сайта, блога (если есть)">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="blog"
-            placeholder="адрес web-сайта, блога (если есть)">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="tel"
+  name="homePhone"
+  placeholder="домашний телефон">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="tel"
-            name="homePhone"
-            placeholder="домашний телефон">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="tel"
+  name="workPhone"
+  placeholder="рабочий телефон">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="tel"
-            name="workPhone"
-            placeholder="рабочий телефон">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="tel"
+  name="mobile"
+  placeholder="мобильный телефон">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="tel"
-            name="mobile"
-            placeholder="мобильный телефон">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="job"
+  placeholder="место работы или учебы">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="job"
-            placeholder="место работы или учебы">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="position"
+  placeholder="должность">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="position"
-            placeholder="должность">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="arrival"
+  placeholder="дата планируемого прибытия в ААЭ"
+  [mdDatepicker]="arrival">
+<md-datepicker-toggle mdSuffix [for]="arrival"></md-datepicker-toggle>
+<md-datepicker #arrival></md-datepicker>
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="arrival"
-            placeholder="дата планируемого прибытия в ААЭ"
-            [mdDatepicker]="arrival">
-          <md-datepicker-toggle mdSuffix [for]="arrival"></md-datepicker-toggle>
-          <md-datepicker #arrival></md-datepicker>
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="departure"
+  placeholder="дата планируемого отъезда из ААЭ"
+  [mdDatepicker]="departure">
+<md-datepicker-toggle mdSuffix [for]="departure"></md-datepicker-toggle>
+<md-datepicker #departure></md-datepicker>
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="departure"
-            placeholder="дата планируемого отъезда из ААЭ"
-            [mdDatepicker]="departure">
-          <md-datepicker-toggle mdSuffix [for]="departure"></md-datepicker-toggle>
-          <md-datepicker #departure></md-datepicker>
-        </md-form-field>
+<md-form-field>
+<textarea
+  mdInput
+  type="text"
+  name="experience"
+  placeholder="кем, где и в каких экспедициях вы работали (если нет - оставьте поле пустым)"></textarea>
+</md-form-field>
 
-        <md-form-field>
-          <textarea
-            mdInput
-            type="text"
-            name="experience"
-            placeholder="кем, где и в каких экспедициях вы работали (если нет - оставьте поле пустым)"></textarea>
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="term"
+  placeholder="время вашего пребывания в каких-либо экспедициях ранее">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="term"
-            placeholder="время вашего пребывания в каких-либо экспедициях ранее">
-        </md-form-field>
+<md-form-field>
+<textarea
+  mdInput
+  type="text"
+  name="skills"
+  placeholder="опишите ваши археологические/экспедиционные умения, навыки (если имеются)"></textarea>
+</md-form-field>
 
-        <md-form-field>
-          <textarea
-            mdInput
-            type="text"
-            name="skills"
-            placeholder="опишите ваши археологические/экспедиционные умения, навыки (если имеются)"></textarea>
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="interests"
+  placeholder="ваши интересы">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="interests"
-            placeholder="ваши интересы">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="languages"
+  placeholder="какими языками вы владеете">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="languages"
-            placeholder="какими языками вы владеете">
-        </md-form-field>
+<md-form-field>
+<input
+  mdInput
+  type="text"
+  name="sources"
+  placeholder="из каких источников вы узнали об экспедиции">
+</md-form-field>
 
-        <md-form-field>
-          <input
-            mdInput
-            type="text"
-            name="sources"
-            placeholder="из каких источников вы узнали об экспедиции">
-        </md-form-field>
+<md-form-field>
+<textarea
+  mdInput
+  type="text"
+  name="questions"
+  placeholder="пожелания или вопросы"></textarea>
+</md-form-field>
 
-        <md-form-field>
-          <textarea
-            mdInput
-            type="text"
-            name="questions"
-            placeholder="пожелания или вопросы"></textarea>
-        </md-form-field>
-
-        <md-form-field>
-          <textarea
-            mdInput
-            type="text"
-            name="emergency"
-            placeholder="контакты на случай критической ситуации (родственники, друзья). Желательно мобильные телефоны, телефоны основного места работы, адреса"></textarea>
-        </md-form-field>
+<md-form-field>
+<textarea
+  mdInput
+  type="text"
+  name="emergency"
+  placeholder="контакты на случай критической ситуации (родственники, друзья). Желательно мобильные телефоны, телефоны основного места работы, адреса"></textarea>
+</md-form-field>
 
 
-          <p>Отправляя данную заявку я подтвеждаю, что я ознакомился / ознакомилась:</p>
+<p>Отправляя данную заявку я подтвеждаю, что я ознакомился / ознакомилась:</p>
 
-          <div class="field">
-            <div class="control">
-                <md-checkbox>со <a href="#">списком документов для участников археологической экспедиции</a></md-checkbox>
-            </div>
-          </div>
+<div>
+  <md-checkbox>со <a href="#">списком документов для участников археологической экспедиции</a></md-checkbox>
+</div>
 
-          <div class="field">
-            <div class="control">
-                <md-checkbox>с <a href="#">примерным списком вещей для экспедиции</a></md-checkbox>
-            </div>
-          </div>
+<div>
+  <md-checkbox>с <a href="#">примерным списком вещей для экспедиции</a></md-checkbox>
+</div>
 
-          <div class="field">
-            <div class="control">
-                <md-checkbox>я прочитал (прочитала) и полностью согласен (согласна) с <a href="#">правилами поведения в экспедиции</a></md-checkbox>
-            </div>
-          </div>
+<div>
+  <md-checkbox>я прочитал (прочитала) и полностью согласен (согласна) с <a href="#">правилами поведения в экспедиции</a></md-checkbox>
+</div>
 
-          <div class="field is-grouped">
-            <div class="control">
-              <button class="button is-primary">Отправить</button>
-            </div>
-            <div class="control">
-              <button class="button is-link">Очистить</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
+<div>
+  <button>Отправить</button>
+  <button>Очистить</button>
 </div>
 
 <app-footer></app-footer>
