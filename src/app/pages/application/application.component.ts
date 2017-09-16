@@ -2,14 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-application',
-  template: `
-    <app-header></app-header>
-    <p>
-      application Works!
-    </p>
-    <app-footer></app-footer>
-  `,
-  styles: []
+  templateUrl: './application.component.html',
+  styleUrls: ['./application.component.sass']
 })
 export class ApplicationComponent implements OnInit {
 
