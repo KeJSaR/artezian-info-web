@@ -1,11 +1,17 @@
-<a (click)="onSelect()">
-<i class="fa" [ngClass]="menuSelected ? 'fa-times' : 'fa-bars'"></i>
-меню
-</a>
+<header>
 
-<app-nav *ngIf="menuSelected; else title"></app-nav>
-<ng-template #title>
-<a routerLink="/intro" class="button">Артезианская Археологическая Экспедиция</a>
-</ng-template>
+  <div (click)="onSelect()" class="block menu-button">
+    <i class="fa" [ngClass]="menuSelected ? 'fa-times' : 'fa-bars'"></i>
+    меню
+  </div>
 
-<a routerLink="/application">подать заявку</a>
+  <div class="block">
+    <app-nav *ngIf="menuSelected; else title"></app-nav>
+    <ng-template #title>
+      <a routerLink="/intro" class="button">Артезианская Археологическая Экспедиция</a>
+    </ng-template>
+  </div>
+
+  <a routerLink="/application" class="block application-button">подать заявку</a>
+
+</header>
