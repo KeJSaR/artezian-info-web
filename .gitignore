@@ -44,3 +44,6 @@ Thumbs.db
 
 # Temp Folder
 /src/assets/temp
+
+# API key file
+/src/assets/admin-scripts/tinymce.js
