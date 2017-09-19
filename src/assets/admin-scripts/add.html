@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Добавление статьи</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+          crossorigin="anonymous" />
+
+    <style>
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container py-5">
+
+      <div class="row">
+        <div class="col">
+          <h1 class="py-5">Администативная панель / Добавление статьи</h1>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-8">
+          <div class="form-group">
+            <input type="text" class="form-control" id="article-title" placeholder="Заголовок статьи">
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="form-group">
+            <select class="form-control" id="article-section">
+              <option value="2">Статьи</option>
+              <option value="1">Об ААЭ</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col-8">
+          <div class="form-group">
+            <textarea class="form-control" id="article-intro" placeholder="Текст статьи"></textarea>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="form-group">
+            <div class="card">
+              <img id="sample-image" class="card-img-top" src="https://farm5.staticflickr.com/4432/36932048481_812e3a379a_b.jpg" alt="your image" />
+              <div class="card-body">
+                <input type="file" class="form-control-file" id="article-image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col">
+          <div class="form-group">
+            <textarea class="form-control" id="article-content" placeholder="Текст статьи"></textarea>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col">
+          <div class="form-group">
+            <button id="submit" type="submit" class="btn btn-primary">Отправить</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col">
+          <div id="test-data" class="py-4"></div>
+        </div>
+
+      </div>
+
+    </div><!-- end of .container -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="tinymce.js"></script>
+    <script>
+      function loadScript(url, callback) {
+
+        var script = document.createElement("script")
+        script.type = "text/javascript";
+
+        script.onload = function() {
+          if (callback) callback();
+        };
+
+        script.src = url;
+        document.getElementsByTagName("head")[0].appendChild(script);
+      }
+
+      var url = 'https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=' + tinymceApiKey;
+
+      loadScript(url, function() {
+        loadScript('add.js', false);
+      });
+
+    </script>
+  </body>
+</html>
