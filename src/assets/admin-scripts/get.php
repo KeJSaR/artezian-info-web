@@ -1,145 +1,82 @@
 <?php
 
-  require("validator.php");
-  require("db-conn.php");
+require("conn.php");
 
-  $v = new Validator();
-  $type = $v->getType();
+function connect()
+{
+  $db = new Db_Conn;
+  return $db->getConnection();
+}
 
-  switch ($type) {
-    case 'menu':
-      getMenu();
-      break;
+function get_post_data()
+{
+  return array(
+    "type"    => $_POST["type"], // article or list
+    "id"      => $_POST["id"], // article id
+    "section" => $_POST["section"], // all, info or articles - 0, 1 or 2
+  );
+}
 
-    case 'article':
-      getArticle($v);
-      break;
+/*
+  * ===========================================================================
+  * Articles
+  * ===========================================================================
+  */
+function get_list($section)
+{
+  $dbh = connect();
+
+  $sql = 'SELECT article_id, section_id, date, image, title, intro';
+
+  if ($section) {
+    $sql .= ' WHERE section = :section';
   }
 
-  function connect()
-  {
-    $db = new Db_Conn;
-    return $db->getConnection();
+  $sql .= ' ORDER BY date';
+
+  $sth = $dbh->prepare($sql);
+  $sth->execute(array(
+    ':section' => $section,
+  ));
+
+  return $sth->fetchAll();
+}
+
+function get_article($id)
+{
+  $dbh = connect();
+
+  $sql = 'SELECT section_id, date, image, title, intro, content
+              WHERE id = :id';
+
+  $sth = $dbh->prepare($sql);
+  $sth->execute(array(
+    ':id' => $id,
+  ));
+
+  return $sth->fetch();
+}
+
+function get_db_data($post_data)
+{
+  $contentType = $post_data['type'];
+  $data = '';
+
+  if ($contentType === 'list') {
+    $section = $post_data["section"];
+    $data = get_list($section);
+  } else if ($contentType === 'article') {
+    $id = $post_data["id"];
+    $data = get_article($id);
   }
 
-  /*
-   * ===========================================================================
-   * Menu
-   * ===========================================================================
-   */
-  function getMenuData()
-  {
-    $dbh = connect();
+  return $data;
+}
 
-    $sql = 'SELECT link, name
-              FROM menu
-              ORDER BY id';
+$post_data = get_post_data();
 
-    $sth = $dbh->prepare($sql);
-    $sth->execute();
+$data = get_db_data($post_data);
 
-    return $sth->fetchAll();
-  }
+$encoded_data = json_encode($data);
 
-  function getMenu()
-  {
-    $menuData = getMenuData();
-    $js = json_encode($menuData);
-    echo $js;
-  }
-
-  /*
-   * ===========================================================================
-   * Articles
-   * ===========================================================================
-   */
-  function getArticleList($page, $hasSubtitle, $hasImg, $hasIntro)
-  {
-    $dbh = connect();
-
-    $sql = 'SELECT link, title';
-
-    if ($hasSubtitle) $sql .= ', subtitle';
-    if ($hasImg)      $sql .= ', img';
-    if ($hasIntro)    $sql .= ', intro';
-
-    switch ($page) {
-      case 'articles':
-        $sql .= ' FROM articles ';
-        break;
-
-      case 'info':
-        $sql .= ' FROM info ';
-        break;
-
-      case 'rules':
-        $sql .= ' FROM rules ';
-        break;
-
-      case 'special':
-        $sql .= ' FROM special ';
-        break;
-    }
-
-    $sql .= 'ORDER BY id';
-
-    $sth = $dbh->prepare($sql);
-    $sth->execute();
-
-    return $sth->fetchAll();
-  }
-
-  function getArticleText($page, $link)
-  {
-    $dbh = connect();
-
-    $sql = 'SELECT title, subtitle, img, intro, content ';
-
-    switch ($page) {
-      case 'articles':
-        $sql .= ' FROM articles ';
-        break;
-
-      case 'info':
-        $sql .= ' FROM info ';
-        break;
-
-      case 'rules':
-        $sql .= ' FROM rules ';
-        break;
-
-      case 'special':
-        $sql .= ' FROM special ';
-        break;
-    }
-
-    $sql .= 'WHERE link = :link';
-
-    $sth = $dbh->prepare($sql);
-    $sth->bindValue(':link', $link, PDO::PARAM_STR);
-    $sth->execute();
-
-    return $sth->fetch();
-  }
-
-  function getArticle($v)
-  {
-    $contentType = $v->getContentType();
-    $r = '';
-    if ($contentType === 'list') {
-      $articlePage = $v->getArticlePage();
-      $hasSubtitle = $v->getHasSubtitle();
-      $hasImg      = $v->getHasImg();
-      $hasIntro    = $v->getHasIntro();
-      $r = getArticleList($articlePage, $hasSubtitle, $hasImg, $hasIntro);
-    } else if ($contentType === 'text') {
-      $articlePage = $v->getArticlePage();
-      $articleLink = $v->getArticleLink();
-      $r = getArticleText($articlePage, $articleLink);
-    }
-    $js = json_encode($r);
-    echo $js;
-  }
-
-
-
+echo $encoded_data;
