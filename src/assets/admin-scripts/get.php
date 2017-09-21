@@ -10,11 +10,17 @@ function connect()
 
 function get_post_data()
 {
-  return array(
-    "type"    => $_POST["type"], // article or list
-    "id"      => $_POST["id"], // article id
-    "section" => $_POST["section"], // all, info or articles - 0, 1 or 2
-  );
+  $post_data = array();
+  if (isset($_POST["type"])) {
+    $post_data['type'] = $_POST["type"];
+  }
+  if (isset($_POST["id"])) {
+    $post_data['id'] = $_POST["id"];
+  }
+  if (isset($_POST["section"])) {
+    $post_data['section'] = $_POST["section"];
+  }
+  return $post_data;
 }
 
 /*
@@ -26,18 +32,23 @@ function get_list($section)
 {
   $dbh = connect();
 
-  $sql = 'SELECT article_id, section_id, date, image, title, intro';
+  $sql = 'SELECT article_id, section_id, date, image, title';
 
   if ($section) {
     $sql .= ' WHERE section = :section';
   }
 
-  $sql .= ' ORDER BY date';
+  $sql .= ' FROM article ORDER BY date';
 
   $sth = $dbh->prepare($sql);
-  $sth->execute(array(
-    ':section' => $section,
-  ));
+
+  if ($section) {
+    $sth->execute(array(
+      ':section' => $section,
+    ));
+  } else {
+    $sth->execute();
+  }
 
   return $sth->fetchAll();
 }
@@ -47,6 +58,7 @@ function get_article($id)
   $dbh = connect();
 
   $sql = 'SELECT section_id, date, image, title, intro, content
+              FROM article
               WHERE id = :id';
 
   $sth = $dbh->prepare($sql);
@@ -55,6 +67,18 @@ function get_article($id)
   ));
 
   return $sth->fetch();
+}
+
+function get_section()
+{
+  $dbh = connect();
+
+  $sql = 'SELECT section_id, title FROM section';
+
+  $sth = $dbh->prepare($sql);
+  $sth->execute();
+
+  return $sth->fetchAll();
 }
 
 function get_db_data($post_data)
@@ -68,6 +92,8 @@ function get_db_data($post_data)
   } else if ($contentType === 'article') {
     $id = $post_data["id"];
     $data = get_article($id);
+  } else if ($contentType === 'section') {
+    $data = get_section();
   }
 
   return $data;
