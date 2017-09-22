@@ -8,19 +8,19 @@ function connect()
   return $db->getConnection();
 }
 
-function get_post_data()
+function get_id()
 {
-  return filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+  return filter_input(INPUT_POST, "id", FILTER_SANITIZE_NUMBER_INT);
 }
 
 function delete_article($id)
 {
   $dbh = connect();
 
-  $dbh->exec('DELETE FROM article
-              WHERE article_id = ' . $id);
+  $dbh->exec("DELETE FROM article
+              WHERE article_id = " . $id);
 }
 
-$id = get_post_data();
+$id = get_id();
 
 delete_article($id);
