@@ -6,10 +6,16 @@ function checkArticle() {
 
     $('tr.checked i').removeClass('fa-check-square-o').addClass('fa-square-o');
     $('tr.checked').removeClass('checked');
+    $('.btn-outline-primary').prop('disabled', false);
+    $('.btn-outline-warning').prop('disabled', true);
+    $('.btn-outline-danger').prop('disabled', true);
 
     if ( !isChecked ) {
       $(this).addClass('checked');
       $('tr.checked i').removeClass('fa-square-o').addClass('fa-check-square-o');
+      $('.btn-outline-primary').prop('disabled', true);
+      $('.btn-outline-warning').prop('disabled', false);
+      $('.btn-outline-danger').prop('disabled', false);
     }
   });
 }
