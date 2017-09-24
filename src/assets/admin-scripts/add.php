@@ -45,7 +45,7 @@ function update_article($article_data)
   try {
     $sth = $dbh->prepare($sql);
     $sth->execute(array(
-      ':section'    => $article_data["section"],
+      ":section"    => $article_data["section"],
       ":title"      => $article_data["title"],
       ":intro"      => $article_data["intro"],
       ":content"    => $article_data["content"],
@@ -69,7 +69,7 @@ function create_article($article_data)
   try {
     $sth = $dbh->prepare($sql);
     $sth->execute(array(
-      ':date' => $article_data["date"],
+      ":date" => $article_data["date"],
     ));
     return $dbh->lastInsertId();
   }
