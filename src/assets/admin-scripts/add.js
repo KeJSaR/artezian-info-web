@@ -18,10 +18,6 @@ function sendArticleData(url, id) {
   let articleIntro   = $('#article-intro').val();
   let articleContent = $('#article-content').val();
 
-  var fd = new FormData();
-  var file = $('#article-image')[0].files[0];
-  fd.append('file', file);
-
   $.post(url, fd, {
     'update'  : 1,
     'id'      : id,
