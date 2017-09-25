@@ -32,7 +32,7 @@ function get_list($section)
 {
   $dbh = connect();
 
-  $sql = 'SELECT article_id, section_id, date, image, title';
+  $sql = 'SELECT article_id, section_id, date, title';
 
   if ($section) {
     $sql .= ' WHERE section = :section';
@@ -57,7 +57,7 @@ function get_article($id)
 {
   $dbh = connect();
 
-  $sql = 'SELECT section_id, date, image, title, intro, content
+  $sql = 'SELECT section_id, date, title, intro, content
               FROM article
               WHERE id = :id';
 

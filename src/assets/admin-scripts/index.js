@@ -78,6 +78,7 @@ function makeArticlesTable(sections) {
     'type': 'list',
     'section': 0,
   }).done(function( data ) {
+    $('#test-data').html(data);
     var obj = JSON.parse(data);
     obj.forEach(function(element) {
       $('#articles-list tbody').append(`
@@ -87,7 +88,7 @@ function makeArticlesTable(sections) {
           <td>${element.date}</td>
           <td>${sections[element.section_id]}</td>
           <td>${element.title}</td>
-          <td>${element.image}</td>
+          <td><img src="article-main-image-${element.image}" alt="${element.title}"></td>
         </tr>
       `);
     });
