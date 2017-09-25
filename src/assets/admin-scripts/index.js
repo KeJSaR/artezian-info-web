@@ -88,7 +88,7 @@ function makeArticlesTable(sections) {
           <td>${element.date}</td>
           <td>${sections[element.section_id]}</td>
           <td>${element.title}</td>
-          <td><img src="article-main-image-${element.image}" alt="${element.title}"></td>
+          <td><img src="article-main-image-${element.article_id}" alt="${element.title}"></td>
         </tr>
       `);
     });
