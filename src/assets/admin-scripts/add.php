@@ -24,11 +24,9 @@ function get_article_update_data()
   );
 }
 
-function get_article_initial_data()
+function get_date()
 {
-  return array(
-    "date" => $_POST["date"],
-  );
+  return $_POST["date"];
 }
 
 function update_article($article_data)
@@ -51,15 +49,91 @@ function update_article($article_data)
       ":content"    => $article_data["content"],
       ":article_id" => $article_data["id"],
     ));
-    return false;
   }
   catch(PDOException $e)
   {
-    return $sql . "<br>" . $e->getMessage();
+    echo $sql . "<br>" . $e->getMessage();
   }
+
+  return false;
 }
 
-function create_article($article_data)
+function get_last_article_id()
+{
+  $dbh = connect();
+
+  $sql = 'SELECT article_id
+          FROM article
+          ORDER BY article_id DESC LIMIT 1';
+
+  try {
+    $sth = $dbh->prepare($sql);
+    $sth->execute();
+    $result = $sth->fetch();
+  }
+  catch(PDOException $e)
+  {
+    echo $sql . "<br>" . $e->getMessage();
+  }
+
+  return $result["article_id"];
+}
+
+function check_if_empty($id)
+{
+  $dbh = connect();
+
+  $sql = 'SELECT section_id, title, intro, content
+              FROM article
+              WHERE article_id = :article_id';
+
+  try {
+    $sth = $dbh->prepare($sql);
+    $sth->execute(array(
+      ':article_id' => $id,
+    ));
+    $article_data = $sth->fetch();
+  }
+  catch(PDOException $e)
+  {
+    echo $sql . "<br>" . $e->getMessage();
+  }
+
+  if ( $article_data["section_id"] == ""
+    && $article_data["title"]      == ""
+    && $article_data["intro"]      == ""
+    && $article_data["content"]    == ""
+  ) {
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+function update_empty_article($last_article_id, $date)
+{
+  $dbh = connect();
+
+  $sql = "UPDATE article
+          SET date = :date
+          WHERE article_id = :article_id";
+
+  try {
+    $sth = $dbh->prepare($sql);
+    $sth->execute(array(
+      ":date"       => $date,
+      ":article_id" => $last_article_id,
+    ));
+  }
+  catch(PDOException $e)
+  {
+    echo $sql . "<br>" . $e->getMessage();
+  }
+
+  return false;
+}
+
+function create_empty_article($date)
 {
   $dbh = connect();
 
@@ -69,16 +143,23 @@ function create_article($article_data)
   try {
     $sth = $dbh->prepare($sql);
     $sth->execute(array(
-      ":date" => $article_data["date"],
+      ":date" => $date,
     ));
-    return $dbh->lastInsertId();
   }
   catch(PDOException $e)
   {
-    return $sql . "<br>" . $e->getMessage();
+    echo $sql . "<br>" . $e->getMessage();
   }
+
+  return $dbh->lastInsertId();
 }
 
+/**
+ * Start function that checks if we should update existed but empty
+ * article or create new empty article
+ * @return string id of the empty article
+ * @return boolean false if article updated with data successfully
+ */
 function init() {
   // Check POST type
   $is_update = check_post_type();
@@ -90,8 +171,19 @@ function init() {
     return update_article($article_data);
   } else {
     // Create empty article to get its ID
-    $article_data = get_article_initial_data();
-    return create_article($article_data);
+    $date = get_date();
+    $last_article_id = get_last_article_id();
+    $if_empty = check_if_empty($last_article_id);
+    if ($if_empty) {
+      $err = update_empty_article($last_article_id, $date);
+      if ($err) {
+        return $err;
+      } else {
+        return $last_article_id;
+      }
+    } else {
+      return create_empty_article($date);
+    }
   }
 }
 

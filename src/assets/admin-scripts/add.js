@@ -18,7 +18,7 @@ function sendArticleData(url, id) {
   let articleIntro   = $('#article-intro').val();
   let articleContent = $('#article-content').val();
 
-  $.post(url, fd, {
+  $.post(url, {
     'update'  : 1,
     'id'      : id,
     'section' : articleSection,
