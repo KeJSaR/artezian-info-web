@@ -47,5 +47,3 @@ Thumbs.db
 
 # API key file
 /src/assets/admin-scripts/tinymce.js
-/src/assets/admin-scripts/upload.html
-/src/assets/admin-scripts/upload.php
