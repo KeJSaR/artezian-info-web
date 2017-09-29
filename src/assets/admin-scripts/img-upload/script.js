@@ -65,16 +65,6 @@ function drawFromCanvas(canvas, img, w, h) {
   return canvas;
 }
 
-function makeFormData(canvas) {
-  var dataURL = canvas.toDataURL('image/jpeg', 0.9);
-  var blob    = dataURItoBlob(dataURL);
-  var fd      = new FormData();
-
-  fd.append('file', blob, 'blob.jpeg');
-
-  return fd;
-}
-
 function dataURItoBlob(dataURI) {
   var splits     = dataURI.split(',')[1];
   var isBase64   = dataURI.split(',')[0].indexOf('base64') >= 0;
@@ -88,6 +78,16 @@ function dataURItoBlob(dataURI) {
   }
 
   return new Blob([ia], {type:mimeString});
+}
+
+function makeFormData(canvas) {
+  var dataURL = canvas.toDataURL('image/jpeg', 0.9);
+  var blob    = dataURItoBlob(dataURL);
+  var fd      = new FormData();
+
+  fd.append('file', blob, 'blob.jpeg');
+
+  return fd;
 }
 
 function makeRequest(fd) {
