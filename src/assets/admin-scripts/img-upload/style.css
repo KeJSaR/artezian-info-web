@@ -20,3 +20,11 @@
 #fileInput {
   display: none;
 }
+
+#thumbnail {
+  width: 300px;
+}
+
+#thumbnail img {
+  width: 100%;
+}

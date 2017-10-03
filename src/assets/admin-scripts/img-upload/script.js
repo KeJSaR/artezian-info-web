@@ -11,6 +11,10 @@ $(function() {
   $('#fileInput').on('change', fileUpload);
 });
 
+var showThumbnail = function(img) {
+  $('#thumbnail').html(img);
+}
+
 function fileUpload(e) {
   $('#dropBox').html(e.target.value + ' uploading...');
 
@@ -21,13 +25,19 @@ function fileUpload(e) {
   } else {
     var img = document.createElement('img');
     img.src = window.URL.createObjectURL(file);
-    $('#thumbnail').html(img);
 
     img.onload = function() {
-      var canvas = createCanvas(300, 300, img);
-      var fd     = makeFormData(canvas);
-      makeRequest(fd);
+      var canvasSmall = createCanvas(300, 300, img);
+      var fdSmall     = makeFormData(canvasSmall, 'pic');
+      makeRequest(fdSmall);
+
+      var canvasBig = createCanvas(1200, 1200, img);
+      var fdbig     = makeFormData(canvasBig, 'orig');
+      makeRequest(fdbig);
+
+      showThumbnail(img);
     };
+
   }
 }
 
@@ -80,12 +90,14 @@ function dataURItoBlob(dataURI) {
   return new Blob([ia], {type:mimeString});
 }
 
-function makeFormData(canvas) {
+function makeFormData(canvas, n) {
   var dataURL = canvas.toDataURL('image/jpeg', 0.9);
   var blob    = dataURItoBlob(dataURL);
   var fd      = new FormData();
 
-  fd.append('file', blob, 'blob.jpeg');
+  var name = n + '.jpeg';
+
+  fd.append('file', blob, name);
 
   return fd;
 }
