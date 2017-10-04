@@ -1,4 +1,4 @@
-#dropBox {
+/*#dropBox {
   border: 1px dashed #999;
   background: #eee;
   cursor: pointer;
@@ -8,6 +8,7 @@
   min-height: 150px;
   padding: 54px 54px;
   box-sizing: border-box;
+  position: relative;
 }
 
 #dropBox p {
@@ -15,10 +16,39 @@
   margin: 2em 0;
   font-size: 16px;
   font-weight: bold;
+}*/
+
+
+#main-img-box {
+  position: relative;
 }
 
-#fileInput {
+#main-img-box .close {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
   display: none;
+}
+
+#main-img-box .close:hover,
+#main-img-box .close:active {
+  color: red;
+  cursor: pointer;
+}
+
+#main-img-box::before {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  content: "";
+  background-color: white;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 #thumbnail {

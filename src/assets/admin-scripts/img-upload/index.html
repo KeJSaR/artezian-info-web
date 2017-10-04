@@ -4,21 +4,18 @@
     <meta charset="utf-8">
     <title>Temp image upload testing page</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Code based on https://www.codexworld.com/ajax-file-upload-using-jquery-php/ -->
   </head>
   <body>
 
-    <h1>Ajax File Upload using jQuery and PHP</h1>
-
     <div>
       <div id="dropBox">
-        <p>Select file to upload</p>
+        <p id="upload-text">Select file to upload</p>
+        <div id="thumbnail"></div>
+        <div class="close" title="Delete photo">x</div>
       </div>
       <input type="file" name="fileInput" id="fileInput" />
     </div>
-
-    <div id="thumbnail"></div>
-
-    <p><a href="https://www.codexworld.com/ajax-file-upload-using-jquery-php/">source</a></p>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="script.js"></script>

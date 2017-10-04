@@ -94,66 +94,66 @@ tinymce.init({
   toolbar3      : 'image rotateleft rotateright flipv fliph editimage imageoptions | media charmap insertdatetime | cut copy paste | table | visualblocks visualchars | undo redo',
   table_toolbar : 'tabledelete tablecellprops tablemergecells tablesplitcells tableinsertrowbefore tableinsertrowafter tabledeleterow tablerowprops tablecutrow tablecopyrow tablepasterowbefore tablepasterowafter tableinsertcolbefore tableinsertcolafter tabledeletecol'
 });
-
-// Preview an image before it is uploaded ##############################
-
-function readURL(input) {
-
-  if (input.files && input.files[0]) {
-
-    var image = input.files[0];
-
-    var name = image.name;
-    var type = image.type;
-    var size = image.size;
-
-    $('#test-data').append('name: <b>' + name + '</b><br>; ' + 'type: <b>' + type + '</b><br>; ' + 'size: <b>' + size + '</b><br>;');
-
-    var reader = new FileReader();
-
-    reader.onload = function (e) {
-      $('#sample-image').attr('src', e.target.result);
-    }
-
-    reader.readAsDataURL(input.files[0]);
-
-    // -------------------------------------------
-
-    var sendData = new FormData();
-    sendData.append('fileToUpload', image, name);
-
-    $('#sample-image').show();
-
-    $.ajax({
-      url: 'upload.php',
-      type: 'POST',
-      data: sendData,
-      cache: false,
-      contentType: false,
-      processData: false,
-
-      xhr: function() {
-        var myXhr = $.ajaxSettings.xhr();
-        if (myXhr.upload) {
-          // For handling the progress of the upload
-          myXhr.upload.addEventListener('progress', function(e) {
-            if (e.lengthComputable) {
-              $('progress').attr({
-                value: e.loaded,
-                max: e.total,
-              });
-            }
-          } , false);
-        }
-        return myXhr;
-      },
-    }).done(function(data) {
-      $('#test-data').append(data);
-    });
-
-  }
-}
-
-$('#article-image').change(function(){
-  readURL(this);
-});
+//
+// // Preview an image before it is uploaded ##############################
+//
+// function readURL(input) {
+//
+//   if (input.files && input.files[0]) {
+//
+//     var image = input.files[0];
+//
+//     var name = image.name;
+//     var type = image.type;
+//     var size = image.size;
+//
+//     $('#test-data').append('name: <b>' + name + '</b><br>; ' + 'type: <b>' + type + '</b><br>; ' + 'size: <b>' + size + '</b><br>;');
+//
+//     var reader = new FileReader();
+//
+//     reader.onload = function (e) {
+//       $('#sample-image').attr('src', e.target.result);
+//     }
+//
+//     reader.readAsDataURL(input.files[0]);
+//
+//     // -------------------------------------------
+//
+//     var sendData = new FormData();
+//     sendData.append('fileToUpload', image, name);
+//
+//     $('#sample-image').show();
+//
+//     $.ajax({
+//       url: 'upload.php',
+//       type: 'POST',
+//       data: sendData,
+//       cache: false,
+//       contentType: false,
+//       processData: false,
+//
+//       xhr: function() {
+//         var myXhr = $.ajaxSettings.xhr();
+//         if (myXhr.upload) {
+//           // For handling the progress of the upload
+//           myXhr.upload.addEventListener('progress', function(e) {
+//             if (e.lengthComputable) {
+//               $('progress').attr({
+//                 value: e.loaded,
+//                 max: e.total,
+//               });
+//             }
+//           } , false);
+//         }
+//         return myXhr;
+//       },
+//     }).done(function(data) {
+//       $('#test-data').append(data);
+//     });
+//
+//   }
+// }
+//
+// $('#article-image').change(function(){
+//   readURL(this);
+// });

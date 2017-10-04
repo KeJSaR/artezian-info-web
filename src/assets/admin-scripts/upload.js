@@ -4,15 +4,16 @@ $(function() {
     $('#article-image').hide();
     $('#main-img-box .close').show(0, function() {
       $(this).click(function() {
-        // location.reload();
         $('#article-image').show();
         $('#main-img-box .close').hide();
         $('#thumbnail').empty();
-
-         var $el = $('#article-image');
-         $el.wrap('<form>').closest('form').get(0).reset();
-         $el.unwrap();
-         deleteImage('img.jpeg');
+        var $el = $('#article-image');
+        $el.wrap('<form>').closest('form').get(0).reset();
+        $el.unwrap();
+        
+        var id = $('body').data('article-id');
+        deleteImage(id + '-pic.jpeg');
+        deleteImage(id + '-img.jpeg');
       });
     });
     $('#thumbnail').html(img);
@@ -40,15 +41,16 @@ $(function() {
   function uploadImage(img, size) {
     var dim;
     var name;
+    var id = $('body').data('article-id');
 
     if (size === 'small') {
       dim  = 300;
-      name = 'pic';
+      name = id + '-pic';
     }
 
     if (size === 'large') {
       dim  = 1200;
-      name = 'img';
+      name = id + '-img';
     }
 
     var canvas = createCanvas(dim, dim, img);
@@ -127,18 +129,13 @@ $(function() {
     };
   }
 
-  $('#clickme').click(function() {
-    deleteImage('img.jpeg');
-  });
-
   function deleteImage(name) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'upload.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send('delete=1&name=' + name);
     xhr.onload = function () {
-      var response = JSON.parse(xhr.responseText);
-      replyToUser(xhr.status, response.status);
+      replyToUser(xhr.status, 'deleted');
     };
   }
 
@@ -148,9 +145,9 @@ $(function() {
     if (status === 200 && response == 'ok') {
       message = 'File has been uploaded successfully.';
     } else if (response == 'type_err') {
-      message = 'Please choose an images file. Click to upload another.';
+      message = 'Please choose an images file.';
     } else if (response == 'deleted') {
-      message = 'File has been deleted successfully. Click to upload another.';
+      message = 'File has been deleted.';
     } else if (response == 'not_exists') {
       message = 'File does not exist on server.';
     } else {
