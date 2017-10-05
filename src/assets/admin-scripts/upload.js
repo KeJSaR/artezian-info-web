@@ -10,7 +10,7 @@ $(function() {
         var $el = $('#article-image');
         $el.wrap('<form>').closest('form').get(0).reset();
         $el.unwrap();
-        
+
         var id = $('body').data('article-id');
         deleteImage(id + '-pic.jpeg');
         deleteImage(id + '-img.jpeg');
@@ -156,4 +156,9 @@ $(function() {
 
     $('#upload-text').html(message);
   }
+
+  $('#test-submit').click(function() {
+    $('#mceu_54-button').click();
+    $('#mceu_100-inp').val('source.jpg');
+  });
 });

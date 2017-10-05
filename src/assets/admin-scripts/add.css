@@ -9,14 +9,15 @@ h1 span {
   display : none;
 }
 
-.mce-branding-powered-by,
+/*.mce-branding-powered-by,
 .mce-btn,
 .mce-panel {
   background-color : transparent !important;
-}
+}*/
 
 .mce-branding-powered-by {
   border : none !important;
+  display: none;
 }
 
 
