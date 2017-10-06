@@ -78,6 +78,7 @@ tinymce.init({
   menubar       : false,
   statusbar     : false,
   paste_as_text : true,
+  autoresize_max_height: 200,
   plugins       : 'paste autolink autoresize advcode link lists textcolor colorpicker',
   toolbar       : 'bold italic underline | subscript superscript | strikethrough forecolor backcolor | removeformat | bullist numlist | link unlink | code'
 });
@@ -88,6 +89,7 @@ tinymce.init({
   statusbar     : false,
   paste_as_text : true,
   image_advtab  : true,
+  autoresize_max_height: 500,
   plugins       : 'autolink autoresize hr lists link image charmap paste searchreplace visualblocks visualchars advcode insertdatetime media table imagetools directionality textcolor',
   toolbar1      : 'alignleft aligncenter alignright alignjustify alignnone | outdent indent | ltr rtl | styleselect formatselect fontsizeselect',
   toolbar2      : 'bullist numlist | bold italic underline subscript superscript | strikethrough forecolor backcolor | removeformat | blockquote hr | link unlink | searchreplace | code',

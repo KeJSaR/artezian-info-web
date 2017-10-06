@@ -1,13 +1,17 @@
 $(function() {
 
+  $('#add-article-image').click(function() {
+    $('#article-image').click();
+  });
+
   var showThumbnail = function(img) {
-    $('#article-image').hide();
+    $('#main-image').hide();
     $('#main-img-box .close').show(0, function() {
       $(this).click(function() {
-        $('#article-image').show();
+        $('#main-image').show();
         $('#main-img-box .close').hide();
         $('#thumbnail').empty();
-        var $el = $('#article-image');
+        var $el = $('#main-image');
         $el.wrap('<form>').closest('form').get(0).reset();
         $el.unwrap();
 
@@ -19,7 +23,7 @@ $(function() {
     $('#thumbnail').html(img);
   }
 
-  $('#article-image').on('change', function(e) {
+  $('#main-image').on('change', function(e) {
 
     var file = e.target.files[0];
 
@@ -33,6 +37,24 @@ $(function() {
         uploadImage(img, 'large');
         uploadImage(img, 'small');
         showThumbnail(img);
+      };
+    }
+  });
+
+  $('#article-image').on('change', function(e) {
+
+    var file = e.target.files[0];
+
+    if (!file.type.match('image.*')) {
+      $('#upload-text').html('Please choose an images file.');
+    } else {
+      var img = document.createElement('img');
+      img.src = window.URL.createObjectURL(file);
+
+      img.onload = function() {
+        uploadImage(img, 'article');
+        $('#mceu_54-button').click();
+        $('#mceu_100-inp').val('source.jpg');
       };
     }
 
@@ -51,6 +73,11 @@ $(function() {
     if (size === 'large') {
       dim  = 1200;
       name = id + '-img';
+    }
+
+    if (size === 'article') {
+      dim  = 1200;
+      name = id + '-article';
     }
 
     var canvas = createCanvas(dim, dim, img);
@@ -156,9 +183,4 @@ $(function() {
 
     $('#upload-text').html(message);
   }
-
-  $('#test-submit').click(function() {
-    $('#mceu_54-button').click();
-    $('#mceu_100-inp').val('source.jpg');
-  });
 });
