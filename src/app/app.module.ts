@@ -19,6 +19,7 @@ import { TextComponent }         from './parts/text/text.component';
 import { IntroComponent }        from './parts/intro/intro.component';
 import { ArticleComponent }      from './parts/article/article.component';
 import { BlogComponent }         from './parts/blog/blog.component';
+import { ContentComponent } from './parts/content/content.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BlogComponent }         from './parts/blog/blog.component';
     TextComponent,
     IntroComponent,
     ArticleComponent,
-    BlogComponent
+    BlogComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
