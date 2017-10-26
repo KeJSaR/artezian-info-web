@@ -21,7 +21,7 @@ USE `artezian` ;
 -- Table `artezian`.`menu`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `artezian`.`menu` (
-  `id` INT(2) UNSIGNED NOT NULL,
+  `id` INT(2) UNSIGNED NOT NULL AUTO_INCREMENT,
   `alias` VARCHAR(255) NOT NULL,
   `title` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`),
@@ -81,8 +81,8 @@ ENGINE = InnoDB;
 -- Table `artezian`.`image`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `artezian`.`image` (
-  `id` INT(10) NOT NULL,
-  `gallery_id` INT(10) NOT NULL,
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `gallery_id` INT(10) UNSIGNED NOT NULL,
   `title` VARCHAR(255) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_image_gallery1_idx` (`gallery_id` ASC),
