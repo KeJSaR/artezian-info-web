@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { DataService } from './data.service';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PageAboutComponent } from './pages/page-about/page-about.component';
 import { PageArticlesComponent } from './pages/page-articles/page-articles.component';
 import { PageGalleryComponent } from './pages/page-gallery/page-gallery.component';
