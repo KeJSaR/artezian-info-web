@@ -1,5 +1,14 @@
 <?php
 
+// Example of access.php content:
+
+// <?php
+// define('DB_HOST', 'localhost');
+// define('DB_NAME', 'test');
+// define('DB_USER', 'root');
+// define('DB_PASS', '');
+// define('DB_CHAR', 'utf8');
+
 require_once "access.php";
 
 class DB
