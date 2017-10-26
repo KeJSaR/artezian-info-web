@@ -15,6 +15,10 @@ import { PageFormComponent }     from './pages/page-form/page-form.component';
 import { HeaderComponent }       from './parts/header/header.component';
 import { FooterComponent }       from './parts/footer/footer.component';
 import { MenuComponent }         from './parts/menu/menu.component';
+import { TextComponent } from './parts/text/text.component';
+import { IntroComponent } from './parts/intro/intro.component';
+import { ArticleComponent } from './parts/article/article.component';
+import { BlogComponent } from './parts/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { MenuComponent }         from './parts/menu/menu.component';
     PageFormComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    TextComponent,
+    IntroComponent,
+    ArticleComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
