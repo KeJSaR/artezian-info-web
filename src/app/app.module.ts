@@ -1,5 +1,6 @@
 import { BrowserModule }         from '@angular/platform-browser';
 import { NgModule }              from '@angular/core';
+import { HttpClientModule }      from '@angular/common/http';
 
 import { AppRoutingModule }      from './app-routing.module';
 import { AppComponent }          from './app.component';
@@ -19,7 +20,7 @@ import { TextComponent }         from './parts/text/text.component';
 import { IntroComponent }        from './parts/intro/intro.component';
 import { ArticleComponent }      from './parts/article/article.component';
 import { BlogComponent }         from './parts/blog/blog.component';
-import { ContentComponent } from './parts/content/content.component';
+import { ContentComponent }      from './parts/content/content.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ContentComponent } from './parts/content/content.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
