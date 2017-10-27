@@ -73,3 +73,9 @@ require_once 'database.php';
 // $stmt = DB::run("UPDATE pdowrapper SET name=? WHERE id=?", [$new, $id]);
 // var_dump($stmt->rowCount());
 // //int(1)
+
+function get_menu()
+{
+    $menu = DB::run("SELECT * FROM menu")->fetchAll();
+    return $menu;
+}
