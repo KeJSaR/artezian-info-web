@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { DataService }       from '../../data.service';
-import { MenuItem }          from '../../interfaces/menu-item';
+import { MenuItem }          from '../../interfaces/menu-item.interface';
 
 @Component({
   selector: 'app-menu',
