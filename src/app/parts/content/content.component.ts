@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-content',
@@ -6,8 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./content.component.sass']
 })
 export class ContentComponent implements OnInit {
-
-  @Input() content: string;
 
   constructor() { }
 

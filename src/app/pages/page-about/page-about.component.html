@@ -1,8 +1,3 @@
 <p>
-  page-about works!
+  page-about works! {{ alias }} & {{ type }}
 </p>
-
-<div [ngSwitch]="pageType">
-  <app-content *ngSwitchCase="'content'" [content]="content"></app-content>
-  <app-article *ngSwitchCase="'article'" [content]="articleContent"></app-article>
-</div>

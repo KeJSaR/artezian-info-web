@@ -9,16 +9,13 @@ import { ActivatedRoute }    from '@angular/router';
 export class PageAboutComponent implements OnInit {
 
   alias: string;
-  pageType: string;
-
-  content: string = 'Special Blog Content Data from Page About';
-  articleContent: string = 'Special Blog Content Data from Page About';
+  type: string;
 
   constructor(private route: ActivatedRoute) { }
-  
-  ngOnInit() {      
+
+  ngOnInit() {
     this.alias = this.route.snapshot.params['alias'];
-    this.pageType = this.alias === undefined ? 'content' : 'article';
+    this.type = this.alias === undefined ? 'page-content' : 'page-article';
   }
 
 }
