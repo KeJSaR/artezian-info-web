@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-intro',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intro.component.sass']
 })
 export class IntroComponent implements OnInit {
+
+  @Input() content: string;
 
   constructor() { }
 

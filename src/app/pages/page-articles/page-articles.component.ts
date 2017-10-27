@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute }    from '@angular/router';
 
 @Component({
   selector: 'app-page-articles',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageArticlesComponent implements OnInit {
 
-  constructor() { }
+  alias: string;
+  pageType: string;
+
+  blogContent:string = 'Special Blog Content Data from Page Articles';
+  articleContent:string =  'Special Blog Content Data from Page Articles';
+
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit() {
+    this.alias = this.route.snapshot.params['alias'];
+    this.pageType = this.alias === undefined ? 'blog' : 'article';
   }
 
 }

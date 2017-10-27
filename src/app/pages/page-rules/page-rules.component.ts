@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute }    from '@angular/router';
 
 @Component({
   selector: 'app-page-rules',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageRulesComponent implements OnInit {
 
-  constructor() { }
+  alias: string;
+  pageType: string;
+
+  content:string = 'Special Blog Content Data from Page Rules';
+  articleContent:string =  'Special Blog Content Data from Page Rules';
+
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit() {
+    this.alias = this.route.snapshot.params['alias'];
+    this.pageType = this.alias === undefined ? 'content' : 'article';
   }
 
 }

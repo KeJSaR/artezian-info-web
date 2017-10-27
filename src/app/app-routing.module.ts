@@ -9,16 +9,16 @@ import { PageRulesComponent }    from './pages/page-rules/page-rules.component';
 import { PageFormComponent }     from './pages/page-form/page-form.component';
 
 const routes: Routes = [
-  { path: '',             redirectTo: '/about', pathMatch: 'full' },
-  { path: 'about',        component: PageAboutComponent },
-  { path: 'articles',     component: PageArticlesComponent },
-  { path: 'articles/:id', component: PageArticlesComponent },
-  { path: 'gallery',      component: PageGalleryComponent },
-  { path: 'gallery/:id',  component: PageGalleryComponent },
-  { path: 'rules',        component: PageRulesComponent },
-  { path: 'rules/:id',    component: PageRulesComponent },
-  { path: 'form',         component: PageFormComponent },
-  { path: '**',           component: NotFoundComponent }
+  { path: '',                redirectTo: '/about', pathMatch: 'full' },
+  { path: 'about',           component: PageAboutComponent },
+  { path: 'articles',        component: PageArticlesComponent },
+  { path: 'articles/:alias', component: PageArticlesComponent },
+  { path: 'gallery',         component: PageGalleryComponent },
+  { path: 'gallery/:alias',  component: PageGalleryComponent },
+  { path: 'rules',           component: PageRulesComponent },
+  { path: 'rules/:alias',    component: PageRulesComponent },
+  { path: 'form',            component: PageFormComponent },
+  { path: '**',              component: NotFoundComponent }
 ];
 
 @NgModule({
