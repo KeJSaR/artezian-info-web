@@ -1,24 +1,21 @@
 import { NgModule }              from '@angular/core';
 import { Routes, RouterModule }  from '@angular/router';
+import { Data } from '@angular/router';
 
-import { NotFoundComponent }     from './pages/not-found/not-found.component';
-import { PageAboutComponent }    from './pages/page-about/page-about.component';
-import { PageArticlesComponent } from './pages/page-articles/page-articles.component';
-import { PageGalleryComponent }  from './pages/page-gallery/page-gallery.component';
-import { PageRulesComponent }    from './pages/page-rules/page-rules.component';
-import { PageFormComponent }     from './pages/page-form/page-form.component';
+import { PagesComponent }        from './pages/pages.component';
 
 const routes: Routes = [
   { path: '',                redirectTo: '/about', pathMatch: 'full' },
-  { path: 'about',           component: PageAboutComponent },
-  { path: 'articles',        component: PageArticlesComponent },
-  { path: 'articles/:alias', component: PageArticlesComponent },
-  { path: 'gallery',         component: PageGalleryComponent },
-  { path: 'gallery/:alias',  component: PageGalleryComponent },
-  { path: 'rules',           component: PageRulesComponent },
-  { path: 'rules/:alias',    component: PageRulesComponent },
-  { path: 'form',            component: PageFormComponent },
-  { path: '**',              component: NotFoundComponent }
+  { path: 'about',           component: PagesComponent, data: {page: 'about'} },
+  { path: 'about/:alias',    component: PagesComponent, data: {page: 'about'} },
+  { path: 'articles',        component: PagesComponent, data: {page: 'articles'} },
+  { path: 'articles/:alias', component: PagesComponent, data: {page: 'articles'} },
+  { path: 'gallery',         component: PagesComponent, data: {page: 'gallery'} },
+  { path: 'gallery/:alias',  component: PagesComponent, data: {page: 'gallery'} },
+  { path: 'rules',           component: PagesComponent, data: {page: 'rules'} },
+  { path: 'rules/:alias',    component: PagesComponent, data: {page: 'rules'} },
+  { path: 'form',            component: PagesComponent, data: {page: 'form'} },
+  { path: '**',              component: PagesComponent, data: {page: '404'} }
 ];
 
 @NgModule({

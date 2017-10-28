@@ -1,8 +1,0 @@
-<p>
-  page-articles works!
-</p>
-
-<div [ngSwitch]="pageType">
-  <app-blog    *ngSwitchCase="'blog'"    [content]="blogContent"></app-blog>
-  <app-article *ngSwitchCase="'article'" [content]="articleContent"></app-article>
-</div>

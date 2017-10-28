@@ -6,12 +6,7 @@ import { AppRoutingModule }      from './app-routing.module';
 import { AppComponent }          from './app.component';
 
 import { DataService }           from './data.service';
-import { NotFoundComponent }     from './pages/not-found/not-found.component';
-import { PageAboutComponent }    from './pages/page-about/page-about.component';
-import { PageArticlesComponent } from './pages/page-articles/page-articles.component';
-import { PageGalleryComponent }  from './pages/page-gallery/page-gallery.component';
-import { PageRulesComponent }    from './pages/page-rules/page-rules.component';
-import { PageFormComponent }     from './pages/page-form/page-form.component';
+import { PagesComponent }        from './pages/pages.component';
 
 import { HeaderComponent }       from './parts/header/header.component';
 import { FooterComponent }       from './parts/footer/footer.component';
@@ -21,16 +16,15 @@ import { IntroComponent }        from './parts/intro/intro.component';
 import { ArticleComponent }      from './parts/article/article.component';
 import { BlogComponent }         from './parts/blog/blog.component';
 import { ContentComponent }      from './parts/content/content.component';
+import { NotFoundComponent }     from './parts/not-found/not-found.component';
+import { GalleryComponent } from './parts/gallery/gallery.component';
+import { AlbumComponent } from './parts/album/album.component';
+import { FormComponent } from './parts/form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent,
-    PageAboutComponent,
-    PageArticlesComponent,
-    PageGalleryComponent,
-    PageRulesComponent,
-    PageFormComponent,
+    PagesComponent,
     HeaderComponent,
     FooterComponent,
     MenuComponent,
@@ -38,7 +32,11 @@ import { ContentComponent }      from './parts/content/content.component';
     IntroComponent,
     ArticleComponent,
     BlogComponent,
-    ContentComponent
+    ContentComponent,
+    NotFoundComponent,
+    GalleryComponent,
+    AlbumComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

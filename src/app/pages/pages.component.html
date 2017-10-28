@@ -1,0 +1,43 @@
+<div [ngSwitch]="type">
+
+  <ng-template [ngSwitchCase]="'about'">
+    <app-content [page]="page"></app-content>
+  </ng-template>
+
+  <ng-template [ngSwitchCase]="'about+'">
+    <app-article [page]="page" [alias]="alias"></app-article>
+  </ng-template>
+
+  <ng-template [ngSwitchCase]="'articles'">
+    <app-blog></app-blog>
+  </ng-template>
+
+  <ng-template [ngSwitchCase]="'articles+'">
+    <app-article [page]="page" [alias]="alias"></app-article>
+  </ng-template>
+
+  <ng-template [ngSwitchCase]="'gallery'">
+    <app-gallery></app-gallery>
+  </ng-template>
+
+  <ng-template [ngSwitchCase]="'gallery+'">
+    <app-album [alias]="alias"></app-album>
+  </ng-template>
+
+  <ng-template [ngSwitchCase]="'rules'">
+    <app-content [page]="page"></app-content>
+  </ng-template>
+
+  <ng-template [ngSwitchCase]="'rules+'">
+    <app-article [page]="page" [alias]="alias"></app-article>
+  </ng-template>
+
+  <ng-template [ngSwitchCase]="'form'">
+    <app-form></app-form>
+  </ng-template>
+
+  <ng-template ngSwitchDefault>
+    <app-not-found></app-not-found>
+  </ng-template>
+
+</div>
