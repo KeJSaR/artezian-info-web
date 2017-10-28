@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { DataService }       from '../../data.service';
-import { MenuItem }          from '../../interfaces/menu-item.interface';
+import { Menu }              from '../../interfaces/menu.interface';
 
 @Component({
   selector: 'app-menu',
@@ -10,7 +10,7 @@ import { MenuItem }          from '../../interfaces/menu-item.interface';
 })
 export class MenuComponent implements OnInit {
 
-  private menu: MenuItem[];
+  private menu: Menu[];
 
   constructor(private dataService: DataService) { }
 

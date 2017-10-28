@@ -1,5 +1,5 @@
 <nav>
   <a *ngFor="let menuItem of menu" routerLink="/{{ menuItem.alias }}" routerLinkActive="active">
-    <span>{{ menuItem.id }}</span> || {{ menuItem.title }}
+    {{ menuItem.title }}
   </a>
 </nav>
