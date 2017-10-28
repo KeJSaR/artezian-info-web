@@ -9,9 +9,9 @@ import { MenuItem }          from '../../interfaces/menu-item.interface';
   styleUrls: ['./menu.component.sass']
 })
 export class MenuComponent implements OnInit {
-  
-  menu: MenuItem[];
-  
+
+  private menu: MenuItem[];
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
