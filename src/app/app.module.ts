@@ -13,7 +13,6 @@ import { PagesComponent }          from './pages/pages.component';
 
 import { HeaderComponent }         from './parts/header/header.component';
 import { FooterComponent }         from './parts/footer/footer.component';
-import { MenuComponent }           from './parts/menu/menu.component';
 import { TextComponent }           from './parts/text/text.component';
 import { IntroComponent }          from './parts/intro/intro.component';
 import { ArticleComponent }        from './parts/article/article.component';
@@ -30,7 +29,6 @@ import { FormComponent }           from './parts/form/form.component';
     PagesComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent,
     TextComponent,
     IntroComponent,
     ArticleComponent,
