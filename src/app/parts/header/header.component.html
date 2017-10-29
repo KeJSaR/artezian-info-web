@@ -1,22 +1,16 @@
-<section class="aae-header">
-  <div class="aae-nav-icon">
-    <button mat-button routerLink="/">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </button>
-  </div>
-  <div class="aae-title">
-    <button mat-button class="wide" routerLink="/about">
+<section>
+  
+  <button mat-button routerLink="/about">
+    <span class="wide">
       Артезианская Археологическая Экспедиция
-    </button>
-    <button mat-button class="narrow">
+    </span>
+    <span class="narrow">
       ААЭ
-    </button>
-  </div>
-  <div class="aae-app-button" routerLink="/form">
-    <button mat-raised-button color="warn">
-      Заявка
-    </button>
-  </div>
-</section>
+    </span>
+  </button>
 
-<app-menu></app-menu>
+  <button mat-raised-button color="warn" routerLink="/form">
+    Заявка
+  </button>
+
+</section>
