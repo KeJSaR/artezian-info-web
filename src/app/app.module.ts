@@ -4,7 +4,7 @@ import { HttpClientModule }        from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule }        from './app-routing.module';
-import { AppMaterialModule }       from './app-material.module';
+import { MaterialModule }          from './material/material.module';
 
 import { DataService }             from './data.service';
 
@@ -44,7 +44,7 @@ import { FormComponent }           from './parts/form/form.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AppMaterialModule
+    MaterialModule
   ],
   providers: [
     DataService
