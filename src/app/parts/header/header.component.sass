@@ -1,0 +1,27 @@
+.aae-header
+  display: -webkit-flex
+  display: flex
+  -webkit-justify-content: space-between
+  justify-content: space-between
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  padding: 10px 10px 15px 10px
+  height: 36px
+  background-color: rgba(255,255,255,0.9)
+
+@media (max-width: 1023px)
+  .wide
+    display: none
+  
+  .narrow
+    display: block
+
+@media (min-width: 1024px)
+  .wide
+    display: block
+  
+  .narrow
+    display: none
+  
