@@ -5,7 +5,8 @@ import { RouterModule }   from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
 
 const routes: Routes = [
-  { path: '',                redirectTo: '/about', pathMatch: 'full'             },
+  { path: '',                redirectTo: '/main', pathMatch: 'full'              },
+  { path: 'main',            component: PagesComponent, data: {page: 'main'}     },
   { path: 'about',           component: PagesComponent, data: {page: 'about'}    },
   { path: 'about/:alias',    component: PagesComponent, data: {page: 'about'}    },
   { path: 'articles',        component: PagesComponent, data: {page: 'articles'} },
