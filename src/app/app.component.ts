@@ -9,7 +9,7 @@ import { Menu }              from './interfaces/menu.interface';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit {
-  
+
   private menu: Menu[];
 
   constructor(private dataService: DataService) { }
@@ -17,5 +17,5 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.dataService.getMenu().subscribe((data) => this.menu = data);
   }
-  
+
 }
