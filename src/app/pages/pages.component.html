@@ -1,5 +1,9 @@
 <div [ngSwitch]="type">
 
+  <ng-template [ngSwitchCase]="'main'">
+    <app-main></app-main>
+  </ng-template>
+
   <ng-template [ngSwitchCase]="'about'">
     <app-content [page]="page"></app-content>
   </ng-template>
