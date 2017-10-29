@@ -22,6 +22,7 @@ import { NotFoundComponent }       from './parts/not-found/not-found.component';
 import { GalleryComponent }        from './parts/gallery/gallery.component';
 import { AlbumComponent }          from './parts/album/album.component';
 import { FormComponent }           from './parts/form/form.component';
+import { MainComponent }           from './parts/main/main.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormComponent }           from './parts/form/form.component';
     NotFoundComponent,
     GalleryComponent,
     AlbumComponent,
-    FormComponent
+    FormComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
