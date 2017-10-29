@@ -5,10 +5,10 @@ import { Observable }  from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
 
-import { Menu } from './interfaces/menu.interface';
-import { Text } from './interfaces/text.interface';
-import { Intro } from './interfaces/intro.interface';
-import { Article } from './interfaces/article.interface';
+import { Menu } from '../interfaces/menu.interface';
+import { Text } from '../interfaces/text.interface';
+import { Intro } from '../interfaces/intro.interface';
+import { Article } from '../interfaces/article.interface';
 
 @Injectable()
 export class DataService {

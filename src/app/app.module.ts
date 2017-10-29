@@ -6,7 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule }        from './app-routing.module';
 import { MaterialModule }          from './material/material.module';
 
-import { DataService }             from './data.service';
+import { DataService }             from './services/data.service';
+import { PageService }             from './services/page.service';
 
 import { AppComponent }            from './app.component';
 import { PagesComponent }          from './pages/pages.component';
@@ -49,7 +50,8 @@ import { MainComponent }           from './parts/main/main.component';
     MaterialModule
   ],
   providers: [
-    DataService
+    DataService,
+    PageService
   ],
   bootstrap: [
     AppComponent
