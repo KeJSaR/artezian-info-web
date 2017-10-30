@@ -1,23 +1,22 @@
-<section>
-  
-  <button 
-  routerLink="/about"
-  mat-button 
-  class="aae-title-button">
-    <span class="wide">
-      Артезианская Археологическая Экспедиция
-    </span>
-    <span class="narrow">
-      ААЭ
-    </span>
-  </button>
+<section [class.main]="page === 'main'">
 
-  <button 
-  routerLink="/form"
-  mat-raised-button 
-  color="warn" 
-  class="aae-form-button">
-    Заявка
-  </button>
+  <div class="aae-header-wrapper">
+    <button
+    routerLink="/about"
+    mat-button
+    class="aae-title-button">
+      <span class="narrow">
+        ААЭ
+      </span>
+    </button>
+
+    <button
+    routerLink="/form"
+    mat-raised-button
+    color="warn"
+    class="aae-form-button">
+      Заявка
+    </button>
+  </div>
 
 </section>

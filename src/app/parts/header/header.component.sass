@@ -3,29 +3,54 @@ section
   top: 0
   left: 0
   right: 0
-  padding: 10px 0 15px
+  padding: 35px
   height: 36px
-  background-color: rgba(255,255,255,0.9)
-  text-align: center
+  background-color: rgba(255, 255, 255, 0.9)
+  text-align: left
+  z-index: 30
 
-  .aae-title-button
+  &.main
+    background-color: transparent
+    color: #ffffff
+
+    .aae-header-wrapper
+      max-width: 1200px
+      margin: 0 auto
+      border-bottom: 1px solid #ffffff
+      height: 70px
+      display: -webkit-flex
+      display: flex
+      -webkit-justify-content: space-between
+      justify-content: space-between
+      -webkit-align-items: baseline
+      align-items: baseline
+
+      .aae-title-button
+
+        .narrow
+          font-weight: 900
+          font-size: 40px
+
+        .wide
+          font-weight: 300
+          font-size: 16px
+          text-transform: uppercase
+
+      .aae-form-button
+        border: 1px solid #fff
+        background-color: transparent
 
 
-  .aae-form-button
-    position: absolute
-    top: 10px
-    right: 27px
+// @media (max-width: 1023px)
+//   .wide
+//     display: none
 
-@media (max-width: 1023px)
-  .wide
-    display: none
-  
-  .narrow
-    display: block
+//   .narrow
+//     display: block
 
-@media (min-width: 1024px)
-  .wide
-    display: block
-  
-  .narrow
-    display: none
+// @media (min-width: 1024px)
+//   .wide
+//     display: block
+
+//   .narrow
+//     display: none
