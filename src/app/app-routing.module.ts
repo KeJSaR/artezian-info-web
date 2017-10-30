@@ -2,7 +2,7 @@ import { NgModule }       from '@angular/core';
 import { Routes }         from '@angular/router';
 import { RouterModule }   from '@angular/router';
 
-import { PageComponent } from './page/page.component';
+import { PageComponent }  from './page/page.component';
 
 const routes: Routes = [
   { path: '',                redirectTo: '/main', pathMatch: 'full'             },
