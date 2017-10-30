@@ -3,7 +3,6 @@ import { OnInit }         from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { DataService }    from '../services/data.service';
-import { PageService }    from '../services/page.service';
 import { Menu }           from '../interfaces/menu.interface';
 
 @Component({
@@ -20,13 +19,11 @@ export class PageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dataService: DataService,
-    private pageService: PageService
+    private dataService: DataService
   ) {
 
     this.page = route.snapshot.data.page;
     this.type = route.snapshot.data.page;
-    this.setPage(route.snapshot.data.page);
 
     if (route.snapshot.url.length > 1) {
       this.alias = route.snapshot.params.alias;
@@ -37,11 +34,6 @@ export class PageComponent implements OnInit {
   
   ngOnInit() {
     this.dataService.getMenu().subscribe((data) => this.menu = data);
-    this.page = this.pageService.getPage();
-  }
-
-  setPage(page: string) {
-    this.pageService.setPage(page);
   }
 
 }

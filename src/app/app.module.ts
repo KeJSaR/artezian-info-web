@@ -7,7 +7,6 @@ import { AppRoutingModule }        from './app-routing.module';
 import { MaterialModule }          from './material/material.module';
 
 import { DataService }             from './services/data.service';
-import { PageService }             from './services/page.service';
 
 import { AppComponent }            from './app.component';
 import { PageComponent }           from './page/page.component';
@@ -50,8 +49,7 @@ import { MainComponent }           from './parts/main/main.component';
     MaterialModule
   ],
   providers: [
-    DataService,
-    PageService
+    DataService
   ],
   bootstrap: [
     AppComponent
