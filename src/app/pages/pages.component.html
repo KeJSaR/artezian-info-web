@@ -1,47 +1,79 @@
-<div [ngSwitch]="type">
+<mat-sidenav-container>
+  
+  <mat-sidenav #sidenav mode="over" opened="false">
 
-  <ng-template [ngSwitchCase]="'main'">
-    <app-main></app-main>
-  </ng-template>
+    <a *ngFor="let menuItem of menu"
+    routerLink="/{{ menuItem.alias }}"
+    routerLinkActive="active"
+    (click)="sidenav.toggle()">
+      {{ menuItem.title }}
+    </a>
 
-  <ng-template [ngSwitchCase]="'about'">
-    <app-content [page]="page"></app-content>
-  </ng-template>
+  </mat-sidenav>
 
-  <ng-template [ngSwitchCase]="'about+'">
-    <app-article [page]="page" [alias]="alias"></app-article>
-  </ng-template>
+  <div class="aae-content">
 
-  <ng-template [ngSwitchCase]="'articles'">
-    <app-blog></app-blog>
-  </ng-template>
+    <app-header [page]="page"></app-header>
 
-  <ng-template [ngSwitchCase]="'articles+'">
-    <app-article [page]="page" [alias]="alias"></app-article>
-  </ng-template>
+    <div [ngSwitch]="type">
+      
+      <ng-template [ngSwitchCase]="'main'">
+        <app-main></app-main>
+      </ng-template>
+    
+      <ng-template [ngSwitchCase]="'about'">
+        <app-content [page]="page"></app-content>
+      </ng-template>
+    
+      <ng-template [ngSwitchCase]="'about+'">
+        <app-article [page]="page" [alias]="alias"></app-article>
+      </ng-template>
+    
+      <ng-template [ngSwitchCase]="'articles'">
+        <app-blog></app-blog>
+      </ng-template>
+    
+      <ng-template [ngSwitchCase]="'articles+'">
+        <app-article [page]="page" [alias]="alias"></app-article>
+      </ng-template>
+    
+      <ng-template [ngSwitchCase]="'gallery'">
+        <app-gallery></app-gallery>
+      </ng-template>
+    
+      <ng-template [ngSwitchCase]="'gallery+'">
+        <app-album [alias]="alias"></app-album>
+      </ng-template>
+    
+      <ng-template [ngSwitchCase]="'rules'">
+        <app-content [page]="page"></app-content>
+      </ng-template>
+    
+      <ng-template [ngSwitchCase]="'rules+'">
+        <app-article [page]="page" [alias]="alias"></app-article>
+      </ng-template>
+    
+      <ng-template [ngSwitchCase]="'form'">
+        <app-form></app-form>
+      </ng-template>
+    
+      <ng-template ngSwitchDefault>
+        <app-not-found></app-not-found>
+      </ng-template>
+    
+    </div>
 
-  <ng-template [ngSwitchCase]="'gallery'">
-    <app-gallery></app-gallery>
-  </ng-template>
+    <app-footer [page]="page"></app-footer>
 
-  <ng-template [ngSwitchCase]="'gallery+'">
-    <app-album [alias]="alias"></app-album>
-  </ng-template>
+  </div>
 
-  <ng-template [ngSwitchCase]="'rules'">
-    <app-content [page]="page"></app-content>
-  </ng-template>
+</mat-sidenav-container>
 
-  <ng-template [ngSwitchCase]="'rules+'">
-    <app-article [page]="page" [alias]="alias"></app-article>
-  </ng-template>
-
-  <ng-template [ngSwitchCase]="'form'">
-    <app-form></app-form>
-  </ng-template>
-
-  <ng-template ngSwitchDefault>
-    <app-not-found></app-not-found>
-  </ng-template>
-
-</div>
+<aside>
+  <div class="aae-sidenav-toggle" (click)="sidenav.toggle()">
+    <i class="fa" aria-hidden="true"
+    [class.fa-bars]="!sidenav.opened"
+    [class.fa-times]="sidenav.opened"></i>
+  </div>
+</aside>
+  
