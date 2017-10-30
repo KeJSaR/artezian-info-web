@@ -1,16 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { Input }     from '@angular/core';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.sass']
+  selector    : 'app-content',
+  templateUrl : './content.component.html',
+  styleUrls   : ['./content.component.sass']
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent {
 
   @Input() page: string;
-
-  constructor() { }
-
-  ngOnInit() { }
 
 }
