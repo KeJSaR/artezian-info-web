@@ -10,7 +10,7 @@ import { DataService }             from './services/data.service';
 import { PageService }             from './services/page.service';
 
 import { AppComponent }            from './app.component';
-import { PagesComponent }          from './pages/pages.component';
+import { PageComponent }           from './page/page.component';
 
 import { HeaderComponent }         from './parts/header/header.component';
 import { FooterComponent }         from './parts/footer/footer.component';
@@ -28,7 +28,7 @@ import { MainComponent }           from './parts/main/main.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PagesComponent,
+    PageComponent,
     HeaderComponent,
     FooterComponent,
     TextComponent,

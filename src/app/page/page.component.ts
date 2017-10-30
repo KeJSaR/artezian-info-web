@@ -7,11 +7,11 @@ import { PageService }    from '../services/page.service';
 import { Menu }           from '../interfaces/menu.interface';
 
 @Component({
-  selector: 'app-pages',
-  templateUrl: './pages.component.html',
-  styleUrls: ['./pages.component.sass']
+  selector: 'app-page',
+  templateUrl: './page.component.html',
+  styleUrls: ['./page.component.sass']
 })
-export class PagesComponent implements OnInit {
+export class PageComponent implements OnInit {
   
   private menu:  Menu[];
   private page:  string = '';
