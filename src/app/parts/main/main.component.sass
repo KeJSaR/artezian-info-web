@@ -1,3 +1,75 @@
 section
-  background: url("../../../assets/img/bg_main.jpg")
+  background: url("../../../assets/img/bg_main.jpg") center center / cover no-repeat
   min-height: 100vh
+  position: relative
+  z-index: 10
+  display: -webkit-flex
+  display: flex
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-align-items: center
+  align-items: center
+
+  .aae-color-mask
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 20
+    opacity: .7
+
+    background: #79316e
+    background: -moz-linear-gradient(top, #79316e 0%, #1f2653 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#79316e), color-stop(100%,#1f2653))
+    background: -webkit-linear-gradient(top, #79316e 0%,#1f2653 100%)
+    background: -o-linear-gradient(top, #79316e 0%,#1f2653 100%)
+    background: -ms-linear-gradient(top, #79316e 0%,#1f2653 100%)
+    background: linear-gradient(to bottom, #79316e 0%,#1f2653 100%)
+
+  .aae-main-content
+    max-width: 1200px
+    z-index: 30
+    color: #ffffff
+    text-align: center
+
+    h1
+      font-weight: 900
+      font-size: 90px
+      text-transform: uppercase
+      margin: 0 0 30px
+
+      span
+        color: red
+
+    h2
+      font-weight: 300
+      font-size: 16px
+      text-transform: lowercase
+      letter-spacing: 1px
+      margin-bottom: 20px
+
+    .aae-main-page-buttons
+      display: -webkit-flex
+      display: flex
+      -webkit-justify-content: center
+      justify-content: center
+
+      div
+        background-color: rgba(0, 0, 0, 0.15)
+        cursor: pointer
+        padding: 10px 15px
+        border: 1px solid #ffffff
+        border-radius: 3px
+        margin: 20px 10px
+        font-size: 20px
+        font-weight: 300
+        text-transform: uppercase
+        -webkit-transition: all 750ms ease-out
+        -moz-transition: all 750ms ease-out
+        -o-transition: all 750ms ease-out
+        transition: all 750ms ease-out
+
+        &:hover, &:active
+          background-color: #ffffff
+          color: #333333
