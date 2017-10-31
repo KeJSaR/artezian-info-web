@@ -134,7 +134,7 @@ class Queries
     {
         $q  = "SELECT id, alias, title, intro, content ";
         $q .= "FROM article WHERE menu_id=? AND alias=?";
-        return DB::run($q, [$id, $alias])->fetchAll();
+        return DB::run($q, [$id, $alias])->fetch();
     }
 
 }
