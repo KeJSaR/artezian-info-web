@@ -93,48 +93,48 @@ require_once 'database.php';
 class Queries
 {
 
-  public function page_exist($page)
-  {
-    $q = "SELECT * FROM menu WHERE alias=?";
-    return DB::run($q, [$page])->fetch() ? true : false;
-  }
+    public function page_exist($page)
+    {
+        $q = "SELECT * FROM menu WHERE alias=?";
+        return DB::run($q, [$page])->fetch() ? true : false;
+    }
 
-  public function alias_exist($alias)
-  {
-    $q = "SELECT * FROM article WHERE alias=?";
-    return DB::run($q, [$alias])->fetch() ? true : false;
-  }
+    public function alias_exist($alias)
+    {
+        $q = "SELECT * FROM article WHERE alias=?";
+        return DB::run($q, [$alias])->fetch() ? true : false;
+    }
 
-  public function get_menu()
-  {
-    $q = "SELECT * FROM menu";
-    return DB::run($q)->fetchAll();
-  }
+    public function get_menu()
+    {
+        $q = "SELECT * FROM menu";
+        return DB::run($q)->fetchAll();
+    }
 
-  public function get_menu_id($page)
-  {
-    $q = "SELECT id FROM menu WHERE alias=?";
-    $arr = DB::run($q, [$page])->fetch();
-    return $arr["id"];
-  }
+    public function get_menu_id($page)
+    {
+        $q = "SELECT id FROM menu WHERE alias=?";
+        $arr = DB::run($q, [$page])->fetch();
+        return $arr["id"];
+    }
 
-  public function get_texts($id)
-  {
-    $q = "SELECT id, text FROM text WHERE menu_id=?";
-    return DB::run($q, [$id])->fetchAll();
-  }
+    public function get_texts($id)
+    {
+        $q = "SELECT id, text FROM text WHERE menu_id=?";
+        return DB::run($q, [$id])->fetchAll();
+    }
 
-  public function get_intros($id)
-  {
-    $q = "SELECT id, alias, title, intro FROM article WHERE menu_id=?";
-    return DB::run($q, [$id])->fetchAll();
-  }
+    public function get_intros($id)
+    {
+        $q = "SELECT id, alias, title, intro FROM article WHERE menu_id=?";
+        return DB::run($q, [$id])->fetchAll();
+    }
 
-  public function get_article($id, $alias)
-  {
-    $q  = "SELECT id, alias, title, intro, content ";
-    $q .= "FROM article WHERE menu_id=? AND alias=?";
-    return DB::run($q, [$id, $alias])->fetchAll();
-  }
+    public function get_article($id, $alias)
+    {
+        $q  = "SELECT id, alias, title, intro, content ";
+        $q .= "FROM article WHERE menu_id=? AND alias=?";
+        return DB::run($q, [$id, $alias])->fetchAll();
+    }
 
 }
