@@ -11,6 +11,7 @@ class Data
     {
         if (array_key_exists("get", $_POST)) {
             $this->queries = new Queries();
+            // sleep(1);
             $this->init();
         }
     }
