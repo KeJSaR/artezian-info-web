@@ -35,10 +35,10 @@ export class DataService {
     }).map((resp: Intro[]) => resp);
   }
 
-  getArticle(page: string, alias: string): Observable<Article[]> {
+  getArticle(page: string, alias: string): Observable<Article> {
     return this.http.post(this.url, `get=article&page=${page}&alias=${alias}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
-    }).map((resp: Article[]) => resp);
+    }).map((resp: Article) => resp);
   }
 
 }
