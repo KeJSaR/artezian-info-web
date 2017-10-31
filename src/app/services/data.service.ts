@@ -24,13 +24,13 @@ export class DataService {
   }
 
   getText(page: string): Observable<Text[]> {
-    return this.http.post(this.url, `get=text&page=${page}`, {
+    return this.http.post(this.url, `get=texts&page=${page}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: Text[]) => resp);
   }
 
   getIntro(page: string): Observable<Intro[]> {
-    return this.http.post(this.url, `get=intro&page=${page}`, {
+    return this.http.post(this.url, `get=intros&page=${page}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: Intro[]) => resp);
   }
