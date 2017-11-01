@@ -1,3 +1,20 @@
-<p>
-  article works!
-</p>
+<section
+  *ngIf="article"
+  class="aae-main-wrapper"
+>
+
+  <!--
+    article.alias
+    article.content
+    article.id
+    article.intro
+    article.title
+  -->
+
+  <h1 class="aae-article-header" [innerHtml]="article.title"></h1>
+
+  <div class="aae-article-intro" [innerHtml]="article.intro"></div>
+
+  <div class="aae-article-content" [innerHtml]="article.content"></div>
+
+</section>

@@ -1,16 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { Input }     from '@angular/core';
 
 @Component({
-  selector: 'app-album',
-  templateUrl: './album.component.html',
-  styleUrls: ['./album.component.sass']
+  selector    : 'app-album',
+  templateUrl : './album.component.html',
+  styleUrls   : ['./album.component.sass']
 })
-export class AlbumComponent implements OnInit {
+export class AlbumComponent {
 
   @Input() alias: string;
-
-  constructor() { }
-
-  ngOnInit() { }
 
 }
