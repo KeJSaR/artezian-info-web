@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2017 at 07:28 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.10
+-- Generation Time: Nov 01, 2017 at 11:39 PM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -82,10 +82,25 @@ INSERT INTO `article` (`id`, `menu_id`, `alias`, `title`, `intro`, `content`) VA
 
 CREATE TABLE `gallery` (
   `id` int(10) UNSIGNED NOT NULL,
-  `image_id` int(10) UNSIGNED NOT NULL,
+  `image_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `title` varchar(255) DEFAULT NULL,
   `description` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`id`, `image_id`, `title`, `description`) VALUES
+(1, 1, 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+(2, 11, 'Consectetur adipisicing elit', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+(3, 21, 'Sed do eiusmod', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+(4, 31, 'Tempor incididunt ut labore ', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+(5, 41, 'Et dolore magna aliqua', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+(6, 51, 'Ut enim ad minim veniam', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+(7, 61, 'Quis nostrud exercitation ullamco', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+(8, 71, 'Laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+(9, 81, 'Duis aute irure dolor in reprehenderit', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
 
 -- --------------------------------------------------------
 
@@ -98,6 +113,93 @@ CREATE TABLE `image` (
   `gallery_id` int(10) UNSIGNED NOT NULL,
   `title` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `image`
+--
+
+INSERT INTO `image` (`id`, `gallery_id`, `title`) VALUES
+(1, 1, 'Lorem ipsum dolor sit'),
+(2, 1, 'Et dolore magna aliqua'),
+(3, 1, 'Aliquip ex ea commodo'),
+(4, 1, 'Cillum dolore eu fugiat'),
+(5, 1, 'Qui officia deserunt mollit'),
+(6, 1, 'Elit sed do eiusmod'),
+(7, 1, 'Nostrud exercitation ullamco laboris'),
+(8, 1, 'In reprehenderit in voluptate'),
+(9, 1, 'Occaecat cupidatat non proident'),
+(10, 2, 'Sit amet'),
+(11, 2, 'Aliqua ut'),
+(12, 2, 'Commodo consequat'),
+(13, 2, 'Eu fugiat'),
+(14, 2, 'Mollit anim'),
+(15, 2, 'Tempor incididunt'),
+(16, 2, 'Ullamco laboris'),
+(17, 2, 'In voluptate'),
+(18, 2, 'Non proident'),
+(19, 3, ''),
+(20, 3, ''),
+(21, 3, ''),
+(22, 3, ''),
+(23, 3, ''),
+(24, 3, ''),
+(25, 3, ''),
+(26, 3, ''),
+(27, 3, ''),
+(28, 4, ''),
+(29, 4, ''),
+(30, 4, ''),
+(31, 4, ''),
+(32, 4, ''),
+(33, 4, ''),
+(34, 4, ''),
+(35, 4, ''),
+(36, 4, ''),
+(37, 5, ''),
+(38, 5, ''),
+(39, 5, ''),
+(40, 5, ''),
+(41, 5, ''),
+(42, 5, ''),
+(43, 5, ''),
+(44, 5, ''),
+(45, 5, ''),
+(46, 6, ''),
+(47, 6, ''),
+(48, 6, ''),
+(49, 6, ''),
+(50, 6, ''),
+(51, 6, ''),
+(52, 6, ''),
+(53, 6, ''),
+(54, 6, ''),
+(55, 7, ''),
+(56, 7, ''),
+(57, 7, ''),
+(58, 7, ''),
+(59, 7, ''),
+(60, 7, ''),
+(61, 7, ''),
+(62, 7, ''),
+(63, 7, ''),
+(64, 8, ''),
+(65, 8, ''),
+(66, 8, ''),
+(67, 8, ''),
+(68, 8, ''),
+(69, 8, ''),
+(70, 8, ''),
+(71, 8, ''),
+(72, 8, ''),
+(73, 9, ''),
+(74, 9, ''),
+(75, 9, ''),
+(76, 9, ''),
+(77, 9, ''),
+(78, 9, ''),
+(79, 9, ''),
+(80, 9, ''),
+(81, 9, '');
 
 -- --------------------------------------------------------
 
@@ -165,8 +267,7 @@ ALTER TABLE `article`
 --
 ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_UNIQUE` (`id`),
-  ADD KEY `fk_gallery_image1_idx` (`image_id`);
+  ADD UNIQUE KEY `id_UNIQUE` (`id`);
 
 --
 -- Indexes for table `image`
@@ -205,13 +306,13 @@ ALTER TABLE `article`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -234,12 +335,6 @@ ALTER TABLE `text`
 --
 ALTER TABLE `article`
   ADD CONSTRAINT `fk_article_menu1` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `gallery`
---
-ALTER TABLE `gallery`
-  ADD CONSTRAINT `fk_gallery_image1` FOREIGN KEY (`image_id`) REFERENCES `image` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `image`
