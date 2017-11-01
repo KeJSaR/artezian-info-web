@@ -1,3 +1,13 @@
-<p>
-  album works!
-</p>
+<section
+  *ngIf="images"
+  class="aae-main-wrapper"
+>
+
+  <div *ngFor="let image of images">
+  	<div>
+  		<img src="assets/gallery/{{ alias }}/pics/{{ image.id }}.jpg" alt="{{ image.title }}">
+  		<p [innerHtml]="image.title"></p>
+  	</div>
+  </div>
+
+</section>
