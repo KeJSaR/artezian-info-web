@@ -48,6 +48,14 @@ class Data
                 return $this->get_article();
                 break;
 
+            case "galleries":
+                return $this->get_galleries();
+                break;
+
+            case "images":
+                return $this->get_images();
+                break;
+
             default:
                 return "";
                 break;
@@ -81,6 +89,18 @@ class Data
         $v = $this->alias_valid($_POST["alias"]);
         return $k && $v ? $_POST["alias"] : "";
     }
+    
+    private function gallery_id_valid($gallery_id)
+    {
+        return strlen($gallery_id) ? $this->queries->gallery_exist($gallery_id) : false;
+    }
+
+    private function get_gallery_id()
+    {
+        $k = array_key_exists("gallery_id", $_POST);
+        $v = $this->gallery_id_valid($_POST["gallery_id"]);
+        return $k && $v ? $_POST["gallery_id"] : "";
+    }
 
     /**
      * #########################################################################
@@ -111,6 +131,17 @@ class Data
         $a = $this->get_alias();
         $id = $p !== "" && $a !== "" ? $this->queries->get_menu_id($p) : "";
         return $id !== "" ? $this->queries->get_article($id, $a) : "";
+    }
+    
+    private function get_galleries()
+    {
+        return $this->queries->get_galleries();
+    }
+    
+    private function get_images()
+    {
+        $g = $this->get_gallery_id();
+        return $g !== "" ? $this->queries->get_images($g) : "";
     }
 
     /**

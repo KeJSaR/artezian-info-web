@@ -104,6 +104,12 @@ class Queries
         $q = "SELECT * FROM article WHERE alias=?";
         return DB::run($q, [$alias])->fetch() ? true : false;
     }
+    
+    public function gallery_exist($gallery_id)
+    {
+        $q = "SELECT * FROM gallery WHERE id=?";
+        return DB::run($q, [$gallery_id])->fetch() ? true : false;
+    }
 
     public function get_menu()
     {
@@ -135,6 +141,18 @@ class Queries
         $q  = "SELECT id, alias, title, intro, content ";
         $q .= "FROM article WHERE menu_id=? AND alias=?";
         return DB::run($q, [$id, $alias])->fetch();
+    }
+
+    public function get_galleries()
+    {
+        $q = "SELECT id, image_id, title, description FROM gallery";
+        return DB::run($q)->fetchAll();
+    }
+
+    public function get_images($gallery_id)
+    {
+        $q = "SELECT id, title FROM image WHERE gallery_id=?";
+        return DB::run($q, [$gallery_id])->fetchAll();
     }
 
 }
