@@ -66,39 +66,39 @@ class Data
      * #########################################################################
      */
 
-    private function page_valid($page)
+    private function is_page_valid($page)
     {
-        return strlen($page) ? $this->queries->page_exist($page) : false;
+        return strlen($page) ? $this->queries->is_page_exist($page) : false;
     }
 
     private function get_page()
     {
         $k = array_key_exists("page", $_POST);
-        $v = $this->page_valid($_POST["page"]);
+        $v = $this->is_page_valid($_POST["page"]);
         return $k && $v ? $_POST["page"] : "";
     }
 
-    private function alias_valid($alias)
+    private function is_alias_valid($alias)
     {
-        return strlen($alias) ? $this->queries->alias_exist($alias) : false;
+        return strlen($alias) ? $this->queries->is_alias_exist($alias) : false;
     }
 
     private function get_alias()
     {
         $k = array_key_exists("alias", $_POST);
-        $v = $this->alias_valid($_POST["alias"]);
+        $v = $this->is_alias_valid($_POST["alias"]);
         return $k && $v ? $_POST["alias"] : "";
     }
     
-    private function gallery_id_valid($gallery_id)
+    private function is_gallery_id_valid($gallery_id)
     {
-        return strlen($gallery_id) ? $this->queries->gallery_exist($gallery_id) : false;
+        return strlen($gallery_id) ? $this->queries->is_gallery_exist($gallery_id) : false;
     }
 
     private function get_gallery_id()
     {
         $k = array_key_exists("gallery_id", $_POST);
-        $v = $this->gallery_id_valid($_POST["gallery_id"]);
+        $v = $this->is_gallery_id_valid($_POST["gallery_id"]);
         return $k && $v ? $_POST["gallery_id"] : "";
     }
 

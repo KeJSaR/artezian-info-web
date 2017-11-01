@@ -93,19 +93,19 @@ require_once 'database.php';
 class Queries
 {
 
-    public function page_exist($page)
+    public function is_page_exist($page)
     {
         $q = "SELECT * FROM menu WHERE alias=?";
         return DB::run($q, [$page])->fetch() ? true : false;
     }
 
-    public function alias_exist($alias)
+    public function is_alias_exist($alias)
     {
         $q = "SELECT * FROM article WHERE alias=?";
         return DB::run($q, [$alias])->fetch() ? true : false;
     }
     
-    public function gallery_exist($gallery_id)
+    public function is_gallery_exist($gallery_id)
     {
         $q = "SELECT * FROM gallery WHERE id=?";
         return DB::run($q, [$gallery_id])->fetch() ? true : false;
