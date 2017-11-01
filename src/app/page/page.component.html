@@ -1,68 +1,75 @@
 <mat-sidenav-container>
-  
-  <mat-sidenav #sidenav mode="over" opened="false">
 
+  <mat-sidenav #sidenav mode="over" opened="false">
     <a *ngFor="let menuItem of menu"
     routerLink="/{{ menuItem.alias }}"
     routerLinkActive="active"
     (click)="sidenav.toggle()">
       {{ menuItem.title }}
     </a>
-
   </mat-sidenav>
 
   <div class="aae-content">
 
+    <!-- Header -->
     <app-header [page]="page" [title]="title"></app-header>
 
     <div [ngSwitch]="type">
-      
+
+      <!-- Main page -->
       <ng-template [ngSwitchCase]="'main'">
         <app-main></app-main>
       </ng-template>
-    
+
+      <!-- About page -->
       <ng-template [ngSwitchCase]="'about'">
         <app-content [page]="page"></app-content>
       </ng-template>
-    
+
       <ng-template [ngSwitchCase]="'about+'">
         <app-article [page]="page" [alias]="alias"></app-article>
       </ng-template>
-    
+
+      <!-- Articles page -->
       <ng-template [ngSwitchCase]="'articles'">
         <app-blog></app-blog>
       </ng-template>
-    
+
       <ng-template [ngSwitchCase]="'articles+'">
         <app-article [page]="page" [alias]="alias"></app-article>
       </ng-template>
-    
+
+      <!-- Gallery page -->
       <ng-template [ngSwitchCase]="'gallery'">
         <app-gallery></app-gallery>
       </ng-template>
-    
+
       <ng-template [ngSwitchCase]="'gallery+'">
         <app-album [alias]="alias"></app-album>
       </ng-template>
-    
+
+      <!-- Rules page -->
       <ng-template [ngSwitchCase]="'rules'">
         <app-content [page]="page"></app-content>
       </ng-template>
-    
+
       <ng-template [ngSwitchCase]="'rules+'">
         <app-article [page]="page" [alias]="alias"></app-article>
       </ng-template>
-    
+
+      <!-- Form page -->
       <ng-template [ngSwitchCase]="'form'">
         <app-form></app-form>
       </ng-template>
-    
+
+      <!-- Not Found page -->
       <ng-template ngSwitchDefault>
         <app-not-found></app-not-found>
       </ng-template>
-    
+
     </div>
 
+    <!-- Footer -->
     <app-footer [page]="page"></app-footer>
 
   </div>
@@ -76,4 +83,3 @@
     [class.fa-times]="sidenav.opened"></i>
   </div>
 </aside>
-  
