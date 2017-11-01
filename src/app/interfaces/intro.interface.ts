@@ -1,6 +1,6 @@
 export interface Intro {
-  id: string;
-  alias: string;
-  title: string;
-  intro: string;
+  id    : string;
+  alias : string;
+  title : string;
+  intro : string;
 }
