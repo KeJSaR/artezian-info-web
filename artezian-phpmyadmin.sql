@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2017 at 04:32 PM
+-- Generation Time: Nov 01, 2017 at 07:28 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -82,6 +82,7 @@ INSERT INTO `article` (`id`, `menu_id`, `alias`, `title`, `intro`, `content`) VA
 
 CREATE TABLE `gallery` (
   `id` int(10) UNSIGNED NOT NULL,
+  `main` int(10) UNSIGNED NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   `description` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -164,7 +165,8 @@ ALTER TABLE `article`
 --
 ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_UNIQUE` (`id`);
+  ADD UNIQUE KEY `id_UNIQUE` (`id`),
+  ADD KEY `fk_gallery_image1_idx` (`main`);
 
 --
 -- Indexes for table `image`
@@ -232,6 +234,12 @@ ALTER TABLE `text`
 --
 ALTER TABLE `article`
   ADD CONSTRAINT `fk_article_menu1` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD CONSTRAINT `fk_gallery_image1` FOREIGN KEY (`main`) REFERENCES `image` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `image`
