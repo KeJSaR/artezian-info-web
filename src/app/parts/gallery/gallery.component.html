@@ -1,3 +1,14 @@
-<p>
-  gallery works!
-</p>
+<section
+  *ngIf="galleries"
+  class="aae-main-wrapper"
+>
+
+  <div *ngFor="let gallery of galleries">
+  	<div>
+  		<img src="assets/gallery/{{ gallery.id }}/pics/{{ gallery.image_id }}.jpg" alt="{{ gallery.title }}">
+  		<p [innerHtml]="gallery.title"></p>
+  		<p [innerHtml]="gallery.description"></p>
+  	</div>
+  </div>
+
+</section>
