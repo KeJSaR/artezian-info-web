@@ -5,15 +5,12 @@
     routerLink="/about"
     mat-button
     class="aae-title-button">
-      <span class="narrow">
-        ААЭ
-      </span>
+      <span>ААЭ</span><span class="aae-page-title"> / <span [innerHtml]="title"></span></span>
     </button>
 
     <button
     routerLink="/form"
     mat-raised-button
-    color="warn"
     class="aae-form-button">
       Заявка
     </button>

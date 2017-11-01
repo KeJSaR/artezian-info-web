@@ -8,6 +8,7 @@ import { Input }     from '@angular/core';
 })
 export class HeaderComponent {
 
-  @Input() page: string;
+  @Input() page  : string;
+  @Input() title : string;
 
 }

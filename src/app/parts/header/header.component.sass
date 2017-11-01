@@ -9,37 +9,45 @@ section
   text-align: left
   z-index: 30
 
-  &.main
-    background-color: transparent
-    color: #ffffff
+  .aae-header-wrapper
+    max-width: 1200px
+    margin: 0 auto
+    height: 70px
+    display: -webkit-flex
+    display: flex
+    -webkit-justify-content: space-between
+    justify-content: space-between
+    -webkit-align-items: baseline
+    align-items: baseline
 
-    .aae-header-wrapper
-      max-width: 1200px
-      margin: 0 auto
-      border-bottom: 1px solid #ffffff
-      height: 70px
-      display: -webkit-flex
-      display: flex
-      -webkit-justify-content: space-between
-      justify-content: space-between
-      -webkit-align-items: baseline
-      align-items: baseline
+    .aae-title-button
+      color: #333
 
-      .aae-title-button
+      span
+        font-weight: 900
+        font-size: 40px
+        text-transform: uppercase
 
-        .narrow
-          font-weight: 900
-          font-size: 40px
+    .aae-form-button
+      color: #333
+      border: 1px solid #333
+      background-color: transparent
 
-        .wide
-          font-weight: 300
-          font-size: 16px
-          text-transform: uppercase
+section.main
+  background-color: transparent
 
-      .aae-form-button
-        border: 1px solid #fff
-        background-color: transparent
+  .aae-header-wrapper
+    border-bottom: 1px solid #ffffff
 
+    .aae-title-button
+      color: #fff
+
+      .aae-page-title
+        display: none
+
+    .aae-form-button
+      color: #fff
+      border: 1px solid #fff
 
 // @media (max-width: 1023px)
 //   .wide
