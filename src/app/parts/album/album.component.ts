@@ -8,6 +8,7 @@ import { Input }     from '@angular/core';
 })
 export class AlbumComponent {
 
-  @Input() alias: string;
+  @Input() page  : string;
+  @Input() alias : string;
 
 }

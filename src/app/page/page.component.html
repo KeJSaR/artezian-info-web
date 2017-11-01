@@ -32,7 +32,7 @@
 
       <!-- Articles page -->
       <ng-template [ngSwitchCase]="'articles'">
-        <app-blog></app-blog>
+        <app-blog [page]="page"></app-blog>
       </ng-template>
 
       <ng-template [ngSwitchCase]="'articles+'">
@@ -41,11 +41,11 @@
 
       <!-- Gallery page -->
       <ng-template [ngSwitchCase]="'gallery'">
-        <app-gallery></app-gallery>
+        <app-gallery [page]="page"></app-gallery>
       </ng-template>
 
       <ng-template [ngSwitchCase]="'gallery+'">
-        <app-album [alias]="alias"></app-album>
+        <app-album [page]="page" [alias]="alias"></app-album>
       </ng-template>
 
       <!-- Rules page -->

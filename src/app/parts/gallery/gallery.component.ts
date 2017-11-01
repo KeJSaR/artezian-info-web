@@ -1,5 +1,6 @@
 import { Component }   from '@angular/core';
 import { OnInit }      from '@angular/core';
+import { Input }       from '@angular/core';
 
 import { DataService } from '../../services/data.service';
 
@@ -11,6 +12,8 @@ import { Gallery }     from '../../interfaces/gallery.interface';
   styleUrls   : ['./gallery.component.sass']
 })
 export class GalleryComponent {
+
+  @Input() page : string;
 
 	private galleries : Gallery[];
 
