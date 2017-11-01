@@ -7,6 +7,8 @@ import { Menu }        from '../interfaces/menu.interface';
 import { Text }        from '../interfaces/text.interface';
 import { Intro }       from '../interfaces/intro.interface';
 import { Article }     from '../interfaces/article.interface';
+import { Gallery }     from '../interfaces/gallery.interface';
+import { Image }       from '../interfaces/image.interface';
 
 import 'rxjs/add/operator/map';
 
@@ -34,11 +36,23 @@ export class DataService {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: Intro[]) => resp);
   }
-
+  
   getArticle(page: string, alias: string): Observable<Article> {
     return this.http.post(this.url, `get=article&page=${page}&alias=${alias}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: Article) => resp);
+  }
+  
+  getGalleries(): Observable<Gallery[]> {
+    return this.http.post(this.url, `get=galleries`, {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    }).map((resp: Gallery[]) => resp);
+  }
+
+  getImages(gallery: string): Observable<Image[]> {
+    return this.http.post(this.url, `get=images&gallery=${gallery}`, {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    }).map((resp: Image[]) => resp);
   }
 
 }
