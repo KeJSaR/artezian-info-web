@@ -82,7 +82,7 @@ INSERT INTO `article` (`id`, `menu_id`, `alias`, `title`, `intro`, `content`) VA
 
 CREATE TABLE `gallery` (
   `id` int(10) UNSIGNED NOT NULL,
-  `main` int(10) UNSIGNED NOT NULL,
+  `image_id` int(10) UNSIGNED NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   `description` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -166,7 +166,7 @@ ALTER TABLE `article`
 ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id_UNIQUE` (`id`),
-  ADD KEY `fk_gallery_image1_idx` (`main`);
+  ADD KEY `fk_gallery_image1_idx` (`image_id`);
 
 --
 -- Indexes for table `image`
@@ -239,7 +239,7 @@ ALTER TABLE `article`
 -- Constraints for table `gallery`
 --
 ALTER TABLE `gallery`
-  ADD CONSTRAINT `fk_gallery_image1` FOREIGN KEY (`main`) REFERENCES `image` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_gallery_image1` FOREIGN KEY (`image_id`) REFERENCES `image` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `image`
