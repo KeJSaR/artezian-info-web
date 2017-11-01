@@ -6,7 +6,7 @@
   <div *ngFor="let gallery of galleries">
   	<div>
   		<img src="assets/gallery/{{ gallery.id }}/pics/{{ gallery.image_id }}.jpg" alt="{{ gallery.title }}">
-  		<p [innerHtml]="gallery.title"></p>
+  		<p><a routerLink="/{{ page }}/{{ gallery.id }}" [innerHtml]="gallery.title"></a></p>
   		<p [innerHtml]="gallery.description"></p>
   	</div>
   </div>
