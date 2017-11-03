@@ -1,19 +1,39 @@
 <section [class.main]="page === 'main'">
 
   <div class="aae-header-wrapper">
-    <button
-    routerLink="/about"
-    mat-button
-    class="aae-title-button">
-      <span>ААЭ</span><span class="aae-page-title"> / <span [innerHtml]="title"></span></span>
-    </button>
+    <div class="aae-header-row">
 
-    <button
-    routerLink="/form"
-    mat-raised-button
-    class="aae-form-button">
-      Заявка
-    </button>
+      <div class="aae-title">
+        <span class="aae-main-title" routerLink="/">ААЭ</span>
+        <span class="aae-divider"> | </span>
+        <span class="aae-full-name">Российско-Крымская<br>экспедиция МПГУ</span>
+        <span class="aae-page-title" [innerHtml]="title"></span>
+      </div>
+
+      <button
+      routerLink="/form"
+      mat-raised-button
+      class="aae-form">
+        Принять участие
+      </button>
+
+    </div>
+    <div class="aae-header-row">
+
+      <nav>
+        <a *ngFor="let menuItem of menu"
+        routerLink="/{{ menuItem.alias }}"
+        routerLinkActive="active">
+          {{ menuItem.title }}
+        </a>
+      </nav>
+
+      <span class="aae-social">
+        <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </span>
+
+    </div>
   </div>
 
 </section>

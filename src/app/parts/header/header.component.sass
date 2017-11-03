@@ -1,48 +1,155 @@
 section
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  text-align: left
-  z-index: 30
+  padding: 50px 0 0
+  border-bottom: 1px solid #ccc
 
   .aae-header-wrapper
-    display: -webkit-flex
-    display: flex
-    background-color: rgba(255, 255, 255, 0.9)
-    -webkit-justify-content: space-between
-    justify-content: space-between
-    -webkit-align-items: baseline
-    align-items: baseline
+    background-color: rgba(255, 255, 255, 0.5)
 
-    .aae-title-button
-      color: #333
+    .aae-header-row
+      display: -webkit-flex
+      display: flex
+      -webkit-justify-content: space-between
+      justify-content: space-between
+      -webkit-align-items: center
+      align-items: center
 
-      span
-        font-weight: 900
-        font-size: 40px
+      .aae-title
+        color: #333
+        display: -webkit-flex
+        display: flex
+        -webkit-justify-content: space-between
+        justify-content: space-between
+        -webkit-align-items: center
+        align-items: center
+
+        .aae-main-title
+          font-size: 60px
+          font-weight: 900
+          cursor: pointer
+          -webkit-transition: all 250ms ease-out
+          -moz-transition: all 250ms ease-out
+          -o-transition: all 250ms ease-out
+          transition: all 250ms ease-out
+
+          &:hover,
+          &:active
+            color: #bf360c
+
+        .aae-divider
+          font-size: 30px
+          font-weight: 400
+          padding: 0 10px
+
+        .aae-full-name
+          display: none
+
+        .aae-page-title
+          font-size: 60px
+          font-weight: 900
+
+        span
+          font-weight: 900
+          font-size: 40px
+          text-transform: uppercase
+
+      .aae-form
         text-transform: uppercase
+        -webkit-transition: all 250ms ease-out
+        -moz-transition: all 250ms ease-out
+        -o-transition: all 250ms ease-out
+        transition: all 250ms ease-out
 
-    .aae-form-button
-      color: #333
-      border: 1px solid #333
-      background-color: transparent
+        &:hover,
+        &:active
+          color: #fff
+          background-color: #bf360c
+          border: none
 
-section.main
-  background-color: transparent
+      nav
+        position: relative
+        left: -10px
+        padding: 30px 0 15px
 
-  .aae-header-wrapper
-    border-bottom: 1px solid #ffffff
+        a
+          color: #333
+          text-decoration: none
+          padding: 0 10px
+          text-transform: uppercase
+          font-size: 14px
+          font-weight: 600
+          -webkit-transition: all 250ms ease-out
+          -moz-transition: all 250ms ease-out
+          -o-transition: all 250ms ease-out
+          transition: all 250ms ease-out
 
-    .aae-title-button
-      color: #fff
+          &:hover,
+          &:active
+            color: #bf360c
 
-      .aae-page-title
-        display: none
+      .aae-social
+        position: relative
+        right: -5px
 
-    .aae-form-button
-      color: #fff
-      border: 1px solid #fff
+        a
+          color: #333
+          padding: 0 5px
+          -webkit-transition: all 250ms ease-out
+          -moz-transition: all 250ms ease-out
+          -o-transition: all 250ms ease-out
+          transition: all 250ms ease-out
+
+          &:hover,
+          &:active
+            color: #bf360c
+
+          i
+            font-size: 16px
+            font-weight: 400
+
+  &.main
+    border-bottom: none
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 30
+
+    .aae-header-wrapper
+      background: transparent
+
+      .aae-header-row
+
+        .aae-title
+          color: #fff
+
+          .aae-full-name
+            display: inherit
+            font-size: 20px
+            font-weight: 400
+
+          .aae-page-title
+            display: none
+
+        nav
+          a
+            color: #fff
+            font-weight: 500
+            -webkit-transition: none
+            -moz-transition: none
+            -o-transition: none
+            transition: none
+
+            &:hover,
+            &:active
+              border-bottom: 1px solid #fff
+
+        .aae-social
+          a
+            color: #fff
+
+            &:hover,
+            &:active
+              color: #bf360c
 
 // @media (max-width: 1023px)
 //   .wide

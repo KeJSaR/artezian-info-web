@@ -10,5 +10,6 @@ export class HeaderComponent {
 
   @Input() page  : string;
   @Input() title : string;
+  @Input() menu  : string;
 
 }
