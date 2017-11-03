@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { DataService }    from '../services/data.service';
 import { Menu }           from '../interfaces/menu.interface';
+import { Article }        from '../interfaces/article.interface';
 
 @Component({
   selector    : 'app-page',
@@ -12,30 +13,35 @@ import { Menu }           from '../interfaces/menu.interface';
 })
 export class PageComponent implements OnInit {
 
-  menu  : Menu[];
-  page  : string = '';
-  title : string = '';
-  alias : string = '';
-  type  : string = '';
+  menu    : Menu[];
+  article : Article;
+  isAlias : boolean = false;
+  page    : string  = '';
+  title   : string  = '';
+  alias   : string  = '';
+  type    : string  = '';
+  articleTitle : string = '';
 
   constructor(
     private route       : ActivatedRoute,
     private dataService : DataService
   ) {
 
-    let isAlias: boolean    = this.checkAlias();
-    if (isAlias) this.alias = this.getAlias();
+    this.isAlias = this.checkAlias();
+    if (this.isAlias) this.alias = this.getAlias();
 
     this.page = this.getPage();
-    this.type = this.getType(isAlias);
+    this.type = this.getType();
 
   }
 
   ngOnInit() {
-    return this.dataService.getMenu().subscribe((data) => {
+    this.dataService.getMenu().subscribe((data) => {
       this.menu  = data;
       this.title = this.getTitle();
     });
+
+    if (this.isAlias) this.getContent();
   }
 
   private getPage(): string {
@@ -50,13 +56,37 @@ export class PageComponent implements OnInit {
     return this.route.snapshot.params.alias;
   }
 
-  private getType(isAlias): string {
-    return isAlias ? this.page + '+' : this.page;
+  private getType(): string {
+    return this.isAlias ? this.page + '+' : this.page;
   }
 
   private getTitle(): string {
     for (let item of this.menu) {
       if (item.alias === this.page) return item.title;
+    }
+  }
+
+  private getArticle(): void {
+    this.dataService.getArticle(this.page, this.alias).subscribe((data) => {
+      this.article = data;
+      this.articleTitle = data.title;
+    });
+  }
+
+  private getAlbum(): void {
+
+  }
+
+  private getContent(): void {
+    switch(this.page) {
+      case 'about':
+      case 'articles':
+      case 'rules':
+        this.getArticle();
+        break;
+      case 'gallery':
+        this.getAlbum();
+        break;
     }
   }
 
