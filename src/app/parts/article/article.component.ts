@@ -16,7 +16,7 @@ export class ArticleComponent implements OnInit {
   @Input() page  : string;
   @Input() alias : string;
 
-  private article: Article;
+  article: Article;
 
   constructor(private dataService: DataService) { }
 

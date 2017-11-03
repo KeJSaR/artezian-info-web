@@ -12,11 +12,11 @@ import { Menu }           from '../interfaces/menu.interface';
 })
 export class PageComponent implements OnInit {
 
-  private menu  : Menu[];
-  private page  : string = '';
-  private title : string = '';
-  private alias : string = '';
-  private type  : string = '';
+  menu  : Menu[];
+  page  : string = '';
+  title : string = '';
+  alias : string = '';
+  type  : string = '';
 
   constructor(
     private route       : ActivatedRoute,

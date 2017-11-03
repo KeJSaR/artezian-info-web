@@ -15,7 +15,7 @@ export class GalleryComponent {
 
   @Input() page : string;
 
-	private galleries : Gallery[];
+	galleries : Gallery[];
 
 	constructor(private dataService : DataService) { }
 

@@ -18,8 +18,8 @@ export class ContentComponent implements OnInit {
 
   private texts   : Text[];
   private intros  : Intro[];
-  private isReady : boolean = false;
-  private content = [];
+  isReady : boolean = false;
+  content = [];
 
   constructor(private dataService: DataService) { }
 

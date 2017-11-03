@@ -16,7 +16,7 @@ export class AlbumComponent {
   @Input() page  : string;
   @Input() alias : string;
 
-  private images : Image[];
+  images : Image[];
 
   constructor(private dataService: DataService) { }
 
