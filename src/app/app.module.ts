@@ -12,6 +12,7 @@ import { AppComponent }            from './app.component';
 import { PageComponent }           from './page/page.component';
 
 import { HeaderComponent }         from './parts/header/header.component';
+import { BreadcrumbsComponent }    from './parts/breadcrumbs/breadcrumbs.component';
 import { FooterComponent }         from './parts/footer/footer.component';
 import { TextComponent }           from './parts/text/text.component';
 import { IntroComponent }          from './parts/intro/intro.component';
@@ -29,6 +30,7 @@ import { MainComponent }           from './parts/main/main.component';
     AppComponent,
     PageComponent,
     HeaderComponent,
+    BreadcrumbsComponent,
     FooterComponent,
     TextComponent,
     IntroComponent,
