@@ -15,7 +15,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DataService {
 
-  private url = 'http://localhost/artezian-info-web/src/assets/data.php';
+  private url = 'http://artezian.zone/assets/data.php';
+  // private url = 'assets/data.php';
 
   constructor(private http: HttpClient) { }
 
@@ -36,13 +37,13 @@ export class DataService {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: Intro[]) => resp);
   }
-  
+
   getArticle(page: string, alias: string): Observable<Article> {
     return this.http.post(this.url, `get=article&page=${page}&alias=${alias}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: Article) => resp);
   }
-  
+
   getGalleries(): Observable<Gallery[]> {
     return this.http.post(this.url, `get=galleries`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
