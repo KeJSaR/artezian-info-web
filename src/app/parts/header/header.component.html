@@ -20,13 +20,7 @@
     </div>
     <div class="aae-header-row">
 
-      <nav>
-        <a *ngFor="let menuItem of menu"
-        routerLink="/{{ menuItem.alias }}"
-        routerLinkActive="active">
-          {{ menuItem.title }}
-        </a>
-      </nav>
+      <app-menu [menu]="menu" [page]="page"></app-menu>
 
       <span class="aae-social">
         <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
