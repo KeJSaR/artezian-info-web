@@ -24,6 +24,7 @@ import { GalleryComponent }        from './parts/gallery/gallery.component';
 import { AlbumComponent }          from './parts/album/album.component';
 import { FormComponent }           from './parts/form/form.component';
 import { MainComponent }           from './parts/main/main.component';
+import { CallComponent }           from './parts/call/call.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MainComponent }           from './parts/main/main.component';
     GalleryComponent,
     AlbumComponent,
     FormComponent,
-    MainComponent
+    MainComponent,
+    CallComponent
   ],
   imports: [
     BrowserModule,
