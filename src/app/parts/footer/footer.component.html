@@ -1,7 +1,35 @@
-<section class="aae-main-wrapper" *ngIf="page !== 'main'">
+<section *ngIf="page !== 'main'">
 
-  <p>
-    footer works!
-  </p>
+  <div class="aae-footer-row">
+
+    <div class="aae-main-wrapper">
+
+      <div class="aae-popular-articles">
+        <h3>Популярные статьи</h3>
+        <ul>
+          <li><a href="#">Артезианская Археологическая Экспедиция</a></li>
+          <li><a href="#">Бытовые условия экспедиции</a></li>
+          <li><a href="#">История образования Артезианской Археологической Экспедиции (ААЭ)</a></li>
+          <li><a href="#">Базовые цели и задачи</a></li>
+          <li><a href="#">Научные цели и задачи Артезианской Археологической Экспедиции</a></li>
+        </ul>
+      </div>
+
+      <div class="aae-contact">
+        <h3>Контакты</h3>
+        <p><span>тел.:</span> +7 (987) 654-32-10</p>
+        <p><span>email:</span> mail@artezian.info</p>
+        <h3>Сообщества</h3>
+        <p><a href="#"><i class="fa fa-vk" aria-hidden="true"></i> Вконтакте</a></p>
+        <p><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="aae-footer-row copyright">
+    <p>2017 <i class="fa fa-copyright" aria-hidden="true"></i> ААЭ. Все права защищены.</p>
+  </div>
 
 </section>
