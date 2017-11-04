@@ -1,38 +1,64 @@
 section.aae-footer-section
-  .aae-main-wrapper
-    display: -webkit-flex
-    display: flex
-    -webkit-justify-content: space-between
-    justify-content: space-between
-    -webkit-align-items: flex-start
-    align-items: flex-start
-    padding: 50px 0
+  .aae-footer-row
+    position: relative
+    overflow: hidden
 
-    h3
-      padding: 15px 0 0 0
-      letter-spacing: .5px
+    .aae-footer-map
+      position: absolute
+      top: -5%
+      left: -5%
+      width: 110%
+      height: 110%
+      background: url("/assets/img/map.png") center center / contain no-repeat
+      z-index: 30
+      opacity: 0.1
 
-    a
-      text-decoration: none
+    .aae-main-wrapper
+      position: relative
+      display: -webkit-flex
+      display: flex
+      -webkit-justify-content: space-between
+      justify-content: space-between
+      -webkit-align-items: flex-start
+      align-items: flex-start
+      padding: 150px 0
+      z-index: 50
 
-    .aae-popular-articles
-      width: 60%
+      h3
+        padding: 15px 0 0 0
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        font-weight: 500
 
-      ul
-        padding: 0
-        margin: 0
+      a
+        text-decoration: none
 
-        li
-          list-style: none
-          padding: 5px 0
+      .aae-popular-articles
+        width: 60%
 
-    .aae-contact
-      width: 35%
+        ul
+          padding: 0
+          margin: 0
 
-      p
-        span
-          font-weight: 600
+          li
+            list-style: none
+            padding: 5px 0
 
-  .copyright
-    padding: 50px 0
-    text-align: center
+      .aae-contact
+        width: 35%
+
+        p
+          .aae-contact-name
+            font-weight: 600
+            display: inline-block
+            margin: 0 5px 0 0
+
+          .aae-social-icon
+            width: 22px
+            text-align: center
+            display: inline-block
+            margin: 0 5px 0 0
+
+    .copyright
+      padding: 50px 0
+      text-align: center
