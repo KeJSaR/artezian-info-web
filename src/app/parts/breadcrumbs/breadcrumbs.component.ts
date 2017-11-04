@@ -11,5 +11,6 @@ export class BreadcrumbsComponent {
   @Input() page  : string;
   @Input() title : string;
   @Input() alias : string;
+  @Input() articleTitle : string;
 
 }

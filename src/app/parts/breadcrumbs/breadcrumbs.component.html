@@ -2,9 +2,12 @@
 
   <div class="aae-header-wrapper">
     <p>
-      <a routerLink="/">Главная</a>
+      <a routerLink="/">Главная</a> <i class="fa fa-angle-right" aria-hidden="true"></i>
       <a routerLink="{{ page }}">{{ title }}</a>
-      {{ alias }}
+      <span *ngIf="articleTitle !== ''">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+        <span class="article-title">{{ articleTitle }}</span>
+      </span>
     </p>
   </div>
 
