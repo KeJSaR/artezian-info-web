@@ -1,23 +1,10 @@
-<section
-  *ngIf="isReady"
-  class="aae-content-section"
->
+<section *ngIf="isReady" class="aae-content-section">
 
-  <div
-    *ngFor="let item of content"
-    [class.aae-text]="item.type === 'text'"
-    [class.aae-intro]="item.type === 'intro'"
-    [class.aae-selected]="item.data.id % 2 === 0"
-  >
+  <div *ngFor="let item of content">
 
-    <app-text
-    *ngIf="item.type === 'text'"
-    [text]="item.data.text"></app-text>
+    <app-text *ngIf="item.type === 'text'" [text]="item.data"></app-text>
 
-    <app-intro
-    *ngIf="item.type === 'intro'"
-    [page]="page"
-    [introData]="item.data"></app-intro>
+    <app-intro *ngIf="item.type === 'intro'" [introData]="item.data" [page]="page"></app-intro>
 
   </div>
 

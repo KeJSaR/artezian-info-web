@@ -1,5 +1,5 @@
-<section class="aae-text-section">
+<section class="aae-text-section" [class.aae-selected]="text.id % 2 === 0">
 
-  <div class="aae-main-wrapper" [innerHtml]="text"></div>
+  <div class="aae-main-wrapper" [innerHtml]="text.text"></div>
 
 </section>

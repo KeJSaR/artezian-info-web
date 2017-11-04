@@ -10,6 +10,6 @@ import { Text }      from '../../interfaces/text.interface';
 })
 export class TextComponent {
 
-  @Input() text : string;
+  @Input() text : Text;
 
 }
