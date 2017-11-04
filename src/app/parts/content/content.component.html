@@ -1,31 +1,24 @@
 <section
   *ngIf="isReady"
-  class="aae-main-wrapper aae-content-section"
+  class="aae-content-section"
 >
 
-  <section
+  <div
     *ngFor="let item of content"
     [class.aae-text]="item.type === 'text'"
     [class.aae-intro]="item.type === 'intro'"
     [class.aae-selected]="item.data.id % 2 === 0"
   >
 
-    <div
-      *ngIf="item.type === 'text'"
-      class="aae-inner-wrapper"
-      [innerHtml]="item.data.text"></div>
+    <app-text
+    *ngIf="item.type === 'text'"
+    [text]="item.data.text"></app-text>
 
-    <div
-      *ngIf="item.type === 'intro'"
-      class="aae-inner-wrapper"
-    >
-      <h2 [innerHtml]="item.data.title"></h2>
-      <div [innerHtml]="item.data.intro"></div>
-      <p class="aae-read-more">
-        <a routerLink="/{{ page }}/{{ item.data.alias }}">Читать далее...</a>
-      </p>
-    </div>
+    <app-intro
+    *ngIf="item.type === 'intro'"
+    [page]="page"
+    [introData]="item.data"></app-intro>
 
-  </section>
+  </div>
 
 </section>

@@ -1,5 +1,15 @@
 <section class="aae-intro-section">
-  <p>
-    intro works!
-  </p>
+
+  <div class="aae-main-wrapper">
+
+    <h2 [innerHtml]="introData.title"></h2>
+
+    <div [innerHtml]="introData.intro"></div>
+
+    <p class="aae-read-more">
+      <a routerLink="/{{ page }}/{{ introData.alias }}">Читать далее...</a>
+    </p>
+    
+  </div>
+
 </section>
