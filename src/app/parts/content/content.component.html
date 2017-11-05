@@ -1,5 +1,23 @@
 <section *ngIf="isReady" class="aae-content-section">
 
+  <div class="aae-content-header">
+
+    <div class="aae-content-header-img">
+      <img src="/assets/img/pages/{{ page }}.jpg" alt="">
+    </div>
+
+    <div class="aae-content-header-img-gradient"></div>
+
+    <!--
+    <div class="aae-content-header-text">
+      <div class="aae-header-wrapper">
+        <h1>Title</h1>
+      </div>
+    </div>
+    -->
+
+  </div>
+
   <div *ngFor="let item of content">
 
     <app-text *ngIf="item.type === 'text'" [textData]="item.data"></app-text>
