@@ -1,7 +1,12 @@
-<section class="aae-text-section" [class.aae-selected]="textData.id % 2 === 0">
-  <div class="aae-main-wrapper">
+<section class="aae-text-section aae-text-{{ textData.id }}"
+[class.aae-selected]="textData.id % 2 === 0">
 
+  <div class="aae-text-image" *ngIf="textData.id % 2 !== 0"></div>
+
+  <div class="aae-text-content">
     <div [innerHtml]="textData.text"></div>
-
   </div>
+
+  <div class="aae-text-image" *ngIf="textData.id % 2 === 0"></div>
+
 </section>

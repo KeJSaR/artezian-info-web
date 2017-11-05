@@ -1,8 +1,69 @@
 @import "../../../colors"
 
-.aae-text-section
-  background-color: #283140
-  color: #fff
+section
+  background-color: #00363a
+  color: $white-0
+  position: relative
+  display: -webkit-flex
+  display: flex
+  -webkit-justify-content: flex-start
+  justify-content: flex-start
+  -webkit-align-items: center
+  align-items: center
+
+  .aae-text-image
+    width: 50%
+    background: url("/assets/img/bg_text_1.png") center center / cover no-repeat
+    height: 300px
+
+  .aae-text-content
+    width: 450px
+    padding: 0 25px
+    font-size: 20px
+    font-weight: 500
+    background-color: #f5f5f5
+    height: 300px
+    color: #00363a
+    display: -webkit-flex
+    display: flex
+    -webkit-justify-content: center
+    justify-content: center
+    -webkit-align-items: center
+    align-items: center
 
   &.aae-selected
-    background-color: #666
+    -webkit-justify-content: flex-end
+    justify-content: flex-end
+
+  &.aae-text-1
+    -webkit-justify-content: center
+    justify-content: center
+
+    .aae-text-image
+      display: none
+
+    .aae-text-content
+      background-color: transparent
+      color: #ffffff
+      text-transform: uppercase
+      width: 1000px
+      text-align: center
+      font-weight: 300
+      font-size: 20px
+      padding: 150px 0
+      height: auto
+
+
+  //
+  // &.aae-selected
+  //   background-color: #666
+
+    // .aae-text-bg-1
+    //   position: absolute
+    //   top: 0
+    //   left: 0
+    //   width: 100%
+    //   height: 100%
+    //   background-color: $orange-0
+    //   opacity: .1
+    //
