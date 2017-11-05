@@ -42,7 +42,7 @@ testem.log
 Thumbs.db
 
 # Database login data
-/src/assets/access.php
+/src/assets/php/access.php
 
 # Gallery folders
 /src/assets/img/
