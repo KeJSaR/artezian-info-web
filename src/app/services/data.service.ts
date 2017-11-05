@@ -15,7 +15,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DataService {
 
-  private url = 'http://artezian.zone/assets/data.php';
+  private url = 'http://artezian.zone/assets/php/data.php';
   // private url = 'assets/data.php';
 
   constructor(private http: HttpClient) { }
