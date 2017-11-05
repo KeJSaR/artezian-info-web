@@ -1,7 +1,19 @@
 <section *ngIf="article" class="aae-article-section">
 
   <div class="aae-article-header">
-    <h1 class="aae-header-wrapper" [innerHtml]="article.title"></h1>
+
+    <div class="aae-article-header-img">
+      <img src="/assets/articles/{{ article.id }}.jpg" alt="">
+    </div>
+
+    <div class="aae-article-header-img-gradient"></div>
+
+    <div class="aae-article-header-text">
+      <div class="aae-header-wrapper">
+        <h1 [innerHtml]="article.title"></h1>
+      </div>
+    </div>
+
   </div>
 
   <div class="aae-article-intro">
