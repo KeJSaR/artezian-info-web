@@ -1,7 +1,13 @@
 @import "../../../colors"
 
 section
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  z-index: 30
   padding: 50px 0 0
+  background-color: transparent
 
   .aae-header-wrapper
     .aae-header-row
@@ -19,7 +25,7 @@ section
         justify-content: space-between
         -webkit-align-items: center
         align-items: center
-        color: $black
+        color: $white
         letter-spacing: -2px
 
         .aae-main-title
@@ -30,7 +36,7 @@ section
           -moz-transition: all 250ms ease-out
           -o-transition: all 250ms ease-out
           transition: all 250ms ease-out
-          color: $black
+          color: $white
 
           &:hover,
           &:active
@@ -46,8 +52,8 @@ section
 
         .aae-page-title
           font-size: 70px
-          font-weight: 900
-          color: $black
+          font-weight: 700
+          color: $white
 
         span
           font-weight: 900
@@ -70,11 +76,6 @@ section
   &.main
     background-color: transparent
     border-bottom: none
-    position: fixed
-    top: 0
-    left: 0
-    right: 0
-    z-index: 30
 
     .aae-header-wrapper
       background-color: transparent
