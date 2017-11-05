@@ -45,11 +45,4 @@ Thumbs.db
 /src/assets/access.php
 
 # Gallery folders
-/src/assets/gallery/2
-/src/assets/gallery/3
-/src/assets/gallery/4
-/src/assets/gallery/5
-/src/assets/gallery/6
-/src/assets/gallery/7
-/src/assets/gallery/8
-/src/assets/gallery/9
+/src/assets/img/
