@@ -1,11 +1,19 @@
 <section *ngIf="article" class="aae-article-section">
-  <div class="aae-main-wrapper">
 
-    <h1 class="aae-article-header" [innerHtml]="article.title"></h1>
-
-    <div class="aae-article-intro" [innerHtml]="article.intro"></div>
-
-    <div class="aae-article-content" [innerHtml]="article.content"></div>
-
+  <div class="aae-article-header">
+    <h1 class="aae-header-wrapper" [innerHtml]="article.title"></h1>
   </div>
+
+  <div class="aae-article-intro">
+    <div class="aae-main-wrapper-narrow">
+      <div class="aae-intro">
+        <div [innerHtml]="article.intro"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="aae-article-content">
+    <div class="aae-main-wrapper-narrow" [innerHtml]="article.content"></div>
+  </div>
+
 </section>
