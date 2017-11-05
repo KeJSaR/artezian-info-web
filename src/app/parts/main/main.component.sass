@@ -21,13 +21,13 @@ section
     z-index: 20
     opacity: .7
 
-    background: #1f2653
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1f2653), color-stop(100%,#263238))
-    background: -webkit-linear-gradient(top, #1f2653 0%,#263238 100%)
-    background: -moz-linear-gradient(top, #1f2653 0%, #263238 100%)
-    background: -ms-linear-gradient(top, #1f2653 0%,#263238 100%)
-    background: -o-linear-gradient(top, #1f2653 0%,#263238 100%)
-    background: linear-gradient(to bottom, #1f2653 0%,#263238 100%)
+    background: #263238
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#263238), color-stop(100%,#212121))
+    background: -webkit-linear-gradient(top, #263238 0%,#212121 100%)
+    background: -moz-linear-gradient(top, #263238 0%, #212121 100%)
+    background: -ms-linear-gradient(top, #263238 0%,#212121 100%)
+    background: -o-linear-gradient(top, #263238 0%,#212121 100%)
+    background: linear-gradient(to bottom, #263238 0%,#212121 100%)
 
   .aae-main-content
     max-width: 1200px
@@ -44,7 +44,7 @@ section
       margin-top: 70px
 
       span
-        color: #bf360c
+        color: $orange-0
 
     h2
       font-weight: 300
@@ -60,7 +60,7 @@ section
       justify-content: center
 
       div
-        background-color: rgba(255, 255, 255, 0.8)
+        background-color: $white-0
         color: #333
         cursor: pointer
         padding: 10px 15px
@@ -73,7 +73,9 @@ section
         -moz-transition: all 250ms ease-out
         -o-transition: all 250ms ease-out
         transition: all 250ms ease-out
+        opacity: .8
 
         &:hover, &:active
           background-color: #bf360c
           color: #fff
+          opacity: 1
