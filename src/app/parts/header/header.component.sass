@@ -1,6 +1,6 @@
 @import "../../../colors"
 
-section.aae-header-section
+section
   padding: 50px 0 0
 
   .aae-header-wrapper
@@ -19,7 +19,7 @@ section.aae-header-section
         justify-content: space-between
         -webkit-align-items: center
         align-items: center
-        color: $dark-0
+        color: $black
         letter-spacing: -2px
 
         .aae-main-title
@@ -30,11 +30,11 @@ section.aae-header-section
           -moz-transition: all 250ms ease-out
           -o-transition: all 250ms ease-out
           transition: all 250ms ease-out
-          color: $black-0
+          color: $black
 
           &:hover,
           &:active
-            color: $orange-0
+            color: $primary
 
         .aae-divider
           font-size: 30px
@@ -47,7 +47,7 @@ section.aae-header-section
         .aae-page-title
           font-size: 70px
           font-weight: 900
-          color: $black-0
+          color: $black
 
         span
           font-weight: 900
@@ -61,14 +61,14 @@ section.aae-header-section
         -o-transition: all 250ms ease-out
         transition: all 250ms ease-out
         background-color: transparent
-        border: 2px solid $orange-0
-        color: $orange-0
+        border: 2px solid $primary
+        color: $primary
         font-weight: 600
 
         &:hover,
         &:active
-          color: $white-0
-          background-color: $orange-0
+          color: $white
+          background-color: $primary
 
   &.main
     border-bottom: none
@@ -83,14 +83,14 @@ section.aae-header-section
 
       .aae-header-row
         .aae-title
-          color: $white-0
+          color: $white
 
           .aae-main-title
-            color: $white-0
+            color: $white
 
             &:hover,
             &:active
-              color: $orange-0
+              color: $primary
 
           .aae-full-name
             display: inherit
@@ -102,15 +102,15 @@ section.aae-header-section
             display: none
 
         .aae-form
-          border: 2px solid $white-0
-          color: $white-0
+          border: 2px solid $white
+          color: $white
           font-weight: 600
 
           &:hover,
           &:active
-            color: $orange-0
-            background-color: $white-0
-            border-color: $white-0
+            color: $primary
+            background-color: $white
+            border-color: $white
 
 // @media (max-width: 1023px)
 //   .wide

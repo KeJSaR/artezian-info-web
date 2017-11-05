@@ -5,7 +5,7 @@ section
 
   .aae-intro-img-block
     position: relative
-    border-top: 3px solid $orange-0
+    border-top: 3px solid $primary
 
     .aae-intro-img
       position: relative
@@ -45,33 +45,33 @@ section
       height: 600px
       width: 1000px
       opacity: .7
-      background: rgba(0, 0, 0, 0.1)
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, 0.1)), color-stop(100%,#263238))
-      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%,#263238 100%)
-      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, #263238 100%)
-      background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%,#263238 100%)
-      background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%,#263238 100%)
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%,#263238 100%)
+      background: $black-opacity-1
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $black-opacity-1), color-stop(100%, $blue-grey-900))
+      background: -webkit-linear-gradient(top, $black-opacity-1 0%, $blue-grey-900 100%)
+      background: -moz-linear-gradient(top,    $black-opacity-1 0%, $blue-grey-900 100%)
+      background: -ms-linear-gradient(top,     $black-opacity-1 0%, $blue-grey-900 100%)
+      background: -o-linear-gradient(top,      $black-opacity-1 0%, $blue-grey-900 100%)
+      background: linear-gradient(to bottom,   $black-opacity-1 0%, $blue-grey-900 100%)
       z-index: 25
 
     h2
       position: absolute
       bottom: 0
       left: 0
-      color: #fff
+      color: $white
       font-size: 55px
       text-transform: uppercase
       font-weight: 900
       z-index: 30
       margin: 0 350px 0 0
       padding: 20px 20px 30px 40px
-      border-top: 15px solid #fff
-      background: rgba(0,0,0,0.5)
+      border-top: 15px solid $white
+      background: $black-opacity-5
       line-height: 57px
       word-spacing: 7px
 
   .aae-intro-content
-    background-color: #eee
+    background-color: $blue-grey-100
     padding: 20px 40px
     margin: 0px 350px 0 0px
     font-size: 18px
@@ -82,7 +82,7 @@ section
       text-align: left
 
       a
-        color: #333
+        color: $grey-900
         font-weight: 900
         text-decoration: none
         text-transform: uppercase
