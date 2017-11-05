@@ -6,70 +6,42 @@
 
 <!-- Breadcrumbs -->
 <app-breadcrumbs
-*ngIf="page !== 'main'"
-[page]="page"
-[title]="title"
-[alias]="alias"
-[articleTitle]="articleTitle"></app-breadcrumbs>
+  *ngIf="page !== 'main'"
+  [page]="page" [title]="title" [alias]="alias"
+  [articleTitle]="articleTitle"
+></app-breadcrumbs>
 
-<div [ngSwitch]="type">
+<!-- Pages ================================================================= -->
 
-  <!-- Main page -->
-  <ng-template [ngSwitchCase]="'main'">
-    <app-main></app-main>
-  </ng-template>
+<!-- Main page -->
+<app-main      *ngIf="type === 'main'"></app-main>
 
-  <!-- About page -->
-  <ng-template [ngSwitchCase]="'about'">
-    <app-content [page]="page"></app-content>
-  </ng-template>
+<!-- About page -->
+<app-content   *ngIf="type === 'about'"     [page]="page"></app-content>
+<app-article   *ngIf="type === 'about+'"    [article]="article"></app-article>
 
-  <ng-template [ngSwitchCase]="'about+'">
-    <app-article [article]="article"></app-article>
-  </ng-template>
+<!-- Articles page -->
+<app-blog      *ngIf="type === 'articles'"  [page]="page"></app-blog>
+<app-article   *ngIf="type === 'articles+'" [article]="article"></app-article>
 
-  <!-- Articles page -->
-  <ng-template [ngSwitchCase]="'articles'">
-    <app-blog [page]="page"></app-blog>
-  </ng-template>
+<!-- Gallery page -->
+<app-gallery   *ngIf="type === 'gallery'"   [page]="page"></app-gallery>
+<app-album     *ngIf="type === 'gallery+'"  [page]="page" [alias]="alias"></app-album>
 
-  <ng-template [ngSwitchCase]="'articles+'">
-    <app-article [article]="article"></app-article>
-  </ng-template>
+<!-- Rules page -->
+<app-content   *ngIf="type === 'rules'"     [page]="page"></app-content>
+<app-article   *ngIf="type === 'rules+'"    [article]="article"></app-article>
 
-  <!-- Gallery page -->
-  <ng-template [ngSwitchCase]="'gallery'">
-    <app-gallery [page]="page"></app-gallery>
-  </ng-template>
+<!-- Form page -->
+<app-form      *ngIf="type === 'form'"></app-form>
 
-  <ng-template [ngSwitchCase]="'gallery+'">
-    <app-album [page]="page" [alias]="alias"></app-album>
-  </ng-template>
+<!-- Not Found page -->
+<app-not-found *ngIf="type === '404'"></app-not-found>
 
-  <!-- Rules page -->
-  <ng-template [ngSwitchCase]="'rules'">
-    <app-content [page]="page"></app-content>
-  </ng-template>
+<!-- ======================================================================= -->
 
-  <ng-template [ngSwitchCase]="'rules+'">
-    <app-article [article]="article"></app-article>
-  </ng-template>
-
-  <!-- Form page -->
-  <ng-template [ngSwitchCase]="'form'">
-    <app-form></app-form>
-  </ng-template>
-
-  <!-- Not Found page -->
-  <ng-template ngSwitchDefault>
-    <app-not-found></app-not-found>
-  </ng-template>
-
-</div>
-
+<!-- Call to Journey -->
 <app-call [page]="page"></app-call>
 
 <!-- Footer -->
 <app-footer [page]="page"></app-footer>
-
-</div>
