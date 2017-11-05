@@ -7,17 +7,54 @@
 // @import "~@angular/material/prebuilt-themes/pink-bluegrey.css"
 // @import "~@angular/material/prebuilt-themes/purple-green.css"
 
+html, body
+  margin: 0
+  padding: 0
+
 body
   font-family: $primary-font
+  background-color: $grey-100
 
-html, body, app-root, mat-sidenav-container, .aae-content
-  margin: 0
-  width: 100%
-  height: 100%
+section
+  background-color: $grey-100
+
+h2
+  font-size: 36px
+  line-height: 36px
+  font-weight: 900
+  color: $grey-800
+  margin: 90px 0 36px 0
+  padding: 0
+  text-transform: uppercase
+
+p, li
+  font-size: 16px
+  line-height: 22px
+  font-weight: 400
+  color: $grey-700
+  margin: 20px 0 0 0
+  padding: 0
+
+.aae-intro
+  div
+    margin-bottom: 50px
+    border-left: 5px solid #ccc
+    padding: 0 0 0 20px
+
+    p
+      font-size: 19px
+      font-weight: 300
+      line-height: 26px
 
 .aae-header-wrapper
   padding: 0 100px
+  max-width: 1600px
+  margin: 0 auto
 
-.aae-main-wrapper
-  max-width: 1000px
+.aae-main-wrapper-wide
+  max-width: 900px
+  margin: 0 auto
+
+.aae-main-wrapper-narrow
+  max-width: 600px
   margin: 0 auto
