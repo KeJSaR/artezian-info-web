@@ -1,29 +1,79 @@
 @import "../../../colors"
 
-nav.aae-menu-section
-  position: relative
-  left: -10px
-  padding: 30px 0 15px
+section
+  border-bottom: 1px solid $dark-0
 
-  a
-    text-decoration: none
-    padding: 0 10px
-    text-transform: uppercase
-    font-size: 14px
-    font-weight: 600
-    -webkit-transition: all 250ms ease-out
-    -moz-transition: all 250ms ease-out
-    -o-transition: all 250ms ease-out
-    transition: all 250ms ease-out
+  .aae-header-wrapper
+    display: -webkit-flex
+    display: flex
+    -webkit-justify-content: space-between
+    justify-content: space-between
+    -webkit-align-items: center
+    align-items: center
 
-nav.aae-menu-section.main
-  a
-    font-weight: 500
-    -webkit-transition: none
-    -moz-transition: none
-    -o-transition: none
-    transition: none
+    nav
+      position: relative
+      left: -10px
+      padding: 30px 0 15px
 
-    &:hover,
-    &:active
-      border-bottom: 1px solid
+      a
+        text-decoration: none
+        padding: 0 10px
+        text-transform: uppercase
+        font-size: 14px
+        font-weight: 600
+        color: $dark-0
+
+        &:hover,
+        &:active
+          color: $orange-0
+
+    .aae-social
+      position: relative
+      right: -5px
+
+      a
+        padding: 0 5px
+        -webkit-transition: all 250ms ease-out
+        -moz-transition: all 250ms ease-out
+        -o-transition: all 250ms ease-out
+        transition: all 250ms ease-out
+        color: $dark-0
+
+        &:hover,
+        &:active
+          color: $orange-0
+
+        i
+          font-size: 16px
+          font-weight: 400
+
+  &.main
+    border-bottom: none
+    position: fixed
+    top: 122px
+    left: 0
+    right: 0
+    z-index: 30
+
+    .aae-header-wrapper
+      nav
+        a
+          font-weight: 500
+          -webkit-transition: none
+          -moz-transition: none
+          -o-transition: none
+          transition: none
+          color: $white-0
+
+          &:hover,
+          &:active
+            border-bottom: 1px solid $white-0
+
+      .aae-social
+        a
+          color: $white-0
+
+          &:hover,
+          &:active
+            color: $orange-0

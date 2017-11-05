@@ -1,16 +1,18 @@
 <section class="aae-menu-section" [class.main]="page === 'main'">
+  <div class="aae-header-wrapper">
 
-  <nav>
-    <a *ngFor="let menuItem of menu"
-    routerLink="/{{ menuItem.alias }}"
-    routerLinkActive="active">
-      {{ menuItem.title }}
-    </a>
-  </nav>
+    <nav>
+      <a *ngFor="let menuItem of menu"
+      routerLink="/{{ menuItem.alias }}"
+      routerLinkActive="active">
+        {{ menuItem.title }}
+      </a>
+    </nav>
 
-  <span class="aae-social">
-    <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
-    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-  </span>
-  
+    <span class="aae-social">
+      <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    </span>
+
+  </div>
 </section>

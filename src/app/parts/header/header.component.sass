@@ -2,7 +2,6 @@
 
 section.aae-header-section
   padding: 50px 0 0
-  border-bottom: 1px solid
 
   .aae-header-wrapper
     .aae-header-row
@@ -20,6 +19,7 @@ section.aae-header-section
         justify-content: space-between
         -webkit-align-items: center
         align-items: center
+        color: $dark-0
 
         .aae-main-title
           font-size: 60px
@@ -29,6 +29,10 @@ section.aae-header-section
           -moz-transition: all 250ms ease-out
           -o-transition: all 250ms ease-out
           transition: all 250ms ease-out
+
+          &:hover,
+          &:active
+            color: $orange-0
 
         .aae-divider
           font-size: 30px
@@ -56,22 +60,9 @@ section.aae-header-section
 
         &:hover,
         &:active
+          color: $white-0
+          background-color: $orange-0
           border: none
-
-      .aae-social
-        position: relative
-        right: -5px
-
-        a
-          padding: 0 5px
-          -webkit-transition: all 250ms ease-out
-          -moz-transition: all 250ms ease-out
-          -o-transition: all 250ms ease-out
-          transition: all 250ms ease-out
-
-          i
-            font-size: 16px
-            font-weight: 400
 
   &.main
     border-bottom: none
@@ -86,6 +77,8 @@ section.aae-header-section
 
       .aae-header-row
         .aae-title
+          color: $white-0
+          
           .aae-full-name
             display: inherit
             font-size: 20px
