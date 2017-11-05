@@ -2,7 +2,7 @@
 
   <div *ngFor="let item of content">
 
-    <app-text *ngIf="item.type === 'text'" [text]="item.data"></app-text>
+    <app-text *ngIf="item.type === 'text'" [textData]="item.data"></app-text>
 
     <app-intro *ngIf="item.type === 'intro'" [introData]="item.data" [page]="page"></app-intro>
 
