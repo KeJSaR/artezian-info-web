@@ -1,7 +1,7 @@
 import { Component }    from '@angular/core';
 import { Inject }       from '@angular/core';
 import { HostListener } from '@angular/core';
-import { DOCUMENT }     from "@angular/platform-browser";
+import { DOCUMENT }     from '@angular/common';
 
 @Component({
   selector    : 'app-root',
@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
-  @HostListener("window:scroll", [])
+  @HostListener('window: scroll', [])
   onWindowScroll() {
     if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
       this.navIsFixed = true;
