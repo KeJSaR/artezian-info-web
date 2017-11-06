@@ -1,1 +1,8 @@
 <router-outlet></router-outlet>
+
+<!--Scroll to top-->
+<div class="scroll-to-top" [ngClass]="{'show-scroll': navIsFixed}">
+  <div (click)="scrollToTop()">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+  </div>
+</div>
