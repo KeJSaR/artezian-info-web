@@ -58,6 +58,23 @@
     "class": {
       "spec": false
     },
-    "component": {}
+    "component": {
+      "spec": false
+    },
+    "directive": {
+      "spec": false
+    },
+    "guard": {
+      "spec": false
+    },
+    "module": {
+      "spec": false
+    },
+    "pipe": {
+      "spec": false
+    },
+    "service": {
+      "spec": false
+    }
   }
 }

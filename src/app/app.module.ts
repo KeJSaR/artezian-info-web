@@ -1,10 +1,8 @@
 import { BrowserModule }           from '@angular/platform-browser';
 import { NgModule }                from '@angular/core';
 import { HttpClientModule }        from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule }        from './app-routing.module';
-import { MaterialModule }          from './material/material.module';
 
 import { DataService }             from './services/data.service';
 
@@ -50,9 +48,7 @@ import { MenuComponent }           from './parts/menu/menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MaterialModule
+    HttpClientModule
   ],
   providers: [
     DataService
