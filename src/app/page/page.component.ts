@@ -36,12 +36,25 @@ export class PageComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.scrollToTop();
+
     this.dataService.getMenu().subscribe((data) => {
       this.menu  = data;
       this.title = this.getTitle();
     });
 
     if (this.isAlias) this.getContent();
+  }
+
+  scrollToTop() {
+    (function smoothscroll() {
+      var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      if (currentScroll > 0) {
+        window.requestAnimationFrame(smoothscroll);
+        window.scrollTo(0, 0);
+      }
+    })();
   }
 
   private getPage(): string {
