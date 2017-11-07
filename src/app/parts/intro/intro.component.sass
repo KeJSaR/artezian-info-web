@@ -33,21 +33,48 @@ section
       z-index: 25
 
     h2
-      position: absolute
-      bottom: 0
-      left: 0
-      color: $grey-100
-      font-size: 55px
-      text-transform: uppercase
-      font-weight: 900
-      z-index: 30
       margin: 0
-      padding: 20px 290px 30px 40px
-      border-top: 15px solid $grey-100
-      background: $black-opacity-1
-      line-height: 57px
-      word-spacing: 7px
-      text-align: left
+
+      a
+        z-index: 40
+        text-transform: uppercase
+        position: absolute
+        bottom: 0
+        left: 0
+        color: $grey-100
+        font-size: 55px
+        font-weight: 900
+        padding: 20px 290px 30px 40px
+        border-top: 15px solid $grey-100
+        background: $black-opacity-1
+        line-height: 57px
+        word-spacing: 7px
+        text-decoration: none
+        -webkit-transition: all 250ms ease-out
+        -moz-transition: all 250ms ease-out
+        -o-transition: all 250ms ease-out
+        transition: all 250ms ease-out
+
+        &:hover,
+        &:active
+          color: $primary-light
+          text-shadow: 1px 1px 3px $black-opacity-3
+
+      .aae-read-more
+        position: absolute
+        bottom: 12px
+        right: 8px
+        color: $grey-100
+        font-weight: 400
+        text-decoration: none
+        text-transform: lowercase
+        font-size: 16px
+        border: none
+        padding: 0
+        margin: 0
+        word-spacing: 0
+        background: transparent
+        z-index: 30
 
   .aae-intro-content
     background-color: $grey-100
@@ -57,25 +84,15 @@ section
     font-weight: 300
     line-height: 1.5
 
-    .aae-read-more
-      text-align: left
-
-      a
-        color: $grey-900
-        font-weight: 900
-        text-decoration: none
-        text-transform: uppercase
-        font-size: 13px
-
   &.aae-selected
     .aae-intro-img-block
       h2
-        margin: 0
-        padding: 20px 40px 30px 290px
-        text-align: right
+        a
+          padding: 20px 40px 30px 290px
+          text-align: right
+
+        .aae-read-more
+          left: 8px
 
     .aae-intro-content
       margin: 0px 0px 0 250px
-
-      .aae-read-more
-        text-align: right
