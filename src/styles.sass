@@ -7,29 +7,43 @@ html, body
   padding: 0
 
 body
-  font-family: $primary-font
   background-color: $grey-100
   position: relative
+  font-family: $primary-font
 
 section
   background-color: $grey-100
 
-h2
-  font-size: 36px
-  line-height: 36px
-  font-weight: 900
-  color: $grey-800
-  margin: 90px 0 36px 0
-  padding: 0
-  text-transform: uppercase
+.aae-article-content
+  h2::before
+      content: ""
+      border-bottom: 30px solid $white
+      width: 30%
+      height: 30px
+      display: block
+      position: relative
+      top: 47px
+      opacity: 0.75
+      z-index: -1
+      left: -20px
 
-p, li
-  font-size: 16px
-  line-height: 22px
-  font-weight: 400
-  color: $grey-700
-  margin: 20px 0 0 0
-  padding: 0
+  h2
+    font-size: 36px
+    line-height: 36px
+    font-weight: 500
+    color: $grey-900
+    margin: 30px 0 40px 0
+    position: relative
+    z-index: 10
+
+  p, li
+    font-family: $secondary-font
+    font-size: 17px
+    line-height: 24px
+    font-weight: 400
+    color: $grey-700
+    margin: 20px 0 0 0
+    padding: 0
 
 .aae-intro
   div
