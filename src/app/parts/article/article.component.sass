@@ -1,10 +1,23 @@
 @import "../../../colors"
 
 section
+  position: relative
+  padding: 0 0 200px 0
+
+  .aae-article-pattern
+    position: absolute
+    bottom: 0
+    right: 0
+    height: 1000px
+    width: 856px
+    background: url("/assets/img/pattern_1.png") right bottom no-repeat
+    opacity: .05
+
   .aae-article-header
     position: relative
     overflow: hidden
     margin-bottom: 90px
+    max-height: 100vh
 
     .aae-article-header-img
       position: relative
@@ -31,7 +44,7 @@ section
 
     .aae-article-header-text
       position: absolute
-      top: 238px
+      top: 234px
       left: 0
       right: 0
       z-index: 20
@@ -43,7 +56,7 @@ section
       background: -o-linear-gradient(top,      $black-opacity-1 0%, $black-opacity-0 100%)
       background: linear-gradient(to bottom,   $black-opacity-1 0%, $black-opacity-0 100%)
       padding-top: 30px
-      padding-bottom: 300px
+      padding-bottom: 150px
 
       h1
         color: #ffffff
@@ -51,10 +64,7 @@ section
         font-weight: 500
         text-align: left
         width: 500px
-
+        line-height: 63px
 
   .aae-article-intro
     margin: 50px 0 0 0
-
-  .aae-article-content
-    margin: 0 0 150px 0
