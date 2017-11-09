@@ -1,1 +1,61 @@
 @import "../../../colors"
+
+section
+  .aae-content-header
+    position: relative
+    overflow: hidden
+    margin-bottom: 90px
+    max-height: 100vh
+
+    .aae-content-header-img
+      position: relative
+      z-index: 10
+
+    img
+      width: 100%
+
+    .aae-content-header-img-gradient
+      position: absolute
+      top: 0
+      left: 0
+      height: 100%
+      width: 100%
+      opacity: .7
+      background: $black-opacity-5
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $black-opacity-5), color-stop(100%, $black-opacity-0))
+      background: -webkit-linear-gradient(top, $black-opacity-5 0%, $black-opacity-0 100%)
+      background: -moz-linear-gradient(top,    $black-opacity-5 0%, $black-opacity-0 100%)
+      background: -ms-linear-gradient(top,     $black-opacity-5 0%, $black-opacity-0 100%)
+      background: -o-linear-gradient(top,      $black-opacity-5 0%, $black-opacity-0 100%)
+      background: linear-gradient(to bottom,   $black-opacity-5 0%, $black-opacity-0 100%)
+      z-index: 15
+
+    .aae-content-header-text
+      position: absolute
+      top: 238px
+      left: 0
+      right: 0
+      z-index: 20
+      background: $black-opacity-1
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $black-opacity-1), color-stop(100%, $black-opacity-0))
+      background: -webkit-linear-gradient(top, $black-opacity-1 0%, $black-opacity-0 100%)
+      background: -moz-linear-gradient(top,    $black-opacity-1 0%, $black-opacity-0 100%)
+      background: -ms-linear-gradient(top,     $black-opacity-1 0%, $black-opacity-0 100%)
+      background: -o-linear-gradient(top,      $black-opacity-1 0%, $black-opacity-0 100%)
+      background: linear-gradient(to bottom,   $black-opacity-1 0%, $black-opacity-0 100%)
+      padding-top: 30px
+      padding-bottom: 300px
+
+      h1
+        color: $white
+        font-size: 60px
+        font-weight: 500
+        text-align: left
+        margin-bottom: 0
+        padding-bottom: 0
+
+      h2
+        color: $white
+        font-size: 30px
+        font-weight: 500
+        text-align: left
