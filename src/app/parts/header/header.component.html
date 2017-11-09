@@ -10,7 +10,7 @@
         <span class="aae-page-title" [innerHtml]="title"></span>
       </div>
 
-      <div routerLink="/form" class="aae-form">Подать заявку</div>
+      <div *ngIf="page !== 'form'" routerLink="/form" class="aae-form">Подать заявку</div>
 
     </div>
 
