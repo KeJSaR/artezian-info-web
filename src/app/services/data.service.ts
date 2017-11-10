@@ -7,6 +7,7 @@ import { Menu }        from '../interfaces/menu.interface';
 import { Text }        from '../interfaces/text.interface';
 import { Intro }       from '../interfaces/intro.interface';
 import { Article }     from '../interfaces/article.interface';
+import { Blog }        from '../interfaces/blog.interface';
 import { Gallery }     from '../interfaces/gallery.interface';
 import { Image }       from '../interfaces/image.interface';
 
@@ -42,6 +43,12 @@ export class DataService {
     return this.http.post(this.url, `get=article&page=${page}&alias=${alias}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: Article) => resp);
+  }
+  
+  getBlog(): Observable<Blog[]> {
+    return this.http.post(this.url, 'get=blog', {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    }).map((resp: Blog[]) => resp);
   }
 
   getGalleries(): Observable<Gallery[]> {
