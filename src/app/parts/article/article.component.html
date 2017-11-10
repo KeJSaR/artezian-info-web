@@ -12,6 +12,14 @@
 
     <div class="aae-article-header-text">
       <div class="aae-header-wrapper">
+        <p *ngIf="article.author_name !== 'ААЭ'">
+          <span class="aae-author-name">
+            {{ article.author_name }},
+          </span>
+          <span class="aae-author-title">
+            {{ article.author_title }}
+          </span>
+        </p>
         <h1 [innerHtml]="article.title"></h1>
       </div>
     </div>
