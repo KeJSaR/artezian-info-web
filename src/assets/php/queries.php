@@ -149,6 +149,21 @@ class Queries
         return DB::run($q, [$author_id])->fetch();
     }
 
+    public function get_blog($page)
+    {
+        $id = $this->get_menu_id($page);
+        $q  = "SELECT id, date, alias, title, author_id, intro "
+            . "FROM article WHERE menu_id=?";
+        $blog = DB::run($q, [$id])->fetchAll();
+        foreach ($blog as $id => $article) {
+            $author = $this->get_author($article["author_id"]);
+            $blog[$id]["author_name"]  = $author["name"];
+            $blog[$id]["author_title"] = $author["title"];
+            unset($blog[$id]["author_id"]);
+        }
+        return $blog;
+    }
+
     public function get_galleries()
     {
         $q = "SELECT id, image_id, title, description FROM gallery";

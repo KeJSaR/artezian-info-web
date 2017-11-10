@@ -47,6 +47,10 @@ class Data
             case "article":
                 return $this->get_article();
                 break;
+                
+            case "blog":
+                return $this->get_blog();
+                break;
 
             case "galleries":
                 return $this->get_galleries();
@@ -142,7 +146,13 @@ class Data
         // Add author data to article
         $article["author_name"]  = $author["name"];
         $article["author_title"] = $author["title"];
+        unset($article["author_id"]);
         return $article;
+    }
+
+    private function get_blog()
+    {
+        return $this->queries->get_blog("articles");
     }
     
     private function get_galleries()
