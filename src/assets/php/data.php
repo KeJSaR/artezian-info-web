@@ -125,12 +125,24 @@ class Data
         return $id !== "" ? $this->queries->get_intros($id) : "";
     }
 
+    private function get_author($author_id)
+    {
+        return $this->queries->get_author($author_id);
+    }
+
     private function get_article()
     {
+        // Get article data
         $p = $this->get_page();
         $a = $this->get_alias();
         $id = $p !== "" && $a !== "" ? $this->queries->get_menu_id($p) : "";
-        return $id !== "" ? $this->queries->get_article($id, $a) : "";
+        $article = $id !== "" ? $this->queries->get_article($id, $a) : "";
+        // Get author data
+        $author = $this->get_author($article["author_id"]);
+        // Add author data to article
+        $article["author_name"]  = $author["name"];
+        $article["author_title"] = $author["title"];
+        return $article;
     }
     
     private function get_galleries()

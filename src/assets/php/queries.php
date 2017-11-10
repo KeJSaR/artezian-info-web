@@ -138,9 +138,15 @@ class Queries
 
     public function get_article($id, $alias)
     {
-        $q  = "SELECT id, alias, title, intro, content ";
+        $q  = "SELECT id, date, alias, title, author_id, intro, content ";
         $q .= "FROM article WHERE menu_id=? AND alias=?";
         return DB::run($q, [$id, $alias])->fetch();
+    }
+
+    public function get_author($author_id)
+    {
+        $q = "SELECT name, title FROM author WHERE id=?";
+        return DB::run($q, [$author_id])->fetch();
     }
 
     public function get_galleries()
