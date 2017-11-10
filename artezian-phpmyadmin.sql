@@ -64,14 +64,14 @@ INSERT INTO `article` (`id`, `date`, `menu_id`, `alias`, `title`, `author_id`, `
 CREATE TABLE `author` (
   `id` int(3) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
-  `authorcol` varchar(255) DEFAULT NULL
+  `title` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `author`
 --
 
-INSERT INTO `author` (`id`, `name`, `authorcol`) VALUES
+INSERT INTO `author` (`id`, `name`, `title`) VALUES
 (1, 'ААЭ', 'Артезианская Археологическая Экспедиция'),
 (2, 'Винокуров Н.И.', 'доктор исторических наук, профессор');
 

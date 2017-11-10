@@ -54,7 +54,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `artezian`.`author` (
   `id` INT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  `authorcol` VARCHAR(255) NULL,
+  `title` VARCHAR(255) NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `idauthor_UNIQUE` (`id` ASC),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
