@@ -101,9 +101,9 @@ class Data
 
     private function get_gallery_id()
     {
-        $k = array_key_exists("gallery_id", $_POST);
-        $v = $this->is_gallery_id_valid($_POST["gallery_id"]);
-        return $k && $v ? $_POST["gallery_id"] : "";
+        $k = array_key_exists("gallery-id", $_POST);
+        $v = $this->is_gallery_id_valid($_POST["gallery-id"]);
+        return $k && $v ? $_POST["gallery-id"] : "";
     }
 
     /**
