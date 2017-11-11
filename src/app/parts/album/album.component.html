@@ -1,9 +1,9 @@
 <section *ngIf="images" class="aae-album-section">
-  <div class="aae-main-wrapper">
+  <div class="aae-main-wrapper-wide">
 
     <div *ngFor="let image of images">
     	<div>
-    		<img src="assets/gallery/{{ alias }}/pics/{{ image.id }}.jpg" alt="{{ image.title }}">
+    		<img src="assets/img/gallery/{{ alias }}/pics/{{ image.id }}.jpg" alt="{{ image.title }}">
     		<p [innerHtml]="image.title"></p>
     	</div>
     </div>

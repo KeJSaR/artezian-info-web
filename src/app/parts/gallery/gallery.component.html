@@ -1,9 +1,9 @@
 <section *ngIf="galleries" class="aae-gallery-section">
-  <div class="aae-main-wrapper">
+  <div class="aae-main-wrapper-wide">
 
     <div *ngFor="let gallery of galleries">
     	<div>
-    		<img src="assets/gallery/{{ gallery.id }}/pics/{{ gallery.image_id }}.jpg" alt="{{ gallery.title }}">
+    		<img src="assets/img/gallery/{{ gallery.id }}/pics/{{ gallery.image_id }}.jpg" alt="{{ gallery.title }}">
     		<p><a routerLink="/{{ page }}/{{ gallery.id }}" [innerHtml]="gallery.title"></a></p>
     		<p [innerHtml]="gallery.description"></p>
     	</div>
