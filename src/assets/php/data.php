@@ -60,6 +60,10 @@ class Data
                 return $this->get_images();
                 break;
 
+            case "gallery-info":
+                return $this->get_gallery_info();
+                break;
+
             default:
                 return "";
                 break;
@@ -164,6 +168,12 @@ class Data
     {
         $g = $this->get_gallery_id();
         return $g !== "" ? $this->queries->get_images($g) : "";
+    }
+
+    private function get_gallery_info()
+    {
+        $g = $this->get_gallery_id();
+        return $g !== "" ? $this->queries->get_gallery_info($g) : "";
     }
 
     /**

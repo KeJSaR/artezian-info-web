@@ -176,4 +176,10 @@ class Queries
         return DB::run($q, [$gallery_id])->fetchAll();
     }
 
+    public function get_gallery_info($gallery_id)
+    {
+        $q = "SELECT id, image_id, title, description FROM gallery WHERE id=?";
+        return DB::run($q, [$gallery_id])->fetch();
+    }
+
 }

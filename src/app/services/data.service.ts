@@ -63,4 +63,10 @@ export class DataService {
     }).map((resp: Image[]) => resp);
   }
 
+  getGalleryInfo(galleryId: string): Observable<Gallery> {
+    return this.http.post(this.url, `get=gallery-info&gallery-id=${galleryId}`, {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    }).map((resp: Gallery) => resp);
+  }
+
 }
