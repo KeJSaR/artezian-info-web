@@ -60,6 +60,23 @@ section
         font-weight: 500
         text-align: left
 
+  a
+    color: $grey-900
+    text-decoration: none
+
+    &:hover,
+    &:active
+      color: $primary
+      border-bottom: 1px solid $primary
+  
+  p
+    a
+      border-bottom: 1px solid $grey-900
+
+      &:hover,
+      &:active
+        border-bottom-color: $primary
+
   .aae-form-rules
     border-left: 3px solid $grey-300
     padding: 0 0 0 30px
@@ -73,6 +90,10 @@ section
       font-size: 20px
       font-weight: 300
       line-height: 28px
+
+    ul
+      li
+        font-style: italic
 
   .aae-form-content
     margin: 50px 0
