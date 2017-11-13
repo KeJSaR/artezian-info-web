@@ -155,6 +155,16 @@ class Queries
         return $arr["name"];
     }
 
+    public function get_section_info($id)
+    {
+        $q = "SELECT info
+              FROM menu
+              WHERE id=?";
+        $arr = DB::run($q, [$id])->fetch();
+
+        return $arr["info"];
+    }
+
     /**
      * Get Text data
      */

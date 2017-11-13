@@ -36,6 +36,10 @@ class Data
                 return $this->get_section_name();
                 break;
 
+            case "section-info":
+                return $this->get_section_info();
+                break;
+
             case "subsection-name":
                 return $this->get_subsection_name();
                 break;
@@ -160,6 +164,13 @@ class Data
         $alias = $this->get_alias();
         $id = $alias ? $this->queries->get_menu_id($alias) : "";
         return $id ? $this->queries->get_section_name($id) : "";
+    }
+
+    private function get_section_info()
+    {
+        $alias = $this->get_alias();
+        $id = $alias ? $this->queries->get_menu_id($alias) : "";
+        return $id ? $this->queries->get_section_info($id) : "";
     }
 
     private function get_subsection_name()
