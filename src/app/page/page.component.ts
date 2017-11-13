@@ -22,22 +22,28 @@ export class PageComponent implements OnInit {
 
   // ===========================================================================
 
-  section: Path =  { alias: '', name: '' }
-  subsection: Path = { alias: '', name: '' }
+  section: Path =  {
+    alias: '', 
+    name: '' 
+  }
+  subsection: Path = { 
+    alias: '', 
+    name: '' 
+  }
 
   constructor(
     private route: ActivatedRoute,
     private data: DataService
   ) {
     const pathLength: number = this.route.snapshot.url.length;
-    this.section.alias = this.getSectionAlias();
-    if (pathLength > 1) this.subsection.alias = this.getSubsectionAlias();
+    this.setSectionAlias();
+    this.setSubsectionAlias(pathLength);
   }
 
   ngOnInit() {
     this.scrollToTop();
-    this.getSectionName();
-    if (this.subsection.alias) this.getSubsectionName();
+    this.setSectionName();
+    this.setSubsectionName();
   }
 
   scrollToTop() {
@@ -50,24 +56,36 @@ export class PageComponent implements OnInit {
     })();
   }
 
-  private getSectionAlias(): string {
-    return this.route.snapshot.data.section;
+  /**
+   * Set Aliases
+   */
+
+  private setSectionAlias(): void {
+    this.section.alias = this.route.snapshot.data.section;
   }
 
-  private getSubsectionAlias(): string {
-    return this.route.snapshot.params.subsection;
+  private setSubsectionAlias(pathLength: number): void {
+    if (pathLength > 1) {
+      this.subsection.alias = this.route.snapshot.params.subsection;
+    }
   }
 
-  private getSectionName(): void {
+  /**
+   * Set Names
+   */
+
+  private setSectionName(): void {
     this.data.getSectionName(this.section.alias).subscribe((data) => {
       this.section.name = data;
     });
   }
 
-  private getSubsectionName(): void {
-    this.data.getSubsectionName(this.section.alias, this.subsection.alias).subscribe((data) => {
-      this.subsection.name = data;
-    });
+  private setSubsectionName(): void {
+    if (this.subsection.alias) {
+      this.data.getSubsectionName(this.section.alias, this.subsection.alias).subscribe((data) => {
+        this.subsection.name = data;
+      });
+    }
   }
 
 }
