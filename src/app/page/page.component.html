@@ -16,9 +16,9 @@
 <app-not-found *ngIf="section.name === '404'"></app-not-found>
 <app-about *ngIf="section.name === 'about' && subsection.alias === ''" [alias]="section.alias"></app-about>
 <app-blog *ngIf="(section.name === 'articles' && subsection.alias === '') || (section.name === 'news' && subsection.alias === '')" [alias]="section.alias"></app-blog>
-<app-article *ngIf="(section.name === 'about' && subsection.alias) || (section.name === 'articles' && subsection.alias) || (section.name === 'news' && subsection.alias)" [alias]="section.alias" [subAlias]="subsection.alias"></app-article>
+<app-article *ngIf="(section.name === 'about' && subsection.alias) || (section.name === 'articles' && subsection.alias) || (section.name === 'news' && subsection.alias)" [alias]="section.alias" [subalias]="subsection.alias"></app-article>
 <app-gallery *ngIf="section.name === 'gallery' && subsection.alias === ''"></app-gallery>
-<app-album *ngIf="section.name === 'gallery' && subsection.alias" [subAlias]="subsection.alias"></app-album>
+<app-album *ngIf="section.name === 'gallery' && subsection.alias" [subalias]="subsection.alias"></app-album>
 
 <!-- Call ================================================================== -->
 <app-call [alias]="section.alias"></app-call>
