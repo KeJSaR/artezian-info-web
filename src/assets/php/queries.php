@@ -263,4 +263,14 @@ class Queries
         return $arr["name"];
     }
 
+    public function get_gallery_image_id($gallery_id)
+    {
+        $q = "SELECT image_id
+              FROM gallery 
+              WHERE id=?";
+        $arr = DB::run($q, [$gallery_id])->fetch();
+
+        return $arr["image_id"];
+    }
+
 }
