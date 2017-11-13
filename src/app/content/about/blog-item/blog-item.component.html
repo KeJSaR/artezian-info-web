@@ -1,17 +1,17 @@
-<section class="aae-intro-section" [class.aae-selected]="introData.id % 2 === 0">
+<section class="aae-intro-section" [class.aae-selected]="blogItem.id % 2 === 0">
   <div class="aae-main-wrapper-wide">
 
     <div class="aae-intro-img-block">
 
       <div class="aae-intro-img">
-        <img src="/assets/img/articles/{{ introData.id }}.jpg" alt="">
+        <img src="/assets/img/articles/{{ blogItem.id }}.jpg" alt="">
       </div>
 
       <div class="aae-intro-img-gradient"></div>
 
       <h2>
 
-        <a routerLink="/{{ page }}/{{ introData.alias }}" [innerHtml]="introData.title"></a>
+        <a routerLink="/{{ alias }}/{{ blogItem.alias }}" [innerHtml]="blogItem.title"></a>
 
         <p class="aae-read-more">подробнее...</p>
 
@@ -21,7 +21,7 @@
 
     <div class="aae-intro-content">
 
-      <div [innerHtml]="introData.intro"></div>
+      <div [innerHtml]="blogItem.intro"></div>
 
     </div>
 
