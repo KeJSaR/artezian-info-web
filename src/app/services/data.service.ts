@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { MenuItem } from '../interfaces/menu-item.interface';
 import { Text } from '../interfaces/text.interface';
 import { Article } from '../interfaces/article.interface';
+import { AuthorInfo } from '../interfaces/author-info.interface';
 import { BlogItem } from '../interfaces/blog-item.interface';
 import { Gallery } from '../interfaces/gallery.interface';
 import { Image } from '../interfaces/image.interface';
@@ -42,6 +43,12 @@ export class DataService {
     }).map((resp: string) => resp);
   }
 
+  getPageInfo(alias: string): Observable<string> {
+    return this.http.post(this.url, `get=section-info&alias=${alias}`, {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    }).map((resp: string) => resp);
+  }
+
   /**
    * Get Text data
    */
@@ -66,6 +73,12 @@ export class DataService {
     return this.http.post(this.url, `get=article&alias=${alias}&subalias=${subalias}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: Article) => resp);
+  }
+
+  getAuthorInfo(alias: string, subalias: string): Observable<AuthorInfo> {
+    return this.http.post(this.url, `get=article-info&alias=${alias}&subalias=${subalias}`, {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    }).map((resp: AuthorInfo) => resp);
   }
 
   /**
