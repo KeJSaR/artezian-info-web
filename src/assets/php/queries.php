@@ -219,6 +219,16 @@ class Queries
         return DB::run($q, [$menu_id, $alias])->fetch();
     }
 
+    public function get_author_id($menu_id, $alias)
+    {
+        $q = "SELECT author_id
+              FROM article 
+              WHERE menu_id=? AND alias=?";
+        $arr = DB::run($q, [$menu_id, $alias])->fetch();
+
+        return $arr["author_id"];
+    }
+
     public function get_article_title($menu_id, $alias)
     {
         $q = "SELECT title
@@ -227,19 +237,6 @@ class Queries
         $arr = DB::run($q, [$menu_id, $alias])->fetch();
 
         return $arr["title"];
-    }
-
-    /**
-     * Get Image data
-     */
-
-    public function get_images($gallery_id)
-    {
-        $q = "SELECT id, name 
-              FROM image 
-              WHERE gallery_id=?";
-
-        return DB::run($q, [$gallery_id])->fetchAll();
     }
 
     /**
@@ -252,6 +249,15 @@ class Queries
               FROM gallery";
 
         return DB::run($q)->fetchAll();
+    }
+
+    public function get_gallery_images($gallery_id)
+    {
+        $q = "SELECT id, name 
+              FROM image 
+              WHERE gallery_id=?";
+
+        return DB::run($q, [$gallery_id])->fetchAll();
     }
 
     public function get_gallery_info($gallery_id)

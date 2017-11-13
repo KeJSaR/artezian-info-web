@@ -76,7 +76,7 @@ export class DataService {
   }
 
   getAuthorInfo(alias: string, subalias: string): Observable<AuthorInfo> {
-    return this.http.post(this.url, `get=article-info&alias=${alias}&subalias=${subalias}`, {
+    return this.http.post(this.url, `get=author-info&alias=${alias}&subalias=${subalias}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: AuthorInfo) => resp);
   }

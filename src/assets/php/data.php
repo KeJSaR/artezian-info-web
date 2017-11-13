@@ -32,36 +32,36 @@ class Data
     private function get_data($get)
     {
         switch ($get) {
-            case "section-name":
-                return $this->get_section_name();
+            case "menu-items":
+                return $this->get_menu_items();
                 break;
 
-            case "section-info":
-                return $this->get_section_info();
+            case "section-name":
+                return $this->get_section_name();
                 break;
 
             case "subsection-name":
                 return $this->get_subsection_name();
                 break;
 
-            case "menu-items":
-                return $this->get_menu_items();
+            case "section-info":
+                return $this->get_section_info();
                 break;
 
             case "texts":
                 return $this->get_texts();
                 break;
-
-            case "intros":
-                return $this->get_intros();
+                
+            case "blog-items":
+                return $this->get_blog_items();
                 break;
 
             case "article":
                 return $this->get_article();
                 break;
-                
-            case "blog-items":
-                return $this->get_blog_items();
+
+            case "author-info":
+                return $this->get_author_info();
                 break;
 
             case "galleries":
@@ -166,13 +166,6 @@ class Data
         return $id ? $this->queries->get_section_name($id) : "";
     }
 
-    private function get_section_info()
-    {
-        $alias = $this->get_alias();
-        $id = $alias ? $this->queries->get_menu_id($alias) : "";
-        return $id ? $this->queries->get_section_info($id) : "";
-    }
-
     private function get_subsection_name()
     {
         $alias = $this->get_alias();
@@ -186,6 +179,13 @@ class Data
         }
 
         return  $id && $subalias ? $this->queries->get_gallery_title($subalias) : "";
+    }
+
+    private function get_section_info()
+    {
+        $alias = $this->get_alias();
+        $id = $alias ? $this->queries->get_menu_id($alias) : "";
+        return $id ? $this->queries->get_section_info($id) : "";
     }
 
     /**
@@ -228,6 +228,16 @@ class Data
         unset($article["author_id"]);
 
         return $article;
+    }
+
+    private function get_author_info()
+    {
+        $alias = $this->get_alias();
+        $id = $alias ? $this->queries->get_menu_id($alias) : "";
+        $subalias = $this->get_subalias($id);
+        $author_id = $id && $subalias ? $this->queries->get_author_id($id, $subalias) : "";
+
+        return $this->get_author($author_id);
     }
 
     /**
