@@ -24,7 +24,7 @@ class Data
             $data = $this->get_data($_POST["get"]);
         }
 
-        if ($data !== "" ) {
+        if ($data) {
             $this->return_data($data);
         }
     }
@@ -32,8 +32,16 @@ class Data
     private function get_data($get)
     {
         switch ($get) {
-            case "menu":
-                return $this->get_menu();
+            case "section-name":
+                return $this->get_section_name();
+                break;
+
+            case "subsection-name":
+                return $this->get_subsection_name();
+                break;
+
+            case "menu-items":
+                return $this->get_menu_items();
                 break;
 
             case "texts":
@@ -48,16 +56,16 @@ class Data
                 return $this->get_article();
                 break;
                 
-            case "blog":
-                return $this->get_blog();
+            case "blog-items":
+                return $this->get_blog_items();
                 break;
 
             case "galleries":
                 return $this->get_galleries();
                 break;
 
-            case "images":
-                return $this->get_images();
+            case "gallery-images":
+                return $this->get_gallery_images();
                 break;
 
             case "gallery-info":
@@ -71,25 +79,21 @@ class Data
     }
 
     /**
-     * #########################################################################
+     * Get POST data ###########################################################
      */
 
-    private function is_page_valid($page)
-    {
-        return strlen($page) ? $this->queries->is_page_exist($page) : false;
-    }
+    /**
+     * Section Alias
+     */
 
-    private function get_page()
-    {
-        $k = array_key_exists("page", $_POST);
-        $v = $this->is_page_valid($_POST["page"]);
-        return $k && $v ? $_POST["page"] : "";
-    }
+    // Check Section Alias
 
     private function is_alias_valid($alias)
     {
         return strlen($alias) ? $this->queries->is_alias_exist($alias) : false;
     }
+
+    // Get Section Alias
 
     private function get_alias()
     {
@@ -97,11 +101,39 @@ class Data
         $v = $this->is_alias_valid($_POST["alias"]);
         return $k && $v ? $_POST["alias"] : "";
     }
+
+    /**
+     * Subsection Alias
+     */
+
+    // Check Subsection Alias
+
+    private function is_subalias_valid($id, $subalias)
+    {
+        return strlen($subalias) ? $this->queries->is_subalias_exist($id, $subalias) : false;
+    }
+
+    // Get Subsection Alias
+
+    private function get_subalias($id)
+    {
+        $k = array_key_exists("subalias", $_POST);
+        $v = $this->is_subalias_valid($id, $_POST["subalias"]);
+        return $k && $v ? $_POST["subalias"] : "";
+    }
+
+    /**
+     * Gallery Id
+     */
+
+    // Check Gallery Id
     
     private function is_gallery_id_valid($gallery_id)
     {
         return strlen($gallery_id) ? $this->queries->is_gallery_exist($gallery_id) : false;
     }
+
+    // Get Gallery Id
 
     private function get_gallery_id()
     {
@@ -111,26 +143,60 @@ class Data
     }
 
     /**
-     * #########################################################################
+     * Get Database data #######################################################
      */
 
-    private function get_menu()
+    /**
+     * Get Menu data
+     */
+
+    private function get_menu_items()
     {
-        return $this->queries->get_menu();
+        return $this->queries->get_menu_items();
     }
+
+    private function get_section_name()
+    {
+        $alias = $this->get_alias();
+        $id = $alias ? $this->queries->get_menu_id($alias) : "";
+        return $id ? $this->queries->get_section_name($id) : "";
+    }
+
+    private function get_subsection_name()
+    {
+        $alias = $this->get_alias();
+        $id = $alias ? $this->queries->get_menu_id($alias) : "";
+        $subalias = $this->get_subalias($id);
+        if (   $alias === "about"
+            || $alias === "articles"
+            || $alias === "rules"
+        ) {
+            return $id && $subalias ? $this->queries->get_article_title($id, $subalias) : "";
+        }
+
+        return  $id && $subalias ? $this->queries->get_gallery_title($subalias) : "";
+    }
+
+    /**
+     * Get Text data
+     */
 
     private function get_texts()
     {
-        $p = $this->get_page();
-        $id = $p !== "" ? $this->queries->get_menu_id($p) : "";
-        return $id !== "" ? $this->queries->get_texts($id) : "";
+        $alias = $this->get_alias();
+        $id = $alias ? $this->queries->get_menu_id($alias) : "";
+        return $id ? $this->queries->get_texts($id) : "";
     }
 
-    private function get_intros()
+    /**
+     * Get Article data
+     */
+
+    private function get_blog_items()
     {
-        $p = $this->get_page();
-        $id = $p !== "" ? $this->queries->get_menu_id($p) : "";
-        return $id !== "" ? $this->queries->get_intros($id) : "";
+        $alias = $this->get_alias();
+        $id = $alias ? $this->queries->get_menu_id($alias) : "";
+        return $this->queries->get_blog_items($id);
     }
 
     private function get_author($author_id)
@@ -141,43 +207,41 @@ class Data
     private function get_article()
     {
         // Get article data
-        $p = $this->get_page();
-        $a = $this->get_alias();
-        $id = $p !== "" && $a !== "" ? $this->queries->get_menu_id($p) : "";
-        $article = $id !== "" ? $this->queries->get_article($id, $a) : "";
-        // Get author data
-        $author = $this->get_author($article["author_id"]);
+        $alias = $this->get_alias();
+        $id = $alias ? $this->queries->get_menu_id($alias) : "";
+        $subalias = $this->get_subalias($id);
+        $article = $id && $subalias ? $this->queries->get_article($id, $subalias) : "";
+
         // Add author data to article
-        $article["author_name"]  = $author["name"];
-        $article["author_title"] = $author["title"];
+        $article["author"] = $this->get_author($article["author_id"]);
         unset($article["author_id"]);
+
         return $article;
     }
 
-    private function get_blog()
-    {
-        return $this->queries->get_blog("articles");
-    }
+    /**
+     * Get Gallery data
+     */
     
     private function get_galleries()
     {
         return $this->queries->get_galleries();
     }
     
-    private function get_images()
+    private function get_gallery_images()
     {
-        $g = $this->get_gallery_id();
-        return $g !== "" ? $this->queries->get_images($g) : "";
+        $gallery_id = $this->get_gallery_id();
+        return $gallery_id ? $this->queries->get_gallery_images($gallery_id) : "";
     }
 
     private function get_gallery_info()
     {
-        $g = $this->get_gallery_id();
-        return $g !== "" ? $this->queries->get_gallery_info($g) : "";
+        $gallery_id = $this->get_gallery_id();
+        return $gallery_id ? $this->queries->get_gallery_info($gallery_id) : "";
     }
 
     /**
-     * #########################################################################
+     * Return data #############################################################
      */
 
     private function return_data($data)

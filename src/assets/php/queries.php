@@ -92,94 +92,175 @@ require_once 'database.php';
 
 class Queries
 {
-
-    public function is_page_exist($page)
-    {
-        $q = "SELECT * FROM menu WHERE alias=?";
-        return DB::run($q, [$page])->fetch() ? true : false;
-    }
+    /**
+     * Checkers
+     */
 
     public function is_alias_exist($alias)
     {
-        $q = "SELECT * FROM article WHERE alias=?";
+        $q = "SELECT id
+              FROM menu 
+              WHERE alias=?";
+
         return DB::run($q, [$alias])->fetch() ? true : false;
+    }
+
+    public function is_subalias_exist($id, $subalias)
+    {
+        $q = "SELECT id
+              FROM article 
+              WHERE menu_id=? AND alias=?";
+
+        return DB::run($q, [$id, $subalias])->fetch() ? true : false;
     }
     
     public function is_gallery_exist($gallery_id)
     {
-        $q = "SELECT * FROM gallery WHERE id=?";
+        $q = "SELECT id
+              FROM gallery 
+              WHERE id=?";
+
         return DB::run($q, [$gallery_id])->fetch() ? true : false;
     }
 
-    public function get_menu()
+    /**
+     * Get Menu data
+     */
+
+    public function get_menu_items()
     {
-        $q = "SELECT * FROM menu";
+        $q = "SELECT alias, name, info
+              FROM menu";
+
         return DB::run($q)->fetchAll();
     }
 
-    public function get_menu_id($page)
+    public function get_menu_id($alias)
     {
-        $q = "SELECT id FROM menu WHERE alias=?";
-        $arr = DB::run($q, [$page])->fetch();
+        $q = "SELECT id
+              FROM menu
+              WHERE alias=?";
+        $arr = DB::run($q, [$alias])->fetch();
+
         return $arr["id"];
     }
 
+    public function get_section_name($id)
+    {
+        $q = "SELECT name
+              FROM menu
+              WHERE id=?";
+        $arr = DB::run($q, [$id])->fetch();
+
+        return $arr["name"];
+    }
+
+    /**
+     * Get Text data
+     */
+
     public function get_texts($id)
     {
-        $q = "SELECT id, text FROM text WHERE menu_id=?";
+        $q = "SELECT id, content
+              FROM text 
+              WHERE menu_id=?";
+
         return DB::run($q, [$id])->fetchAll();
     }
 
-    public function get_intros($id)
-    {
-        $q = "SELECT id, alias, title, intro FROM article WHERE menu_id=?";
-        return DB::run($q, [$id])->fetchAll();
-    }
-
-    public function get_article($id, $alias)
-    {
-        $q  = "SELECT id, date, alias, title, author_id, intro, content ";
-        $q .= "FROM article WHERE menu_id=? AND alias=?";
-        return DB::run($q, [$id, $alias])->fetch();
-    }
+    /**
+     * Get Author data
+     */
 
     public function get_author($author_id)
     {
-        $q = "SELECT name, title FROM author WHERE id=?";
+        $q = "SELECT name, info
+              FROM author 
+              WHERE id=?";
+
         return DB::run($q, [$author_id])->fetch();
     }
 
-    public function get_blog($page)
+    /**
+     * Get Article data
+     */
+
+    public function get_blog_items($id)
     {
-        $id = $this->get_menu_id($page);
-        $q  = "SELECT id, date, alias, title, author_id, intro "
-            . "FROM article WHERE menu_id=?";
+        $q = "SELECT id, date, alias, title, author_id, intro
+              FROM article 
+              WHERE menu_id=?";
         $blog = DB::run($q, [$id])->fetchAll();
+
         foreach ($blog as $id => $article) {
-            $author = $this->get_author($article["author_id"]);
-            $blog[$id]["author_name"]  = $author["name"];
-            $blog[$id]["author_title"] = $author["title"];
+            $blog[$id]["author"] = $this->get_author($article["author_id"]);
             unset($blog[$id]["author_id"]);
         }
+
         return $blog;
     }
 
-    public function get_galleries()
+    public function get_article($menu_id, $alias)
     {
-        $q = "SELECT id, image_id, title, description FROM gallery";
-        return DB::run($q)->fetchAll();
+        $q = "SELECT id, date, alias, title, author_id, intro, content
+              FROM article 
+              WHERE menu_id=? AND alias=?";
+
+        return DB::run($q, [$menu_id, $alias])->fetch();
     }
+
+    public function get_article_title($menu_id, $alias)
+    {
+        $q = "SELECT title
+              FROM article 
+              WHERE menu_id=? AND alias=?";
+        $arr = DB::run($q, [$menu_id, $alias])->fetch();
+
+        return $arr["title"];
+    }
+
+    /**
+     * Get Image data
+     */
 
     public function get_images($gallery_id)
     {
-        $q = "SELECT id, title FROM image WHERE gallery_id=?";
+        $q = "SELECT id, name 
+              FROM image 
+              WHERE gallery_id=?";
+
         return DB::run($q, [$gallery_id])->fetchAll();
+    }
+
+    /**
+     * Get Gallery data
+     */
+
+    public function get_galleries()
+    {
+        $q = "SELECT id, image_id, name, info
+              FROM gallery";
+
+        return DB::run($q)->fetchAll();
     }
 
     public function get_gallery_info($gallery_id)
     {
-        $q = "SELECT id, image_id, title, description FROM gallery WHERE id=?";
+        $q = "SELECT id, image_id, name, info
+              FROM gallery 
+              WHERE id=?";
+
         return DB::run($q, [$gallery_id])->fetch();
+    }
+
+    public function get_gallery_title($subalias)
+    {
+        $q = "SELECT name
+              FROM gallery 
+              WHERE id=?";
+        $arr = DB::run($q, [$subalias])->fetch();
+
+        return $arr["name"];
     }
 
 }
