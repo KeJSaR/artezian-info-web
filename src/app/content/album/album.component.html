@@ -10,8 +10,8 @@
 
     <div class="aae-content-header-text">
       <div *ngIf="gallery" class="aae-header-wrapper">
-        <h1 [innerHtml]="gallery.title"></h1>
-        <p [innerHtml]="gallery.description"></p>
+        <h1 [innerHtml]="gallery.name"></h1>
+        <p [innerHtml]="gallery.info"></p>
       </div>
     </div>
 
@@ -20,8 +20,8 @@
   <div class="aae-main-wrapper-wide">
 
     <div *ngFor="let image of images" class="aae-album-img-wrapper">
-      <img src="assets/img/gallery/{{ alias }}/{{ image.id }}.jpg" alt="{{ image.title }}">
-      <p [innerHtml]="image.title"></p>
+      <img src="assets/img/gallery/{{ alias }}/{{ image.id }}.jpg" alt="{{ image.name }}">
+      <p [innerHtml]="image.name"></p>
     </div>
     
   </div>

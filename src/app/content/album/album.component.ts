@@ -11,7 +11,7 @@ import { Gallery } from '../../interfaces/gallery.interface';
 })
 export class AlbumComponent {
 
-  @Input() alias: string;
+  @Input() subalias: string;
 
   images: Image[];
   gallery: Gallery;
@@ -19,15 +19,19 @@ export class AlbumComponent {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-
-    this.dataService.getImages(this.alias).subscribe((data) => {
-      this.images = data;
-    });
-    
-    this.dataService.getGalleryInfo(this.alias).subscribe((data) => {
-      this.gallery = data;
-    });
-
+    this.setImages();
+    this.setInfo();
   }
 
+  private setImages() {
+    this.dataService.getGalleryImages(this.subalias).subscribe((data) => {
+      this.images = data;
+    });
+  }
+
+  private setInfo() {
+    this.dataService.getGalleryInfo(this.subalias).subscribe((data) => {
+      this.gallery = data;
+    });
+  }
 }
