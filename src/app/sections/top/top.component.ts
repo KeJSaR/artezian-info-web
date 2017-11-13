@@ -50,7 +50,7 @@ export class TopComponent implements OnInit {
   private init(): void {
     if (this.subsection.alias) {
       if (this.section.alias === 'gallery') {
-        this.path = 'gallery';
+        this.path = 'gallery' + '/' + this.subsection.alias;
         this.setGalleryInfo(this.subsection.alias);
       }
       else {
