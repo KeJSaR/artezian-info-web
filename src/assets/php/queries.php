@@ -253,12 +253,12 @@ class Queries
         return DB::run($q, [$gallery_id])->fetch();
     }
 
-    public function get_gallery_title($subalias)
+    public function get_gallery_title($gallery_id)
     {
         $q = "SELECT name
               FROM gallery 
               WHERE id=?";
-        $arr = DB::run($q, [$subalias])->fetch();
+        $arr = DB::run($q, [$gallery_id])->fetch();
 
         return $arr["name"];
     }
