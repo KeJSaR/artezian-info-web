@@ -11,6 +11,7 @@ import { Article } from '../../interfaces/article.interface';
 export class ArticleComponent {
 
   @Input() alias: string;
+  @Input() subalias: string;
 
   article: Article;
 
@@ -18,7 +19,7 @@ export class ArticleComponent {
 
 
   private getArticle(): void {
-    this.data.getArticle(this.alias).subscribe((data) => {
+    this.data.getArticle(this.alias, this.subalias).subscribe((data) => {
       this.article = data;
     });
   }
