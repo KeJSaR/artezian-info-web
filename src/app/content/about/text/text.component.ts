@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Text } from '../../interfaces/text.interface';
+import { Text } from '../../../interfaces/text.interface';
 
 @Component({
   selector: 'app-text',
@@ -9,6 +9,6 @@ import { Text } from '../../interfaces/text.interface';
 })
 export class TextComponent {
 
-  @Input() textData: Text;
+  @Input() text: Text;
 
 }
