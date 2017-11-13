@@ -10,7 +10,7 @@ import { MenuItem } from '../../interfaces/menu-item.interface';
 })
 export class MenuComponent implements OnInit {
 
-  @Input() name: string;
+  @Input() alias: string;
 
   menu: MenuItem[];
 
