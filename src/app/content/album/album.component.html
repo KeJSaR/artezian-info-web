@@ -1,21 +1,4 @@
 <section *ngIf="images" class="aae-album">
-    
-  <div class="aae-content-header">
-
-    <div *ngIf="gallery" class="aae-content-header-img">
-      <img src="assets/img/gallery/{{ gallery.id }}/{{ gallery.image_id }}.jpg" alt="">
-    </div>
-
-    <div class="aae-content-header-img-gradient"></div>
-
-    <div class="aae-content-header-text">
-      <div *ngIf="gallery" class="aae-header-wrapper">
-        <h1 [innerHtml]="gallery.name"></h1>
-        <p [innerHtml]="gallery.info"></p>
-      </div>
-    </div>
-
-  </div>
 
   <div class="aae-main-wrapper-wide">
 
