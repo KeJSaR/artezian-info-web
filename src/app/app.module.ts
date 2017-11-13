@@ -18,7 +18,7 @@ import { TopComponent } from './sections/top/top.component';
 
 import { AboutComponent } from './content/about/about.component';
 import { TextComponent } from './content/about/text/text.component';
-import { IntroComponent } from './content/about/intro/intro.component';
+import { BlogItemComponent } from './content/about/blog-item/blog-item.component';
 
 import { ArticleComponent } from './content/article/article.component';
 import { BlogComponent } from './content/blog/blog.component';
@@ -36,7 +36,7 @@ import { MainComponent } from './content/main/main.component';
     BreadcrumbsComponent,
     FooterComponent,
     TextComponent,
-    IntroComponent,
+    BlogItemComponent,
     ArticleComponent,
     BlogComponent,
     AboutComponent,
