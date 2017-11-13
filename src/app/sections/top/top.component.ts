@@ -11,7 +11,7 @@ import { Path } from '../../interfaces/path.interface';
 export class TopComponent implements OnInit {
 
   @Input() section: Path;
-  @Input() subName: Path;
+  @Input() subsection: Path;
 
   path: string = '';
   image: string = '';
@@ -30,13 +30,13 @@ export class TopComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.subName) {
+    if (this.subsection.alias) {
       if (this.section.alias === 'gallery') {
         this.path = 'gallery';
-        this.image = this.section.alias;
+        this.image = this.subsection.alias;
       } else {
-        this.path = 'pages';
-        this.image = this.section.alias;
+        this.path = 'articles';
+        this.image = this.subsection.alias;
       }
     } else {
       this.path = 'pages';

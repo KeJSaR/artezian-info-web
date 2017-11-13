@@ -8,7 +8,7 @@
 <app-breadcrumbs *ngIf="section.name !== 'main'" [section]="section" [subsection]="subsection"></app-breadcrumbs>
 
 <!-- Top =================================================================== -->
-<app-top *ngIf="section.name !== 'main'" [section]="section" [subName]="subsection.name"></app-top>
+<app-top *ngIf="section.name !== 'main'" [section]="section" [subsection]="subsection"></app-top>
 
 <!-- Pages ================================================================= -->
 <app-main *ngIf="section.name === 'main'"></app-main>
