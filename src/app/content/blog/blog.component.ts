@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { DataService } from '../../services/data.service';
-import { Blog } from '../../interfaces/blog.interface';
+import { BlogItem } from '../../interfaces/blog-item.interface';
 
 @Component({
   selector: 'app-blog',
@@ -9,16 +9,17 @@ import { Blog } from '../../interfaces/blog.interface';
   styleUrls: ['./blog.component.sass']
 })
 export class BlogComponent implements OnInit {
+
+  @Input() alias: string;
   
-  blog: Blog[];
+  blogItems: BlogItem[];
   
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
 
-    this.dataService.getBlog().subscribe((data) => {
-      this.blog  = data;
-      console.log(data);
+    this.dataService.getBlogItems(this.alias).subscribe((data) => {
+      this.blogItems = data;
     });
 
   }

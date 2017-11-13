@@ -1,30 +1,12 @@
 <section class="aae-blog-section">
-    
-  <div class="aae-content-header">
-
-    <div class="aae-content-header-img">
-      <img src="/assets/img/pages/articles.jpg" alt="">
-    </div>
-
-    <div class="aae-content-header-img-gradient"></div>
-
-    <!--
-    <div class="aae-content-header-text">
-      <div class="aae-header-wrapper">
-        <h1>Title</h1>
-      </div>
-    </div>
-    -->
-
-  </div>
 
   <div class="aae-main-wrapper-narrow">
-    <div *ngFor="let item of blog">
+    <div *ngFor="let item of blogItems">
       <h2><a routerLink="/articles/{{ item.alias }}">{{ item.title }}</a></h2>
       <p class="aae-article-date">{{ item.date }}</p>
       <p class="aae-article-author">
-        <span class="aae-author-name">{{ item.author_name }},</span>
-        <span class="aae-author-title">{{ item.author_title }}</span>
+        <span class="aae-author-name">{{ item.author.name }},</span>
+        <span class="aae-author-info">{{ item.author.info }}</span>
       </p>
       <div class="aae-article-intro" [innerHtml]="item.intro"></div>
     </div>
