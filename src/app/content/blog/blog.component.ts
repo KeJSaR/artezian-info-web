@@ -17,11 +17,13 @@ export class BlogComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.setBlogItems();
+  }
 
+  private setBlogItems(): void {
     this.dataService.getBlogItems(this.alias).subscribe((data) => {
       this.blogItems = data;
     });
-
   }
   
 }

@@ -56,20 +56,20 @@ export class CallComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.callText = this.getText();
-    this.buttonText = this.getButton();
+    this.setCallText();
+    this.setButtonText();
   }
 
-  private getText(): string {
+  private setCallText(): void {
     let max: number = this.call.length;
     let rand: number = Math.floor(Math.random() * max);
-    return this.alias != 'main' && this.alias != 'form' ? this.call[rand] : '';
+    this.callText = this.alias != 'main' && this.alias != 'form' ? this.call[rand] : '';
   }
 
-  private getButton(): string {
+  private setButtonText(): void {
     let max: number = this.button.length;
     let rand: number = Math.floor(Math.random() * max);
-    return this.alias != 'main' && this.alias != 'form' ? this.button[rand] : '';
+    this.buttonText = this.alias != 'main' && this.alias != 'form' ? this.button[rand] : '';
   }
 
 }

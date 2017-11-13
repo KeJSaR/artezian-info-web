@@ -17,10 +17,10 @@ export class MenuComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.getMenuItems();
+    this.setMenuItems();
   }
 
-  private getMenuItems() {
+  private setMenuItems() {
     this.data.getMenuItems().subscribe((data) => {
       this.menu = data;
     });

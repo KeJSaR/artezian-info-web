@@ -18,10 +18,10 @@ export class ArticleComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.getArticle();
+    this.setArticle();
   }
 
-  private getArticle(): void {
+  private setArticle(): void {
     this.data.getArticle(this.alias, this.subalias).subscribe((data) => {
       this.article = data;
     });

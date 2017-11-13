@@ -21,17 +21,22 @@ export class AboutComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.setTexts();
+    this.setBlogItems();
+  }
 
+  private setTexts(): void {
     this.dataService.getTexts(this.alias).subscribe((data) => {
       this.texts = data;
       this.makeAbout();
     });
+  }
 
+  private setBlogItems(): void {
     this.dataService.getBlogItems(this.alias).subscribe((data) => {
       this.blogItems = data;
       this.makeAbout();
     });
-
   }
 
   private makeAbout(): void {
