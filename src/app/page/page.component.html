@@ -14,7 +14,7 @@
 <app-main *ngIf="section.name === 'main'"></app-main>
 <app-form *ngIf="section.name === 'form'"></app-form>
 <app-not-found *ngIf="section.name === '404'"></app-not-found>
-<app-content *ngIf="section.name === 'about' && subsection.alias === ''" [alias]="section.alias"></app-content>
+<app-about *ngIf="section.name === 'about' && subsection.alias === ''" [alias]="section.alias"></app-about>
 <app-blog *ngIf="(section.name === 'articles' && subsection.alias === '') || (section.name === 'news' && subsection.alias === '')" [alias]="section.alias"></app-blog>
 <app-article *ngIf="(section.name === 'about' && subsection.alias) || (section.name === 'articles' && subsection.alias) || (section.name === 'news' && subsection.alias)" [alias]="section.alias" [subAlias]="subsection.alias"></app-article>
 <app-gallery *ngIf="section.name === 'gallery' && subsection.alias === ''"></app-gallery>
