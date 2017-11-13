@@ -24,4 +24,4 @@
 <app-call [alias]="section.alias"></app-call>
 
 <!-- Footer ================================================================ -->
-<app-footer [alias]="section.alias"></app-footer>
+<app-footer *ngIf="section.alias !== 'main'"></app-footer>
