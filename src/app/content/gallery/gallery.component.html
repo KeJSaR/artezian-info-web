@@ -22,10 +22,10 @@
 
     <div *ngFor="let gallery of galleries" class="aae-gallery-container">
 			<div class="aae-gallery-img-wrapper">
-				<img src="assets/img/gallery/{{ gallery.id }}/pics/{{ gallery.image_id }}.jpg" alt="{{ gallery.title }}">
+				<img src="assets/img/gallery/{{ gallery.id }}/pics/{{ gallery.image_id }}.jpg" alt="{{ gallery.name }}">
 			</div>
-			<p><a routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.title"></a></p>
-			<p [innerHtml]="gallery.description"></p>
+			<p><a routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.name"></a></p>
+			<p [innerHtml]="gallery.info"></p>
     </div>
 
 	</div>

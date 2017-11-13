@@ -15,11 +15,12 @@ export class GalleryComponent implements OnInit {
 	constructor(private dataService: DataService) { }
 
 	ngOnInit() {
+    this.setGalleriesData();
+	}
 
+  private setGalleriesData(): void {
     this.dataService.getGalleries().subscribe((data) => {
       this.galleries = data;
     });
-
-	}
-
+  }
 }
