@@ -4,9 +4,9 @@
 
   <div class="aae-top-gradient"></div>
 
-  <div *ngIf="title" class="aae-top-text">
+  <div class="aae-top-text">
 
-    <h1 [innerHtml]="title"></h1>
+    <h1 *ngIf="title" [innerHtml]="title"></h1>
 
     <p *ngIf="name" class="aae-top-author">
       <span class="aae-author-name" [innerHtml]="name"></span>
