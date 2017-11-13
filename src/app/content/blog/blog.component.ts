@@ -1,19 +1,18 @@
-import { Component }   from '@angular/core';
-import { OnInit }      from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { DataService } from '../../services/data.service';
-import { Blog }        from '../../interfaces/blog.interface';
+import { Blog } from '../../interfaces/blog.interface';
 
 @Component({
-  selector    : 'app-blog',
-  templateUrl : './blog.component.html',
-  styleUrls   : ['./blog.component.sass']
+  selector: 'app-blog',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.sass']
 })
 export class BlogComponent implements OnInit {
   
-  blog : Blog[];
+  blog: Blog[];
   
-  constructor(private dataService : DataService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
 

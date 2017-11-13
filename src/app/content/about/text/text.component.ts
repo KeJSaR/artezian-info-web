@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
-import { Input }     from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import { Text }      from '../../interfaces/text.interface';
+import { Text } from '../../interfaces/text.interface';
 
 @Component({
-  selector    : 'app-text',
-  templateUrl : './text.component.html',
-  styleUrls   : ['./text.component.sass']
+  selector: 'app-text',
+  templateUrl: './text.component.html',
+  styleUrls: ['./text.component.sass']
 })
 export class TextComponent {
 
-  @Input() textData : Text;
+  @Input() textData: Text;
 
 }

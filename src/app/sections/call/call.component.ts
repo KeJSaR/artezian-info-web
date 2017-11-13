@@ -1,20 +1,18 @@
-import { Component } from '@angular/core';
-import { OnInit }    from '@angular/core';
-import { Input }     from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector    : 'app-call',
-  templateUrl : './call.component.html',
-  styleUrls   : ['./call.component.sass']
+  selector: 'app-call',
+  templateUrl: './call.component.html',
+  styleUrls: ['./call.component.sass']
 })
 export class CallComponent implements OnInit {
 
   @Input() page: string;
 
-  callText : string;
-  buttonText : string;
+  callText: string;
+  buttonText: string;
 
-  private call : string[] = [
+  private call: string[] = [
     'Полевой лагерь и работа на раскопе',
     'Проверить физическую стойкость?',
     'Готов к полевым условиям?',
@@ -48,7 +46,7 @@ export class CallComponent implements OnInit {
     'Тем, кто неравнодушен к настоящей науке'
   ];
 
-  private button : string[] = [
+  private button: string[] = [
     'Отправиться в экспедицию!',
     'Присоединиться!',
     'Поехать в экспедицию!',
@@ -63,14 +61,14 @@ export class CallComponent implements OnInit {
   }
 
   private getText(): string {
-    let max  : number = this.call.length;
-    let rand : number = Math.floor(Math.random() * max);
+    let max: number = this.call.length;
+    let rand: number = Math.floor(Math.random() * max);
     return this.page != 'main' && this.page != 'form' ? this.call[rand] : '';
   }
 
   private getButton(): string {
-    let max  : number = this.button.length;
-    let rand : number = Math.floor(Math.random() * max);
+    let max: number = this.button.length;
+    let rand: number = Math.floor(Math.random() * max);
     return this.page != 'main' && this.page != 'form' ? this.button[rand] : '';
   }
 

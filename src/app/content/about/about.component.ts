@@ -1,11 +1,8 @@
-import { Component }   from '@angular/core';
-import { OnInit }      from '@angular/core';
-import { Input }       from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { DataService } from '../../services/data.service';
-
-import { Text }        from '../../interfaces/text.interface';
-import { Intro }       from '../../interfaces/intro.interface';
+import { Text } from '../../interfaces/text.interface';
+import { Intro } from '../../interfaces/intro.interface';
 
 @Component({
   selector: 'app-about',
