@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { DataService } from '../../services/data.service';
 import { Article } from '../../interfaces/article.interface';
@@ -8,7 +8,7 @@ import { Article } from '../../interfaces/article.interface';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.sass']
 })
-export class ArticleComponent {
+export class ArticleComponent implements OnInit {
 
   @Input() alias: string;
   @Input() subalias: string;
@@ -17,6 +17,9 @@ export class ArticleComponent {
 
   constructor(private data: DataService) { }
 
+  ngOnInit() {
+    this.getArticle();
+  }
 
   private getArticle(): void {
     this.data.getArticle(this.alias, this.subalias).subscribe((data) => {
