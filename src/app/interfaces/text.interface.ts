@@ -1,4 +1,4 @@
 export interface Text {
-  id   : number;
-  text : string;
+  id: number;
+  content: string;
 }

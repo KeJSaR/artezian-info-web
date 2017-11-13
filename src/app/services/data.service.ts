@@ -1,15 +1,14 @@
-import { Injectable }  from '@angular/core';
-import { HttpClient }  from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-import { Observable }  from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 
-import { Menu }        from '../interfaces/menu.interface';
-import { Text }        from '../interfaces/text.interface';
-import { Intro }       from '../interfaces/intro.interface';
-import { Article }     from '../interfaces/article.interface';
-import { Blog }        from '../interfaces/blog.interface';
-import { Gallery }     from '../interfaces/gallery.interface';
-import { Image }       from '../interfaces/image.interface';
+import { MenuItem } from '../interfaces/menu-item.interface';
+import { Text } from '../interfaces/text.interface';
+import { Article } from '../interfaces/article.interface';
+import { BlogItem } from '../interfaces/blog-item.interface';
+import { Gallery } from '../interfaces/gallery.interface';
+import { Image } from '../interfaces/image.interface';
 
 import 'rxjs/add/operator/map';
 
@@ -21,35 +20,57 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getMenu(): Observable<Menu[]> {
-    return this.http.post(this.url, 'get=menu', {
+  /**
+   * Get Menu data
+   */
+
+  getMenuItems(): Observable<MenuItem[]> {
+    return this.http.post(this.url, `get=menu-items`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
-    }).map((resp: Menu[]) => resp);
+    }).map((resp: MenuItem[]) => resp);
   }
 
-  getText(page: string): Observable<Text[]> {
-    return this.http.post(this.url, `get=texts&page=${page}`, {
+  getSectionName(alias: string): Observable<string> {
+    return this.http.post(this.url, `get=section-name&alias=${alias}`, {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    }).map((resp: string) => resp);
+  }
+
+  getSubsectionName(alias: string, subalias: string): Observable<string> {
+    return this.http.post(this.url, `get=subsection-name&alias=${alias}&subalias=${subalias}`, {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    }).map((resp: string) => resp);
+  }
+
+  /**
+   * Get Text data
+   */
+
+  getTexts(alias: string): Observable<Text[]> {
+    return this.http.post(this.url, `get=texts&alias=${alias}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: Text[]) => resp);
   }
 
-  getIntro(page: string): Observable<Intro[]> {
-    return this.http.post(this.url, `get=intros&page=${page}`, {
+  /**
+   * Get Article data
+   */
+  
+  getBlogItems(alias: string): Observable<BlogItem[]> {
+    return this.http.post(this.url, `get=blog-items&alias=${alias}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
-    }).map((resp: Intro[]) => resp);
+    }).map((resp: BlogItem[]) => resp);
   }
 
-  getArticle(page: string, alias: string): Observable<Article> {
-    return this.http.post(this.url, `get=article&page=${page}&alias=${alias}`, {
+  getArticle(alias: string, subalias: string): Observable<Article> {
+    return this.http.post(this.url, `get=article&alias=${alias}&subalias=${subalias}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: Article) => resp);
   }
-  
-  getBlog(): Observable<Blog[]> {
-    return this.http.post(this.url, 'get=blog', {
-      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
-    }).map((resp: Blog[]) => resp);
-  }
+
+  /**
+   * Get Gallery data
+   */
 
   getGalleries(): Observable<Gallery[]> {
     return this.http.post(this.url, `get=galleries`, {
@@ -57,8 +78,8 @@ export class DataService {
     }).map((resp: Gallery[]) => resp);
   }
 
-  getImages(galleryId: string): Observable<Image[]> {
-    return this.http.post(this.url, `get=images&gallery-id=${galleryId}`, {
+  getGalleryImages(galleryId: string): Observable<Image[]> {
+    return this.http.post(this.url, `get=gallery-images&gallery-id=${galleryId}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: Image[]) => resp);
   }

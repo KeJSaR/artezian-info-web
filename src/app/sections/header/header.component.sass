@@ -1,0 +1,118 @@
+@import "../../../colors"
+
+.aae-header
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  z-index: 30
+  padding: 50px 0 0
+  background-color: transparent
+
+  .aae-header-wrapper
+    .aae-header-row
+      display: -webkit-flex
+      display: flex
+      -webkit-justify-content: space-between
+      justify-content: space-between
+      -webkit-align-items: center
+      align-items: center
+
+      .aae-header-title
+        display: -webkit-flex
+        display: flex
+        -webkit-justify-content: space-between
+        justify-content: space-between
+        -webkit-align-items: center
+        align-items: center
+        color: $white
+
+        span
+          font-weight: 900
+          font-size: 40px
+          text-transform: uppercase
+
+        .aae-header-title-short
+          font-size: 70px
+          font-weight: 900
+          cursor: pointer
+          -webkit-transition: all 250ms ease-out
+          -moz-transition: all 250ms ease-out
+          -o-transition: all 250ms ease-out
+          transition: all 250ms ease-out
+          color: $white
+
+          &:hover,
+          &:active
+            color: $primary
+
+        .aae-header-title-divider
+          font-size: 30px
+          font-weight: 400
+          padding: 0 10px
+
+        .aae-header-title-full
+          display: none
+
+        .aae-header-title-page
+          font-size: 70px
+          font-weight: 700
+          color: $white
+
+      .aae-header-title-form
+        text-transform: uppercase
+        -webkit-transition: all 250ms ease-out
+        -moz-transition: all 250ms ease-out
+        -o-transition: all 250ms ease-out
+        transition: all 250ms ease-out
+        font-weight: 500
+        font-size: 14px
+        cursor: pointer
+        color: $white
+        border: 1px solid $white
+        padding: 10px 15px
+        border-radius: 2px
+
+        &:hover,
+        &:active
+          color: $primary
+          background-color: $white
+
+  &.main
+    background-color: transparent
+    border-bottom: none
+
+    .aae-header-wrapper
+      background-color: transparent
+
+      .aae-header-row
+        .aae-header-title
+          color: $white
+
+          .aae-header-title-short
+            color: $white
+
+            &:hover,
+            &:active
+              color: $primary
+
+          .aae-header-title-full
+            display: inherit
+            font-size: 20px
+            font-weight: 400
+            letter-spacing: 0
+
+          .aae-header-title-page
+            display: none
+
+        .aae-header-title-form
+          background-color: transparent
+          border: 2px solid $white
+          color: $white
+          font-weight: 600
+
+          &:hover,
+          &:active
+            color: $primary
+            background-color: $white
+            border-color: $white

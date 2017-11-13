@@ -1,0 +1,82 @@
+@import "../../../colors"
+
+.aae-menu
+  position: absolute
+  top: 155px
+  left: 0
+  right: 0
+  z-index: 30
+  border-bottom: 1px solid $grey-300
+  background-color: $black-opacity-1
+
+  .aae-header-wrapper
+    display: -webkit-flex
+    display: flex
+    -webkit-justify-content: space-between
+    justify-content: space-between
+    -webkit-align-items: center
+    align-items: center
+
+    nav
+      position: relative
+      left: -10px
+      padding: 10px 0
+
+      a
+        text-decoration: none
+        padding: 0 10px
+        text-transform: uppercase
+        font-size: 14px
+        font-weight: 700
+        color: $white
+
+        &:hover,
+        &:active
+          color: $primary
+
+    .aae-menu-social
+      position: relative
+      right: -5px
+      padding: 10px 0
+
+      a
+        text-decoration: none
+        padding: 0 5px
+        -webkit-transition: all 250ms ease-out
+        -moz-transition: all 250ms ease-out
+        -o-transition: all 250ms ease-out
+        transition: all 250ms ease-out
+        color: $white
+
+        &:hover,
+        &:active
+          color: $primary
+
+        i
+          font-size: 16px
+          font-weight: 400
+
+  &.main
+    border-bottom: none
+
+    .aae-header-wrapper
+      nav
+        a
+          font-weight: 500
+          -webkit-transition: none
+          -moz-transition: none
+          -o-transition: none
+          transition: none
+          color: $white
+
+          &:hover,
+          &:active
+            border-bottom: 1px solid $white
+
+      .aae-menu-social
+        a
+          color: $white
+
+          &:hover,
+          &:active
+            color: $primary

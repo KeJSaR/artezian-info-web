@@ -1,47 +1,27 @@
-<!-- Header -->
-<app-header [page]="page" [title]="title"></app-header>
+<!-- Header ================================================================ -->
+<app-header [section]="section"></app-header>
 
-<!-- Menu -->
-<app-menu [menu]="menu" [page]="page"></app-menu>
+<!-- Menu ================================================================== -->
+<app-menu [name]="section.name"></app-menu>
 
-<!-- Breadcrumbs -->
-<app-breadcrumbs
-  *ngIf="page !== 'main'"
-  [page]="page" [title]="title" [alias]="alias"
-  [articleTitle]="articleTitle"
-></app-breadcrumbs>
+<!-- Breadcrumbs =========================================================== -->
+<app-breadcrumbs *ngIf="section.name !== 'main'" [section]="section" [subsection]="subsection"></app-breadcrumbs>
+
+<!-- Top =================================================================== -->
+<app-top *ngIf="section.name !== 'main'" [section]="section" [subName]="subsection.name"></app-top>
 
 <!-- Pages ================================================================= -->
+<app-main *ngIf="section.name === 'main'"></app-main>
+<app-form *ngIf="section.name === 'form'"></app-form>
+<app-not-found *ngIf="section.name === '404'"></app-not-found>
+<app-content *ngIf="section.name === 'about' && subsection.alias === ''" [alias]="section.alias"></app-content>
+<app-blog *ngIf="(section.name === 'articles' && subsection.alias === '') || (section.name === 'news' && subsection.alias === '')" [alias]="section.alias"></app-blog>
+<app-article *ngIf="(section.name === 'about' && subsection.alias) || (section.name === 'articles' && subsection.alias) || (section.name === 'news' && subsection.alias)" [alias]="section.alias" [subAlias]="subsection.alias"></app-article>
+<app-gallery *ngIf="section.name === 'gallery' && subsection.alias === ''"></app-gallery>
+<app-album *ngIf="section.name === 'gallery' && subsection.alias" [subAlias]="subsection.alias"></app-album>
 
-<!-- Main page -->
-<app-main      *ngIf="type === 'main'"></app-main>
+<!-- Call ================================================================== -->
+<app-call [alias]="section.alias"></app-call>
 
-<!-- About page -->
-<app-content   *ngIf="type === 'about'"     [page]="page"></app-content>
-<app-article   *ngIf="type === 'about+'"    [article]="article"></app-article>
-
-<!-- Articles page -->
-<app-blog      *ngIf="type === 'articles'"></app-blog>
-<app-article   *ngIf="type === 'articles+'" [article]="article"></app-article>
-
-<!-- Gallery page -->
-<app-gallery   *ngIf="type === 'gallery'"   [page]="page"></app-gallery>
-<app-album     *ngIf="type === 'gallery+'"  [page]="page" [alias]="alias"></app-album>
-
-<!-- Rules page -->
-<app-content   *ngIf="type === 'rules'"     [page]="page"></app-content>
-<app-article   *ngIf="type === 'rules+'"    [article]="article"></app-article>
-
-<!-- Form page -->
-<app-form      *ngIf="type === 'form'"></app-form>
-
-<!-- Not Found page -->
-<app-not-found *ngIf="type === '404'"></app-not-found>
-
-<!-- ======================================================================= -->
-
-<!-- Call to Journey -->
-<app-call [page]="page"></app-call>
-
-<!-- Footer -->
-<app-footer [page]="page"></app-footer>
+<!-- Footer ================================================================ -->
+<app-footer [alias]="section.alias"></app-footer>

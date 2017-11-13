@@ -1,0 +1,20 @@
+<section class="aae-top">
+
+  <div *ngIf="image !== ''" class="aae-top-img" [ngStyle]="{'height': windowHeight, 'width': windowWidth, 'background-image': 'url(/assets/img/' + path + '/' + image + '.jpg)'}"></div>
+
+  <div class="aae-top-gradient"></div>
+
+  <div *ngIf="title !== ''" class="aae-top-text">
+
+    <h1 [innerHtml]="title"></h1>
+
+    <p *ngIf="name !== ''" class="aae-top-author">
+      <span class="aae-author-name" [innerHtml]="name"></span>
+      <span *ngIf="info !== ''" class="aae-author-title" [innerHtml]="info"></span>
+    </p>
+
+    <p *ngIf="intro !== ''" class="aae-top-intro" [innerHtml]="intro"></p>
+
+  </div>
+
+</section>

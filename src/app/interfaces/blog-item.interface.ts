@@ -1,4 +1,4 @@
-export interface Article {
+export interface BlogItem {
   id: number;
   date: string;
   alias: string;
@@ -8,5 +8,4 @@ export interface Article {
     info: string;
   };
   intro: string;
-  content: string;
 }

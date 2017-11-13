@@ -1,29 +1,32 @@
-import { BrowserModule }           from '@angular/platform-browser';
-import { NgModule }                from '@angular/core';
-import { HttpClientModule }        from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule }        from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
-import { DataService }             from './services/data.service';
+import { DataService } from './services/data.service';
 
-import { AppComponent }            from './app.component';
-import { PageComponent }           from './page/page.component';
+import { AppComponent } from './app.component';
+import { PageComponent } from './page/page.component';
 
-import { HeaderComponent }         from './parts/header/header.component';
-import { BreadcrumbsComponent }    from './parts/breadcrumbs/breadcrumbs.component';
-import { FooterComponent }         from './parts/footer/footer.component';
-import { TextComponent }           from './parts/text/text.component';
-import { IntroComponent }          from './parts/intro/intro.component';
-import { ArticleComponent }        from './parts/article/article.component';
-import { BlogComponent }           from './parts/blog/blog.component';
-import { ContentComponent }        from './parts/content/content.component';
-import { NotFoundComponent }       from './parts/not-found/not-found.component';
-import { GalleryComponent }        from './parts/gallery/gallery.component';
-import { AlbumComponent }          from './parts/album/album.component';
-import { FormComponent }           from './parts/form/form.component';
-import { MainComponent }           from './parts/main/main.component';
-import { CallComponent }           from './parts/call/call.component';
-import { MenuComponent }           from './parts/menu/menu.component';
+import { HeaderComponent } from './sections/header/header.component';
+import { BreadcrumbsComponent } from './sections/breadcrumbs/breadcrumbs.component';
+import { FooterComponent } from './sections/footer/footer.component';
+import { CallComponent } from './sections/call/call.component';
+import { MenuComponent } from './sections/menu/menu.component';
+import { TopComponent } from './sections/top/top.component';
+
+import { AboutComponent } from './content/about/about.component';
+import { TextComponent } from './content/about/text/text.component';
+import { IntroComponent } from './content/about/intro/intro.component';
+
+import { ArticleComponent } from './content/article/article.component';
+import { BlogComponent } from './content/blog/blog.component';
+import { NotFoundComponent } from './content/not-found/not-found.component';
+import { GalleryComponent } from './content/gallery/gallery.component';
+import { AlbumComponent } from './content/album/album.component';
+import { FormComponent } from './content/form/form.component';
+import { MainComponent } from './content/main/main.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +39,15 @@ import { MenuComponent }           from './parts/menu/menu.component';
     IntroComponent,
     ArticleComponent,
     BlogComponent,
-    ContentComponent,
+    AboutComponent,
     NotFoundComponent,
     GalleryComponent,
     AlbumComponent,
     FormComponent,
     MainComponent,
     CallComponent,
-    MenuComponent
+    MenuComponent,
+    TopComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,33 @@
+<section *ngIf="galleries" class="aae-gallery-section">
+	
+	<div class="aae-content-header">
+
+		<div class="aae-content-header-img">
+			<img src="/assets/img/pages/gallery.jpg" alt="">
+		</div>
+
+		<div class="aae-content-header-img-gradient"></div>
+
+		<!--
+		<div class="aae-content-header-text">
+			<div class="aae-header-wrapper">
+				<h1>Title</h1>
+			</div>
+		</div>
+		-->
+
+	</div>
+
+  <div class="aae-main-wrapper-wide flex-container">
+
+    <div *ngFor="let gallery of galleries" class="aae-gallery-container">
+			<div class="aae-gallery-img-wrapper">
+				<img src="assets/img/gallery/{{ gallery.id }}/pics/{{ gallery.image_id }}.jpg" alt="{{ gallery.title }}">
+			</div>
+			<p><a routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.title"></a></p>
+			<p [innerHtml]="gallery.description"></p>
+    </div>
+
+	</div>
+	
+</section>

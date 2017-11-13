@@ -1,12 +1,10 @@
-import { Component }    from '@angular/core';
-import { Inject }       from '@angular/core';
-import { HostListener } from '@angular/core';
-import { DOCUMENT }     from '@angular/common';
+import { Component, Inject, HostListener } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector    : 'app-root',
-  templateUrl : './app.component.html',
-  styleUrls   : ['./app.component.sass']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
 
