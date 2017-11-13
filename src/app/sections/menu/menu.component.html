@@ -2,10 +2,10 @@
   <div class="aae-header-wrapper">
 
     <nav>
-      <a *ngFor="let menuItem of menu"
-      routerLink="/{{ menuItem.alias }}"
+      <a *ngFor="let item of menu"
+      routerLink="/{{ item.alias }}"
       routerLinkActive="active">
-        {{ menuItem.name }}
+        {{ item.name }}
       </a>
     </nav>
 
