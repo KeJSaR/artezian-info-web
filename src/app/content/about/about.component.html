@@ -1,28 +1,10 @@
-<section *ngIf="isReady" class="aae-about-section">
-
-  <!-- <div class="aae-content-header">
-
-    <div class="aae-content-header-img">
-      <img src="/assets/img/pages/{{ page }}.jpg" alt="">
-    </div>
-
-    <div class="aae-content-header-img-gradient"></div> -->
-
-    <!--
-    <div class="aae-content-header-text">
-      <div class="aae-header-wrapper">
-        <h1>Title</h1>
-      </div>
-    </div>
-    -->
-
-  <!-- </div> -->
+<section *ngIf="about" class="aae-about-section">
 
   <div *ngFor="let item of about">
 
-    <app-text *ngIf="item.type === 'text'" [textData]="item.data"></app-text>
+    <app-text *ngIf="item.type === 'text'" [text]="item.data"></app-text>
 
-    <app-intro *ngIf="item.type === 'intro'" [introData]="item.data" [page]="page"></app-intro>
+    <app-blog-item *ngIf="item.type === 'intro'" [blogItem]="item.data" [alias]="alias"></app-blog-item>
 
   </div>
 
