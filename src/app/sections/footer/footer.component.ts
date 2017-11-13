@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class FooterComponent {
 
-  @Input() page: string;
+  @Input() alias: string;
 
 }

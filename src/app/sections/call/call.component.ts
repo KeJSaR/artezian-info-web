@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CallComponent implements OnInit {
 
-  @Input() page: string;
+  @Input() alias: string;
 
   callText: string;
   buttonText: string;
@@ -63,13 +63,13 @@ export class CallComponent implements OnInit {
   private getText(): string {
     let max: number = this.call.length;
     let rand: number = Math.floor(Math.random() * max);
-    return this.page != 'main' && this.page != 'form' ? this.call[rand] : '';
+    return this.alias != 'main' && this.alias != 'form' ? this.call[rand] : '';
   }
 
   private getButton(): string {
     let max: number = this.button.length;
     let rand: number = Math.floor(Math.random() * max);
-    return this.page != 'main' && this.page != 'form' ? this.button[rand] : '';
+    return this.alias != 'main' && this.alias != 'form' ? this.button[rand] : '';
   }
 
 }
