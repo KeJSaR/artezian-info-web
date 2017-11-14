@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { BlogItem } from '../../../interfaces/blog-item.interface';
+import { BlogItem } from '../../interfaces/blog-item.interface';
 
 @Component({
   selector: 'app-blog-item',

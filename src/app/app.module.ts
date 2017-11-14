@@ -10,8 +10,6 @@ import { ShowInfoDirective } from './directives/show-info.directive';
 
 import { AppComponent } from './app.component';
 import { PageComponent } from './page/page.component';
-import { BlogItemComponent } from './content/about/blog-item/blog-item.component';
-import { TextComponent } from './content/about/text/text.component';
 import { AboutComponent } from './content/about/about.component';
 import { AlbumComponent } from './content/album/album.component';
 import { ArticleComponent } from './content/article/article.component';
@@ -20,20 +18,21 @@ import { FormComponent } from './content/form/form.component';
 import { GalleryComponent } from './content/gallery/gallery.component';
 import { MainComponent } from './content/main/main.component';
 import { NotFoundComponent } from './content/not-found/not-found.component';
+import { BlogItemComponent } from './sections/blog-item/blog-item.component';
 import { BreadcrumbsComponent } from './sections/breadcrumbs/breadcrumbs.component';
 import { CallComponent } from './sections/call/call.component';
 import { FooterComponent } from './sections/footer/footer.component';
 import { HeaderComponent } from './sections/header/header.component';
 import { MenuComponent } from './sections/menu/menu.component';
 import { SidebarComponent } from './sections/sidebar/sidebar.component';
+import { TextComponent } from './sections/text/text.component';
 import { TopComponent } from './sections/top/top.component';
 
 @NgModule({
   declarations: [
+    ShowInfoDirective,
     AppComponent,
     PageComponent,
-    BlogItemComponent,
-    TextComponent,
     AboutComponent,
     AlbumComponent,
     ArticleComponent,
@@ -42,14 +41,15 @@ import { TopComponent } from './sections/top/top.component';
     GalleryComponent,
     MainComponent,
     NotFoundComponent,
+    BlogItemComponent,
     BreadcrumbsComponent,
     CallComponent,
     FooterComponent,
     HeaderComponent,
     MenuComponent,
     SidebarComponent,
-    TopComponent,
-    ShowInfoDirective
+    TextComponent,
+    TopComponent
   ],
   imports: [
     BrowserModule,
