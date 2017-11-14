@@ -17,8 +17,8 @@ export class TopComponent implements OnInit {
 
   gallery: Gallery;
   authorInfo: AuthorInfo;
-  windowHeight: string;
-  windowWidth: string;
+  height: string;
+  width: string;
 
   // Main image data
   path: string = '';
@@ -31,8 +31,8 @@ export class TopComponent implements OnInit {
   info: string = '';
 
   constructor(private data: DataService) {
-      this.windowHeight = this.setDimension(window.innerHeight);
-      this.windowWidth  = this.setDimension(window.innerWidth);
+      this.height = this.setDimension(window.innerHeight);
+      this.width  = this.setDimension(window.innerWidth);
   }
 
   ngOnInit() {
@@ -40,13 +40,13 @@ export class TopComponent implements OnInit {
   }
 
   setDimension(num: number): string {
-    return num.toString() + 'px';
+    return (num - 120).toString() + 'px';
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.windowHeight = this.setDimension(event.target.innerHeight);
-    this.windowWidth  = this.setDimension(event.target.innerWidth);
+    this.height = this.setDimension(event.target.innerHeight);
+    this.width  = this.setDimension(event.target.innerWidth);
   }
 
   private init(): void {
