@@ -3,52 +3,41 @@
 .aae-blog-item
   padding: 150px 0
 
-  .aae-intro-img-block
+  .aae-blog-item-img-block
     position: relative
     font-size: 0
     line-height: 0
 
-    .aae-intro-img
+    .aae-blog-item-img
       position: relative
       width: 100%
       z-index: 20
 
-      img
-        width: 100%
+      a
+        outline: none
+        border: none
+        text-decoration: none
 
-    .aae-intro-img-gradient
-      position: absolute
-      top: 0
-      left: 0
-      height: 100%
-      width: 100%
-      opacity: .7
-      background: $black-opacity-1
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $black-opacity-1), color-stop(100%, $blue-grey-900))
-      background: -webkit-linear-gradient(top, $black-opacity-1 0%, $blue-grey-900 100%)
-      background: -moz-linear-gradient(top,    $black-opacity-1 0%, $blue-grey-900 100%)
-      background: -ms-linear-gradient(top,     $black-opacity-1 0%, $blue-grey-900 100%)
-      background: -o-linear-gradient(top,      $black-opacity-1 0%, $blue-grey-900 100%)
-      background: linear-gradient(to bottom,   $black-opacity-1 0%, $blue-grey-900 100%)
-      z-index: 25
+        img
+          width: 100%
+
+  .aae-blog-item-content-block
+    background-color: $grey-100
+    padding: 75px 40px 100px
+    font-size: 18px
+    font-weight: 300
+    line-height: 1.5
 
     h2
-      margin: 0
+      margin: 0 0 40px 0
+      text-align: center
 
       a
         z-index: 40
-        text-transform: uppercase
-        position: absolute
-        bottom: 0
-        left: 0
-        color: $grey-100
-        font-size: 55px
+        color: $grey-800
+        font-size: 35px
         font-weight: 900
-        padding: 20px 290px 30px 40px
-        border-top: 15px solid $grey-100
-        background: $black-opacity-1
-        line-height: 57px
-        word-spacing: 7px
+        line-height: 45px
         text-decoration: none
         -webkit-transition: all 250ms ease-out
         -moz-transition: all 250ms ease-out
@@ -57,42 +46,32 @@
 
         &:hover,
         &:active
-          color: $primary-light
-          text-shadow: 1px 1px 3px $black-opacity-3
+          color: $primary
 
-      .aae-read-more
-        position: absolute
-        bottom: 12px
-        right: 8px
-        color: $grey-100
-        font-weight: 400
+    .aae-blog-item-content-text
+      width: 600px
+      margin: 0 auto
+      font-size: 16px
+
+    .aae-blog-item-read-more
+      text-align: center
+      padding-top: 35px
+
+      a
+        display: inline-block
+        padding: 10px 30px
+        border: 2px solid $blue-grey-600
+        color: $blue-grey-700
+        border-radius: 3px
         text-decoration: none
-        text-transform: lowercase
-        font-size: 16px
-        border: none
-        padding: 0
-        margin: 0
-        word-spacing: 0
-        background: transparent
-        z-index: 30
+        font-weight: 500
+        -webkit-transition: all 250ms ease-out
+        -moz-transition: all 250ms ease-out
+        -o-transition: all 250ms ease-out
+        transition: all 250ms ease-out
 
-  .aae-intro-content
-    background-color: $grey-100
-    padding: 20px 40px
-    margin: 0px 250px 0 0px
-    font-size: 18px
-    font-weight: 300
-    line-height: 1.5
-
-  &.aae-selected
-    .aae-intro-img-block
-      h2
-        a
-          padding: 20px 40px 30px 290px
-          text-align: right
-
-        .aae-read-more
-          left: 8px
-
-    .aae-intro-content
-      margin: 0px 0px 0 250px
+        &:hover,
+        &:active
+          background-color: $blue-grey-700
+          border-color: $blue-grey-700
+          color: $white
