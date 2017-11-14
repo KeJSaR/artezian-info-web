@@ -2,12 +2,27 @@
   <div class="aae-header-wrapper">
     
     <div class="aae-breadcrumbs-wrapper">
-      <a routerLink="/" class="aae-breadcrumbs-main">Главная</a> <i class="fa fa-angle-right" aria-hidden="true"></i>
-      <a routerLink="/{{ section.alias }}/" class="aae-breadcrumbs-name">{{ section.name }}</a>
-      <span *ngIf="subname" class="aae-breadcrumbs-subname">
+
+      <div class="aae-breadcrumbs-item">
+        <a routerLink="/" class="aae-breadcrumbs-main">Главная</a>
+      </div>
+
+      <div class="aae-breadcrumbs-item">
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-        <span>{{ subname }}</span>
-      </span>
+      </div>
+
+      <div class="aae-breadcrumbs-item">
+        <a routerLink="/{{ section.alias }}/" class="aae-breadcrumbs-name">{{ section.name }}</a>
+      </div>
+
+      <div *ngIf="subname" class="aae-breadcrumbs-item">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </div>
+
+      <div *ngIf="subname" class="aae-breadcrumbs-item">
+        <span class="aae-breadcrumbs-subname">{{ subname }}</span>
+      </div>
+
     </div>
 
   </div>

@@ -5,9 +5,10 @@
   top: 195px
   left: 0
   right: 0
+  height: 19px
   z-index: 30
   padding: 10px 0
-  background-color: $black-opacity-1
+  background-color: $black-opacity-2
 
   .aae-breadcrumbs-wrapper
     font-size: 16px
@@ -18,19 +19,24 @@
     padding: 0
     margin: 0
     color: $white
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
 
-    a,
-    .aae-breadcrumbs-subname
-      font-size: 14px
-      padding: 0 5px
+    .aae-breadcrumbs-item
+      margin: 0 5px
 
-    a
-      color: $primary-light
-      text-decoration: none
+      a,
+      .aae-breadcrumbs-subname
+        font-size: 14px
 
-      &:hover,
-      &:active
-        border-bottom: 1px solid $primary
+      a
+        color: $primary-light
+        text-decoration: none
 
-    .aae-breadcrumbs-subname
-      font-weight: 400
+        &:hover,
+        &:active
+          border-bottom: 1px solid $primary
+
+      .aae-breadcrumbs-subname
+        font-weight: 400
