@@ -18,7 +18,7 @@ export class BreadcrumbsComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.setSubname(this.section.alias, this.subalias);
+    if (this.subalias) this.setSubname(this.section.alias, this.subalias);
   }
 
   private setSubname(alias: string, subalias: string) {
