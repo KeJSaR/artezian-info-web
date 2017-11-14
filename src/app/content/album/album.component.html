@@ -3,7 +3,7 @@
   <div class="aae-main-wrapper-wide">
 
     <div *ngFor="let image of images" class="aae-album-img-wrapper">
-      <img src="assets/img/gallery/{{ alias }}/{{ image.id }}.jpg" alt="{{ image.name }}">
+      <img src="assets/img/gallery/{{ subalias }}/{{ image.id }}.jpg" alt="{{ image.name }}">
       <p [innerHtml]="image.name"></p>
     </div>
     
