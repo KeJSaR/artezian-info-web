@@ -1,0 +1,51 @@
+@import "../../../colors"
+
+.aae-sidebar
+  width: 600px
+
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    text-align: center
+
+    li
+      text-transform: uppercase
+      padding: 10px 0
+
+      .aae-sidebar-link
+        cursor: pointer
+        outline: none
+
+        &:hover .aae-sidebar-name,
+        &:active .aae-sidebar-name
+          color: $primary-light
+
+        .aae-sidebar-name
+          color: $white
+          font-size: 26px
+          font-weight: 900
+          padding: 5px
+          -webkit-transition: color 250ms ease-out
+          -moz-transition: color 250ms ease-out
+          -o-transition: color 250ms ease-out
+          transition: color 250ms ease-out
+
+      .aae-sidebar-info
+        color: $white
+        font-size: 14px
+        font-weight: 300
+        line-height: 20px
+        letter-spacing: 1px
+        height: 0
+        opacity: 0
+        overflow: hidden
+        -webkit-transition: opacity 500ms ease-out
+        -moz-transition: opacity 500ms ease-out
+        -o-transition: opacity 500ms ease-out
+        transition: opacity 500ms ease-out
+
+      &.show-info
+        .aae-sidebar-info
+          height: 100%
+          opacity: 1
