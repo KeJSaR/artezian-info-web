@@ -279,4 +279,14 @@ class Queries
         return $arr["name"];
     }
 
+    /**
+     * Check Image
+     */
+
+    public function is_image_exist($path, $image)
+    {
+        $url = "../img/" . $path . "/" . $image . ".jpg";
+        return file_exists($url) ? "true" : "false";
+    }
+
 }

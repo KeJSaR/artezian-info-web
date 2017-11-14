@@ -76,6 +76,10 @@ class Data
                 return $this->get_gallery_info();
                 break;
 
+            case "is-image-exist":
+                return $this->is_image_exist();
+                break;
+
             default:
                 return "";
                 break;
@@ -144,6 +148,24 @@ class Data
         $k = array_key_exists("gallery-id", $_POST);
         $v = $this->is_gallery_id_valid($_POST["gallery-id"]);
         return $k && $v ? $_POST["gallery-id"] : "";
+    }
+
+    /**
+     * Image Path
+     */
+
+    // Get Path
+
+    private function get_path()
+    {
+        return array_key_exists("path", $_POST) ? $_POST["path"] : "";
+    }
+
+    // Get Image
+
+    private function get_image()
+    {
+        return array_key_exists("image", $_POST) ? $_POST["image"] : "";
     }
 
     /**
@@ -259,6 +281,17 @@ class Data
     {
         $gallery_id = $this->get_gallery_id();
         return $gallery_id ? $this->queries->get_gallery_info($gallery_id) : "";
+    }
+
+    /**
+     * Check Image
+     */
+
+    private function is_image_exist()
+    {
+        $path = $this->get_path();
+        $image = $path ? $this->get_image() : "";
+        return $path && $image ? $this->queries->is_image_exist($path, $image) : "false";
     }
 
     /**

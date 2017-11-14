@@ -103,4 +103,14 @@ export class DataService {
     }).map((resp: Gallery) => resp);
   }
 
+  /**
+   * Check Image
+   */
+
+  isImageExist(path: string, image: string): Observable<string> {
+    return this.http.post(this.url, `get=is-image-exist&path=${path}&image=${image}`, {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    }).map((resp: string) => resp);
+  }
+
 }
