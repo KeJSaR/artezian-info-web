@@ -5,14 +5,16 @@
   <div class="aae-top-gradient"></div>
 
   <div *ngIf="title" class="aae-top-title">
+    <div class="aae-header-wrapper">
 
-    <h1 [innerHtml]="title"></h1>
+      <p *ngIf="name" class="aae-top-author">
+        <span class="aae-author-name" [innerHtml]="name"></span>
+        <span *ngIf="info" class="aae-author-title" [innerHtml]="info"></span>
+      </p>
 
-    <p *ngIf="name" class="aae-top-author">
-      <span class="aae-author-name" [innerHtml]="name"></span>
-      <span *ngIf="info" class="aae-author-title" [innerHtml]="info"></span>
-    </p>
+      <h1 [innerHtml]="title"></h1>
 
+    </div>
   </div>
 
   <div *ngIf="intro" class="aae-top-intro" [ngStyle]="{'height': halfHeight}">
