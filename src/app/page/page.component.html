@@ -44,12 +44,12 @@
   </div>
 </div>
 
-<div class="aae-page-border-right"></div>
+<div *ngIf="section.alias !== 'main'" class="aae-page-border-right"></div>
 
 <div class="aae-page-border-bottom" [class.aae-page-border-show]="showBordersContent">
   <div class="aae-page-border-bottom-copyright">Артезианская Археологическая Экспедиция <i class="fa fa-copyright" aria-hidden="true"></i> 2017. Все права защищены.</div>
 </div>
 
-<div class="aae-page-border-left" [class.aae-page-border-show]="showBordersContent">
-  <div class="aae-page-border-left-menu" (click)="switchSidebar()"><i class="fa fa-bars" aria-hidden="true"></i></div>
+<div *ngIf="section.alias !== 'main'" class="aae-page-border-left" [class.aae-page-border-show]="showBordersContent">
+  <div class="aae-page-border-left-menu" (click)="switchSidebar()"><div><span>меню</span><i class="fa fa-bars" aria-hidden="true"></i></div></div>
 </div>
