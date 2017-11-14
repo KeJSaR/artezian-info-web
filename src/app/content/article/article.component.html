@@ -2,16 +2,14 @@
 
   <div class="aae-article-pattern"></div>
 
-  <div class="aae-article-intro">
-    <div class="aae-main-wrapper-narrow">
-      <div class="aae-intro">
-        <div [innerHtml]="article.intro"></div>
-      </div>
+  <div *ngIf="article.intro" class="aae-article-intro">
+    <div class="aae-intro">
+      <div [innerHtml]="article.intro"></div>
     </div>
   </div>
 
   <div class="aae-article-content">
-    <div class="aae-main-wrapper-narrow" [innerHtml]="article.content"></div>
+    <div [innerHtml]="article.content"></div>
   </div>
 
 </section>
