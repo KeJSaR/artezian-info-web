@@ -64,14 +64,15 @@ export class TopComponent implements OnInit {
         this.image = this.subalias;        
         this.setArticleTitle(this.section.alias, this.subalias);
         this.setAuthorInfo(this.section.alias, this.subalias);
+        this.isImageExist();
       }
     }
     else {
       this.path = 'pages';
       this.image = this.section.alias;
       this.setPageInfo(this.section.alias);
+      this.isImageExist();
     }
-    this.isImageExist();
   }
 
   private setGalleryInfo(galleryId: string): void {
@@ -82,9 +83,10 @@ export class TopComponent implements OnInit {
   }
 
   private setGalleryData(): void {
-    this.image = this.gallery.image.toString();
+    this.image = this.gallery.image_id.toString();
     this.title = this.gallery.name;
     this.intro = this.gallery.info;
+    this.isImageExist();
   }
 
   private setArticleTitle(alias: string, subalias: string) {
