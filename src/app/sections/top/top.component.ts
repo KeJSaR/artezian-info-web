@@ -19,6 +19,7 @@ export class TopComponent implements OnInit {
   authorInfo: AuthorInfo;
   height: string;
   width: string;
+  halfHeight: string;
 
   // Main image data
   path: string = '';
@@ -32,6 +33,7 @@ export class TopComponent implements OnInit {
 
   constructor(private data: DataService) {
       this.height = this.setDimension(window.innerHeight);
+      this.halfHeight = this.setDimension(window.innerHeight / 1.5);
       this.width  = this.setDimension(window.innerWidth);
   }
 
@@ -46,6 +48,7 @@ export class TopComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.height = this.setDimension(event.target.innerHeight);
+    this.halfHeight = this.setDimension(event.target.innerHeight / 1.5);
     this.width  = this.setDimension(event.target.innerWidth);
   }
 
