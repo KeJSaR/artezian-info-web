@@ -10,10 +10,10 @@
     .aae-blog-header
       a
         color: $grey-800
-        text-transform: uppercase
         text-decoration: none
-        font-size: 28px
+        font-size: 35px
         font-weight: 900
+        margin: 20px 0 30px
         -webkit-transition: all 250ms ease-out
         -moz-transition: all 250ms ease-out
         -o-transition: all 250ms ease-out
@@ -21,22 +21,46 @@
 
         &:hover,
         &:active
-          color: $blue-grey-700
+          color: $primary
 
-    .aae-blog-date
     .aae-blog-author
+      color: $blue-grey-900
+      border-top: 1px dotted $blue-grey-600
+      border-bottom: 1px dotted $blue-grey-600
+      padding: 13px 0
+      font-size: 14px
+      font-weight: 300
+
       .aae-blog-author-name
+        font-weight: 500
+
       .aae-blog-author-info
-    .aae-blog-intro
+        font-style: italic
+        padding: 0 0 0 5px
+
+    .aae-blog-content
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+
+      .aae-blog-date
+        color: $blue-grey-900
+        min-width: 100px
+        font-weight: 300
+        font-size: 14px
+        line-height: 22px
+        padding: 9px 0 0 0
+
+      .aae-blog-intro
 
     .aae-blog-read-more
       text-align: center
-      padding-top: 30px
+      padding-top: 35px
 
       a
         display: inline-block
         padding: 10px 30px
-        border: 2px solid $blue-grey-700
+        border: 2px solid $blue-grey-600
         color: $blue-grey-700
         border-radius: 3px
         text-decoration: none
@@ -49,4 +73,5 @@
         &:hover,
         &:active
           background-color: $blue-grey-700
+          border-color: $blue-grey-700
           color: $white
