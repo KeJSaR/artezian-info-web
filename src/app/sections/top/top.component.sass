@@ -2,6 +2,21 @@
 
 .aae-top
   position: relative
+  background-color: $secondary
+
+  &.aae-top-shadow-none
+    border-bottom: 1px solid $secondary-border
+    
+    .aae-top-gradient
+      display: none
+
+    .aae-top-title
+      h1
+        text-shadow: 0 0 0 transparent
+
+    .aae-top-intro
+      .aae-top-intro-content
+        text-shadow: 0 0 0 transparent
 
   .aae-top-img
     position: relative
@@ -63,6 +78,7 @@
       font-weight: 500
       text-align: left
       line-height: 63px
+      text-shadow: 0 0 70px $black-opacity-9
 
   .aae-top-intro
     position: absolute
@@ -84,5 +100,5 @@
       text-align: right
       width: 500px
       padding: 0 160px 100px 0
-      text-shadow: 0 0 2px $grey-800
+      text-shadow: 0 0 40px $grey-800
 

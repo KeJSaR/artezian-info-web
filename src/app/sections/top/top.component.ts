@@ -20,6 +20,7 @@ export class TopComponent implements OnInit {
   height: string;
   width: string;
   halfHeight: string;
+  imageExist: boolean = false;
 
   // Main image data
   path: string = '';
@@ -70,6 +71,7 @@ export class TopComponent implements OnInit {
       this.image = this.section.alias;
       this.setPageInfo(this.section.alias);
     }
+    this.isImageExist();
   }
 
   private setGalleryInfo(galleryId: string): void {
@@ -106,6 +108,12 @@ export class TopComponent implements OnInit {
   private setPageInfo(alias: string): void {
     this.data.getPageInfo(alias).subscribe((data) => {
       this.intro = data;
+    });
+  }
+
+  private isImageExist(): void {
+    this.data.isImageExist(this.path, this.image).subscribe((data) => {
+      this.imageExist = data === 'true' ? true : false;
     });
   }
 

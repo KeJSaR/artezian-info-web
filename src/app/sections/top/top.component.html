@@ -1,6 +1,6 @@
-<section class="aae-top">
+<section class="aae-top" [ngStyle]="{'min-height': height}" [class.aae-top-shadow-none]="!imageExist">
 
-  <div *ngIf="image" class="aae-top-img" [ngStyle]="{'height': height, 'background-image': 'url(/assets/img/' + path + '/' + image + '.jpg)'}"></div>
+  <div *ngIf="imageExist" class="aae-top-img" [ngStyle]="{'min-height': height, 'background-image': 'url(/assets/img/' + path + '/' + image + '.jpg)'}"></div>
 
   <div class="aae-top-gradient"></div>
 
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div *ngIf="intro" class="aae-top-intro" [ngStyle]="{'height': halfHeight}">
+  <div *ngIf="intro" class="aae-top-intro" [ngStyle]="{'min-height': halfHeight}">
     <div class="aae-top-intro-content" [innerHtml]="intro"></div>
   </div>
 
