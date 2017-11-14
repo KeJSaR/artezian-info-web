@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
+import { DataService } from '../../services/data.service';
 import { Path } from '../../interfaces/path.interface';
 
 @Component({
@@ -7,9 +8,23 @@ import { Path } from '../../interfaces/path.interface';
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.sass']
 })
-export class BreadcrumbsComponent {
+export class BreadcrumbsComponent implements OnInit {
 
   @Input() section: Path;
-  @Input() subsection: Path;
+  @Input() subalias: string;
+
+  subname: string = '';
+
+  constructor(private data: DataService) { }
+
+  ngOnInit() {
+    this.setSubname(this.section.alias, this.subalias);
+  }
+
+  private setSubname(alias: string, subalias: string) {
+    this.data.getSubsectionName(alias, subalias).subscribe((data) => {
+      this.subname = data;
+    });
+  }
 
 }

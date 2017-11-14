@@ -13,7 +13,7 @@ import { AuthorInfo } from '../../interfaces/author-info.interface';
 export class TopComponent implements OnInit {
 
   @Input() section: Path;
-  @Input() subsection: Path;
+  @Input() subalias: string;
 
   gallery: Gallery;
   authorInfo: AuthorInfo;
@@ -53,16 +53,16 @@ export class TopComponent implements OnInit {
   }
 
   private init(): void {
-    if (this.subsection.alias) {
+    if (this.subalias) {
       if (this.section.alias === 'gallery') {
-        this.path = 'gallery' + '/' + this.subsection.alias;
-        this.setGalleryInfo(this.subsection.alias);
+        this.path = 'gallery' + '/' + this.subalias;
+        this.setGalleryInfo(this.subalias);
       }
       else {
         this.path = 'articles';
-        this.image = this.subsection.alias;
-        this.title = this.subsection.name;
-        this.setAuthorInfo(this.section.alias, this.subsection.alias);
+        this.image = this.subalias;        
+        this.setArticleTitle(this.section.alias, this.subalias);
+        this.setAuthorInfo(this.section.alias, this.subalias);
       }
     }
     else {
@@ -83,6 +83,12 @@ export class TopComponent implements OnInit {
     this.image = this.gallery.image.toString();
     this.title = this.gallery.name;
     this.intro = this.gallery.info;
+  }
+
+  private setArticleTitle(alias: string, subalias: string) {
+    this.data.getSubsectionName(alias, subalias).subscribe((data) => {
+      this.title = data;
+    });
   }
 
   private setAuthorInfo(alias: string, subalias: string): void {

@@ -8,20 +8,20 @@
     <app-menu [alias]="section.alias"></app-menu>
 
     <!-- Breadcrumbs ========================================================= -->
-    <app-breadcrumbs *ngIf="section.alias !== 'main'" [section]="section" [subsection]="subsection"></app-breadcrumbs>
+    <app-breadcrumbs *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias"></app-breadcrumbs>
 
     <!-- Top ================================================================= -->
-    <app-top *ngIf="section.alias !== 'main'" [section]="section" [subsection]="subsection"></app-top>
+    <app-top *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias"></app-top>
 
     <!-- Pages =============================================================== -->
     <app-main *ngIf="section.alias === 'main'"></app-main>
     <app-form *ngIf="section.alias === 'form'"></app-form>
     <app-not-found *ngIf="section.alias === '404'"></app-not-found>
-    <app-about *ngIf="section.alias === 'about' && subsection.alias === ''" [alias]="section.alias"></app-about>
-    <app-blog *ngIf="(section.alias === 'articles' && subsection.alias === '') || (section.alias === 'news' && subsection.alias === '')" [alias]="section.alias"></app-blog>
-    <app-article *ngIf="(section.alias === 'about' && subsection.alias) || (section.alias === 'articles' && subsection.alias) || (section.alias === 'news' && subsection.alias)" [alias]="section.alias" [subalias]="subsection.alias"></app-article>
-    <app-gallery *ngIf="section.alias === 'gallery' && subsection.alias === ''"></app-gallery>
-    <app-album *ngIf="section.alias === 'gallery' && subsection.alias" [subalias]="subsection.alias"></app-album>
+    <app-about *ngIf="section.alias === 'about' && subalias === ''" [alias]="section.alias"></app-about>
+    <app-blog *ngIf="(section.alias === 'articles' && subalias === '') || (section.alias === 'news' && subalias === '')" [alias]="section.alias"></app-blog>
+    <app-article *ngIf="(section.alias === 'about' && subalias) || (section.alias === 'articles' && subalias) || (section.alias === 'news' && subalias)" [alias]="section.alias" [subalias]="subalias"></app-article>
+    <app-gallery *ngIf="section.alias === 'gallery' && subalias === ''"></app-gallery>
+    <app-album *ngIf="section.alias === 'gallery' && subalias" [subalias]="subalias"></app-album>
 
     <!-- Call ================================================================ -->
     <app-call [alias]="section.alias"></app-call>

@@ -27,10 +27,7 @@ export class PageComponent implements OnInit {
     alias: '', 
     name: '' 
   }
-  subsection: Path = { 
-    alias: '', 
-    name: '' 
-  }
+  subalias: string = '';
   showBordersContent: boolean = false;
   showSidebarContent: boolean = false;
   heightMax: number;
@@ -48,7 +45,6 @@ export class PageComponent implements OnInit {
   ngOnInit() {
     this.scrollToTop();
     this.setSectionName();
-    this.setSubsectionName();
     this.setHeight();
   }
 
@@ -82,7 +78,7 @@ export class PageComponent implements OnInit {
 
   private setSubsectionAlias(pathLength: number): void {
     if (pathLength > 1) {
-      this.subsection.alias = this.route.snapshot.params.subsection;
+      this.subalias = this.route.snapshot.params.subsection;
     }
   }
 
@@ -94,14 +90,6 @@ export class PageComponent implements OnInit {
     this.data.getSectionName(this.section.alias).subscribe((data) => {
       this.section.name = data;
     });
-  }
-
-  private setSubsectionName(): void {
-    if (this.subsection.alias) {
-      this.data.getSubsectionName(this.section.alias, this.subsection.alias).subscribe((data) => {
-        this.subsection.name = data;
-      });
-    }
   }
 
   private setHeight(): void {

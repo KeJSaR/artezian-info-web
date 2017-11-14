@@ -4,9 +4,9 @@
     <div class="aae-breadcrumbs-wrapper">
       <a routerLink="/" class="aae-breadcrumbs-main">Главная</a> <i class="fa fa-angle-right" aria-hidden="true"></i>
       <a routerLink="/{{ section.alias }}/" class="aae-breadcrumbs-name">{{ section.name }}</a>
-      <span *ngIf="subsection.name" class="aae-breadcrumbs-subname">
+      <span *ngIf="subname" class="aae-breadcrumbs-subname">
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-        <span>{{ subsection.name }}</span>
+        <span>{{ subname }}</span>
       </span>
     </div>
 
