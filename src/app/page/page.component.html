@@ -1,27 +1,55 @@
-<!-- Header ================================================================ -->
-<app-header [section]="section"></app-header>
+<section class="aae-page">
+  <div class="aae-page-wrapper">
 
-<!-- Menu ================================================================== -->
-<app-menu [alias]="section.alias"></app-menu>
+    <!-- Header ============================================================== -->
+    <app-header [section]="section"></app-header>
 
-<!-- Breadcrumbs =========================================================== -->
-<app-breadcrumbs *ngIf="section.alias !== 'main'" [section]="section" [subsection]="subsection"></app-breadcrumbs>
+    <!-- Menu ================================================================ -->
+    <app-menu [alias]="section.alias"></app-menu>
 
-<!-- Top =================================================================== -->
-<app-top *ngIf="section.alias !== 'main'" [section]="section" [subsection]="subsection"></app-top>
+    <!-- Breadcrumbs ========================================================= -->
+    <app-breadcrumbs *ngIf="section.alias !== 'main'" [section]="section" [subsection]="subsection"></app-breadcrumbs>
 
-<!-- Pages ================================================================= -->
-<app-main *ngIf="section.alias === 'main'"></app-main>
-<app-form *ngIf="section.alias === 'form'"></app-form>
-<app-not-found *ngIf="section.alias === '404'"></app-not-found>
-<app-about *ngIf="section.alias === 'about' && subsection.alias === ''" [alias]="section.alias"></app-about>
-<app-blog *ngIf="(section.alias === 'articles' && subsection.alias === '') || (section.alias === 'news' && subsection.alias === '')" [alias]="section.alias"></app-blog>
-<app-article *ngIf="(section.alias === 'about' && subsection.alias) || (section.alias === 'articles' && subsection.alias) || (section.alias === 'news' && subsection.alias)" [alias]="section.alias" [subalias]="subsection.alias"></app-article>
-<app-gallery *ngIf="section.alias === 'gallery' && subsection.alias === ''"></app-gallery>
-<app-album *ngIf="section.alias === 'gallery' && subsection.alias" [subalias]="subsection.alias"></app-album>
+    <!-- Top ================================================================= -->
+    <app-top *ngIf="section.alias !== 'main'" [section]="section" [subsection]="subsection"></app-top>
 
-<!-- Call ================================================================== -->
-<app-call [alias]="section.alias"></app-call>
+    <!-- Pages =============================================================== -->
+    <app-main *ngIf="section.alias === 'main'"></app-main>
+    <app-form *ngIf="section.alias === 'form'"></app-form>
+    <app-not-found *ngIf="section.alias === '404'"></app-not-found>
+    <app-about *ngIf="section.alias === 'about' && subsection.alias === ''" [alias]="section.alias"></app-about>
+    <app-blog *ngIf="(section.alias === 'articles' && subsection.alias === '') || (section.alias === 'news' && subsection.alias === '')" [alias]="section.alias"></app-blog>
+    <app-article *ngIf="(section.alias === 'about' && subsection.alias) || (section.alias === 'articles' && subsection.alias) || (section.alias === 'news' && subsection.alias)" [alias]="section.alias" [subalias]="subsection.alias"></app-article>
+    <app-gallery *ngIf="section.alias === 'gallery' && subsection.alias === ''"></app-gallery>
+    <app-album *ngIf="section.alias === 'gallery' && subsection.alias" [subalias]="subsection.alias"></app-album>
 
-<!-- Footer ================================================================ -->
-<app-footer *ngIf="section.alias !== 'main'"></app-footer>
+    <!-- Call ================================================================ -->
+    <app-call [alias]="section.alias"></app-call>
+
+    <!-- Footer ============================================================== -->
+    <app-footer *ngIf="section.alias !== 'main'"></app-footer>
+
+  </div>
+</section>
+
+<div class="aae-page-sidebar" [class.aae-page-sidebar-show]="showSidebarContent">
+  <app-sidebar></app-sidebar>
+</div>
+
+<div class="aae-page-border-top" [class.aae-page-border-show]="showBordersContent">
+  <div class="aae-page-border-top-title"><a href="#">Артезианская Археологическая Экспедиция</a></div>
+  <div class="aae-page-border-top-social">
+    <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+<div class="aae-page-border-right"></div>
+
+<div class="aae-page-border-bottom" [class.aae-page-border-show]="showBordersContent">
+  <div class="aae-page-border-bottom-copyright">Артезианская Археологическая Экспедиция <i class="fa fa-copyright" aria-hidden="true"></i> 2017. Все права защищены.</div>
+</div>
+
+<div class="aae-page-border-left" [class.aae-page-border-show]="showBordersContent">
+  <div class="aae-page-border-left-menu" (click)="switchSidebar()"><i class="fa fa-bars" aria-hidden="true"></i></div>
+</div>

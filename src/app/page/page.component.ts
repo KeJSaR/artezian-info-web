@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
 import { DataService } from '../services/data.service';
@@ -30,6 +31,10 @@ export class PageComponent implements OnInit {
     alias: '', 
     name: '' 
   }
+  showBordersContent: boolean = false;
+  showSidebarContent: boolean = false;
+  heightMax: number;
+  heightMin: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -44,6 +49,7 @@ export class PageComponent implements OnInit {
     this.scrollToTop();
     this.setSectionName();
     this.setSubsectionName();
+    this.setHeight();
   }
 
   scrollToTop() {
@@ -54,6 +60,16 @@ export class PageComponent implements OnInit {
         window.scrollTo(0, 0);
       }
     })();
+  }
+
+  @HostListener('window: scroll', [])
+  onWindowScroll() {
+    if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) > this.heightMax) {
+      this.showBordersContent = true;
+    } 
+    else if (this.showBordersContent && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.heightMin) {
+      this.showBordersContent = false;
+    }
   }
 
   /**
@@ -86,6 +102,15 @@ export class PageComponent implements OnInit {
         this.subsection.name = data;
       });
     }
+  }
+
+  private setHeight(): void {
+    this.heightMax = window.innerHeight + 120;
+    this.heightMin = window.innerHeight - 120;
+  }
+
+  public switchSidebar(): void {
+    this.showSidebarContent = !this.showSidebarContent;
   }
 
 }
