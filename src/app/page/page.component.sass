@@ -19,10 +19,10 @@
   justify-content: center
   opacity: 0
   z-index: 900
-  -webkit-transition: all 250ms ease-out
-  -moz-transition: all 250ms ease-out
-  -o-transition: all 250ms ease-out
-  transition: all 250ms ease-out
+  -webkit-transition: all 500ms ease-out
+  -moz-transition: all 500ms ease-out
+  -o-transition: all 500ms ease-out
+  transition: all 500ms ease-out
 
   &.aae-page-sidebar-show
     opacity: 1
@@ -125,6 +125,14 @@
     color: $white
     font-size: 21px
     cursor: pointer
+    -webkit-transition: all 250ms ease-out
+    -moz-transition: all 250ms ease-out
+    -o-transition: all 250ms ease-out
+    transition: all 250ms ease-out
+
+    &:hover,
+    &:active
+      color: $primary-light
 
     div
       position: relative
