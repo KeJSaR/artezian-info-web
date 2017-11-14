@@ -2,7 +2,6 @@
 
 .aae-main
   background: url("/assets/img/pages/main.jpg") center center / cover no-repeat
-  min-height: 100vh
   position: relative
   z-index: 10
   display: -webkit-flex
@@ -20,14 +19,7 @@
     bottom: 0
     z-index: 20
     opacity: .7
-
-    background: $blue-grey-900
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $blue-grey-900), color-stop(100%, $grey-900))
-    background: -webkit-linear-gradient(top, $blue-grey-900 0%, $grey-900 100%)
-    background: -moz-linear-gradient(top,    $blue-grey-900 0%, $grey-900 100%)
-    background: -ms-linear-gradient(top,     $blue-grey-900 0%, $grey-900 100%)
-    background: -o-linear-gradient(top,      $blue-grey-900 0%, $grey-900 100%)
-    background: linear-gradient(to bottom,   $blue-grey-900 0%, $grey-900 100%)
+    background: $black-opacity-9
 
   .aae-main-content
     max-width: 1200px
@@ -41,6 +33,7 @@
       text-transform: uppercase
       margin: 0 0 30px
       line-height: 100px
+      padding: 150px 0 0 0
 
       span
         color: $primary
@@ -75,6 +68,6 @@
         opacity: .8
 
         &:hover, &:active
-          background-color: $primary
+          background-color: $primary-light
           color: $white
           opacity: 1
