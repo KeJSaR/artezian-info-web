@@ -30,8 +30,7 @@ export class PageComponent implements OnInit {
   subalias: string = '';
   showBordersContent: boolean = false;
   showSidebarContent: boolean = false;
-  heightMax: number;
-  heightMin: number;
+  height: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -60,12 +59,22 @@ export class PageComponent implements OnInit {
 
   @HostListener('window: scroll', [])
   onWindowScroll() {
-    if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) > this.heightMax) {
+    if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) >= this.height) {
       this.showBordersContent = true;
     } 
-    else if (this.showBordersContent && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.heightMin) {
+    else if (this.showBordersContent && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.height) {
       this.showBordersContent = false;
     }
+  }
+
+  scrollDown() {
+    (function downscroll() {
+      var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      if (currentScroll < window.innerHeight - 120) {
+        window.requestAnimationFrame(downscroll);
+        window.scrollTo(0, window.innerHeight - 120);
+      }
+    })();
   }
 
   /**
@@ -93,8 +102,7 @@ export class PageComponent implements OnInit {
   }
 
   private setHeight(): void {
-    this.heightMax = window.innerHeight + 120;
-    this.heightMin = window.innerHeight - 120;
+    this.height = window.innerHeight - 120;
   }
 
   public switchSidebar(): void {

@@ -13,6 +13,13 @@
     <!-- Top ================================================================= -->
     <app-top *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias"></app-top>
 
+    <!-- Down Button ========================================================= -->
+    <div *ngIf="section.alias !== 'main'" class="aae-page-down">
+      <div class="aae-page-down-wrapper">
+        <span (click)="scrollDown()"><i class="fa fa-chevron-circle-down"></i></span>
+      </div>
+    </div>
+
     <!-- Pages =============================================================== -->
     <app-main *ngIf="section.alias === 'main'"></app-main>
     <app-form *ngIf="section.alias === 'form'"></app-form>

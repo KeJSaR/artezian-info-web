@@ -7,6 +7,61 @@
   .aae-page-wrapper
     position: relative
 
+    .aae-page-down
+      position: absolute
+      top: 80vh
+      text-align: center
+      width: 100%
+      z-index: 900
+      opacity: 0.9
+
+      .aae-page-down-wrapper
+        display: inline-block
+        width: 55px
+        height: 55px
+
+        span
+          cursor: pointer
+          position: relative
+          width: 55px
+          height: 55px
+          font-size: 0
+          line-height: 0
+          border-radius: 100%
+          display: flex
+          align-items: center
+          justify-content: center
+          /* Safari 4.0 - 8.0 */
+          -webkit-animation-name: circle-down
+          -webkit-animation-duration: 4s
+          -webkit-animation-timing-function: linear
+          // -webkit-animation-delay: 2s
+          -webkit-animation-iteration-count: infinite
+          // -webkit-animation-direction: alternate
+          /* Standard syntax */
+          animation-name: circle-down
+          animation-duration: 4s
+          animation-timing-function: linear
+          // animation-delay: 2s
+          animation-iteration-count: infinite
+          // animation-direction: alternate
+          z-index: 950
+
+          i
+            color: $white
+            position: relative
+            z-index: 1000
+            line-height: 42px
+            font-size: 34px
+            -webkit-transition: all 250ms ease-out
+            -moz-transition: all 250ms ease-out
+            -o-transition: all 250ms ease-out
+            transition: all 250ms ease-out
+
+          &:hover i,
+          &:active i
+            color: $primary
+
 .aae-page-sidebar
   position: fixed
   top: 0
@@ -151,3 +206,33 @@
   &.aae-page-border-show
     .aae-page-border-left-menu
       display: inherit
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes circle-down
+  0%   
+    top: 0px
+  10%  
+    top: 4px
+  20%  
+    top: 0px
+  30%  
+    top: 4px
+  40% 
+    top: 0px
+  100%
+    top: 0px
+
+/* Standard syntax */
+@keyframes circle-down
+  0%   
+    top: 0px
+  10%  
+    top: 4px
+  20%  
+    top: 0px
+  30%  
+    top: 4px
+  40% 
+    top: 0px
+  100%
+    top: 0px
