@@ -109,7 +109,7 @@ class Queries
     {
         $q = "SELECT id
               FROM article 
-              WHERE menu_id=? AND alias=?";
+              WHERE menu_id=? AND id=?";
 
         return DB::run($q, [$id, $subalias])->fetch() ? true : false;
     }
@@ -197,7 +197,7 @@ class Queries
 
     public function get_blog_items($id)
     {
-        $q = "SELECT id, date, alias, title, author_id, intro
+        $q = "SELECT id, date, title, author_id, intro
               FROM article 
               WHERE menu_id=?";
         $blog = DB::run($q, [$id])->fetchAll();
@@ -210,31 +210,31 @@ class Queries
         return $blog;
     }
 
-    public function get_article($menu_id, $alias)
+    public function get_article($menu_id, $id)
     {
-        $q = "SELECT id, date, alias, title, author_id, intro, content
+        $q = "SELECT id, date, title, author_id, intro, content
               FROM article 
-              WHERE menu_id=? AND alias=?";
+              WHERE menu_id=? AND id=?";
 
-        return DB::run($q, [$menu_id, $alias])->fetch();
+        return DB::run($q, [$menu_id, $id])->fetch();
     }
 
-    public function get_author_id($menu_id, $alias)
+    public function get_author_id($menu_id, $id)
     {
         $q = "SELECT author_id
               FROM article 
-              WHERE menu_id=? AND alias=?";
-        $arr = DB::run($q, [$menu_id, $alias])->fetch();
+              WHERE menu_id=? AND id=?";
+        $arr = DB::run($q, [$menu_id, $id])->fetch();
 
         return $arr["author_id"];
     }
 
-    public function get_article_title($menu_id, $alias)
+    public function get_article_title($menu_id, $id)
     {
         $q = "SELECT title
               FROM article 
-              WHERE menu_id=? AND alias=?";
-        $arr = DB::run($q, [$menu_id, $alias])->fetch();
+              WHERE menu_id=? AND id=?";
+        $arr = DB::run($q, [$menu_id, $id])->fetch();
 
         return $arr["title"];
     }

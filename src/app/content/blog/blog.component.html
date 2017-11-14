@@ -2,7 +2,7 @@
 
   <div class="aae-main-wrapper-narrow">
     <div *ngFor="let item of blogItems">
-      <h2><a routerLink="/articles/{{ item.alias }}">{{ item.title }}</a></h2>
+      <h2><a routerLink="/articles/{{ item.id }}">{{ item.title }}</a></h2>
       <p class="aae-article-date">{{ item.date }}</p>
       <p class="aae-article-author">
         <span class="aae-author-name">{{ item.author.name }},</span>
