@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 13, 2017 at 10:18 PM
+-- Generation Time: Nov 15, 2017 at 04:51 AM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -232,8 +232,8 @@ CREATE TABLE `menu` (
 
 INSERT INTO `menu` (`id`, `alias`, `name`, `info`) VALUES
 (1, 'main', 'Главная', ''),
-(2, 'about', 'Об экспедиции', 'История образования, бытовые условия, основные цели и задачи, научная деятельность Артезианской Археологической Экспедиции'),
-(3, 'articles', 'Статьи', 'Уникальные научные статьи по археологии и истории Артезиана, Боспора, Северного и Северо-Западного Причерноморья.'),
+(2, 'about', 'Об экспедиции', 'История образования,<br>бытовые условия,<br>основные цели и задачи,<br>научная деятельность Артезианской Археологической Экспедиции'),
+(3, 'articles', 'Статьи', 'Уникальные научные статьи по археологии и истории Артезиана, Боспора, Северного и Северо-Западного Причерноморья'),
 (4, 'gallery', 'Фотогалерея', 'Тематические и сезонные фотоальбомы археологической деятельности, работы и отдыха в Артезианской Археологической Экспедиции'),
 (5, 'news', 'Новости', 'Новости сайта, новости экспедиции, полезная информация, события, объявления'),
 (6, 'form', 'Заявка', 'Электронная заявка для принятия участия в Артезианской Археологической Экспедиции');
@@ -255,14 +255,12 @@ CREATE TABLE `text` (
 --
 
 INSERT INTO `text` (`id`, `menu_id`, `content`) VALUES
-(1, 2, '<p>Приглашаем вас!</p>\r\n<p>В романтическое археологическое путешествие в глубину тысячелетий.</p>\r\n<p>На археологические раскопки античных памятников древнего Боспорского царства.</p>\r\n<p>В урочище Артезиан, жемчужину Крымского Приазовья.</p>'),
-(2, 2, '<p>Ласковое море, песчаные пляжи, ковыльные степи, южное солнце, новые друзья, замечательные впечатления, лекции ведущих ученых и преподавателей ВУЗов, лучшая археологическая школа, экскурсии, здоровый отдых … гарантируются! Смотрите нашу фотогалерею!</p>'),
-(3, 2, '<p>Мы приглашаем на наши раскопки волонтеров, любителей истории и археологии, поклонников здорового образа жизни, желающих быстро сбросить лишние килограммы, веселых и жизнерадостных людей, увлеченных школьников, студентов и аспирантов. Принимаем в наши ряды семьи, организованные группы, коллективы единомышленников и энтузиастов.</p>'),
-(4, 2, '<p>Регион проведения: Раскопки проходят в Восточном Крыму в 20 километрах от города Керчь. В двадцати минутах ходьбы от базового лагеря экспедиции находится поселок Чистополье и одноименная железнодорожная станция.</p>'),
-(5, 2, '<p>Сроки: Экспедиция работает в поле с 1 июня — 5 сентября. Постановщиков экспедиционного лагеря приглашаем на две недели раньше начала работы.</p>'),
-(6, 2, '<p>На сайте Вы сможете найти всю необходимую информацию об экспедиции. В разделе «Об ААЭ» рассказана история образования Артезианской Археологической Экспедиции (ААЭ), её цели и задачи, научные исследования и достижения, перечислены основные направления деятельности ААЭ, а также Вы можете ознакомиться с бытовыми условиями экспедиции.</p>'),
-(7, 2, '<p>Если же Вы не представляете свою жизнь без археологии, степного ветра, до сих пор несущего отзвуки древних событий, без звёздных крымских ночей, ласкового Азовского моря, то раздел «Заявка» – для Вас. Здесь Вы можете оставить электронную заявку, которая забронирует за Вами место в археологическом лагере.</p>'),
-(8, 2, '<p>В разделе «Правила» можно ознакомиться со списком необходимых документов, проверить все ли вещи Вы подготовили для путешествия и прочитать наши правила.</p>');
+(1, 2, '<p>Приглашаем вас в романтическое археологическое путешествие в глубину тысячелетий!</p>\n<p>На археологические раскопки античных памятников древнего Боспорского царства, в урочище Артезиан, жемчужину Крымского Приазовья.</p>'),
+(2, 2, '<p>Ласковое море, песчаные пляжи, ковыльные степи, южное солнце, новые друзья, замечательные впечатления, лекции ведущих ученых и преподавателей ВУЗов, лучшая археологическая школа, экскурсии, здоровый отдых…</p><p>Смотрите нашу фотогалерею!</p>'),
+(3, 2, '<p>Мы приглашаем на наши раскопки волонтеров, любителей истории и археологии, поклонников здорового образа жизни, желающих быстро сбросить лишние килограммы, веселых и жизнерадостных людей, увлеченных школьников, студентов и аспирантов.</p><p>Принимаем в наши ряды семьи, организованные группы, коллективы единомышленников и энтузиастов.</p>'),
+(4, 2, '<p>Раскопки проходят в Восточном Крыму в 20 километрах от города Керчь.</p><p>В двадцати минутах ходьбы от базового лагеря экспедиции находится поселок Чистополье и одноимённая железнодорожная станция.</p>'),
+(5, 2, '<p>Экспедиция обычно работает в поле с 1 июня — по 5 сентября.</p><p>Постановщиков экспедиционного лагеря приглашаем на две недели раньше начала работы.</p>'),
+(6, 2, '<p>Если же вы не представляете свою жизнь без археологии, степного ветра, до сих пор несущего отзвуки древних событий, без звёздных крымских ночей, ласкового Азовского моря, то раздел «Заявка» – для Вас.</p><p>Там вы сможете оставить электронную заявку, которая забронирует за вами место в археологическом лагере.</p>');
 
 --
 -- Indexes for dumped tables
@@ -274,15 +272,15 @@ INSERT INTO `text` (`id`, `menu_id`, `content`) VALUES
 ALTER TABLE `article`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id_UNIQUE` (`id`),
-  ADD KEY `fk_article_menu1_idx` (`menu_id`),
-  ADD KEY `fk_article_author1_idx` (`author_id`);
+  ADD KEY `fk_article_menu_idx` (`menu_id`),
+  ADD KEY `fk_article_author_idx` (`author_id`);
 
 --
 -- Indexes for table `author`
 --
 ALTER TABLE `author`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `idauthor_UNIQUE` (`id`),
+  ADD UNIQUE KEY `id_UNIQUE` (`id`),
   ADD UNIQUE KEY `name_UNIQUE` (`name`);
 
 --
@@ -298,7 +296,7 @@ ALTER TABLE `gallery`
 ALTER TABLE `image`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id_UNIQUE` (`id`),
-  ADD KEY `fk_image_gallery1_idx` (`gallery_id`);
+  ADD KEY `fk_image_gallery_idx` (`gallery_id`);
 
 --
 -- Indexes for table `menu`
@@ -313,7 +311,7 @@ ALTER TABLE `menu`
 ALTER TABLE `text`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id_UNIQUE` (`id`),
-  ADD KEY `fk_text_menu1_idx` (`menu_id`);
+  ADD KEY `fk_text_menu_idx` (`menu_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -348,7 +346,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `text`
 --
 ALTER TABLE `text`
-  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
@@ -357,20 +355,20 @@ ALTER TABLE `text`
 -- Constraints for table `article`
 --
 ALTER TABLE `article`
-  ADD CONSTRAINT `fk_article_author1` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_article_menu1` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_article_author` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_article_menu` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `image`
 --
 ALTER TABLE `image`
-  ADD CONSTRAINT `fk_image_gallery1` FOREIGN KEY (`gallery_id`) REFERENCES `gallery` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_image_gallery` FOREIGN KEY (`gallery_id`) REFERENCES `gallery` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `text`
 --
 ALTER TABLE `text`
-  ADD CONSTRAINT `fk_text_menu1` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_text_menu` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
