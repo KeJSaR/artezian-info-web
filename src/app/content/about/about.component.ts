@@ -44,8 +44,9 @@ export class AboutComponent implements OnInit {
       let tL = this.texts.length;
       let iL = this.blogItems.length;
       let max = tL > iL ? tL : iL;
+      let t = 0;
       for (let i = 0; i < max; i++) {
-        if (i < tL) this.about.push({type: 'text',  data: this.texts[i]});
+        if (t < tL && i % 2 === 0) this.about.push({type: 'text',  data: this.texts[t++]});
         if (i < iL) this.about.push({type: 'intro', data: this.blogItems[i]});
       }
     }
