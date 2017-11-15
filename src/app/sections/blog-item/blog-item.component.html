@@ -1,27 +1,25 @@
 <section *ngIf="blogItem" class="aae-blog-item" [class.aae-selected]="blogItem.id % 2 === 0">
-  <div class="aae-main-wrapper-wide">
 
-    <div class="aae-blog-item-img-block">
+  <div class="aae-blog-item-img-block">
 
-      <div class="aae-blog-item-img">
-        <a routerLink="/{{ alias }}/{{ blogItem.id }}">
-          <img src="/assets/img/articles/{{ blogItem.id }}.jpg" alt="">
-        </a>
-      </div>
-
-    </div>
-
-    <div class="aae-blog-item-content-block">
-
-      <h2><a routerLink="/{{ alias }}/{{ blogItem.id }}" [innerHtml]="blogItem.title"></a></h2>
-
-      <div class="aae-blog-item-content-text" [innerHtml]="blogItem.intro"></div>
-
-      <div class="aae-blog-item-read-more">
-        <a routerLink="/{{ alias }}/{{ blogItem.id }}">подробнее</a>
-      </div>
-
+    <div class="aae-blog-item-img">
+      <a routerLink="/{{ alias }}/{{ blogItem.id }}">
+        <img src="/assets/img/articles/{{ blogItem.id }}.jpg" alt="">
+      </a>
     </div>
 
   </div>
+
+  <div class="aae-blog-item-content-block">
+
+    <h2><a routerLink="/{{ alias }}/{{ blogItem.id }}" [innerHtml]="blogItem.title"></a></h2>
+
+    <div class="aae-blog-item-content-text" [innerHtml]="blogItem.intro"></div>
+
+    <div class="aae-blog-item-read-more">
+      <a routerLink="/{{ alias }}/{{ blogItem.id }}">подробнее</a>
+    </div>
+
+  </div>
+
 </section>
