@@ -3,8 +3,7 @@
 
 .aae-article
   position: relative
-  padding-top: $section-content-padding-top
-  padding-bottom: $section-content-padding-bottom
+  margin: $margin-narrow-top 0 $margin-narrow-bottom
 
   .aae-article-pattern
     position: absolute
@@ -18,15 +17,10 @@
 
   .aae-article-intro,
   .aae-article-content
-    padding: 50px 100px
-    background-color: $grey-100
-    width: 600px
-    margin: 100px auto
-    position: relative
-    z-index: 10
-
-  .aae-article-intro
-
-  .aae-article-content
-    padding-bottom: 100px
-
+    .aae-article-wrapper
+      background-color: $grey-100
+      margin: $margin-narrow auto
+      padding: $padding-narrow
+      width: $width-narrow
+      position: relative
+      z-index: 10

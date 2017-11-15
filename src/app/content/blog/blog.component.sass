@@ -2,14 +2,14 @@
 @import "../../../variables"
 
 .aae-blog
-  padding-top: $section-content-padding-top
-  padding-bottom: $section-content-padding-bottom
+  position: relative
+  margin: $margin-narrow-top 0 $margin-narrow-bottom
 
   .aae-blog-wrapper
-    width: 600px
-    margin: 75px auto
-    padding: 50px 100px 75px
-    background-color: $grey-100 
+    background-color: $grey-100
+    margin: $margin-narrow auto
+    padding: $padding-narrow
+    width: $width-narrow
 
     .aae-blog-header
       a
@@ -42,7 +42,7 @@
         font-style: italic
         padding: 0 0 0 5px
 
-    .aae-blog-content
+    .aae-blog-intro-wrapper
       display: flex
       justify-content: space-between
       align-items: flex-start
@@ -54,8 +54,6 @@
         font-size: 14px
         line-height: 22px
         padding: 9px 0 0 0
-
-      .aae-blog-intro
 
     .aae-blog-read-more
       text-align: center

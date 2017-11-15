@@ -2,11 +2,21 @@
 @import "../../../variables"
 
 .aae-album
-  padding-top: $section-content-padding-top
-  padding-bottom: $section-content-padding-bottom
+  position: relative
+  margin: $margin-wide-top 0 $margin-wide-bottom
 
-  .aae-album-img-wrapper
-    margin-bottom: 50px
+  .aae-album-wrapper
+    background-color: $grey-100
+    margin: $margin-wide auto
+    padding: $padding-wide
+    width: $width-wide
 
-    img
-      width: 100%
+    .aae-album-img-wrapper
+      margin-bottom: 50px
+
+      img
+        width: 100%
+
+      p
+        color: $grey-100
+        text-align: center
