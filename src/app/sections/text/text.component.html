@@ -1,7 +1,7 @@
 <section *ngIf="text" class="aae-text">
   <div class="aae-main-wrapper-wide">
 
-    <div class="aae-text-content">
+    <div class="aae-text-content" [ngStyle]="{'min-height': height}">
       <div [innerHtml]="text.content"></div>
     </div>
 
