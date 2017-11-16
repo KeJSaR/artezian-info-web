@@ -4,7 +4,7 @@
 
     <div class="aae-blog-item-img">
       <a routerLink="/{{ alias }}/{{ blogItem.id }}">
-        <img src="/assets/img/articles/{{ blogItem.id }}.jpg" alt="">
+        <img src="http://artezian.zone/articles/{{ blogItem.id }}.jpg" alt="">
       </a>
     </div>
 
@@ -16,9 +16,9 @@
 
     <div class="aae-blog-item-content-text" [innerHtml]="blogItem.intro"></div>
 
-    <div class="aae-blog-item-read-more">
+    <p class="aae-blog-item-read-more">
       <a routerLink="/{{ alias }}/{{ blogItem.id }}">подробнее</a>
-    </div>
+    </p>
 
   </div>
 
