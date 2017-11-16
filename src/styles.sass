@@ -16,6 +16,12 @@ body
   max-width: 1400px
   margin: 0 auto
 
+.primary-font
+  font-family: $primary-font
+
+.secondary-font
+  font-family: $secondary-font
+
 // Articles ####################################################################
 
 .aae-article-intro
@@ -29,7 +35,7 @@ body
     line-height: 26px
 
 .aae-article-content,
-.aae-blog-intro
+.aae-blog-item-content-text
   h2::before
     content: ""
     border-bottom: 30px solid $white
@@ -56,6 +62,33 @@ body
     font-size: 17px
     line-height: 24px
     font-weight: 400
-    color: $grey-700
+    color: $grey-800
     margin: 20px 0 0 0
     padding: 0
+
+.aae-blog
+
+  h2
+    font-size: 31px
+    line-height: 36px
+    font-weight: 500
+    color: $grey-900
+    position: relative
+    z-index: 10
+
+  p, li
+    font-family: $secondary-font
+    font-size: 16px
+    line-height: 24px
+    font-weight: 300
+    color: $grey-900
+    margin: 20px 0 0 0
+    padding: 0
+
+
+.aae-blog-item-content-text
+  p
+    font-size: 16px
+    font-weight: 300
+    color: $black
+    text-align: justify
