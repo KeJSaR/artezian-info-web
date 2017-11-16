@@ -12,8 +12,8 @@ const routes: Routes = [
   { path: 'articles/:subsection', component: PageComponent, data: {section: 'articles'} },
   { path: 'gallery',              component: PageComponent, data: {section: 'gallery'} },
   { path: 'gallery/:subsection',  component: PageComponent, data: {section: 'gallery'} },
-  { path: 'rules',                component: PageComponent, data: {section: 'rules'} },
-  { path: 'rules/:subsection',    component: PageComponent, data: {section: 'rules'} },
+  { path: 'news',                 component: PageComponent, data: {section: 'news'} },
+  { path: 'news/:subsection',     component: PageComponent, data: {section: 'news'} },
   { path: 'form',                 component: PageComponent, data: {section: 'form'} },
   { path: '**',                   component: PageComponent, data: {section: '404'} }
 ];
