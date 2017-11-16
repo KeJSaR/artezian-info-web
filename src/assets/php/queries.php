@@ -253,7 +253,7 @@ class Queries
 
     public function get_gallery_images($gallery_id)
     {
-        $q = "SELECT id, name 
+        $q = "SELECT alias, name 
               FROM image 
               WHERE gallery_id=?";
 
