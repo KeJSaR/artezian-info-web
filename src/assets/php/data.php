@@ -121,12 +121,24 @@ class Data
         return strlen($subalias) ? $this->queries->is_subalias_exist($id, $subalias) : false;
     }
 
+    private function is_gallery_subalias_valid($subalias)
+    {
+        return strlen($subalias) ? $this->queries->is_gallery_subalias_exist($subalias) : false;
+    }
+
     // Get Subsection Alias
 
-    private function get_subalias($id)
+    private function get_subalias($id, $alias)
     {
         $k = array_key_exists("subalias", $_POST);
-        $v = $this->is_subalias_valid($id, $_POST["subalias"]);
+        $v = $this->is_subalias_valid($id, $alias, $_POST["subalias"]);
+        return $k && $v ? $_POST["subalias"] : "";
+    }
+
+    private function get_gallery_subalias()
+    {
+        $k = array_key_exists("subalias", $_POST);
+        $v = $this->is_gallery_subalias_valid($_POST["subalias"]);
         return $k && $v ? $_POST["subalias"] : "";
     }
 
@@ -191,16 +203,16 @@ class Data
     private function get_subsection_name()
     {
         $alias = $this->get_alias();
-        $id = $alias ? $this->queries->get_menu_id($alias) : "";
-        $subalias = $this->get_subalias($id);
-        if (   $alias === "about"
-            || $alias === "articles"
-            || $alias === "rules"
-        ) {
-            return $id && $subalias ? $this->queries->get_article_title($id, $subalias) : "";
+
+        if ($alias === "gallery") {
+            $subalias = $this->get_gallery_subalias();
+            return $subalias ? $this->queries->get_gallery_title($subalias) : "";
         }
 
-        return  $id && $subalias ? $this->queries->get_gallery_title($subalias) : "";
+        $id = $alias ? $this->queries->get_menu_id($alias) : "";
+        $subalias = $this->get_subalias($id, $alias);
+
+        return $id && $subalias ? $this->queries->get_article_title($id, $subalias) : "";
     }
 
     private function get_section_info()
@@ -242,7 +254,7 @@ class Data
         // Get article data
         $alias = $this->get_alias();
         $id = $alias ? $this->queries->get_menu_id($alias) : "";
-        $subalias = $this->get_subalias($id);
+        $subalias = $this->get_subalias($id, $alias);
         $article = $id && $subalias ? $this->queries->get_article($id, $subalias) : "";
 
         // Add author data to article
@@ -256,7 +268,7 @@ class Data
     {
         $alias = $this->get_alias();
         $id = $alias ? $this->queries->get_menu_id($alias) : "";
-        $subalias = $this->get_subalias($id);
+        $subalias = $this->get_subalias($id, $alias);
         $author_id = $id && $subalias ? $this->queries->get_author_id($id, $subalias) : "";
 
         return $this->get_author($author_id);

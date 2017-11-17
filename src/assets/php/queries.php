@@ -113,6 +113,15 @@ class Queries
 
         return DB::run($q, [$id, $subalias])->fetch() ? true : false;
     }
+
+    public function is_gallery_subalias_exist($subalias)
+    {
+        $q = "SELECT id
+              FROM gallery 
+              WHERE id=?";
+
+        return DB::run($q, [$subalias])->fetch() ? true : false;
+    }
     
     public function is_gallery_exist($gallery_id)
     {
