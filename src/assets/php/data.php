@@ -131,7 +131,7 @@ class Data
     private function get_subalias($id, $alias)
     {
         $k = array_key_exists("subalias", $_POST);
-        $v = $this->is_subalias_valid($id, $alias, $_POST["subalias"]);
+        $v = $this->is_subalias_valid($id, $_POST["subalias"]);
         return $k && $v ? $_POST["subalias"] : "";
     }
 
