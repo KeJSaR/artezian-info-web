@@ -2,8 +2,7 @@
 
   <div class="aae-album-wrapper">
 
-    <div *ngFor="let image of images" class="aae-album-img-wrapper">
-      <img src="http://artezian.zone/gallery/{{ subalias }}/{{ image.alias }}.jpg" alt="{{ image.name }}">
+    <div *ngFor="let image of images" class="aae-album-img-wrapper" [ngStyle]="{'background-image': 'url(http://artezian.zone/gallery/' + subalias + '/pics/' + image.alias + '.jpg)'}">
       <p [innerHtml]="image.name"></p>
     </div>
     

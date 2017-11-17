@@ -2,21 +2,25 @@
 @import "../../../variables"
 
 .aae-album
+  background-color: $white
   position: relative
-  margin: $section-margin-top 0 $section-margin-bottom
 
   .aae-album-wrapper
-    background-color: $grey-100
-    margin: $wrapper-margin auto
-    padding: 0 $wrapper-padding
+    margin: 0 auto
+    padding: $wrapper-padding
     width: $wrapper-width-wide
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
 
     .aae-album-img-wrapper
+      width: 200px
+      height: 200px
       margin-bottom: 50px
-
-      img
-        width: 100%
-
-      p
-        color: $grey-100
-        text-align: center
+      background-position: center center
+      background-size: cover
+      border: none
+      outline: none
+      text-decoration: none
+      font-size: 0
+      line-height: 0
