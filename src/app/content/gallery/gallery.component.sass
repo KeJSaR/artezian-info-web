@@ -6,8 +6,8 @@
   position: relative
 
   .aae-gallery-wrapper
-    margin: $wrapper-margin auto
-    padding: 0 $wrapper-padding
+    margin: 0 auto
+    padding: $wrapper-padding
     width: $wrapper-width-wide
     display: flex
     flex-flow: row wrap
@@ -19,14 +19,55 @@
       padding-bottom: 50px
 
       .aae-gallery-img-wrapper
+        width: 280px
+        height: 280px
+        position: relative
+
         a
           width: 280px
           height: 280px
-          display: block
+          position: absolute
+          top: 0
+          left: 0
           background-position: center center
           background-size: cover
           border: none
-          overflow: none
+          outline: none
           text-decoration: none
           font-size: 0
           line-height: 0
+
+          &.aae-gallery-img
+            z-index: 50
+
+          &.aae-gallery-info
+            opacity: 0
+            color: $white
+            width: 240px
+            height: 240px
+            z-index: 100
+            font-size: 14px
+            line-height: 17px
+            padding: 20px
+            background-color: $secondary-light
+            overflow: hidden
+            -webkit-transition: all 250ms ease-out
+            -moz-transition: all 250ms ease-out
+            -o-transition: all 250ms ease-out
+            transition: all 250ms ease-out
+
+            &:hover,
+            &:active
+              opacity: 1
+
+      .aae-gallery-name
+        text-align: center
+
+        a
+          color: $secondary-dark
+          text-decoration: none
+          font-weight: 500
+
+          &:hover,
+          &:active
+            color: $primary

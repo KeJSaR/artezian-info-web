@@ -4,10 +4,10 @@
 
     <div *ngFor="let gallery of galleries" class="aae-gallery-container">
 			<div class="aae-gallery-img-wrapper">
-				<a routerLink="/gallery/{{ gallery.id }}" [ngStyle]="{'background-image': 'url(http://artezian.zone/gallery/' + gallery.id + '/pics/' + gallery.image_id + '.jpg)'}"></a>
+				<a class="aae-gallery-img" routerLink="/gallery/{{ gallery.id }}" [ngStyle]="{'background-image': 'url(http://artezian.zone/gallery/' + gallery.id + '/pics/' + gallery.image_id + '.jpg)'}"></a>
+				<a *ngIf="gallery.info" class="aae-gallery-info" routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.info"></a>
 			</div>
-			<p><a routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.name"></a></p>
-			<p [innerHtml]="gallery.info"></p>
+			<p class="aae-gallery-name"><a routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.name"></a></p>
     </div>
 
 	</div>
