@@ -21,6 +21,8 @@ export class TopComponent implements OnInit {
   width: string;
   halfHeight: string;
   imageExist: boolean = false;
+  galleryImageExist: boolean = false;
+  subaliasExist: boolean = false;
 
   // Main image data
   path: string = '';
@@ -55,6 +57,9 @@ export class TopComponent implements OnInit {
 
   private init(): void {
     if (this.subalias) {
+
+      this.subaliasExist = true;
+
       if (this.section.alias === 'gallery') {
         this.path = 'gallery' + '/' + this.subalias;
         this.setGalleryInfo(this.subalias);
@@ -86,7 +91,7 @@ export class TopComponent implements OnInit {
     this.image = this.gallery.image_id.toString();
     this.title = this.gallery.name;
     this.intro = this.gallery.info;
-    this.isImageExist();
+    this.galleryImageExist = true;
   }
 
   private setArticleTitle(alias: string, subalias: string) {
