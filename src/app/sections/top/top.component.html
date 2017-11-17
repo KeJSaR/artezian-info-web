@@ -1,7 +1,8 @@
 <section class="aae-top">
 
   <div *ngIf="imageExist" class="aae-top-img" [ngStyle]="{'min-height': height, 'background-image': 'url(/assets/img/' + path + '/' + image + '.jpg)'}"></div>
-  <div *ngIf="!imageExist" class="aae-top-img" [ngStyle]="{'min-height': height, 'background-image': 'url(/assets/img/' + path + '/' + 'default.jpg)'}"></div>
+  <div *ngIf="!imageExist && galleryImageExist && section.alias === 'gallery'" class="aae-top-img" [ngStyle]="{'min-height': height, 'background-image': 'url(http://artezian.zone/gallery/' + subalias + '/' + image + '.jpg)'}"></div>
+  <div *ngIf="!imageExist && subaliasExist && section.alias === 'articles'" class="aae-top-img" [ngStyle]="{'min-height': height, 'background-image': 'url(/assets/img/' + path + '/' + 'default.jpg)'}"></div>
 
   <div class="aae-top-gradient"></div>
 
