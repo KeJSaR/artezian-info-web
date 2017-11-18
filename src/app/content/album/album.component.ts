@@ -12,6 +12,7 @@ import { Gallery } from '../../interfaces/gallery.interface';
 export class AlbumComponent {
 
   @Input() subalias: string;
+  @Input() albumName: string;
 
   images: Image[];
   gallery: Gallery;

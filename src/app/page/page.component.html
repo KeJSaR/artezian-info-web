@@ -28,7 +28,7 @@
     <app-blog *ngIf="(section.alias === 'articles' && subalias === '') || (section.alias === 'news' && subalias === '')" [alias]="section.alias"></app-blog>
     <app-article *ngIf="(section.alias === 'about' && subalias) || (section.alias === 'articles' && subalias) || (section.alias === 'news' && subalias)" [alias]="section.alias" [subalias]="subalias"></app-article>
     <app-gallery *ngIf="section.alias === 'gallery' && subalias === ''"></app-gallery>
-    <app-album *ngIf="section.alias === 'gallery' && subalias" [subalias]="subalias"></app-album>
+    <app-album *ngIf="section.alias === 'gallery' && subalias" [subalias]="subalias" [albumName]="section.name"></app-album>
 
     <!-- Call ================================================================ -->
     <app-call [alias]="section.alias"></app-call>
