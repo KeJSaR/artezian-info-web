@@ -16,6 +16,9 @@ export class AlbumComponent {
   images: Image[];
   gallery: Gallery;
 
+  currentImg: string;
+  isShow: boolean = false;
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
@@ -34,4 +37,14 @@ export class AlbumComponent {
       this.gallery = data;
     });
   }
+
+  showImg(subalias: string, alias: string) {
+    this.currentImg = alias;
+    this.isShow = true;
+  }
+
+  closeImgShow() {
+    this.isShow = false;
+  }
+
 }
