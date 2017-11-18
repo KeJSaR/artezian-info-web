@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
 import { Image } from '../../interfaces/image.interface';
 
@@ -9,16 +9,25 @@ import { Image } from '../../interfaces/image.interface';
 })
 export class ImgShowComponent implements OnInit {
 
+  @Input() albumName: string;
   @Input() subalias: string;
   @Input() currentImg: string;
   @Input() images: Image[];
 
   @Output() close = new EventEmitter<boolean>();
 
-  alias: number[] = [];
+  aliases: number[] = [];
   names: string[] = [];
   index: number;
   image: number;
+  height: number;
+  width: number;
+  imgHeight: number;
+  imgWidth: number;
+  currImgHeight: string;
+  currImgWidth: string;
+  maxNum: number;
+  currNum: number;
 
   constructor() { }
 
@@ -26,32 +35,79 @@ export class ImgShowComponent implements OnInit {
     this.setArrays();
     this.setIndex();
     this.setImage(this.index);
+    this.height = this.setDimension(window.innerHeight);
+    this.width  = this.setDimension(window.innerWidth);
   }
 
-  setArrays() {
+  setArrays(): void {
     this.images.forEach(img => {
-      this.alias.push(img.alias);
+      this.aliases.push(img.alias);
       this.names.push(img.name);
     });
   }
 
-  setIndex() {
-    this.index = this.alias.indexOf(parseInt(this.currentImg));
+  setIndex(): void {
+    this.index = this.aliases.indexOf(parseInt(this.currentImg));
+    this.setMaxNum();
+    this.setCurrNum();
   }
 
-  setImage(index) {
-    this.image = this.alias[index];
+  setMaxNum() {
+    this.maxNum = this.aliases.length;
   }
 
-  showNext() {
-    this.setImage(this.index++);
+  setCurrNum() {
+    this.currNum = this.index + 1;
   }
 
-  showPrev() {
-    this.setImage(this.index--);
+  setImage(index: number): void {
+    this.image = this.aliases[index];
   }
 
-  closeImgShow() {
+  setDimension(num: number): number {
+    return num - 120;
+  }
+
+  showNext(): void {
+    this.index = this.index + 1 === this.maxNum ? 0 : this.index + 1;
+    this.setImage(this.index);
+    this.setCurrNum()
+  }
+
+  showPrev(): void {
+    this.index = this.index - 1 < 0 ? this.maxNum - 1 : this.index - 1;
+    this.setImage(this.index);
+    this.setCurrNum();
+  }
+
+  getSize(img: any): void {
+    this.imgHeight = img.clientHeight;
+    this.imgWidth = img.clientWidth;
+    this.setSize();
+  }
+
+  setSize(): void {
+    let imgDim: number = this.imgWidth / this.imgHeight;
+    let scrDim: number = this.width / this.height;
+
+    if (imgDim < scrDim) {
+      this.currImgHeight = this.height.toString() + 'px';
+      this.currImgWidth = 'auto';
+    }
+    else {
+      this.currImgHeight = 'auto';
+      this.currImgWidth = this.width.toString() + 'px';
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.height = this.setDimension(event.target.innerHeight);
+    this.width  = this.setDimension(event.target.innerWidth);
+    this.setSize();
+  }
+
+  closeImgShow(): void {
     this.close.emit();
   }
 

@@ -10,7 +10,6 @@
   bottom: 60px
   padding: 10px
   background-color: $secondary
-  color: $white
   z-index: 1000
 
   .aae-image-wrapper
@@ -20,11 +19,38 @@
     height: 100%
     width: 100%
 
+  .aae-image-show-curr-num
+    position: absolute
+    left: 35px
+    top: 20px
+    color: $white
+    cursor: pointer
+    font-size: 24px
+    line-height: 1
+    padding: 20px
+
   .aae-img-show-close
     position: absolute
-    right: 50px
-    top: 50px
-    color: $white
+    right: 35px
+    top: 20px
+    cursor: pointer
+    font-size: 0
+    line-height: 0
+    padding: 20px
+    border-radius: 100%
+
+    i
+      font-size: 24px
+      line-height: 1
+      color: $white
+      -webkit-transition: all 250ms ease-out
+      -moz-transition: all 250ms ease-out
+      -o-transition: all 250ms ease-out
+      transition: all 250ms ease-out
+
+      &:hover,
+      &:active
+        color: $primary
 
   .aae-image-show-next,
   .aae-image-show-prev
@@ -34,17 +60,27 @@
     display: flex
     align-items: center
     height: 100%
+    cursor: pointer
+    color: $white
+    -webkit-transition: all 250ms ease-out
+    -moz-transition: all 250ms ease-out
+    -o-transition: all 250ms ease-out
+    transition: all 250ms ease-out
 
-  .aae-image-show-next
+    &:hover,
+    &:active
+      color: $primary
+
+  .aae-image-show-prev
     left: 0
     justify-content: flex-start
 
     i
-      margin-left: 50px      
+      margin-left: 60px
 
-  .aae-image-show-prev
+  .aae-image-show-next
     right: 0
     justify-content: flex-end
 
     i
-      margin-right: 50px      
+      margin-right: 60px

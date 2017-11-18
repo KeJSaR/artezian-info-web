@@ -1,14 +1,20 @@
 <div class="aae-image-show" [class.aae-is-show]="isShow">
 
   <div class="aae-image-wrapper">
-    <img *ngIf="image" src="http://artezian.zone/gallery/{{ subalias }}/{{ image }}.jpg" alt="">
+    <img #img *ngIf="image" 
+      src="http://artezian.zone/gallery/{{ subalias }}/{{ image }}.jpg" 
+      alt="{{ albumName }} {{ names[index] }}" 
+      (load)="getSize(img)" 
+      [ngStyle]="{'width': currImgWidth, 'height': currImgHeight}">
   </div>
 
-  <div class="aae-image-show-next" (click)="showNext()">
+  <div class="aae-image-show-curr-num">{{ currNum }} / {{ maxNum }}</div>
+
+  <div class="aae-image-show-prev" (click)="showPrev()">
     <i class="fa fa-angle-left fa-4x"></i>
   </div>
 
-  <div class="aae-image-show-prev" (click)="showPrev()">
+  <div class="aae-image-show-next" (click)="showNext()">
     <i class="fa fa-angle-right fa-4x"></i>
   </div>
 
