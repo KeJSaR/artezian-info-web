@@ -1,0 +1,50 @@
+@import "../../../colors"
+@import "../../../variables"
+
+.aae-image-show
+  display: inherit
+  position: fixed
+  top: 60px
+  left: 60px
+  right: 60px
+  bottom: 60px
+  padding: 10px
+  background-color: $secondary
+  color: $white
+  z-index: 1000
+
+  .aae-image-wrapper
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100%
+    width: 100%
+
+  .aae-img-show-close
+    position: absolute
+    right: 50px
+    top: 50px
+    color: $white
+
+  .aae-image-show-next,
+  .aae-image-show-prev
+    position: absolute
+    top: 0
+    width: 50%
+    display: flex
+    align-items: center
+    height: 100%
+
+  .aae-image-show-next
+    left: 0
+    justify-content: flex-start
+
+    i
+      margin-left: 50px      
+
+  .aae-image-show-prev
+    right: 0
+    justify-content: flex-end
+
+    i
+      margin-right: 50px      
