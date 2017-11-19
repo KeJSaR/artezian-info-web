@@ -63,13 +63,13 @@ export class CallComponent implements OnInit {
   private setCallText(): void {
     let max: number = this.call.length;
     let rand: number = Math.floor(Math.random() * max);
-    this.callText = this.alias != 'main' && this.alias != 'form' ? this.call[rand] : '';
+    this.callText = this.alias != 'form' ? this.call[rand] : '';
   }
 
   private setButtonText(): void {
     let max: number = this.button.length;
     let rand: number = Math.floor(Math.random() * max);
-    this.buttonText = this.alias != 'main' && this.alias != 'form' ? this.button[rand] : '';
+    this.buttonText = this.alias != 'form' ? this.button[rand] : '';
   }
 
 }
