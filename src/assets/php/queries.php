@@ -292,9 +292,9 @@ class Queries
      * Check Image
      */
 
-    public function is_image_exist($path, $image)
+    public function is_image_exist($image)
     {
-        $url = "../img/" . $path . "/" . $image . ".jpg";
+        $url = "../../articles/" . $image . ".jpg";
         return file_exists($url) ? "true" : "false";
     }
 

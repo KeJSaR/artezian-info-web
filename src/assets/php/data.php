@@ -166,13 +166,6 @@ class Data
      * Image Path
      */
 
-    // Get Path
-
-    private function get_path()
-    {
-        return array_key_exists("path", $_POST) ? $_POST["path"] : "";
-    }
-
     // Get Image
 
     private function get_image()
@@ -301,9 +294,8 @@ class Data
 
     private function is_image_exist()
     {
-        $path = $this->get_path();
-        $image = $path ? $this->get_image() : "";
-        return $path && $image ? $this->queries->is_image_exist($path, $image) : "false";
+        $image = $this->get_image();
+        return $image ? $this->queries->is_image_exist($image) : "false";
     }
 
     /**
