@@ -2,18 +2,20 @@
 @import "../../../variables"
 
 .aae-header
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
+  position: relative
   height: 105px
-  z-index: 30
+  width: 100%
   padding: 50px 0 0
   background-color: $black-opacity-1
-  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.75)
+  z-index: 20
 
   .aae-header-wrapper
+    width: 100%
+    max-width: 1400px
+    margin: 0 auto
+    
     .aae-header-row
+      padding: 0 60px
       display: -webkit-flex
       display: flex
       -webkit-justify-content: space-between
@@ -80,6 +82,7 @@
         &:active
           color: $primary
           background-color: $white
+          text-shadow: 0 0 0 transparent
 
   &.main
     background-color: transparent
