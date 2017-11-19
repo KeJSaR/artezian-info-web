@@ -1,14 +1,16 @@
 <section *ngIf="menu" class="aae-menu" [class.main]="alias === 'main'">
-  <div class="aae-header-wrapper">
+  <div class="aae-menu-wrapper">
+    <div class="aae-menu-content">
 
-    <nav>
-      <a *ngFor="let item of menu" routerLink="/{{ item.alias }}" routerLinkActive="active">{{ item.name }}</a>
-    </nav>
+      <nav>
+        <a *ngFor="let item of menu" routerLink="/{{ item.alias }}" routerLinkActive="active">{{ item.name }}</a>
+      </nav>
 
-    <span class="aae-menu-social">
-      <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-    </span>
+      <span class="aae-menu-social">
+        <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </span>
 
+    </div>
   </div>
 </section>
