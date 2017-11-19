@@ -1,20 +1,11 @@
-<section class="aae-page">
+<section class="aae-page" [class.aae-page-main]="section.alias === 'main'">
   <div class="aae-page-wrapper">
-
-    <!-- Header ============================================================== -->
-    <app-header [section]="section"></app-header>
-
-    <!-- Menu ================================================================ -->
-    <app-menu [alias]="section.alias"></app-menu>
-
-    <!-- Breadcrumbs ========================================================= -->
-    <app-breadcrumbs *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias"></app-breadcrumbs>
 
     <!-- Top ================================================================= -->
     <app-top *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias"></app-top>
 
     <!-- Down Button ========================================================= -->
-    <div *ngIf="section.alias !== 'main'" class="aae-page-down">
+    <div *ngIf="section.alias !== 'main'" class="aae-page-down" [ngStyle]="{'top': pageDownTop}">
       <div class="aae-page-down-wrapper">
         <span (click)="scrollDown()"><i class="fa fa-chevron-circle-down"></i></span>
       </div>
@@ -31,7 +22,7 @@
     <app-album *ngIf="section.alias === 'gallery' && subalias" [subalias]="subalias" [albumName]="section.name"></app-album>
 
     <!-- Call ================================================================ -->
-    <app-call [alias]="section.alias"></app-call>
+    <app-call *ngIf="section.alias !== 'main'" [alias]="section.alias"></app-call>
 
     <!-- Footer ============================================================== -->
     <app-footer *ngIf="section.alias !== 'main'"></app-footer>
