@@ -4,13 +4,7 @@
 .aae-main
   background: url("/assets/img/pages/main.jpg") center center / cover no-repeat
   position: relative
-  z-index: 10
-  display: -webkit-flex
-  display: flex
-  -webkit-justify-content: center
-  justify-content: center
-  -webkit-align-items: center
-  align-items: center
+  padding: 60px 0
 
   .aae-color-mask
     position: absolute
@@ -18,13 +12,19 @@
     left: 0
     right: 0
     bottom: 0
-    z-index: 20
     opacity: .7
-    background: $black-opacity-9
+    background: $black-opacity-8
+    background: -webkit-linear-gradient( $black-opacity-9, $black-opacity-6, $black-opacity-9)
+    background: -moz-linear-gradient(    $black-opacity-9, $black-opacity-6, $black-opacity-9)
+    background: -o-linear-gradient(      $black-opacity-9, $black-opacity-6, $black-opacity-9)
+    background: linear-gradient(         $black-opacity-9, $black-opacity-6, $black-opacity-9)
+    z-index: 10
 
   .aae-main-content
+    position: relative
     max-width: 1200px
-    z-index: 30
+    margin: 100px auto
+    z-index: 20
     color: $white
     text-align: center
 
@@ -34,23 +34,16 @@
       text-transform: uppercase
       margin: 0 0 30px
       line-height: 100px
-      padding: 150px 0 0 0
+      padding: 0
+      margin: 0 0 20px 0
 
       span
         color: $primary
 
-    h2
-      font-weight: 300
-      font-size: 16px
-      text-transform: lowercase
-      letter-spacing: 1px
-      margin-bottom: 20px
-
     .aae-main-page-buttons
-      display: -webkit-flex
       display: flex
-      -webkit-justify-content: center
       justify-content: center
+      align-items: center
 
       div
         background-color: $white
@@ -58,7 +51,7 @@
         cursor: pointer
         padding: 10px 15px
         border-radius: 3px
-        margin: 20px 20px
+        margin: 20px
         font-size: 20px
         font-weight: 400
         text-transform: uppercase
@@ -66,10 +59,8 @@
         -moz-transition: all 250ms ease-out
         -o-transition: all 250ms ease-out
         transition: all 250ms ease-out
-        opacity: .8
 
         &:hover, 
         &:active
           background-color: $primary
           color: $white
-          opacity: 1
