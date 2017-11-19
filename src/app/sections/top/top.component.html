@@ -1,13 +1,15 @@
-<section class="aae-top">
-
-  <div *ngIf="imageExist" class="aae-top-img" [ngStyle]="{'min-height': height, 'background-image': 'url(/assets/img/' + path + '/' + image + '.jpg)'}"></div>
-  <div *ngIf="!imageExist && galleryImageExist && section.alias === 'gallery'" class="aae-top-img" [ngStyle]="{'min-height': height, 'background-image': 'url(http://artezian.zone/gallery/' + subalias + '/' + image + '.jpg)'}"></div>
-  <div *ngIf="!imageExist && subaliasExist && section.alias === 'articles'" class="aae-top-img" [ngStyle]="{'min-height': height, 'background-image': 'url(/assets/img/' + path + '/' + 'default.jpg)'}"></div>
+<section *ngIf="topImgUrl" class="aae-top" [ngStyle]="{'min-height': height, 'background-image': 'url(' + topImgUrl + ')'}">
 
   <div class="aae-top-gradient"></div>
 
+  <app-header [section]="section"></app-header>
+  
+  <app-menu [alias]="section.alias"></app-menu>
+  
+  <app-breadcrumbs [section]="section" [subalias]="subalias"></app-breadcrumbs>
+
   <div *ngIf="title" class="aae-top-title">
-    <div class="aae-header-wrapper">
+    <div class="aae-top-wrapper">
 
       <p *ngIf="name" class="aae-top-author">
         <span class="aae-author-name" [innerHtml]="name"></span>
@@ -19,8 +21,10 @@
     </div>
   </div>
 
-  <div *ngIf="intro" class="aae-top-intro" [ngStyle]="{'min-height': halfHeight}">
-    <div class="aae-top-intro-content" [innerHtml]="intro"></div>
+  <div *ngIf="intro" class="aae-top-intro">
+    <div class="aae-top-wrapper">
+      <div class="aae-top-intro-content" [innerHtml]="intro"></div>
+    </div>
   </div>
 
 </section>

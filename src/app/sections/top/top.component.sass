@@ -4,18 +4,9 @@
 .aae-top
   position: relative
   background-color: $secondary
-
-  .aae-top-img
-    position: relative
-    z-index: 10
-    overflow: hidden
-    display: flex
-    justify-content: center
-    align-items: center
-    background-position: center center
-    background-size: cover
-    background-repeat: no-repeat
-    width: 100%
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
 
   .aae-top-gradient
     position: absolute
@@ -24,26 +15,26 @@
     height: 100%
     width: 100%
     opacity: .7
-    background: $black-opacity-5
-    background: -webkit-linear-gradient( $black-opacity-5, $black-opacity-0, $black-opacity-5)
-    background: -moz-linear-gradient(    $black-opacity-5, $black-opacity-0, $black-opacity-5)
-    background: -o-linear-gradient(      $black-opacity-5, $black-opacity-0, $black-opacity-5)
-    background: linear-gradient(         $black-opacity-5, $black-opacity-0, $black-opacity-5)
-    z-index: 15
+    background: $black-opacity-8
+    background: -webkit-linear-gradient( $black-opacity-8, $black-opacity-4, $black-opacity-8)
+    background: -moz-linear-gradient(    $black-opacity-8, $black-opacity-4, $black-opacity-8)
+    background: -o-linear-gradient(      $black-opacity-8, $black-opacity-4, $black-opacity-8)
+    background: linear-gradient(         $black-opacity-8, $black-opacity-4, $black-opacity-8)
+    z-index: 10
+
+  .aae-top-title,
+  .aae-top-intro
+    position: relative
+    width: 100%
+    max-width: 1400px
+    margin: 0 auto
+    z-index: 20
+
+    .aae-top-wrapper
+      padding: 0 60px
 
   .aae-top-title
-    position: absolute
-    top: 234px
-    left: 0
-    right: 0
-    z-index: 20
-    background: $black-opacity-1
-    background: -webkit-linear-gradient( $black-opacity-2, $black-opacity-0)
-    background: -moz-linear-gradient(    $black-opacity-2, $black-opacity-0)
-    background: -o-linear-gradient(      $black-opacity-2, $black-opacity-0)
-    background: linear-gradient(         $black-opacity-2, $black-opacity-0)
     padding-top: 30px
-    padding-bottom: 150px
 
     .aae-top-author
       text-align: right
@@ -68,15 +59,9 @@
       text-shadow: 0 0 70px $black-opacity-9
 
   .aae-top-intro
-    position: absolute
-    bottom: 0
-    left: 0
-    right: 0
-    z-index: 20
     display: flex
     justify-content: flex-end
     align-items: flex-end
-
 
     .aae-top-intro-content
       color: $white
@@ -85,7 +70,6 @@
       letter-spacing: 1px
       text-transform: uppercase
       text-align: right
-      width: 500px
-      padding: 0 160px 60px 0
+      padding: 60px 0 60px 0
       text-shadow: 0 0 40px $grey-900
 

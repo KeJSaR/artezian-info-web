@@ -19,10 +19,10 @@ export class TopComponent implements OnInit {
   authorInfo: AuthorInfo;
   height: string;
   width: string;
-  halfHeight: string;
   imageExist: boolean = false;
   galleryImageExist: boolean = false;
   subaliasExist: boolean = false;
+  topImgUrl: string;
 
   // Main image data
   path: string = '';
@@ -36,7 +36,6 @@ export class TopComponent implements OnInit {
 
   constructor(private data: DataService) {
       this.height = this.setDimension(window.innerHeight);
-      this.halfHeight = this.setDimension(window.innerHeight / 1.5);
       this.width  = this.setDimension(window.innerWidth);
   }
 
@@ -51,7 +50,6 @@ export class TopComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.height = this.setDimension(event.target.innerHeight);
-    this.halfHeight = this.setDimension(event.target.innerHeight / 1.5);
     this.width  = this.setDimension(event.target.innerWidth);
   }
 
@@ -61,11 +59,9 @@ export class TopComponent implements OnInit {
       this.subaliasExist = true;
 
       if (this.section.alias === 'gallery') {
-        this.path = 'gallery' + '/' + this.subalias;
         this.setGalleryInfo(this.subalias);
       }
       else {
-        this.path = 'articles';
         this.image = this.subalias;        
         this.setArticleTitle(this.section.alias, this.subalias);
         this.setAuthorInfo(this.section.alias, this.subalias);
@@ -76,7 +72,7 @@ export class TopComponent implements OnInit {
       this.path = 'pages';
       this.image = this.section.alias;
       this.setPageInfo(this.section.alias);
-      this.isImageExist();
+      this.setTopImage();
     }
   }
 
@@ -92,6 +88,7 @@ export class TopComponent implements OnInit {
     this.title = this.gallery.name;
     this.intro = this.gallery.info;
     this.galleryImageExist = true;
+    this.setTopImage();
   }
 
   private setArticleTitle(alias: string, subalias: string) {
@@ -118,9 +115,25 @@ export class TopComponent implements OnInit {
     });
   }
 
+  private setTopImage(): void {
+    if (this.galleryImageExist) {
+      this.topImgUrl = 'http://artezian.zone/gallery/' + this.subalias + '/' + this.image + '.jpg';
+    }
+    else if (this.imageExist) {
+      this.topImgUrl = 'http://artezian.zone/articles/' + this.image + '.jpg';
+    }
+    else if (this.path === 'pages') {
+      this.topImgUrl = 'http://artezian.zone/pages/' + this.section.alias + '.jpg';
+    }
+    else {
+      this.topImgUrl = 'http://artezian.zone/pages/' + this.section.alias + '-default.jpg';
+    }
+  }
+
   private isImageExist(): void {
-    this.data.isImageExist(this.path, this.image).subscribe((data) => {
+    this.data.isImageExist(this.image).subscribe((data) => {
       this.imageExist = data === 'true' ? true : false;
+      this.setTopImage();
     });
   }
 
