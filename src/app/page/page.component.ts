@@ -31,6 +31,7 @@ export class PageComponent implements OnInit {
   showBordersContent: boolean = false;
   showSidebarContent: boolean = false;
   height: number;
+  pageDownTop: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -103,10 +104,15 @@ export class PageComponent implements OnInit {
 
   private setHeight(): void {
     this.height = window.innerHeight - 120;
+    this.setPageDownTop();
   }
 
   public switchSidebar(): void {
     this.showSidebarContent = !this.showSidebarContent;
+  }
+
+  private setPageDownTop(): void {
+    this.pageDownTop = (this.height - 75).toString() + 'px';
   }
 
 }
