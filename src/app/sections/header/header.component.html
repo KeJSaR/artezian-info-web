@@ -6,8 +6,8 @@
       <div class="aae-header-title">
         <span class="aae-header-title-short" routerLink="/">ААЭ</span>
         <span class="aae-header-title-divider"> | </span>
-        <span class="aae-header-title-full">Российско-Крымская<br>экспедиция МПГУ</span>
-        <span class="aae-header-title-page" [innerHtml]="section.name"></span>
+        <span *ngIf="section.alias === 'main'" class="aae-header-title-full">Российско-Крымская<br>экспедиция МПГУ</span>
+        <span *ngIf="section.alias !== 'main'" class="aae-header-title-page" [innerHtml]="section.name"></span>
       </div>
 
       <div *ngIf="section.alias !== 'form'" routerLink="/form" class="aae-header-title-form">Подать заявку</div>
