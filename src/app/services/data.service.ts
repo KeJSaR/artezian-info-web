@@ -107,8 +107,8 @@ export class DataService {
    * Check Image
    */
 
-  isImageExist(path: string, image: string): Observable<string> {
-    return this.http.post(this.url, `get=is-image-exist&path=${path}&image=${image}`, {
+  isImageExist(image: string): Observable<string> {
+    return this.http.post(this.url, `get=is-image-exist&image=${image}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: string) => resp);
   }
