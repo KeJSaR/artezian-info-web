@@ -35,6 +35,10 @@
           font-size: 14px
           font-weight: 700
           color: $white
+          -webkit-transition: all 250ms ease-out
+          -moz-transition: all 250ms ease-out
+          -o-transition: all 250ms ease-out
+          transition: all 250ms ease-out
 
           &:hover,
           &:active
@@ -59,7 +63,7 @@
             color: $primary
 
           i
-            font-size: 16px
+            font-size: 18px
             font-weight: 400
 
   &.main
@@ -67,19 +71,21 @@
     border-bottom: none
 
     .aae-menu-wrapper
-      nav
-        a
-          font-weight: 500
-          -webkit-transition: none
-          -moz-transition: none
-          -o-transition: none
-          transition: none
-          color: $white
+      .aae-menu-content
+        nav
+          a
+            font-weight: 500
+            -webkit-transition: none
+            -moz-transition: none
+            -o-transition: none
+            transition: none
+            color: $white
 
-          &:hover,
-          &:active
-            padding-bottom: 4px
-            border-bottom: 1px solid $white
+            &:hover,
+            &:active
+              color: $white
+              padding-bottom: 4px
+              border-bottom: 1px solid $white
 
       .aae-menu-social
         a
