@@ -17,7 +17,7 @@ section
       &:hover,
       &:active
         color: $form-hv
-        border-bottom: $form-hv-bd
+        border-bottom: 1px solid $form-hv-bd
 
     & p:first-child
       text-align: center
@@ -26,14 +26,14 @@ section
       line-height: 25px
 
       a
-        border-bottom: $form-bd
+        border-bottom: 1px solid $form-bd
 
         &:hover,
         &:active
-          border-bottom: $form-hv-bd
+          border-bottom-color: $form-hv-bd
 
     .rules
-      border-left: $form-rules-bd
+      border-left: 3px solid $form-rules-bd
       padding: 0 0 0 30px
       margin: 50px 0
 
@@ -74,7 +74,7 @@ section
             width: 310px
             border: none
             padding: 10px
-            border-bottom: $form-input-bd
+            border-bottom: 2px solid $form-input-bd
             border-radius: 3px
             font-size: 18px
             line-height: 22px
@@ -82,7 +82,7 @@ section
             +transition(250ms)
 
             &:focus
-              border-bottom: $form-focus-bd
+              border-bottom-color: $form-focus-bd
 
         .check
           width: 30px
@@ -93,8 +93,8 @@ section
       .agree
         padding: 20px 0
         margin: 20px 0
-        border-top: $form-agree-bd
-        border-bottom: $form-agree-bd
+        border-top: 1px solid $form-agree-bd
+        border-bottom: 1px solid $form-agree-bd
 
         .checkbox
           width: 30px
@@ -129,7 +129,7 @@ section
             +transition(250ms)
 
             &.input-submit
-              border: $form-submit-bd
+              border: 3px solid $form-submit-bd
               color: $form-submit
 
               &:hover,
@@ -138,7 +138,7 @@ section
                 background-color: $form-submit-hv-bg
 
             &.input-reset
-              border: $form-reset-bd
+              border: 3px solid $form-reset-bd
               color: $form-reset
 
               &:hover,
