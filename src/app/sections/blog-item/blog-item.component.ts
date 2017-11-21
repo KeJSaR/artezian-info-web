@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { BlogItem } from '../../interfaces/blog-item.interface';
 
 @Component({
-  selector: 'app-blog-item',
+  selector: 'aae-blog-item',
   templateUrl: './blog-item.component.html',
   styleUrls: ['./blog-item.component.sass']
 })

@@ -2,7 +2,7 @@
   <div class="aae-page-wrapper">
 
     <!-- Top ================================================================= -->
-    <app-top *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias"></app-top>
+    <aae-top *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias"></aae-top>
 
     <!-- Down Button ========================================================= -->
     <div *ngIf="section.alias !== 'main'" class="aae-page-down" [ngStyle]="{'top': pageDownTop}">
@@ -12,26 +12,26 @@
     </div>
 
     <!-- Pages =============================================================== -->
-    <app-main *ngIf="section.alias === 'main'"></app-main>
-    <app-form *ngIf="section.alias === 'form'"></app-form>
-    <app-not-found *ngIf="section.alias === '404'"></app-not-found>
-    <app-about *ngIf="section.alias === 'about' && subalias === ''" [alias]="section.alias"></app-about>
-    <app-blog *ngIf="(section.alias === 'articles' && subalias === '') || (section.alias === 'news' && subalias === '')" [alias]="section.alias"></app-blog>
-    <app-article *ngIf="(section.alias === 'about' && subalias) || (section.alias === 'articles' && subalias) || (section.alias === 'news' && subalias)" [alias]="section.alias" [subalias]="subalias"></app-article>
-    <app-gallery *ngIf="section.alias === 'gallery' && subalias === ''"></app-gallery>
-    <app-album *ngIf="section.alias === 'gallery' && subalias" [subalias]="subalias" [albumName]="section.name"></app-album>
+    <aae-main *ngIf="section.alias === 'main'"></aae-main>
+    <aae-form *ngIf="section.alias === 'form'"></aae-form>
+    <aae-not-found *ngIf="section.alias === '404'"></aae-not-found>
+    <aae-about *ngIf="section.alias === 'about' && subalias === ''" [alias]="section.alias"></aae-about>
+    <aae-blog *ngIf="(section.alias === 'articles' && subalias === '') || (section.alias === 'news' && subalias === '')" [alias]="section.alias"></aae-blog>
+    <aae-article *ngIf="(section.alias === 'about' && subalias) || (section.alias === 'articles' && subalias) || (section.alias === 'news' && subalias)" [alias]="section.alias" [subalias]="subalias"></aae-article>
+    <aae-gallery *ngIf="section.alias === 'gallery' && subalias === ''"></aae-gallery>
+    <aae-album *ngIf="section.alias === 'gallery' && subalias" [subalias]="subalias" [albumName]="section.name"></aae-album>
 
     <!-- Call ================================================================ -->
-    <app-call *ngIf="section.alias !== 'main'" [alias]="section.alias"></app-call>
+    <aae-call *ngIf="section.alias !== 'main'" [alias]="section.alias"></aae-call>
 
     <!-- Footer ============================================================== -->
-    <app-footer *ngIf="section.alias !== 'main'"></app-footer>
+    <aae-footer *ngIf="section.alias !== 'main'"></aae-footer>
 
   </div>
 </section>
 
 <div class="aae-page-sidebar" [class.aae-page-sidebar-show]="showSidebarContent">
-  <app-sidebar></app-sidebar>
+  <aae-sidebar></aae-sidebar>
 </div>
 
 <div class="aae-page-border-top" [class.aae-page-border-show]="showBordersContent">

@@ -4,7 +4,7 @@ import { DataService } from '../../services/data.service';
 import { Gallery } from '../../interfaces/gallery.interface';
 
 @Component({
-  selector: 'app-gallery',
+  selector: 'aae-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.sass']
 })

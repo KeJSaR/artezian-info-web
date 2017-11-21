@@ -4,7 +4,7 @@ import { DataService } from '../../services/data.service';
 import { Path } from '../../interfaces/path.interface';
 
 @Component({
-  selector: 'app-breadcrumbs',
+  selector: 'aae-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.sass']
 })

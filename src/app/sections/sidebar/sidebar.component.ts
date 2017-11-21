@@ -4,7 +4,7 @@ import { DataService } from '../../services/data.service';
 import { MenuItem } from '../../interfaces/menu-item.interface';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'aae-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.sass']
 })

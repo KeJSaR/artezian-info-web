@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@a
 import { Image } from '../../interfaces/image.interface';
 
 @Component({
-  selector: 'app-img-show',
+  selector: 'aae-img-show',
   templateUrl: './img-show.component.html',
   styleUrls: ['./img-show.component.sass']
 })

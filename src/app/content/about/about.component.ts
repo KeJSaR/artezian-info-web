@@ -5,7 +5,7 @@ import { Text } from '../../interfaces/text.interface';
 import { BlogItem } from '../../interfaces/blog-item.interface';
 
 @Component({
-  selector: 'app-about',
+  selector: 'aae-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.sass']
 })
@@ -15,7 +15,7 @@ export class AboutComponent implements OnInit {
 
   private texts: Text[];
   private blogItems: BlogItem[];
-  
+
   about = [];
 
   constructor(private dataService: DataService) { }

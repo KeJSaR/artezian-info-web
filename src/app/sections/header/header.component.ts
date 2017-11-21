@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { Path } from '../../interfaces/path.interface';
 
 @Component({
-  selector: 'app-header',
+  selector: 'aae-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass']
 })

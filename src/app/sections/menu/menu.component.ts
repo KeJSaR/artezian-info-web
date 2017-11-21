@@ -4,7 +4,7 @@ import { DataService } from '../../services/data.service';
 import { MenuItem } from '../../interfaces/menu-item.interface';
 
 @Component({
-  selector: 'app-menu',
+  selector: 'aae-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.sass']
 })

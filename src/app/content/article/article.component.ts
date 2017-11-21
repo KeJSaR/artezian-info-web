@@ -4,7 +4,7 @@ import { DataService } from '../../services/data.service';
 import { Article } from '../../interfaces/article.interface';
 
 @Component({
-  selector: 'app-article',
+  selector: 'aae-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.sass']
 })

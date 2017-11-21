@@ -7,7 +7,7 @@ import { DataService } from '../services/data.service';
 import { Path } from '../interfaces/path.interface';
 
 @Component({
-  selector: 'app-page',
+  selector: 'aae-page',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.sass']
 })
@@ -15,7 +15,7 @@ export class PageComponent implements OnInit {
 
   // ===========================================================================
 
-  // url 
+  // url
   // [scheme:] [//host[:port]] [/path] [?query] [#fragment]
 
   // path
@@ -24,8 +24,8 @@ export class PageComponent implements OnInit {
   // ===========================================================================
 
   section: Path =  {
-    alias: '', 
-    name: '' 
+    alias: '',
+    name: ''
   }
   subalias: string = '';
   showBordersContent: boolean = false;
@@ -62,7 +62,7 @@ export class PageComponent implements OnInit {
   onWindowScroll() {
     if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) >= this.height) {
       this.showBordersContent = true;
-    } 
+    }
     else if (this.showBordersContent && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.height) {
       this.showBordersContent = false;
     }

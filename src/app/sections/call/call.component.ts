@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-call',
+  selector: 'aae-call',
   templateUrl: './call.component.html',
   styleUrls: ['./call.component.sass']
 })

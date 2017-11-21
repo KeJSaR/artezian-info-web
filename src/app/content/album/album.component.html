@@ -5,9 +5,9 @@
     <div *ngFor="let image of images" class="aae-album-img-wrapper" [ngStyle]="{'background-image': 'url(http://artezian.zone/gallery/' + subalias + '/pics/' + image.alias + '.jpg)'}" (click)="showImg(subalias, image.alias)">
       <p [innerHtml]="image.name"></p>
     </div>
-    
+
   </div>
 
 </section>
 
-<app-img-show *ngIf="isShow" [albumName]="albumName" [subalias]="subalias" [currentImg]="currentImg" [images]="images" (close)="closeImgShow()"></app-img-show>
+<aae-img-show *ngIf="isShow" [albumName]="albumName" [subalias]="subalias" [currentImg]="currentImg" [images]="images" (close)="closeImgShow()"></aae-img-show>

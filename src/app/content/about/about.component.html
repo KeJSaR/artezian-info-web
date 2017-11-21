@@ -2,9 +2,9 @@
 
   <div class="aae-about-wrapper" *ngFor="let item of about">
 
-    <app-text *ngIf="item.type === 'text'" [text]="item.data"></app-text>
+    <aae-text *ngIf="item.type === 'text'" [text]="item.data"></aae-text>
 
-    <app-blog-item *ngIf="item.type === 'intro'" [blogItem]="item.data" [alias]="alias"></app-blog-item>
+    <aae-blog-item *ngIf="item.type === 'intro'" [blogItem]="item.data" [alias]="alias"></aae-blog-item>
 
   </div>
 

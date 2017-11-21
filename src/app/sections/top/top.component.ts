@@ -6,7 +6,7 @@ import { Gallery } from '../../interfaces/gallery.interface';
 import { AuthorInfo } from '../../interfaces/author-info.interface';
 
 @Component({
-  selector: 'app-top',
+  selector: 'aae-top',
   templateUrl: './top.component.html',
   styleUrls: ['./top.component.sass']
 })
@@ -62,7 +62,7 @@ export class TopComponent implements OnInit {
         this.setGalleryInfo(this.subalias);
       }
       else {
-        this.image = this.subalias;        
+        this.image = this.subalias;
         this.setArticleTitle(this.section.alias, this.subalias);
         this.setAuthorInfo(this.section.alias, this.subalias);
         this.isImageExist();

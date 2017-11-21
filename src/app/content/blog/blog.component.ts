@@ -4,16 +4,16 @@ import { DataService } from '../../services/data.service';
 import { BlogItem } from '../../interfaces/blog-item.interface';
 
 @Component({
-  selector: 'app-blog',
+  selector: 'aae-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.sass']
 })
 export class BlogComponent implements OnInit {
 
   @Input() alias: string;
-  
+
   blogItems: BlogItem[];
-  
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
@@ -25,5 +25,5 @@ export class BlogComponent implements OnInit {
       this.blogItems = data;
     });
   }
-  
+
 }

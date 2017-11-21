@@ -5,7 +5,7 @@ import { Image } from '../../interfaces/image.interface';
 import { Gallery } from '../../interfaces/gallery.interface';
 
 @Component({
-  selector: 'app-album',
+  selector: 'aae-album',
   templateUrl: './album.component.html',
   styleUrls: ['./album.component.sass']
 })

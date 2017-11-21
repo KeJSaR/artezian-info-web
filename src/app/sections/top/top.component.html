@@ -2,11 +2,11 @@
 
   <div class="aae-top-gradient"></div>
 
-  <app-header [section]="section"></app-header>
-  
-  <app-menu [alias]="section.alias"></app-menu>
-  
-  <app-breadcrumbs [section]="section" [subalias]="subalias"></app-breadcrumbs>
+  <aae-header [section]="section"></aae-header>
+
+  <aae-menu [alias]="section.alias"></aae-menu>
+
+  <aae-breadcrumbs [section]="section" [subalias]="subalias"></aae-breadcrumbs>
 
   <div *ngIf="title" class="aae-top-title">
     <div class="aae-top-wrapper">

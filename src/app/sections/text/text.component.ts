@@ -3,7 +3,7 @@ import { Component, Input, OnInit, HostListener } from '@angular/core';
 import { Text } from '../../interfaces/text.interface';
 
 @Component({
-  selector: 'app-text',
+  selector: 'aae-text',
   templateUrl: './text.component.html',
   styleUrls: ['./text.component.sass']
 })
