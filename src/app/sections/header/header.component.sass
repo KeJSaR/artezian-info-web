@@ -33,11 +33,11 @@ section
 
         span
           font-weight: 900
-          font-size: 40px
+          +font-size(40px)
           text-transform: uppercase
 
         .short
-          font-size: 70px
+          +font-size(70px)
           font-weight: 900
           cursor: pointer
           +transition(all .25s ease-out)
@@ -48,7 +48,7 @@ section
             color: $header-short-hv
 
         .divider
-          font-size: 30px
+          +font-size(30px)
           font-weight: 400
           padding: 0 10px
 
@@ -56,7 +56,7 @@ section
           display: none
 
         .page
-          font-size: 70px
+          +font-size(70px)
           font-weight: 700
           color: $header-page
 
@@ -64,7 +64,7 @@ section
         text-transform: uppercase
         +transition(all .25s ease-out)
         font-weight: 500
-        font-size: 14px
+        +font-size(14px)
         cursor: pointer
         color: $header-form
         border: 1px solid $header-form-bd
@@ -96,7 +96,7 @@ section
 
           .full
             display: inherit
-            font-size: 20px
+            +font-size(20px)
             font-weight: 400
             letter-spacing: 0
 

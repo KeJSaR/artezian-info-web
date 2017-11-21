@@ -1,5 +1,14 @@
 @import "colors"
 
+// Font size
+@function calculateRem($size)
+  $remSize: $size / 16px
+  @return $remSize * 1rem
+
+=font-size($size)
+  font-size: $size
+  font-size: calculateRem($size)
+
 // Transition
 =transition($args...)
   -webkit-transition: $args
@@ -14,7 +23,7 @@
   $opacity-ie: $opacity * 100
   filter: alpha(opacity=$opacity-ie)
 
-// Animations and keyframes
+// Animations
 =keyframes($animation-name)
   @-webkit-keyframes #{$animation-name}
     @content
