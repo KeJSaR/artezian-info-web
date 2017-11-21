@@ -43,6 +43,18 @@
   -o-animation: #{$str}
   animation: #{$str}
 
+// Z-index
+@function z($name)
+  @if index($z-indexes, $name)
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1
+  @else
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}'
+    @return null
+
+$z-a: breadcrumbs footer-wrapper header title menu h2 map pattern img gradient mask
+$z-b: bg sidebar img-show scroll-to-top down-c down-b down-a article gallery main
+$z-indexes: join($z-b, $z-a, comma)
+
 
 // Content #####################################################################
 

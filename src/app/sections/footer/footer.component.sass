@@ -10,7 +10,7 @@ section
     width: 110%
     height: 110%
     background: url("/assets/img/map.png") center center / contain no-repeat
-    z-index: 10
+    z-index: z('map')
     +opacity(0.1)
 
   .top
@@ -29,7 +29,7 @@ section
       justify-content: space-between
       -webkit-align-items: flex-start
       align-items: flex-start
-      z-index: 20
+      z-index: z('footer-wrapper')
 
       a
         color: $footer-color
