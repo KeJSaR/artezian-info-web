@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { RoutingModule } from './routing.module';
 
 import { DataService } from './services/data.service';
 
@@ -55,7 +55,7 @@ import { TopComponent } from './sections/top/top.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RoutingModule,
     HttpClientModule
   ],
   providers: [
