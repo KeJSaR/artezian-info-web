@@ -1,12 +1,13 @@
 @import "colors"
 
 // Transition
-=transition($time)
-  -webkit-transition: all $time ease-out
-  -moz-transition:    all $time ease-out
-  -ms-transition:     all $time ease-out
-  transition:         all $time ease-out
-  // +transition(250ms)
+=transition($args...)
+  -webkit-transition: $args
+  -moz-transition: $args
+  -ms-transition: $args
+  -o-transition: $args
+  transition: $args
+  // +transition(color .3s ease)
 
 // Content #####################################################################
 
