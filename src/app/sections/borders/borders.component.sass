@@ -1,0 +1,119 @@
+@import "../../../variables"
+
+.top,
+.right,
+.bottom,
+.left
+  position: fixed
+  background-color: $secondary-dark
+  z-index: z('bg')
+  display: flex
+  align-items: center
+
+.top-title,
+.top-social,
+.bottom-copyright,
+.left-menu
+  +opacity(0)
+  +transition(all .5s ease-out)
+
+  a
+    color: $white
+    text-decoration: none
+    +transition(all .25s ease-out)
+
+    &:hover,
+    &:active
+      color: $primary-light
+
+
+.top
+  top: 0
+  right: 0
+  left: 0
+  width: 100%
+  height: 60px
+  justify-content: space-between
+
+  .top-title
+    padding-left: 60px
+
+  .top-social
+    padding-right: 60px
+
+    a
+      margin-left: 15px
+
+  &.show
+    .top-title,
+    .top-social
+      +opacity(1)
+
+.right
+  top: 0
+  right: 0
+  bottom: 0
+  width: 60px
+  height: 100%
+
+.bottom
+  right: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 60px
+  justify-content: flex-end
+
+  .bottom-copyright
+    padding-right: 60px
+    text-transform: uppercase
+    +font-size(12px)
+    font-weight: 300
+    letter-spacing: 1px
+    color: $white
+    +opacity(0.5)
+
+    i
+      +font-size(10px)
+      margin: 0 5px
+      position: relative
+      top: 1px
+
+  &.show
+    .bottom-copyright
+      +opacity(1)
+
+.left
+  top: 0
+  bottom: 0
+  left: 0
+  width: 60px
+  height: 100%
+  justify-content: center
+
+  .left-menu
+    color: $white
+    +font-size(21px)
+    cursor: pointer
+    +transition(all .25s ease-out)
+
+    &:hover,
+    &:active
+      color: $primary-light
+
+    div
+      position: relative
+
+      span
+        position: absolute
+        top: -63px
+        left: -31px
+        transform: rotate(-90deg)
+        text-transform: uppercase
+        font-weight: 100
+        letter-spacing: 2px
+        +font-size(24px)
+
+  &.show
+    .left-menu
+      +opacity(1)

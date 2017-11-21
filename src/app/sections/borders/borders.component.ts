@@ -1,15 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-borders',
+  selector: 'aae-borders',
   templateUrl: './borders.component.html',
   styleUrls: ['./borders.component.sass']
 })
 export class BordersComponent implements OnInit {
 
-  constructor() { }
+  @Input() alias: string;
+
+  @Output() showSidebar = new EventEmitter<boolean>();
+
+  showSidebarContent: boolean = false;
+  showBordersContent: boolean = false;
+  height: number;
 
   ngOnInit() {
+    this.setHeight(window.innerHeight);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.setHeight(event.target.innerHeight);
+  }
+
+  @HostListener('window: scroll', [])
+  onWindowScroll() {
+    if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) >= this.height) {
+      this.showBordersContent = true;
+    }
+    else if (this.showBordersContent && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.height) {
+      this.showBordersContent = false;
+    }
+  }
+
+  switchSidebar(): void {
+    this.showSidebar.emit();
+    this.showSidebarContent = !this.showSidebarContent;
+  }
+
+  private setHeight(height: number): void {
+    this.height = height - 120;
   }
 
 }
