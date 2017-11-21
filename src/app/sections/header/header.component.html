@@ -1,16 +1,16 @@
-<section class="aae-header" [class.main]="section.alias === 'main'">
-  <div class="aae-header-wrapper">
+<section [class.main]="section.alias === 'main'">
+  <div class="wrapper">
 
-    <div class="aae-header-row">
+    <div class="row">
 
-      <div class="aae-header-title">
-        <span class="aae-header-title-short" routerLink="/">ААЭ</span>
-        <span class="aae-header-title-divider"> | </span>
-        <span *ngIf="section.alias === 'main'" class="aae-header-title-full">Российско-Крымская<br>экспедиция МПГУ</span>
-        <span *ngIf="section.alias !== 'main'" class="aae-header-title-page" [innerHtml]="section.name"></span>
+      <div class="title">
+        <span class="short" routerLink="/">ААЭ</span>
+        <span class="divider"> | </span>
+        <span *ngIf="section.alias === 'main'" class="full">Российско-Крымская<br>экспедиция МПГУ</span>
+        <span *ngIf="section.alias !== 'main'" class="page" [innerHtml]="section.name"></span>
       </div>
 
-      <div *ngIf="section.alias !== 'form'" routerLink="/form" class="aae-header-title-form">Подать заявку</div>
+      <div *ngIf="section.alias !== 'form'" routerLink="/form" class="form">Подать заявку</div>
 
     </div>
 

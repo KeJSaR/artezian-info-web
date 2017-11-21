@@ -1,13 +1,13 @@
-<section *ngIf="article" class="aae-article">
+<section *ngIf="article">
 
-  <div class="aae-article-pattern"></div>
+  <div class="pattern"></div>
 
-  <div *ngIf="article.intro" class="aae-article-wrapper">
-    <div class="aae-article-intro" [innerHtml]="article.intro"></div>
+  <div *ngIf="article.intro" class="wrapper">
+    <div class="intro" [innerHtml]="article.intro"></div>
   </div>
 
-  <div *ngIf="article.content" class="aae-article-wrapper">
-    <div class="aae-article-content" [innerHtml]="article.content"></div>
+  <div *ngIf="article.content" class="wrapper">
+    <div class="content" [innerHtml]="article.content"></div>
   </div>
 
 </section>

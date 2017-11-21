@@ -1,19 +1,19 @@
 @import "../../../variables"
 
-.aae-header
+section
   position: relative
   height: 105px
   width: 100%
   padding: 50px 0 0
-  background-color: $black-opacity-1
+  background-color: $header-bg
   z-index: 20
 
-  .aae-header-wrapper
+  .wrapper
     width: 100%
     max-width: 1400px
     margin: 0 auto
 
-    .aae-header-row
+    .row
       padding: 0 60px
       display: -webkit-flex
       display: flex
@@ -22,102 +22,95 @@
       -webkit-align-items: center
       align-items: center
 
-      .aae-header-title
+      .title
         display: -webkit-flex
         display: flex
         -webkit-justify-content: space-between
         justify-content: space-between
         -webkit-align-items: center
         align-items: center
-        color: $white
+        color: $header
 
         span
           font-weight: 900
           font-size: 40px
           text-transform: uppercase
 
-        .aae-header-title-short
+        .short
           font-size: 70px
           font-weight: 900
           cursor: pointer
-          -webkit-transition: all 250ms ease-out
-          -moz-transition: all 250ms ease-out
-          -o-transition: all 250ms ease-out
-          transition: all 250ms ease-out
-          color: $white
+          +transition(250ms)
+          color: $header-short
 
           &:hover,
           &:active
-            color: $primary
+            color: $header-short-hv
 
-        .aae-header-title-divider
+        .divider
           font-size: 30px
           font-weight: 400
           padding: 0 10px
 
-        .aae-header-title-full
+        .full
           display: none
 
-        .aae-header-title-page
+        .page
           font-size: 70px
           font-weight: 700
-          color: $white
+          color: $header-page
 
-      .aae-header-title-form
+      .form
         text-transform: uppercase
-        -webkit-transition: all 250ms ease-out
-        -moz-transition: all 250ms ease-out
-        -o-transition: all 250ms ease-out
-        transition: all 250ms ease-out
+        +transition(250ms)
         font-weight: 500
         font-size: 14px
         cursor: pointer
-        color: $white
-        border: 1px solid $white
+        color: $header-form
+        border: $header-form-bd
         padding: 10px 15px
         border-radius: 2px
 
         &:hover,
         &:active
-          color: $primary
-          background-color: $white
-          text-shadow: 0 0 0 transparent
+          color: $header-form-hv
+          background-color: $header-form-hv-bg
 
   &.main
-    background-color: transparent
+    background-color: $header-main-bg
     border-bottom: none
 
-    .aae-header-wrapper
-      background-color: transparent
+    .wrapper
+      background-color: $header-wrapper-bg
 
-      .aae-header-row
-        .aae-header-title
-          color: $white
+      .row
+        .title
+          color: $header-title
 
-          .aae-header-title-short
-            color: $white
+          .short
+            color: $header-short
 
             &:hover,
             &:active
-              color: $primary
+              color: $header-short-hv
 
-          .aae-header-title-full
+          .full
             display: inherit
             font-size: 20px
             font-weight: 400
             letter-spacing: 0
 
-          .aae-header-title-page
+          .page
             display: none
 
-        .aae-header-title-form
-          background-color: transparent
-          border: 2px solid $white
-          color: $white
+        .form
+          background-color: $header-form-bg
+          border: $header-form-bd
+          color: $header-form
           font-weight: 600
 
           &:hover,
           &:active
-            color: $primary
-            background-color: $white
-            border-color: $white
+            color: $header-form-hv
+            background-color: $header-form-hv-bg
+            border-color: $header-form-hv-bd

@@ -1,12 +1,12 @@
 @import "../../../variables"
 
-.aae-blog-item
-  .aae-blog-item-img-block
+section
+  .image
     position: relative
     font-size: 0
     line-height: 0
 
-    .aae-blog-item-img
+    .img
       position: relative
       width: 100%
       z-index: 10
@@ -19,8 +19,8 @@
         img
           width: 100%
 
-  .aae-blog-item-content-block
-    background-color: $grey-100
+  .content
+    background-color: $blog-content-bg
     padding: 75px 40px 100px
     font-size: 18px
     font-weight: 300
@@ -32,41 +32,35 @@
 
       a
         z-index: 20
-        color: $grey-900
+        color: $blog-content
         text-decoration: none
-        -webkit-transition: all 250ms ease-out
-        -moz-transition: all 250ms ease-out
-        -o-transition: all 250ms ease-out
-        transition: all 250ms ease-out
+        +transition(250ms)
 
         &:hover,
         &:active
-          color: $primary
+          color: $blog-content-hv
 
-    .aae-blog-item-content-text
+    .text
       width: 500px
       margin: 0 auto
       font-size: 16px
 
-    .aae-blog-item-read-more
+    .read-more
       text-align: center
       padding-top: 35px
 
       a
         display: inline-block
         padding: 10px 30px
-        border: 2px solid $blue-grey-600
-        color: $blue-grey-700
+        color: $blog-read-more
+        border: $blog-read-more-bd
         border-radius: 3px
         text-decoration: none
         font-weight: 500
-        -webkit-transition: all 250ms ease-out
-        -moz-transition: all 250ms ease-out
-        -o-transition: all 250ms ease-out
-        transition: all 250ms ease-out
+        +transition(250ms)
 
         &:hover,
         &:active
-          background-color: $blue-grey-700
-          border-color: $blue-grey-700
-          color: $white
+          color: $blog-read-more-hv
+          border-color: $blog-read-more-hv-bd
+          background-color: $blog-read-more-hv-bg

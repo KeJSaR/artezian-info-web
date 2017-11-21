@@ -1,18 +1,18 @@
 @import "../../../variables"
 
-.aae-breadcrumbs
+section
   position: relative
   width: 100%
   padding: 13px 0 10px
-  background-color: $black-opacity-3
+  background-color: $breadcrumbs-bg
   z-index: 20
 
-  .aae-breadcrumbs-wrapper
+  .wrapper
     width: 100%
     max-width: 1400px
     margin: 0 auto
 
-    .aae-breadcrumbs-content
+    .content
       font-size: 14px
       text-transform: uppercase
       font-weight: 500
@@ -20,21 +20,21 @@
       left: -5px
       padding: 0 60px
       margin: 0
-      color: $white
+      color: $breadcrumbs-content
       display: flex
       justify-content: flex-start
       align-items: flex-start
 
-      .aae-breadcrumbs-item
+      .item
         margin: 0 5px
 
         a
-          color: $primary-light
+          color: $breadcrumbs-item
           text-decoration: none
 
           &:hover,
           &:active
-            color: $white
+            color: $breadcrumbs-item-hv
 
-        .aae-breadcrumbs-subname
+        .subname
           font-weight: 400

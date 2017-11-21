@@ -1,11 +1,11 @@
-<section *ngIf="menu" class="aae-sidebar">
+<section *ngIf="menu">
   <ul>
     <li *ngFor="let item of menu" showInfo>
-      <div class="aae-sidebar-link" routerLink="/{{ item.alias }}" routerLinkActive="active">
+      <div class="link" routerLink="/{{ item.alias }}" routerLinkActive="active">
 
-        <div class="aae-sidebar-name">{{ item.name }}</div>
+        <div class="name">{{ item.name }}</div>
 
-        <div class="aae-sidebar-info" [innerHtml]="item.info"></div>
+        <div class="info" [innerHtml]="item.info"></div>
 
       </div>
     </li>

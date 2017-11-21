@@ -1,19 +1,19 @@
 @import "../../../variables"
 
-.aae-menu
+section
   position: relative
   width: 100%
-  border-bottom: 1px solid $white-opacity-3
-  background-color: $black-opacity-1
+  border-bottom: $menu-bd
+  background-color: $menu-bg
   letter-spacing: 0.5px
   z-index: 20
 
-  .aae-menu-wrapper
+  .wrapper
     width: 100%
     max-width: 1400px
     margin: 0 auto
 
-    .aae-menu-content
+    .content
       padding: 0 60px
       display: -webkit-flex
       display: flex
@@ -33,17 +33,14 @@
           text-transform: uppercase
           font-size: 14px
           font-weight: 700
-          color: $white
-          -webkit-transition: all 250ms ease-out
-          -moz-transition: all 250ms ease-out
-          -o-transition: all 250ms ease-out
-          transition: all 250ms ease-out
+          color: $menu-nav
+          +transition(250ms)
 
           &:hover,
           &:active
-            color: $primary
+            color: $menu-nav-hv
 
-      .aae-menu-social
+      .social
         position: relative
         right: -5px
         padding: 10px 0
@@ -51,45 +48,39 @@
         a
           text-decoration: none
           padding: 0 5px
-          -webkit-transition: all 250ms ease-out
-          -moz-transition: all 250ms ease-out
-          -o-transition: all 250ms ease-out
-          transition: all 250ms ease-out
-          color: $white
+          +transition(250ms)
+          color: $menu-social
 
           &:hover,
           &:active
-            color: $primary
+            color: $menu-social-hv
 
           i
             font-size: 18px
             font-weight: 400
 
   &.main
-    background-color: $black-opacity-0
+    background-color: $menu-main-bg
     border-bottom: none
 
-    .aae-menu-wrapper
-      .aae-menu-content
+    .wrapper
+      .content
         nav
           a
             font-weight: 500
-            -webkit-transition: none
-            -moz-transition: none
-            -o-transition: none
-            transition: none
-            color: $white
+            +transition(0)
+            color: $menu-main-content
 
             &:hover,
             &:active
-              color: $white
+              color: $menu-main-content-hv
               padding-bottom: 4px
-              border-bottom: 1px solid $white
+              border-bottom: $menu-main-content-hv-bd
 
-      .aae-menu-social
+      .social
         a
-          color: $white
+          color: $menu-main-social
 
           &:hover,
           &:active
-            color: $primary
+            color: $menu-main-social-hv

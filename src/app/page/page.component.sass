@@ -85,20 +85,20 @@
     opacity: 1
     width: 100%
 
-.aae-page-border-top,
-.aae-page-border-right,
-.aae-page-border-bottom,
-.aae-page-border-left
+.aae-page-bd-top,
+.aae-page-bd-right,
+.aae-page-bd-bottom,
+.aae-page-bd-left
   position: fixed
   background-color: $secondary-dark
   z-index: 100
   display: flex
   align-items: center
 
-.aae-page-border-top-title,
-.aae-page-border-top-social,
-.aae-page-border-bottom-copyright,
-.aae-page-border-left-menu
+.aae-page-bd-top-title,
+.aae-page-bd-top-social,
+.aae-page-bd-bottom-copyright,
+.aae-page-bd-left-menu
   display: none
 
   a
@@ -114,7 +114,7 @@
       color: $primary-light
 
 
-.aae-page-border-top
+.aae-page-bd-top
   top: 0
   right: 0
   left: 0
@@ -122,28 +122,28 @@
   height: 60px
   justify-content: space-between
 
-  .aae-page-border-top-title
+  .aae-page-bd-top-title
     padding-left: 60px
 
-  .aae-page-border-top-social
+  .aae-page-bd-top-social
     padding-right: 60px
 
     a
       margin-left: 15px
 
-  &.aae-page-border-show
-    .aae-page-border-top-title,
-    .aae-page-border-top-social
+  &.aae-page-bd-show
+    .aae-page-bd-top-title,
+    .aae-page-bd-top-social
       display: inherit
 
-.aae-page-border-right
+.aae-page-bd-right
   top: 0
   right: 0
   bottom: 0
   width: 60px
   height: 100%
 
-.aae-page-border-bottom
+.aae-page-bd-bottom
   right: 0
   bottom: 0
   left: 0
@@ -151,7 +151,7 @@
   height: 60px
   justify-content: flex-end
 
-  .aae-page-border-bottom-copyright
+  .aae-page-bd-bottom-copyright
     padding-right: 60px
     text-transform: uppercase
     font-size: 12px
@@ -166,11 +166,11 @@
       position: relative
       top: 1px
 
-  &.aae-page-border-show
-    .aae-page-border-bottom-copyright
+  &.aae-page-bd-show
+    .aae-page-bd-bottom-copyright
       display: inherit
 
-.aae-page-border-left
+.aae-page-bd-left
   top: 0
   bottom: 0
   left: 0
@@ -178,7 +178,7 @@
   height: 100%
   justify-content: center
 
-  .aae-page-border-left-menu
+  .aae-page-bd-left-menu
     color: $white
     font-size: 21px
     cursor: pointer
@@ -204,8 +204,8 @@
         letter-spacing: 2px
         font-size: 24px
 
-  &.aae-page-border-show
-    .aae-page-border-left-menu
+  &.aae-page-bd-show
+    .aae-page-bd-left-menu
       display: inherit
 
 /* Safari 4.0 - 8.0 */

@@ -1,22 +1,22 @@
 @import "../../../variables"
 
-.aae-gallery
-  background-color: $white
+section
+  background-color: $gallery-bg
   position: relative
 
-  .aae-gallery-wrapper
+  .wrapper
     margin: 0 auto
-    padding: $wrapper-padding
-    width: $wrapper-width-wide
+    padding: 100px
+    width: 900px
     display: flex
     flex-flow: row wrap
     justify-content: space-between
 
-    .aae-gallery-container
+    .container
       width: 280px
       padding-bottom: 50px
 
-      .aae-gallery-img-wrapper
+      .image
         width: 280px
         height: 280px
         position: relative
@@ -35,37 +35,34 @@
           font-size: 0
           line-height: 0
 
-          &.aae-gallery-img
+          &.img
             z-index: 10
 
-          &.aae-gallery-info
+          &.info
             opacity: 0
-            color: $white
+            color: $gallery-info
             width: 240px
             height: 240px
             z-index: 20
             font-size: 14px
             line-height: 17px
             padding: 20px
-            background-color: $primary
+            background-color: $gallery-info-bg
             overflow: hidden
-            -webkit-transition: all 250ms ease-out
-            -moz-transition: all 250ms ease-out
-            -o-transition: all 250ms ease-out
-            transition: all 250ms ease-out
+            +transition(250ms)
 
             &:hover,
             &:active
               opacity: 1
 
-      .aae-gallery-name
+      .name
         text-align: center
 
         a
-          color: $secondary-dark
+          color: $gallery-name
           text-decoration: none
           font-weight: 500
 
           &:hover,
           &:active
-            color: $primary
+            color: $gallery-name-hv

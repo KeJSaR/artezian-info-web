@@ -1,9 +1,9 @@
 @import "../../../variables"
 
-.aae-footer
-  color: $blue-grey-100
+section
+  color: $footer
 
-  .aae-footer-map
+  .map
     position: absolute
     top: -5%
     left: -5%
@@ -13,15 +13,15 @@
     z-index: 10
     opacity: 0.1
 
-  .aae-footer-top
+  .top
     position: relative
     overflow: hidden
-    background-color: $secondary
+    background-color: $footer-bg
 
-    .aae-footer-wrapper
-      margin: $wrapper-margin auto
-      padding: $wrapper-padding
-      width: $wrapper-width-wide
+    .wrapper
+      margin: 200px auto
+      padding: 100px
+      width: 900px
       position: relative
       display: -webkit-flex
       display: flex
@@ -32,26 +32,23 @@
       z-index: 20
 
       a
-        color: $blue-grey-100
-        -webkit-transition: all 150ms ease-out
-        -moz-transition: all 150ms ease-out
-        -o-transition: all 150ms ease-out
-        transition: all 150ms ease-out
+        color: $footer-color
+        +transition(250ms)
         text-decoration: none
 
         &:hover,
         &:active
-          color: $white
-          text-shadow: 1px 1px 3px $blue-grey-900
+          color: $footer-hv
+          text-shadow: $footer-ts
 
       h3
-        color: $blue-grey-200
+        color: $footer-h3
         padding: 15px 0 0 0
         letter-spacing: 0.5px
         text-transform: uppercase
         font-weight: 500
 
-      .aae-popular-articles
+      .articles
         padding: 0 20px
         width: 60%
 
@@ -66,24 +63,24 @@
             line-height: 19px
             margin: 10px 0
 
-      .aae-contact
+      .contact
         width: 35%
 
         p
-          color: $blue-grey-100
+          color: $contact
 
-          .aae-contact-name
+          .name
             font-weight: 600
             display: inline-block
             margin: 0 5px 0 0
 
-          .aae-social-icon
+          .social
             width: 22px
             text-align: center
             display: inline-block
             margin: 0 5px 0 0
 
-  .aae-footer-bottom
+  .bottom
     padding: 50px 0
     text-align: center
-    background-color: $secondary-dark
+    background-color: $footer-bottom-bg

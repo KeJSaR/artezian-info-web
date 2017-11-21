@@ -1,12 +1,12 @@
-<section *ngIf="menu" class="aae-menu" [class.main]="alias === 'main'">
-  <div class="aae-menu-wrapper">
-    <div class="aae-menu-content">
+<section *ngIf="menu" [class.main]="alias === 'main'">
+  <div class="wrapper">
+    <div class="content">
 
       <nav>
         <a *ngFor="let item of menu" routerLink="/{{ item.alias }}" routerLinkActive="active">{{ item.name }}</a>
       </nav>
 
-      <span class="aae-menu-social">
+      <span class="social">
         <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>

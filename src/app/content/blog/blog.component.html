@@ -1,23 +1,23 @@
-<section class="aae-blog">
+<section *ngIf="blogItems">
 
-  <div class="aae-blog-wrapper" *ngFor="let item of blogItems">
+  <div class="wrapper" *ngFor="let item of blogItems">
 
-    <h2 class="aae-blog-header"><a routerLink="/articles/{{ item.id }}">{{ item.title }}</a></h2>
+    <h2 class="header"><a routerLink="/articles/{{ item.id }}">{{ item.title }}</a></h2>
 
-    <p class="aae-blog-author">
-      <span class="aae-blog-author-name">{{ item.author.name }},</span>
-      <span class="aae-blog-author-info">{{ item.author.info }}</span>
+    <p class="author">
+      <span class="name">{{ item.author.name }},</span>
+      <span class="info">{{ item.author.info }}</span>
     </p>
 
-    <div class="aae-blog-intro-wrapper">
+    <div class="intro">
 
-      <p class="aae-blog-date">{{ item.date }}</p>
+      <p class="date">{{ item.date }}</p>
 
-      <div class="aae-blog-intro" [innerHtml]="item.intro"></div>
+      <div class="content" [innerHtml]="item.intro"></div>
 
     </div>
 
-    <div class="aae-blog-read-more">
+    <div class="read-more">
       <a routerLink="/articles/{{ item.id }}">читать</a>
     </div>
 

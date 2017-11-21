@@ -1,18 +1,18 @@
-<section class="aae-main" [ngStyle]="{'min-height': height}">
+<section [ngStyle]="{'min-height': height}">
 
-  <div class="aae-color-mask"></div>
+  <div class="mask"></div>
 
   <aae-header [section]="{alias: 'main', name: ''}"></aae-header>
 
   <aae-menu [alias]="'main'"></aae-menu>
 
-  <div class="aae-main-content">
+  <div class="content">
 
     <h1>Артезианская<br>
       <span>Археологическая</span><br>
       Экспедиция</h1>
 
-    <div class="aae-main-page-buttons">
+    <div class="buttons">
       <div routerLink="/about">Подробнее об экспедиции</div>
       <div>Как попасть в экспедицию</div>
     </div>

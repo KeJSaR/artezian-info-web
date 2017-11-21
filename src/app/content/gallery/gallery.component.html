@@ -1,15 +1,15 @@
-<section *ngIf="galleries" class="aae-gallery">
+<section *ngIf="galleries">
 
-  <div class="aae-gallery-wrapper">
+  <div class="wrapper">
 
-    <div *ngFor="let gallery of galleries" class="aae-gallery-container">
-			<div class="aae-gallery-img-wrapper">
-				<a class="aae-gallery-img" routerLink="/gallery/{{ gallery.id }}" [ngStyle]="{'background-image': 'url(http://artezian.zone/gallery/' + gallery.id + '/pics/' + gallery.image_id + '.jpg)'}"></a>
-				<a *ngIf="gallery.info" class="aae-gallery-info" routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.info"></a>
+    <div *ngFor="let gallery of galleries" class="container">
+			<div class="image">
+				<a class="img" routerLink="/gallery/{{ gallery.id }}" [ngStyle]="{'background-image': 'url(http://artezian.zone/gallery/' + gallery.id + '/pics/' + gallery.image_id + '.jpg)'}"></a>
+				<a *ngIf="gallery.info" class="info" routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.info"></a>
 			</div>
-			<p class="aae-gallery-name"><a routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.name"></a></p>
+			<p class="name"><a routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.name"></a></p>
     </div>
 
 	</div>
-	
+
 </section>

@@ -1,23 +1,23 @@
 @import "../../../variables"
 
-.aae-form
+section
   position: relative
-  margin: $section-margin-top 0 $section-margin-bottom
+  margin: 150px 0 250px
 
-  .aae-form-wrapper
-    background-color: $grey-100
-    margin: $wrapper-margin-small auto
-    padding: $wrapper-padding
-    width: $wrapper-width-narrow
+  .wrapper
+    background-color: $form-bg
+    margin: 100px auto
+    padding: 100px
+    width: 600px
 
     a
-      color: $grey-900
+      color: $form
       text-decoration: none
 
       &:hover,
       &:active
-        color: $primary
-        border-bottom: 1px solid $primary
+        color: $form-hv
+        border-bottom: $form-hv-bd
 
     & p:first-child
       text-align: center
@@ -26,14 +26,14 @@
       line-height: 25px
 
       a
-        border-bottom: 1px solid $grey-900
+        border-bottom: $form-bd
 
         &:hover,
         &:active
-          border-bottom-color: $primary
+          border-bottom: $form-hv-bd
 
-    .aae-form-rules
-      border-left: 3px solid $grey-300
+    .rules
+      border-left: $form-rules-bd
       padding: 0 0 0 30px
       margin: 50px 0
 
@@ -41,7 +41,7 @@
         text-transform: uppercase
 
       p
-        color: $grey-700
+        color: $form-rules
         font-size: 20px
         font-weight: 300
         line-height: 28px
@@ -50,56 +50,53 @@
         li
           font-style: italic
 
-    .aae-form-content
+    .content
       margin: 50px 0
 
-      .aae-form-row
+      .row
         display: flex
         justify-content: space-between
         align-items: center
         padding: 10px 0
 
-        .aae-form-title
+        .title
           width: 220px
           padding: 10px 10px 10px 0
           text-align: right
           line-height: 22px
 
-        .aae-form-input
+        .input
           width: 330px
 
           input,
           textarea
-            color: $blue-grey-700
+            color: $form-input-color
             width: 310px
             border: none
             padding: 10px
-            border-bottom: 2px solid $blue-grey-100
+            border-bottom: $form-input-bd
             border-radius: 3px
             font-size: 18px
             line-height: 22px
             outline: none
-            -webkit-transition: all 250ms ease-out
-            -moz-transition: all 250ms ease-out
-            -o-transition: all 250ms ease-out
-            transition: all 250ms ease-out
+            +transition(250ms)
 
             &:focus
-              border-bottom-color: $primary
+              border-bottom: $form-focus-bd
 
-        .aae-form-check
+        .check
           width: 30px
           text-align: center
           padding: 10px 0
           line-height: 22px
 
-      .aae-form-agree-wrapper
+      .agree
         padding: 20px 0
         margin: 20px 0
-        border-top: 1px solid $white
-        border-bottom: 1px solid $white
+        border-top: $form-agree-bd
+        border-bottom: $form-agree-bd
 
-        .aae-form-agree-check
+        .checkbox
           width: 30px
           padding: 10px 0
           text-align: center
@@ -108,16 +105,16 @@
             font-size: 18px
             line-height: 22px
 
-        .aae-form-agree-text
+        .text
           font-size: 18px
           line-height: 22px
           text-align: left
           width: 520px
           padding: 0 10px
 
-      .aae-form-submit-wrapper
-        .aae-form-submit,
-        .aae-form-reset
+      .submit-buttons
+        .submit,
+        .reset
           width: 300px
           text-align: center
 
@@ -129,25 +126,22 @@
             border-radius: 3px
             background-color: transparent
             cursor: pointer
-            -webkit-transition: all 250ms ease-out
-            -moz-transition: all 250ms ease-out
-            -o-transition: all 250ms ease-out
-            transition: all 250ms ease-out
+            +transition(250ms)
 
-            &.aae-form-input-submit
-              border: 3px solid $primary
-              color: $primary
+            &.input-submit
+              border: $form-submit-bd
+              color: $form-submit
 
               &:hover,
               &:active
-                color: $white
-                background-color: $primary
+                color: $form-submit-hv
+                background-color: $form-submit-hv-bg
 
-            &.aae-form-input-reset
-              border: 3px solid $grey-800
-              color: $grey-800
+            &.input-reset
+              border: $form-reset-bd
+              color: $form-reset
 
               &:hover,
               &:active
-                color: $white
-                background-color: $grey-800
+                color: $form-reset-hv
+                background-color: $form-reset-hv-bg

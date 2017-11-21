@@ -1,6 +1,6 @@
 @import "../../../variables"
 
-.aae-sidebar
+section
   width: 600px
 
   ul
@@ -13,26 +13,23 @@
       text-transform: uppercase
       padding: 10px 0
 
-      .aae-sidebar-link
+      .link
         cursor: pointer
         outline: none
 
-        &:hover .aae-sidebar-name,
-        &:active .aae-sidebar-name
-          color: $primary-light
+        &:hover .name,
+        &:active .name
+          color: $sidebar-name-hv
 
-        .aae-sidebar-name
-          color: $grey-800
+        .name
+          color: $sidebar-name
           font-size: 26px
           font-weight: 900
           padding: 5px
-          -webkit-transition: color 250ms ease-out
-          -moz-transition: color 250ms ease-out
-          -o-transition: color 250ms ease-out
-          transition: color 250ms ease-out
+          +transition(250ms)
 
-      .aae-sidebar-info
-        color: $grey-900
+      .info
+        color: $sidebar-info
         font-size: 14px
         font-weight: 300
         line-height: 20px
@@ -40,12 +37,9 @@
         height: 0
         opacity: 0
         overflow: hidden
-        -webkit-transition: opacity 500ms ease-out
-        -moz-transition: opacity 500ms ease-out
-        -o-transition: opacity 500ms ease-out
-        transition: opacity 500ms ease-out
+        +transition(500ms)
 
       &.show-info
-        .aae-sidebar-info
+        .info
           height: 100%
           opacity: 1

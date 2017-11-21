@@ -1,40 +1,37 @@
 @import "../../../variables"
 
-.aae-call
+section
   text-align: center
-  background-color: $primary
+  background-color: $call-bg
   padding: 100px
 
-  .aae-call-text
+  .text
     p
       font-size: 60px
       font-weight: 100
       line-height: 90px
-      color: $white
+      color: $call-text
       margin: 50px 0
 
-  .aae-call-button
+  .button
     margin-bottom: 1em
     text-align: center
 
     div
       display: inline-block
-      background-color: transparent
-      border: 2px solid $white
-      color: $white
+      color: $call-button
+      border: $call-button-bd
+      background-color: $call-button-bg
       font-size: 16px
       font-weight: 600
       padding: 15px 30px
       cursor: pointer
       border-radius: 3px
       text-transform: uppercase
-      -webkit-transition: all 250ms ease-out
-      -moz-transition: all 250ms ease-out
-      -o-transition: all 250ms ease-out
-      transition: all 250ms ease-out
+      +transition(250ms)
 
       &:hover,
       &:active
-        color: $primary
-        background-color: $white
-        border-color: $white
+        color: $call-button-hv
+        border-color: $call-button-hv-bd
+        background-color: $call-button-hv-bg

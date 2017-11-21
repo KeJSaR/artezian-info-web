@@ -1,75 +1,69 @@
 @import "../../../variables"
 
-.aae-blog
+section
   position: relative
-  margin: $section-margin-top 0 $section-margin-bottom
+  margin: 150px 0 250px
 
-  .aae-blog-wrapper
-    background-color: $grey-100
-    margin: $wrapper-margin-small auto
-    padding: $wrapper-padding
-    width: $wrapper-width-narrow
+  .wrapper
+    background-color: $blog-bg
+    margin: 100px auto
+    padding: 100px
+    width: 600px
 
-    .aae-blog-header
+    .header
       a
-        color: $grey-900
+        color: $blog-header
         text-decoration: none
-        -webkit-transition: all 250ms ease-out
-        -moz-transition: all 250ms ease-out
-        -o-transition: all 250ms ease-out
-        transition: all 250ms ease-out
+        +transition(250ms)
 
         &:hover,
         &:active
-          color: $primary
+          color: $blog-header-hv
 
-    .aae-blog-author
-      color: $blue-grey-900
-      border-top: 1px dotted $blue-grey-600
-      border-bottom: 1px dotted $blue-grey-600
+    .author
+      color: $blog-author
+      border-top: $blog-author-bd
+      border-bottom: $blog-author-bd
       padding: 13px 0
       font-size: 14px
       font-weight: 300
 
-      .aae-blog-author-name
+      .name
         font-weight: 500
 
-      .aae-blog-author-info
+      .info
         font-style: italic
         padding: 0 0 0 5px
 
-    .aae-blog-intro-wrapper
+    .intro
       display: flex
       justify-content: space-between
       align-items: flex-start
 
-      .aae-blog-date
-        color: $blue-grey-900
+      .date
+        color: $blog-date
         min-width: 100px
         font-weight: 300
         font-size: 14px
         line-height: 22px
         padding: 9px 0 0 0
 
-    .aae-blog-read-more
+    .read-more
       text-align: center
       padding-top: 35px
 
       a
         display: inline-block
         padding: 10px 30px
-        border: 2px solid $blue-grey-600
-        color: $blue-grey-700
+        color: $blog-read-more
+        border: $blog-read-more-bd
         border-radius: 3px
         text-decoration: none
         font-weight: 500
-        -webkit-transition: all 250ms ease-out
-        -moz-transition: all 250ms ease-out
-        -o-transition: all 250ms ease-out
-        transition: all 250ms ease-out
+        +transition(250ms)
 
         &:hover,
         &:active
-          background-color: $blue-grey-700
-          border-color: $blue-grey-700
-          color: $white
+          color: $blog-read-more-hv
+          border-color: $blog-read-more-hv-bd
+          background-color: $blog-read-more-hv-bg

@@ -1,13 +1,13 @@
 @import "../../../variables"
 
-.aae-top
+section
   position: relative
-  background-color: $secondary
+  background-color: $top-bg
   background-position: center center
   background-size: cover
   background-repeat: no-repeat
 
-  .aae-top-gradient
+  .gradient
     position: absolute
     top: 0
     left: 0
@@ -21,55 +21,67 @@
     background: linear-gradient(         $black-opacity-6, $black-opacity-0, $black-opacity-1)
     z-index: 10
 
-  .aae-top-title,
-  .aae-top-intro
+  .title,
+  .intro
     position: relative
     width: 100%
     max-width: 1400px
     margin: 0 auto
     z-index: 20
 
-    .aae-top-wrapper
+    .wrapper
       padding: 0 60px
 
-  .aae-top-title
+  .title
     padding-top: 30px
 
-    .aae-top-author
+    .author
       text-align: right
-      text-shadow: 1px 1px 2px $grey-900
+      text-shadow: $top-author-ts
+      color: $top-author
 
-      .aae-author-name,
-      .aae-author-title
-        color: $grey-100
-
-      .aae-author-name
+      .name
         font-weight: 500
 
-      .aae-author-title
+      .title
         font-weight: 400
         font-style: italic
 
     h1
-      color: $white
+      color: $top-title
       font-size: 60px
       font-weight: 500
       text-align: left
       line-height: 63px
-      text-shadow: 1px 1px 2px $grey-900
+      text-shadow: $top-title-ts
 
-  .aae-top-intro
+  .intro
     display: flex
     justify-content: flex-end
     align-items: flex-end
 
-    .aae-top-intro-content
-      color: $white
+    .intro-content
+      color: $top-intro
       font-weight: 500
       font-size: 16px
       letter-spacing: 1px
       text-transform: uppercase
       text-align: right
       padding: 60px 0 60px 0
-      text-shadow: 1px 1px 2px $grey-900
+      text-shadow: $top-intro-ts
 
+@media (max-width: 899px)
+  h1
+    color: red
+
+@media (min-width: 900px) and (max-width: 1199px)
+  h1
+    color: green
+
+@media (min-width: 1200px) and (max-width: 1399px)
+  h1
+    color: black
+
+@media (min-width: 1400px)
+  h1
+    color: violet

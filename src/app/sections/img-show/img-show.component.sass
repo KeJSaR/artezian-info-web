@@ -1,6 +1,6 @@
 @import "../../../variables"
 
-.aae-image-show
+section
   display: inherit
   position: fixed
   top: 60px
@@ -8,27 +8,27 @@
   right: 60px
   bottom: 60px
   padding: 10px
-  background-color: $secondary
+  background-color: $show-bg
   z-index: 80
 
-  .aae-image-wrapper
+  .wrapper
     display: flex
     align-items: center
     justify-content: center
     height: 100%
     width: 100%
 
-  .aae-image-show-curr-num
+  .current
     position: absolute
     left: 35px
     top: 20px
-    color: $white
+    color: $show-current
     cursor: pointer
     font-size: 24px
     line-height: 1
     padding: 20px
 
-  .aae-img-show-close
+  .close
     position: absolute
     right: 35px
     top: 20px
@@ -41,18 +41,15 @@
     i
       font-size: 24px
       line-height: 1
-      color: $white
-      -webkit-transition: all 250ms ease-out
-      -moz-transition: all 250ms ease-out
-      -o-transition: all 250ms ease-out
-      transition: all 250ms ease-out
+      color: $show-close
+      +transition(250ms)
 
       &:hover,
       &:active
-        color: $primary
+        color: $show-close-hv
 
-  .aae-image-show-next,
-  .aae-image-show-prev
+  .next,
+  .prev
     position: absolute
     top: 0
     width: 50%
@@ -60,24 +57,21 @@
     align-items: center
     height: 100%
     cursor: pointer
-    color: $white
-    -webkit-transition: all 250ms ease-out
-    -moz-transition: all 250ms ease-out
-    -o-transition: all 250ms ease-out
-    transition: all 250ms ease-out
+    color: $show
+    +transition(250ms)
 
     &:hover,
     &:active
-      color: $primary
+      color: $show-hv
 
-  .aae-image-show-prev
+  .prev
     left: 0
     justify-content: flex-start
 
     i
       margin-left: 60px
 
-  .aae-image-show-next
+  .next
     right: 0
     justify-content: flex-end
 

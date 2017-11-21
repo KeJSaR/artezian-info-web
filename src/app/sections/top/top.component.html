@@ -1,6 +1,6 @@
-<section *ngIf="topImgUrl" class="aae-top" [ngStyle]="{'min-height': height, 'background-image': 'url(' + topImgUrl + ')'}">
+<section *ngIf="topImgUrl" [ngStyle]="{'min-height': height, 'background-image': 'url(' + topImgUrl + ')'}">
 
-  <div class="aae-top-gradient"></div>
+  <div class="gradient"></div>
 
   <aae-header [section]="section"></aae-header>
 
@@ -8,12 +8,12 @@
 
   <aae-breadcrumbs [section]="section" [subalias]="subalias"></aae-breadcrumbs>
 
-  <div *ngIf="title" class="aae-top-title">
-    <div class="aae-top-wrapper">
+  <div *ngIf="title" class="title">
+    <div class="wrapper">
 
-      <p *ngIf="name" class="aae-top-author">
-        <span class="aae-author-name" [innerHtml]="name"></span>
-        <span *ngIf="info" class="aae-author-title" [innerHtml]="info"></span>
+      <p *ngIf="name" class="author">
+        <span class="name" [innerHtml]="name"></span>
+        <span *ngIf="info" class="title" [innerHtml]="info"></span>
       </p>
 
       <h1 [innerHtml]="title"></h1>
@@ -21,9 +21,9 @@
     </div>
   </div>
 
-  <div *ngIf="intro" class="aae-top-intro">
-    <div class="aae-top-wrapper">
-      <div class="aae-top-intro-content" [innerHtml]="intro"></div>
+  <div *ngIf="intro" class="intro">
+    <div class="wrapper">
+      <div class="content" [innerHtml]="intro"></div>
     </div>
   </div>
 

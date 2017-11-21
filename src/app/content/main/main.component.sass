@@ -1,11 +1,11 @@
 @import "../../../variables"
 
-.aae-main
+section
   background: url("http://artezian.zone/pages/main.jpg") center center / cover no-repeat
   position: relative
   padding: 60px 0
 
-  .aae-color-mask
+  .mask
     position: absolute
     top: 0
     left: 0
@@ -19,12 +19,12 @@
     background: linear-gradient(         $black-opacity-9, $black-opacity-6, $black-opacity-9)
     z-index: 10
 
-  .aae-main-content
+  .content
     position: relative
-    max-width: 1200px
+    width: 1200px
     margin: 100px auto
+    color: $main
     z-index: 20
-    color: $white
     text-align: center
 
     h1
@@ -37,16 +37,16 @@
       margin: 0 0 20px 0
 
       span
-        color: $primary
+        color: $main-span
 
-    .aae-main-page-buttons
+    .buttons
       display: flex
-      justify-content: center
+      justify: center
       align-items: center
 
       div
-        background-color: $white
-        color: $grey-900
+        color: $main-div
+        background-color: $main-div-bg
         cursor: pointer
         padding: 10px 15px
         border-radius: 3px
@@ -54,12 +54,9 @@
         font-size: 20px
         font-weight: 400
         text-transform: uppercase
-        -webkit-transition: all 250ms ease-out
-        -moz-transition: all 250ms ease-out
-        -o-transition: all 250ms ease-out
-        transition: all 250ms ease-out
+        +transition(250ms)
 
         &:hover,
         &:active
-          background-color: $primary
-          color: $white
+          color: $main-div-hv
+          background-color: $main-div-hv-bg
