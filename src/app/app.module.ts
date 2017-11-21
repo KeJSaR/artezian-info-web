@@ -19,6 +19,7 @@ import { GalleryComponent } from './content/gallery/gallery.component';
 import { MainComponent } from './content/main/main.component';
 import { NotFoundComponent } from './content/not-found/not-found.component';
 import { BlogItemComponent } from './sections/blog-item/blog-item.component';
+import { BordersComponent } from './sections/borders/borders.component';
 import { BreadcrumbsComponent } from './sections/breadcrumbs/breadcrumbs.component';
 import { CallComponent } from './sections/call/call.component';
 import { FooterComponent } from './sections/footer/footer.component';
@@ -28,7 +29,6 @@ import { MenuComponent } from './sections/menu/menu.component';
 import { SidebarComponent } from './sections/sidebar/sidebar.component';
 import { TextComponent } from './sections/text/text.component';
 import { TopComponent } from './sections/top/top.component';
-import { BordersComponent } from './sections/borders/borders.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +44,7 @@ import { BordersComponent } from './sections/borders/borders.component';
     MainComponent,
     NotFoundComponent,
     BlogItemComponent,
+    BordersComponent,
     BreadcrumbsComponent,
     CallComponent,
     FooterComponent,
@@ -53,7 +54,6 @@ import { BordersComponent } from './sections/borders/borders.component';
     SidebarComponent,
     TextComponent,
     TopComponent,
-    BordersComponent
   ],
   imports: [
     BrowserModule,
