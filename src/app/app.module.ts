@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { RoutingModule } from './routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { DataService } from './services/data.service';
 
@@ -28,6 +28,7 @@ import { MenuComponent } from './sections/menu/menu.component';
 import { SidebarComponent } from './sections/sidebar/sidebar.component';
 import { TextComponent } from './sections/text/text.component';
 import { TopComponent } from './sections/top/top.component';
+import { BordersComponent } from './sections/borders/borders.component';
 
 @NgModule({
   declarations: [
@@ -51,11 +52,12 @@ import { TopComponent } from './sections/top/top.component';
     MenuComponent,
     SidebarComponent,
     TextComponent,
-    TopComponent
+    TopComponent,
+    BordersComponent
   ],
   imports: [
     BrowserModule,
-    RoutingModule,
+    AppRoutingModule,
     HttpClientModule
   ],
   providers: [
