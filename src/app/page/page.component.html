@@ -1,12 +1,12 @@
-<section class="aae-page" [class.aae-page-main]="section.alias === 'main'">
-  <div class="aae-page-wrapper">
+<section [class.main]="section.alias === 'main'">
+  <div class="wrapper">
 
     <!-- Top ================================================================= -->
     <aae-top *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias"></aae-top>
 
     <!-- Down Button ========================================================= -->
-    <div *ngIf="section.alias !== 'main'" class="aae-page-down" [ngStyle]="{'top': pageDownTop}">
-      <div class="aae-page-down-wrapper">
+    <div *ngIf="section.alias !== 'main'" class="down" [ngStyle]="{'top': pageDownTop}">
+      <div class="down-wrapper">
         <span (click)="scrollDown()"><i class="fa fa-chevron-circle-down"></i></span>
       </div>
     </div>
@@ -30,30 +30,8 @@
   </div>
 </section>
 
-<div class="aae-page-sidebar" [class.aae-page-sidebar-show]="showSidebarContent">
+<div class="sidebar" [class.sidebar-show]="showSidebar">
   <aae-sidebar></aae-sidebar>
 </div>
 
-<div class="aae-page-bd-top" [class.aae-page-bd-show]="showBordersContent">
-  <div class="aae-page-bd-top-title"><a href="#">Артезианская Археологическая Экспедиция</a></div>
-  <div class="aae-page-bd-top-social">
-    <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
-    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-  </div>
-</div>
-
-<div *ngIf="section.alias !== 'main'" class="aae-page-bd-right"></div>
-
-<div class="aae-page-bd-bottom" [class.aae-page-bd-show]="showBordersContent">
-  <div class="aae-page-bd-bottom-copyright">Артезианская Археологическая Экспедиция <i class="fa fa-copyright" aria-hidden="true"></i> 2017. Все права защищены.</div>
-</div>
-
-<div *ngIf="section.alias !== 'main'" class="aae-page-bd-left" [class.aae-page-bd-show]="showBordersContent">
-  <div class="aae-page-bd-left-menu" (click)="switchSidebar()">
-    <div>
-      <span>меню</span>
-      <i *ngIf="!showSidebarContent" class="fa fa-bars" aria-hidden="true"></i>
-      <i *ngIf="showSidebarContent" class="fa fa-times" aria-hidden="true"></i>
-    </div>
-  </div>
-</div>
+<aae-borders [alias]="section.alias"  (showSidebar)="switchSidebar()"></aae-borders>

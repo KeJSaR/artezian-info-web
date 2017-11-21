@@ -28,8 +28,7 @@ export class PageComponent implements OnInit {
     name: ''
   }
   subalias: string = '';
-  showBordersContent: boolean = false;
-  showSidebarContent: boolean = false;
+  showSidebar: boolean = false;
   height: number;
   pageDownTop: string;
 
@@ -56,16 +55,6 @@ export class PageComponent implements OnInit {
         window.scrollTo(0, 0);
       }
     })();
-  }
-
-  @HostListener('window: scroll', [])
-  onWindowScroll() {
-    if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) >= this.height) {
-      this.showBordersContent = true;
-    }
-    else if (this.showBordersContent && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.height) {
-      this.showBordersContent = false;
-    }
   }
 
   scrollDown() {
@@ -107,12 +96,12 @@ export class PageComponent implements OnInit {
     this.setPageDownTop();
   }
 
-  public switchSidebar(): void {
-    this.showSidebarContent = !this.showSidebarContent;
-  }
-
   private setPageDownTop(): void {
     this.pageDownTop = (this.height - 75).toString() + 'px';
+  }
+
+  switchSidebar() {
+    this.showSidebar = !this.showSidebar;
   }
 
 }

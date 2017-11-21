@@ -14,23 +14,23 @@
   100%
     top: 0px
 
-.aae-page
+section
   padding: 60px
 
-  &.aae-page-main
+  &.main
     padding: 0
 
-  .aae-page-wrapper
+  .wrapper
     position: relative
 
-    .aae-page-down
+    .down
       position: absolute
       text-align: center
       width: 100%
       z-index: z('down-a')
       +opacity(0.9)
 
-      .aae-page-down-wrapper
+      .down-wrapper
         display: inline-block
         width: 55px
         height: 55px
@@ -61,7 +61,7 @@
           &:active i
             color: $primary
 
-.aae-page-sidebar
+.sidebar
   position: fixed
   top: 0
   left: 0
@@ -76,123 +76,6 @@
   z-index: z('sidebar')
   +transition(all .5s ease-out)
 
-  &.aae-page-sidebar-show
+  &.sidebar-show
     +opacity(1)
     width: 100%
-
-.aae-page-bd-top,
-.aae-page-bd-right,
-.aae-page-bd-bottom,
-.aae-page-bd-left
-  position: fixed
-  background-color: $secondary-dark
-  z-index: z('bg')
-  display: flex
-  align-items: center
-
-.aae-page-bd-top-title,
-.aae-page-bd-top-social,
-.aae-page-bd-bottom-copyright,
-.aae-page-bd-left-menu
-  display: none
-
-  a
-    color: $white
-    text-decoration: none
-    +transition(all .25s ease-out)
-
-    &:hover,
-    &:active
-      color: $primary-light
-
-
-.aae-page-bd-top
-  top: 0
-  right: 0
-  left: 0
-  width: 100%
-  height: 60px
-  justify-content: space-between
-
-  .aae-page-bd-top-title
-    padding-left: 60px
-
-  .aae-page-bd-top-social
-    padding-right: 60px
-
-    a
-      margin-left: 15px
-
-  &.aae-page-bd-show
-    .aae-page-bd-top-title,
-    .aae-page-bd-top-social
-      display: inherit
-
-.aae-page-bd-right
-  top: 0
-  right: 0
-  bottom: 0
-  width: 60px
-  height: 100%
-
-.aae-page-bd-bottom
-  right: 0
-  bottom: 0
-  left: 0
-  width: 100%
-  height: 60px
-  justify-content: flex-end
-
-  .aae-page-bd-bottom-copyright
-    padding-right: 60px
-    text-transform: uppercase
-    +font-size(12px)
-    font-weight: 300
-    letter-spacing: 1px
-    color: $white
-    +opacity(0.5)
-
-    i
-      +font-size(10px)
-      margin: 0 5px
-      position: relative
-      top: 1px
-
-  &.aae-page-bd-show
-    .aae-page-bd-bottom-copyright
-      display: inherit
-
-.aae-page-bd-left
-  top: 0
-  bottom: 0
-  left: 0
-  width: 60px
-  height: 100%
-  justify-content: center
-
-  .aae-page-bd-left-menu
-    color: $white
-    +font-size(21px)
-    cursor: pointer
-    +transition(all .25s ease-out)
-
-    &:hover,
-    &:active
-      color: $primary-light
-
-    div
-      position: relative
-
-      span
-        position: absolute
-        top: -63px
-        left: -31px
-        transform: rotate(-90deg)
-        text-transform: uppercase
-        font-weight: 100
-        letter-spacing: 2px
-        +font-size(24px)
-
-  &.aae-page-bd-show
-    .aae-page-bd-left-menu
-      display: inherit
