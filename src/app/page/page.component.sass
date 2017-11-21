@@ -55,10 +55,7 @@
             z-index: z('down-c')
             line-height: 42px
             +font-size(34px)
-            -webkit-transition: all 250ms ease-out
-            -moz-transition: all 250ms ease-out
-            -o-transition: all 250ms ease-out
-            transition: all 250ms ease-out
+            +transition(all .25s ease-out)
 
           &:hover i,
           &:active i
@@ -77,10 +74,7 @@
   justify-content: center
   +opacity(0)
   z-index: z('sidebar')
-  -webkit-transition: all 500ms ease-out
-  -moz-transition: all 500ms ease-out
-  -o-transition: all 500ms ease-out
-  transition: all 500ms ease-out
+  +transition(all .5s ease-out)
 
   &.aae-page-sidebar-show
     +opacity(1)
@@ -105,10 +99,7 @@
   a
     color: $white
     text-decoration: none
-    -webkit-transition: all 250ms ease-out
-    -moz-transition: all 250ms ease-out
-    -o-transition: all 250ms ease-out
-    transition: all 250ms ease-out
+    +transition(all .25s ease-out)
 
     &:hover,
     &:active
@@ -183,10 +174,7 @@
     color: $white
     +font-size(21px)
     cursor: pointer
-    -webkit-transition: all 250ms ease-out
-    -moz-transition: all 250ms ease-out
-    -o-transition: all 250ms ease-out
-    transition: all 250ms ease-out
+    +transition(all .25s ease-out)
 
     &:hover,
     &:active
