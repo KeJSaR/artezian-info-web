@@ -35,11 +35,11 @@ section
         line-height: 20px
         letter-spacing: 1px
         height: 0
-        opacity: 0
+        +opacity(0)
         overflow: hidden
         +transition(all .5s ease-out)
 
       &.show-info
         .info
           height: 100%
-          opacity: 1
+          +opacity(1)

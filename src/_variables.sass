@@ -9,6 +9,12 @@
   transition: $args
   // +transition(color .3s ease)
 
+=opacity($opacity)
+  opacity: $opacity
+  $opacity-ie: $opacity * 100
+  filter: alpha(opacity=$opacity-ie)
+
+
 // Content #####################################################################
 
 // about
