@@ -7,12 +7,32 @@
   -ms-transition: $args
   -o-transition: $args
   transition: $args
-  // +transition(color .3s ease)
 
+// Cross browser opacity
 =opacity($opacity)
   opacity: $opacity
   $opacity-ie: $opacity * 100
   filter: alpha(opacity=$opacity-ie)
+
+// Animations and keyframes
+=keyframes($animation-name)
+  @-webkit-keyframes #{$animation-name}
+    @content
+  @-moz-keyframes #{$animation-name}
+    @content
+  @-ms-keyframes #{$animation-name}
+    @content
+  @-o-keyframes #{$animation-name}
+    @content
+  @keyframes #{$animation-name}
+    @content
+
+=animation($str)
+  -webkit-animation: #{$str}
+  -moz-animation: #{$str}
+  -ms-animation: #{$str}
+  -o-animation: #{$str}
+  animation: #{$str}
 
 
 // Content #####################################################################
