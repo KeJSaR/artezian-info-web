@@ -1,14 +1,169 @@
 @import "colors"
 
-// Section
+// Transition
+=transition($time)
+  -webkit-transition: all $time ease-out
+  -moz-transition:    all $time ease-out
+  -ms-transition:     all $time ease-out
+  transition:         all $time ease-out
+  // +transition(250ms)
 
-$section-margin-top    : 150px
-$section-margin-bottom : 250px
+// Content #####################################################################
 
-// Wrapper
+// about
 
-$wrapper-margin        : 200px
-$wrapper-margin-small  : 100px
-$wrapper-padding       : 100px
-$wrapper-width-narrow  : 600px
-$wrapper-width-wide    : 900px
+// album
+$album-bg: $white
+
+// article
+$article-bg: $grey-100
+
+// blog
+$blog-bg: $grey-100
+$blog-header: $grey-900
+$blog-header-hv: $primary
+$blog-author: $blue-grey-900
+$blog-author-bd: 1px dotted $blue-grey-600
+$blog-date: $blue-grey-900
+$blog-read-more: $blue-grey-700
+$blog-read-more-bd: 2px solid $blue-grey-600
+$blog-read-more-hv: $white
+$blog-read-more-hv-bd: $blue-grey-700
+$blog-read-more-hv-bg: $blue-grey-700
+
+// form
+$form: $grey-900
+$form-bg: $grey-100
+$form-hv: $primary
+$form-hv-bd: 1px solid $primary
+$form-bd: 1px solid $grey-900
+$form-hv-bd: 1px solid $primary
+$form-rules-bd: 3px solid $grey-300
+$form-rules: $grey-700
+$form-input-color: $blue-grey-700
+$form-input-bd: 2px solid $blue-grey-100
+$form-focus-bd: 2px solid $primary
+$form-agree-bd: 1px solid $white
+$form-submit: $primary
+$form-submit-bd: 3px solid $primary
+$form-submit-hv: $white
+$form-submit-hv-bg: $primary
+$form-reset: $grey-800
+$form-reset-bd: 3px solid $grey-800
+$form-reset-hv: $white
+$form-reset-hv-bg: $grey-800
+
+// gallery
+$gallery-bg: $white
+$gallery-info: $white
+$gallery-info-bg: $primary
+$gallery-name: $secondary-dark
+$gallery-name-hv: $primary
+
+// main
+$main: $white
+$main-span: $primary
+$main-div: $grey-900
+$main-div-bg: $white
+$main-div-hv: $white
+$main-div-hv-bg: $primary
+
+// not-found
+$not-found: $grey-100
+
+
+// Sections ####################################################################
+
+
+// blog-item
+$blog-content: $grey-900
+$blog-content-hv: $primary
+$blog-content-bg: $grey-100
+$blog-read-more: $blue-grey-700
+$blog-read-more-bd: 2px solid $blue-grey-600
+$blog-read-more-hv: $white
+$blog-read-more-hv-bd: 2px solid $blue-grey-700
+$blog-read-more-hv-bg: $blue-grey-700
+
+// breadcrumbs
+$breadcrumbs-bg: $black-opacity-3
+$breadcrumbs-content: $white
+$breadcrumbs-item: $primary-light
+$breadcrumbs-item-hv: $white
+
+// call
+$call-bg: $primary
+$call-text: $white
+$call-button: $white
+$call-button-bd: 2px solid $white
+$call-button-bg: transparent
+$call-button-hv: $primary
+$call-button-hv-bd: 2px solid $white
+$call-button-hv-bg: $white
+
+// footer
+$footer: $blue-grey-100
+$footer-bg: $secondary
+$footer-color: $blue-grey-100
+$footer-hv: $white
+$footer-ts: 1px 1px 3px $blue-grey-900
+$footer-h3: $blue-grey-200
+$contact: $blue-grey-100
+$footer-bottom-bg: $secondary-dark
+
+// header
+$header-bg: $black-opacity-1
+$header: $white
+$header-short: $white
+$header-short-hv: $primary
+$header-page: $white
+$header-form: $white
+$header-form-bd: 1px solid $white
+$header-form-hv: $primary
+$header-form-hv-bg: $white
+$header-main-bg: transparent
+$header-wrapper-bg: transparent
+$header-title: $white
+$header-short: $white
+$header-short-hv: $primary
+$header-form-bg: transparent
+$header-form-hv-bd: $white
+
+// img-show
+$show-bg: $secondary
+$show-current: $white
+$show-close: $white
+$show-close-hv: $primary
+$show: $white
+$show-hv: $primary
+
+// menu
+$menu-bd: 1px solid $white-opacity-3
+$menu-bg: $black-opacity-1
+$menu-nav: $white
+$menu-nav-hv: $primary
+$menu-social: $white
+$menu-social-hv: $primary
+$menu-main-bg: $black-opacity-0
+$menu-main-content: $white
+$menu-main-content-hv: $white
+$menu-main-content-hv-bd: 1px solid $white
+$menu-main-social: $white
+$menu-main-social-hv: $primary
+
+// sidebar
+$sidebar-name: $grey-800
+$sidebar-name-hv: $primary-light
+$sidebar-info: $grey-900
+
+// text
+$text: $white
+
+// top
+$top-bg: $secondary
+$top-author: $grey-100
+$top-author-ts: 1px 1px 2px $grey-900
+$top-title: $white
+$top-title-ts: 1px 1px 2px $grey-900
+$top-intro: $white
+$top-intro-ts: 1px 1px 2px $grey-900
