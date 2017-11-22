@@ -34,7 +34,6 @@ section
         &:hover,
         &:active
           color: $footer-hv
-          text-shadow: $footer-ts
 
       h3
         color: $footer-h3
@@ -79,3 +78,14 @@ section
     padding: 50px 0
     text-align: center
     background-color: $footer-bottom-bg
+
+    .copyright
+      a
+        color: $footer-copyright
+        font-weight: 500
+        text-decoration: none
+        +transition(all 0.25s ease-out)
+
+        &:hover,
+        &:active
+          color: $footer-copyright-hv
