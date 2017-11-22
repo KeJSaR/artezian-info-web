@@ -21,7 +21,7 @@ section
       padding: 0 60px
       margin: 0
       color: $breadcrumbs-content
-      +flex(flex-start, flex-start)
+      +flex(flex-start)
 
       .item
         margin: 0 5px
@@ -36,3 +36,21 @@ section
 
         .subname
           font-weight: 400
+          display: block
+          overflow: hidden
+          height: 15px
+          padding: 1px 0 0 0
+          +font-size(12px)
+          line-height: 15px
+
+    .overlay
+      position: absolute
+      top: 0
+      right: 65px
+      width: 100px
+      height: 100%
+      background: $white-opacity-5
+      background: -webkit-linear-gradient( left, $white-opacity-0, $white)
+      background: -moz-linear-gradient(to right, $white-opacity-0, $white)
+      background: -o-linear-gradient(to right,   $white-opacity-0, $white)
+      background: linear-gradient(to right,      $white-opacity-0, $white)
