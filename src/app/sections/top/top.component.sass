@@ -5,31 +5,31 @@ section
   background-color: $top-bg
 
   .gradient
-    position: absolute
-    top: 240px
-    left: 0
-    bottom: 0
-    width: 100%
     +opacity(0.7)
     +background-gradient($black-opacity-0, $black-opacity-3, $black-opacity-7, horizontal)
+    position: absolute
+    top: 240px
+    bottom: 0
+    left: 0
+    width: 100%
     z-index: z('gradient')
 
   .bg-image
     position: absolute
     top: 240px
-    left: 0
     bottom: 0
-    width: 100%
+    left: 0
     background-position: center center
-    background-size: cover
     background-repeat: no-repeat
+    background-size: cover
+    width: 100%
     z-index: z('bg-image')
 
   .title
     position: relative
+    margin: 0 auto
     width: 100%
     max-width: 1400px
-    margin: 0 auto
     z-index: z('title')
 
     .wrapper
@@ -39,23 +39,23 @@ section
     padding-top: 30px
 
     .author
+      color: $top-author
       text-align: right
       text-shadow: $top-author-ts
-      color: $top-author
 
       .name
         font-weight: 500
 
       .title
-        font-weight: 400
         font-style: italic
+        font-weight: 400
 
     h1
-      color: $top-title
       +font-size(60px)
       font-weight: 500
-      text-align: left
+      color: $top-title
       line-height: 63px
+      text-align: left
       text-shadow: $top-title-ts
 
   .intro
@@ -71,12 +71,12 @@ section
       margin: 0 auto
 
       .content
-        color: $top-intro
-        font-weight: 400
         +font-size(18px)
-        line-height: 1.5
-        letter-spacing: 1px
-        text-transform: uppercase
-        text-align: center
+        font-weight: 400
+        color: $top-intro
         padding: 60px 0 60px 0
+        letter-spacing: 1px
+        line-height: 1.5
+        text-align: center
         text-shadow: $top-intro-ts
+        text-transform: uppercase

@@ -2,36 +2,36 @@
 
 section
   position: relative
-  height: 105px
-  width: 100%
-  padding: 50px 0 0
   background-color: $header-bg
+  padding: 50px 0 0
+  width: 100%
+  height: 105px
   z-index: z('header')
 
   .wrapper
+    margin: 0 auto
     width: 100%
     max-width: 1400px
-    margin: 0 auto
 
     .row
-      padding: 0 60px
       +flex(space-between)
+      padding: 0 60px
 
       .title
         +flex(space-between)
         color: $header
 
         span
-          font-weight: 900
           +font-size(40px)
+          font-weight: 900
           text-transform: uppercase
 
           &.short
             +font-size(70px)
-            font-weight: 900
-            cursor: pointer
             +transition(all .25s ease-out)
+            font-weight: 900
             color: $header-short
+            cursor: pointer
 
             &:hover,
             &:active
@@ -51,20 +51,20 @@ section
             color: $header-page
 
       .form
-        text-transform: uppercase
         +transition(all .25s ease-out)
-        font-weight: 500
         +font-size(14px)
-        cursor: pointer
+        font-weight: 500
         color: $header-form
-        border: 1px solid $header-form-bd
+        cursor: pointer
         padding: 10px 15px
+        border: 1px solid $header-form-bd
         border-radius: 2px
+        text-transform: uppercase
 
         &:hover,
         &:active
-          color: $header-form-hv
           background-color: $header-form-hv-bg
+          color: $header-form-hv
 
   &.main
     background-color: $header-main-bg
@@ -85,8 +85,8 @@ section
               color: $header-main-short-hv
 
           .full
-            display: inherit
             +font-size(20px)
+            display: inherit
             font-weight: 400
             letter-spacing: 0
 
@@ -94,13 +94,13 @@ section
             display: none
 
         .form
-          background-color: $header-main-form-bg
-          border: 1px solid $header-main-form-bd
-          color: $header-main-form
           font-weight: 600
+          background-color: $header-main-form-bg
+          color: $header-main-form
+          border: 1px solid $header-main-form-bd
 
           &:hover,
           &:active
-            color: $header-main-form-hv
             background-color: $header-main-form-hv-bg
+            color: $header-main-form-hv
             border-color: $header-main-form-hv-bd

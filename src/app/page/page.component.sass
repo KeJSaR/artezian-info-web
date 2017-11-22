@@ -24,11 +24,11 @@ section
     position: relative
 
     .down
+      +opacity(0.9)
       position: absolute
       text-align: center
       width: 100%
       z-index: z('down-a')
-      +opacity(0.9)
 
       .down-wrapper
         display: inline-block
@@ -36,41 +36,41 @@ section
         height: 55px
 
         span
-          cursor: pointer
-          position: relative
-          width: 55px
-          height: 55px
           +font-size(0px)
-          line-height: 0
-          border-radius: 100%
           +flex
           +animation('circle-down 4s linear infinite')
+          position: relative
+          cursor: pointer
+          border-radius: 100%
+          line-height: 0
+          width: 55px
+          height: 55px
           z-index: z('down-b')
 
           i
-            color: $white
-            position: relative
-            z-index: z('down-c')
-            line-height: 42px
             +font-size(34px)
             +transition(all .25s ease-out)
+            position: relative
+            color: $white
+            line-height: 42px
+            z-index: z('down-c')
 
           &:hover i,
           &:active i
             color: $primary
 
 .sidebar
+  +transition(all .5s ease-out)
+  +opacity(0)
+  +flex
   position: fixed
   top: 0
   left: 0
+  background-color: $white
+  overflow: hidden
   width: 0
   height: 100%
-  overflow: hidden
-  background-color: $white
-  +flex
-  +opacity(0)
   z-index: z('sidebar')
-  +transition(all .5s ease-out)
 
   &.sidebar-show
     +opacity(1)

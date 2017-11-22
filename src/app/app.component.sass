@@ -3,35 +3,35 @@
 .scroll-to-top
   +transition(all .25s ease-out)
   +opacity(0)
-  color: $app-scroll
   position: fixed
   bottom: 95px
   right: 95px
+  color: $app-scroll
   z-index: z('scroll-to-top')
 
   div
     span
       +transition(all .5s ease-out)
-      +font-size(18px)
       +opacity(0)
-      color: $app-scroll-span
-      background-color: $app-scroll-span-bg
-      padding: 5px 20px 9px
-      border-radius: 3px
-      text-shadow: none
-      font-weight: 400
-      letter-spacing: .5px
+      +font-size(18px)
       position: relative
       bottom: 10px
       right: 3px
+      font-weight: 400
+      background-color: $app-scroll-span-bg
+      color: $app-scroll-span
+      padding: 5px 20px 9px
+      border-radius: 3px
+      letter-spacing: .5px
+      text-shadow: none
 
   &.show-scroll
     +transition(all .25s ease-out)
     +font-size(40px)
     +opacity(0.3)
     color: $app-show-scroll
-    text-shadow: $app-show-scroll-ts
     cursor: pointer
+    text-shadow: $app-show-scroll-ts
 
     &:hover,
     &:active

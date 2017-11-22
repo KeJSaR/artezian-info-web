@@ -2,26 +2,26 @@
 
 section
   position: relative
-  width: 100%
-  padding: 13px 0 10px
   background-color: $breadcrumbs-bg
+  padding: 13px 0 10px
+  width: 100%
   z-index: z('breadcrumbs')
 
   .wrapper
+    margin: 0 auto
     width: 100%
     max-width: 1400px
-    margin: 0 auto
 
     .content
       +font-size(14px)
-      text-transform: uppercase
-      font-weight: 500
+      +flex(flex-start)
       position: relative
       left: -5px
+      font-weight: 500
+      color: $breadcrumbs-content
       padding: 0 60px
       margin: 0
-      color: $breadcrumbs-content
-      +flex(flex-start)
+      text-transform: uppercase
 
       .item
         margin: 0 5px
@@ -35,18 +35,18 @@ section
             color: $breadcrumbs-item-hv
 
         .subname
-          font-weight: 400
+          +font-size(12px)
           display: block
+          font-weight: 400
+          padding: 1px 0 0 0
+          line-height: 15px
           overflow: hidden
           height: 15px
-          padding: 1px 0 0 0
-          +font-size(12px)
-          line-height: 15px
 
     .overlay
+      +background-gradient($white-opacity-0, $white-opacity-5, $white, horizontal)
       position: absolute
       top: 0
       right: 65px
       width: 100px
       height: 100%
-      +background-gradient($white-opacity-0, $white-opacity-5, $white, horizontal)

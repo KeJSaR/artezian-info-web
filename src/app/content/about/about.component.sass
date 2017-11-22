@@ -4,18 +4,18 @@ section
   position: relative
 
   .background
+    +opacity(0.05)
     position: absolute
     top: 0
     left: 0
+    background: url("/assets/img/bg-light.png") center center repeat-y
     width: 100%
     height: 100%
-    background: url("/assets/img/bg-light.png") center center repeat-y
-    +opacity(0.05)
     z-index: z("background")
 
   .wrapper
-    margin: 0 auto
-    padding: 200px 100px
-    width: 900px
     position: relative
+    padding: 200px 100px
+    margin: 0 auto
+    width: 900px
     z-index: z("about")

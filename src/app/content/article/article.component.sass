@@ -5,19 +5,19 @@ section
   margin: 150px 0 250px
 
   .pattern
+    +opacity(0.5)
     position: absolute
     bottom: 0
     right: 0
-    height: 1000px
-    width: 856px
     background: url("/assets/img/pattern-1.png") right bottom no-repeat
-    +opacity(0.5)
+    width: 856px
+    height: 1000px
     z-index: z('pattern')
 
   .wrapper
-    background-color: $article-bg
-    margin: 100px auto
-    padding: 100px
-    width: 600px
     position: relative
+    background-color: $article-bg
+    padding: 100px
+    margin: 100px auto
+    width: 600px
     z-index: z('article')

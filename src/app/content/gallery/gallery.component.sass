@@ -1,53 +1,53 @@
 @import "../../../variables"
 
 section
-  background-color: $gallery-bg
   position: relative
+  background-color: $gallery-bg
 
   .wrapper
-    margin: 0 auto
-    padding: 100px
     +flex(center, center, wrap)
+    padding: 100px
+    margin: 0 auto
 
     .container
-      width: 280px
       padding-bottom: 50px
       margin: 20px
+      width: 280px
 
       .image
+        position: relative
         width: 280px
         height: 280px
-        position: relative
 
         a
-          width: 280px
-          height: 280px
+          +font-size(0px)
           position: absolute
           top: 0
           left: 0
           background-position: center center
           background-size: cover
           border: none
-          outline: none
-          text-decoration: none
-          +font-size(0px)
           line-height: 0
+          outline: none
+          width: 280px
+          height: 280px
+          text-decoration: none
 
           &.img
             z-index: z('img')
 
           &.info
+            +font-size(14px)
             +opacity(0)
+            +transition(all .25s ease-out)
+            background-color: $gallery-info-bg
             color: $gallery-info
+            padding: 20px
+            line-height: 17px
+            overflow: hidden
             width: 240px
             height: 240px
             z-index: z('gallery')
-            +font-size(14px)
-            line-height: 17px
-            padding: 20px
-            background-color: $gallery-info-bg
-            overflow: hidden
-            +transition(all .25s ease-out)
 
             &:hover,
             &:active
@@ -57,9 +57,9 @@ section
         text-align: center
 
         a
+          font-weight: 500
           color: $gallery-name
           text-decoration: none
-          font-weight: 500
 
           &:hover,
           &:active

@@ -6,27 +6,27 @@ section
 
   .wrapper
     background-color: $blog-bg
-    margin: 100px auto
     padding: 100px
+    margin: 100px auto
     width: 600px
 
     .header
       a
+        +transition(all .25s ease-out)
         color: $blog-header
         text-decoration: none
-        +transition(all .25s ease-out)
 
         &:hover,
         &:active
           color: $blog-header-hv
 
     .author
-      color: $blog-author
-      border-top: 1px dotted $blog-author-bd
-      border-bottom: 1px dotted $blog-author-bd
-      padding: 13px 0
       +font-size(14px)
       font-weight: 300
+      color: $blog-author
+      padding: 13px 0
+      border-top: 1px dotted $blog-author-bd
+      border-bottom: 1px dotted $blog-author-bd
 
       .name
         font-weight: 500
@@ -39,29 +39,29 @@ section
       +flex(space-between, flex-start)
 
       .date
-        color: $blog-date
-        min-width: 100px
-        font-weight: 300
         +font-size(14px)
-        line-height: 22px
+        font-weight: 300
+        color: $blog-date
         padding: 9px 0 0 0
+        line-height: 22px
+        min-width: 100px
 
     .read-more
-      text-align: center
       padding-top: 35px
+      text-align: center
 
       a
+        +transition(all .25s ease-out)
         display: inline-block
-        padding: 10px 30px
+        font-weight: 500
         color: $blog-read-more
+        padding: 10px 30px
         border: 2px solid $blog-read-more-bd
         border-radius: 3px
         text-decoration: none
-        font-weight: 500
-        +transition(all .25s ease-out)
 
         &:hover,
         &:active
+          background-color: $blog-read-more-hv-bg
           color: $blog-read-more-hv
           border-color: $blog-read-more-hv-bd
-          background-color: $blog-read-more-hv-bg

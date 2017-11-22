@@ -2,14 +2,14 @@
 @import variables
 
 html, body
-  margin: 0
-  padding: 0
   +font-size(16px)
+  padding: 0
+  margin: 0
 
 body
-  background-color: $styles-bg
   position: relative
   font-family: $primary-font
+  background-color: $styles-bg
 
 .primary-font
   font-family: $primary-font
@@ -20,9 +20,9 @@ body
 // Articles ####################################################################
 
 .aae-article-intro
+  padding: 0 0 0 20px
   margin-bottom: 50px
   border-left: 5px solid $styles-intro
-  padding: 0 0 0 20px
 
   p
     +font-size(19px)
@@ -33,39 +33,39 @@ body
 .aae-blog-item-content-text
   h2
     +font-size(36px)
-    line-height: 36px
+    position: relative
     font-weight: 500
     color: $styles-content-header
     margin: 30px 0 40px 0
-    position: relative
+    line-height: 36px
     z-index: z('h2')
 
   p, li
-    font-family: $secondary-font
     +font-size(17px)
-    line-height: 24px
+    font-family: $secondary-font
     font-weight: 400
     color: $styles-content-text
-    margin: 20px 0 0 0
     padding: 0
+    margin: 20px 0 0 0
+    line-height: 24px
 
 .aae-blog
   h2
     +font-size(31px)
-    line-height: 36px
+    position: relative
     font-weight: 500
     color: $styles-blog-header
-    position: relative
+    line-height: 36px
     z-index: z('h2')
 
   p, li
-    font-family: $secondary-font
     +font-size(16px)
-    line-height: 24px
+    font-family: $secondary-font
     font-weight: 300
     color: $styles-blog-text
-    margin: 20px 0 0 0
     padding: 0
+    margin: 20px 0 0 0
+    line-height: 24px
 
 
 .aae-blog-item-content-text

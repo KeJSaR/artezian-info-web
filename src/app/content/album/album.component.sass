@@ -1,22 +1,22 @@
 @import "../../../variables"
 
 section
-  background-color: $album-bg
   position: relative
+  background-color: $album-bg
 
   .wrapper
-    margin: 0 auto
-    padding: 100px
     +flex(center, center, wrap)
+    padding: 100px
+    margin: 0 auto
 
     .image
-      width: 200px
-      height: 200px
-      margin: 10px
+      +font-size(0px)
       background-position: center center
       background-size: cover
+      margin: 10px
       border: none
-      outline: none
-      text-decoration: none
-      +font-size(0px)
       line-height: 0
+      outline: none
+      width: 200px
+      height: 200px
+      text-decoration: none

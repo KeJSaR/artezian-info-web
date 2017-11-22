@@ -6,8 +6,8 @@ section
 
   .wrapper
     background-color: $form-bg
-    margin: 100px auto
     padding: 100px
+    margin: 100px auto
     width: 600px
 
     a
@@ -33,17 +33,17 @@ section
           border-bottom-color: $form-hv-bd
 
     .rules
-      border-left: 3px solid $form-rules-bd
       padding: 0 0 0 30px
       margin: 50px 0
+      border-left: 3px solid $form-rules-bd
 
       h3
         text-transform: uppercase
 
       p
-        color: $form-rules
         +font-size(20px)
         font-weight: 300
+        color: $form-rules
         line-height: 28px
 
       ul
@@ -58,35 +58,35 @@ section
         padding: 10px 0
 
         .title
-          width: 220px
           padding: 10px 10px 10px 0
-          text-align: right
           line-height: 22px
+          text-align: right
+          width: 220px
 
         .input
           width: 330px
 
           input,
           textarea
+            +font-size(18px)
+            +transition(all .25s ease-out)
             color: $form-input-color
-            width: 310px
-            border: none
             padding: 10px
+            border: none
             border-bottom: 2px solid $form-input-bd
             border-radius: 3px
-            +font-size(18px)
             line-height: 22px
             outline: none
-            +transition(all .25s ease-out)
+            width: 310px
 
             &:focus
               border-bottom-color: $form-focus-bd
 
         .check
-          width: 30px
-          text-align: center
           padding: 10px 0
           line-height: 22px
+          text-align: center
+          width: 30px
 
       .agree
         padding: 20px 0
@@ -95,9 +95,9 @@ section
         border-bottom: 1px solid $form-agree-bd
 
         .checkbox
-          width: 30px
           padding: 10px 0
           text-align: center
+          width: 30px
 
           input
             +font-size(18px)
@@ -105,41 +105,41 @@ section
 
         .text
           +font-size(18px)
+          padding: 0 10px
           line-height: 22px
           text-align: left
           width: 520px
-          padding: 0 10px
 
       .submit-buttons
         .submit,
         .reset
-          width: 300px
           text-align: center
+          width: 300px
 
           input
-            padding: 10px 20px
             +font-size(15px)
-            text-transform: uppercase
+            +transition(all .25s ease-out)
             font-weight: 600
-            border-radius: 3px
             background-color: transparent
             cursor: pointer
-            +transition(all .25s ease-out)
+            padding: 10px 20px
+            border-radius: 3px
+            text-transform: uppercase
 
             &.input-submit
-              border: 3px solid $form-submit-bd
               color: $form-submit
+              border: 3px solid $form-submit-bd
 
               &:hover,
               &:active
-                color: $form-submit-hv
                 background-color: $form-submit-hv-bg
+                color: $form-submit-hv
 
             &.input-reset
-              border: 3px solid $form-reset-bd
               color: $form-reset
+              border: 3px solid $form-reset-bd
 
               &:hover,
               &:active
-                color: $form-reset-hv
                 background-color: $form-reset-hv-bg
+                color: $form-reset-hv

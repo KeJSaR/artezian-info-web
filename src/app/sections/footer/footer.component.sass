@@ -4,31 +4,31 @@ section
   color: $footer
 
   .map
+    +opacity(0.1)
     position: absolute
     top: -5%
     left: -5%
+    background: url("/assets/img/map.png") center center / contain no-repeat
     width: 110%
     height: 110%
-    background: url("/assets/img/map.png") center center / contain no-repeat
     z-index: z('map')
-    +opacity(0.1)
 
   .top
     position: relative
-    overflow: hidden
     background-color: $footer-bg
+    overflow: hidden
 
     .wrapper
-      margin: 200px auto
-      padding: 100px
-      width: 900px
-      position: relative
       +flex(space-between, flex-start)
+      position: relative
+      padding: 100px
+      margin: 200px auto
+      width: 900px
       z-index: z('footer-wrapper')
 
       a
-        color: $footer-color
         +transition(all .25s ease-out)
+        color: $footer-color
         text-decoration: none
 
         &:hover,
@@ -36,11 +36,11 @@ section
           color: $footer-hv
 
       h3
+        font-weight: 500
         color: $footer-h3
         padding: 15px 0 0 0
         letter-spacing: 0.5px
         text-transform: uppercase
-        font-weight: 500
 
       .articles
         padding: 0 20px
@@ -52,10 +52,10 @@ section
 
           li
             +font-size(16px)
-            list-style: none
             padding: 5px 20% 5px 0
-            line-height: 19px
             margin: 10px 0
+            line-height: 19px
+            list-style: none
 
       .contact
         width: 35%
@@ -64,27 +64,27 @@ section
           color: $contact
 
           .name
-            font-weight: 600
             display: inline-block
+            font-weight: 600
             margin: 0 5px 0 0
 
           .social
-            width: 22px
-            text-align: center
             display: inline-block
             margin: 0 5px 0 0
+            text-align: center
+            width: 22px
 
   .bottom
+    background-color: $footer-bottom-bg
     padding: 50px 0
     text-align: center
-    background-color: $footer-bottom-bg
 
     .copyright
       a
-        color: $footer-copyright
-        font-weight: 500
-        text-decoration: none
         +transition(all 0.25s ease-out)
+        font-weight: 500
+        color: $footer-copyright
+        text-decoration: none
 
         &:hover,
         &:active
