@@ -23,7 +23,7 @@ export class PageComponent implements OnInit {
 
   // ===========================================================================
 
-  section: Path =  {
+  section: Path = {
     alias: '',
     name: ''
   }
@@ -67,10 +67,6 @@ export class PageComponent implements OnInit {
     })();
   }
 
-  /**
-   * Set Aliases
-   */
-
   private setSectionAlias(): void {
     this.section.alias = this.route.snapshot.data.section;
   }
@@ -80,10 +76,6 @@ export class PageComponent implements OnInit {
       this.subalias = this.route.snapshot.params.subsection;
     }
   }
-
-  /**
-   * Set Names
-   */
 
   private setSectionName(): void {
     this.data.getSectionName(this.section.alias).subscribe((data) => {
@@ -100,7 +92,7 @@ export class PageComponent implements OnInit {
     this.pageDownTop = (this.height - 75).toString() + 'px';
   }
 
-  switchSidebar() {
+  switchSidebar(): void {
     this.showSidebar = !this.showSidebar;
   }
 
