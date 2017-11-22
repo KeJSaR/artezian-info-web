@@ -16,7 +16,6 @@ export class AlbumComponent {
 
   images: Image[];
   gallery: Gallery;
-
   currentImg: string;
   isShow: boolean = false;
 
@@ -39,7 +38,7 @@ export class AlbumComponent {
     });
   }
 
-  showImg(subalias: string, alias: string) {
+  showImg(alias: string) {
     this.currentImg = alias;
     this.isShow = true;
   }
