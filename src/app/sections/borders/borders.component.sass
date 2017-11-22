@@ -7,8 +7,6 @@
   position: fixed
   background-color: $secondary-dark
   z-index: z('bg')
-  display: flex
-  align-items: center
 
 .top-title,
 .top-social,
@@ -33,7 +31,7 @@
   left: 0
   width: 100%
   height: 60px
-  justify-content: space-between
+  +flex(space-between)
 
   .top-title
     padding-left: 60px
@@ -62,7 +60,7 @@
   left: 0
   width: 100%
   height: 60px
-  justify-content: flex-end
+  +flex(flex-end)
 
   .bottom-copyright
     padding-right: 60px
@@ -89,7 +87,7 @@
   left: 0
   width: 60px
   height: 100%
-  justify-content: center
+  +flex(center)
 
   .left-menu
     color: $white

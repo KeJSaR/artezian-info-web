@@ -12,9 +12,7 @@ section
   z-index: z('img-show')
 
   .wrapper
-    display: flex
-    align-items: center
-    justify-content: center
+    +flex
     height: 100%
     width: 100%
 
@@ -53,8 +51,6 @@ section
     position: absolute
     top: 0
     width: 50%
-    display: flex
-    align-items: center
     height: 100%
     cursor: pointer
     color: $show
@@ -66,14 +62,14 @@ section
 
   .prev
     left: 0
-    justify-content: flex-start
+    +flex(flex-start)
 
     i
       margin-left: 60px
 
   .next
     right: 0
-    justify-content: flex-end
+    +flex(flex-end)
 
     i
       margin-right: 60px

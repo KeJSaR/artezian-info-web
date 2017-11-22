@@ -55,6 +55,20 @@ $z-a: breadcrumbs footer-wrapper header title menu h2 map pattern img gradient m
 $z-b: bg sidebar img-show scroll-to-top down-c down-b down-a article gallery main
 $z-indexes: join($z-b, $z-a, comma)
 
+// Flex
+=flex($justify: center, $align: center, $wrap: nowrap)
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: $wrap
+  flex-wrap: $wrap
+  -webkit-box-pack: $justify
+  -ms-flex-pack: $justify
+  justify-content: $justify
+  -webkit-box-align: $align
+  -ms-flex-align: $align
+  align-items: $align
+
 
 // Content #####################################################################
 
