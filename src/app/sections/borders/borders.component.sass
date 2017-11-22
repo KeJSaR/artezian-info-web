@@ -5,7 +5,7 @@
 .bottom,
 .left
   position: fixed
-  background-color: $secondary-dark
+  background-color: $borders-bg
   z-index: z('bg')
 
 .top-title,
@@ -16,13 +16,13 @@
   +transition(all .5s ease-out)
 
   a
-    color: $white
+    color: $borders
     text-decoration: none
     +transition(all .25s ease-out)
 
     &:hover,
     &:active
-      color: $primary-light
+      color: $borders-hv
 
 
 .top
@@ -68,7 +68,7 @@
     +font-size(12px)
     font-weight: 300
     letter-spacing: 1px
-    color: $white
+    color: $borders-copy
     +opacity(0.5)
 
     i
@@ -90,14 +90,14 @@
   +flex(center)
 
   .left-menu
-    color: $white
+    color: $borders-left
     +font-size(21px)
     cursor: pointer
     +transition(all .25s ease-out)
 
     &:hover,
     &:active
-      color: $primary-light
+      color: $borders-left-hv
 
     div
       position: relative
