@@ -1,12 +1,14 @@
-<section *ngIf="topImgUrl" [ngStyle]="{'min-height': height, 'background-image': 'url(' + topImgUrl + ')'}">
-
-  <div class="gradient"></div>
+<section [ngStyle]="{'min-height': height}">
 
   <aae-header [section]="section"></aae-header>
 
   <aae-menu [alias]="section.alias"></aae-menu>
 
   <aae-breadcrumbs [section]="section" [subalias]="subalias"></aae-breadcrumbs>
+
+  <div *ngIf="topImgUrl" class="bg-image" [ngStyle]="{'background-image': 'url(' + topImgUrl + ')'}"></div>
+
+  <div class="gradient"></div>
 
   <div *ngIf="title" class="title">
     <div class="wrapper">

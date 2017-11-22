@@ -3,23 +3,31 @@
 section
   position: relative
   background-color: $top-bg
-  background-position: center center
-  background-size: cover
-  background-repeat: no-repeat
 
   .gradient
     position: absolute
-    top: 0
+    top: 240px
     left: 0
-    height: 100%
+    bottom: 0
     width: 100%
     +opacity(0.7)
     background: $black-opacity-4
-    background: -webkit-linear-gradient($black-opacity-0, $black-opacity-0, $black-opacity-3, $black-opacity-7)
-    background: -moz-linear-gradient(   $black-opacity-0, $black-opacity-0, $black-opacity-3, $black-opacity-7)
-    background: -o-linear-gradient(     $black-opacity-0, $black-opacity-0, $black-opacity-3, $black-opacity-7)
-    background: linear-gradient(        $black-opacity-0, $black-opacity-0, $black-opacity-3, $black-opacity-7)
+    background: -webkit-linear-gradient($black-opacity-0, $black-opacity-3, $black-opacity-7)
+    background: -moz-linear-gradient(   $black-opacity-0, $black-opacity-3, $black-opacity-7)
+    background: -o-linear-gradient(     $black-opacity-0, $black-opacity-3, $black-opacity-7)
+    background: linear-gradient(        $black-opacity-0, $black-opacity-3, $black-opacity-7)
     z-index: z('gradient')
+
+  .bg-image
+    position: absolute
+    top: 240px
+    left: 0
+    bottom: 0
+    width: 100%
+    background-position: center center
+    background-size: cover
+    background-repeat: no-repeat
+    z-index: z('bg-image')
 
   .title
     position: relative
