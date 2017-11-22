@@ -1,5 +1,7 @@
 <section *ngIf="about">
 
+  <div class="background"></div>
+
   <div class="wrapper" *ngFor="let item of about">
 
     <aae-text *ngIf="item.type === 'text'" [text]="item.data"></aae-text>

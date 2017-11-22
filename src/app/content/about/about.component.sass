@@ -3,7 +3,16 @@
 section
   position: relative
 
+  .background
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: url("/assets/img/bg.png") center center repeat-y
+    +opacity(0.05)
+
   .wrapper
-    margin: 200px auto
-    padding: 0 100px
+    margin: 0 auto
+    padding: 200px 100px
     width: 900px
