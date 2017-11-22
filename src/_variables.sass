@@ -63,7 +63,7 @@ $breakpoints: join($br-b, $br-a, comma)
     @warn 'There is no item "#{$name}", choose one of: #{$z-indexes}'
     @return null
 
-$z-a: (header, title, menu, h2, map, pattern, img, gradient, mask)
+$z-a: (header, intro, title, menu, h2, map, pattern, img, gradient, mask)
 $z-b: (article, gallery, main, breadcrumbs, footer-wrapper)
 $z-c: (bg, sidebar, img-show, scroll-to-top, down-c, down-b, down-a)
 $z-d: join($z-b, $z-a, comma)
@@ -161,6 +161,14 @@ $blog-read-more-hv: $white
 $blog-read-more-hv-bd: $blue-grey-700
 $blog-read-more-hv-bg: $blue-grey-700
 
+// borders
+$borders-bg: $secondary-dark
+$borders: $white
+$borders-hv: $primary-light
+$borders-copy: $white
+$borders-left: $white
+$borders-left-hv: $primary-light
+
 // breadcrumbs
 $breadcrumbs-bg: $black-opacity-3
 $breadcrumbs-content: $white
@@ -188,7 +196,7 @@ $contact: $blue-grey-100
 $footer-bottom-bg: $secondary-dark
 
 // header
-$header-bg: $black-opacity-1
+$header-bg: $black-opacity-3
 $header: $white
 $header-short: $white
 $header-short-hv: $primary
@@ -215,7 +223,7 @@ $show-hv: $primary
 
 // menu
 $menu-bd: $white-opacity-3
-$menu-bg: $black-opacity-1
+$menu-bg: $black-opacity-3
 $menu-nav: $white
 $menu-nav-hv: $primary
 $menu-social: $white
