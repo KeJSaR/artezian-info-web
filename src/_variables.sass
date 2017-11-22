@@ -9,6 +9,18 @@
   font-size: $size
   font-size: calculateRem($size)
 
+// Media queries
+$br-a: (tablet: 768px, tablet-wide: 1024px, desktop: 1248px, desktop-wide: 1440px)
+$br-b: (phone: 400px, phone-wide: 480px, phablet: 560px, tablet-small: 640px)
+$breakpoints: join($br-b, $br-a, comma)
+=mq($width, $type: min)
+  @if map_has_key($breakpoints, $width)
+    $width: map_get($breakpoints, $width)
+    @if $type == max
+      $width: $width - 1px
+    @media only screen and (#{$type}-width: $width)
+      @content
+
 // Transition
 =transition($args...)
   -webkit-transition: $args
@@ -48,12 +60,14 @@
   @if index($z-indexes, $name)
     @return (length($z-indexes) - index($z-indexes, $name)) + 1
   @else
-    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}'
+    @warn 'There is no item "#{$name}", choose one of: #{$z-indexes}'
     @return null
 
-$z-a: breadcrumbs footer-wrapper header title menu h2 map pattern img gradient mask
-$z-b: bg sidebar img-show scroll-to-top down-c down-b down-a article gallery main
-$z-indexes: join($z-b, $z-a, comma)
+$z-a: (header, title, menu, h2, map, pattern, img, gradient, mask)
+$z-b: (article, gallery, main, breadcrumbs, footer-wrapper)
+$z-c: (bg, sidebar, img-show, scroll-to-top, down-c, down-b, down-a)
+$z-d: join($z-b, $z-a, comma)
+$z-indexes: join($z-c, $z-d, comma)
 
 // Flex
 =flex($justify: center, $align: center, $wrap: nowrap)
