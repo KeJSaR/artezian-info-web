@@ -26,29 +26,29 @@ section
           +font-size(40px)
           text-transform: uppercase
 
-        .short
-          +font-size(70px)
-          font-weight: 900
-          cursor: pointer
-          +transition(all .25s ease-out)
-          color: $header-short
+          &.short
+            +font-size(70px)
+            font-weight: 900
+            cursor: pointer
+            +transition(all .25s ease-out)
+            color: $header-short
 
-          &:hover,
-          &:active
-            color: $header-short-hv
+            &:hover,
+            &:active
+              color: $header-short-hv
 
-        .divider
-          +font-size(30px)
-          font-weight: 400
-          padding: 0 10px
+          &.divider
+            +font-size(30px)
+            font-weight: 400
+            padding: 0 10px
 
-        .full
-          display: none
+          &.full
+            display: none
 
-        .page
-          +font-size(70px)
-          font-weight: 700
-          color: $header-page
+          &.page
+            +font-size(70px)
+            font-weight: 700
+            color: $header-page
 
       .form
         text-transform: uppercase
@@ -71,18 +71,18 @@ section
     border-bottom: none
 
     .wrapper
-      background-color: $header-wrapper-bg
+      background-color: $header-main-wrapper-bg
 
       .row
         .title
-          color: $header-title
+          color: $header-main-title
 
           .short
-            color: $header-short
+            color: $header-main-short
 
             &:hover,
             &:active
-              color: $header-short-hv
+              color: $header-main-short-hv
 
           .full
             display: inherit
@@ -94,13 +94,13 @@ section
             display: none
 
         .form
-          background-color: $header-form-bg
-          border: 1px solid $header-form-bd
-          color: $header-form
+          background-color: $header-main-form-bg
+          border: 1px solid $header-main-form-bd
+          color: $header-main-form
           font-weight: 600
 
           &:hover,
           &:active
-            color: $header-form-hv
-            background-color: $header-form-hv-bg
-            border-color: $header-form-hv-bd
+            color: $header-main-form-hv
+            background-color: $header-main-form-hv-bg
+            border-color: $header-main-form-hv-bd
