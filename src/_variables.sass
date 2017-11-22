@@ -64,8 +64,8 @@ $breakpoints: join($br-b, $br-a, comma)
     @warn 'There is no item "#{$name}", choose one of: #{$z-indexes}'
     @return null
 
-$z-a: (header, intro, title, menu, h2, map, pattern, img, gradient, mask)
-$z-b: (article, gallery, main, breadcrumbs, footer-wrapper)
+$z-a: (title, menu, h2, map, about, background, pattern, img, gradient, mask)
+$z-b: (article, gallery, main, breadcrumbs, footer-wrapper,header, intro)
 $z-c: (bg, sidebar, img-show, scroll-to-top, down-c, down-b, down-a)
 $z-d: join($z-b, $z-a, comma)
 $z-indexes: join($z-c, $z-d, comma)

@@ -9,10 +9,13 @@ section
     left: 0
     width: 100%
     height: 100%
-    background: url("/assets/img/bg.png") center center repeat-y
+    background: url("/assets/img/bg-light.png") center center repeat-y
     +opacity(0.05)
+    z-index: z("background")
 
   .wrapper
     margin: 0 auto
     padding: 200px 100px
     width: 900px
+    position: relative
+    z-index: z("about")
