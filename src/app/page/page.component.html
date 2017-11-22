@@ -2,7 +2,7 @@
   <div class="wrapper">
 
     <!-- Top ================================================================= -->
-    <aae-top *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias"></aae-top>
+    <aae-top *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias" [menu]="menu"></aae-top>
 
     <!-- Down Button ========================================================= -->
     <div *ngIf="section.alias !== 'main'" class="down" [ngStyle]="{'top': pageDownTop}">
@@ -12,7 +12,7 @@
     </div>
 
     <!-- Pages =============================================================== -->
-    <aae-main *ngIf="section.alias === 'main'"></aae-main>
+    <aae-main *ngIf="section.alias === 'main'" [menu]="menu"></aae-main>
     <aae-form *ngIf="section.alias === 'form'"></aae-form>
     <aae-not-found *ngIf="section.alias === '404'"></aae-not-found>
     <aae-about *ngIf="section.alias === 'about' && subalias === ''" [alias]="section.alias"></aae-about>
@@ -31,7 +31,7 @@
 </section>
 
 <div class="sidebar" [class.sidebar-show]="showSidebar">
-  <aae-sidebar></aae-sidebar>
+  <aae-sidebar [menu]="menu"></aae-sidebar>
 </div>
 
-<aae-borders [alias]="section.alias"  (showSidebar)="switchSidebar()"></aae-borders>
+<aae-borders [alias]="section.alias" [menu]="menu" (showSidebar)="switchSidebar()"></aae-borders>

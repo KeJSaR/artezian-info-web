@@ -9,6 +9,7 @@
   z-index: z('bg')
 
 .top-title,
+.top-menu,
 .top-social,
 .bottom-copyright,
 .left-menu
@@ -32,9 +33,19 @@
   right: 0
   width: 100%
   height: 60px
+  box-shadow: 0 2px 2px 0 $borders-bs, 0 0 0 1px $borders-bs
 
   .top-title
     padding-left: 60px
+
+  .top-menu
+    a
+      color: $borders-menu
+      display: inline-block
+      padding: 3px 10px
+
+      &.active
+        color: $borders-menu-hv
 
   .top-social
     padding-right: 60px
@@ -44,6 +55,7 @@
 
   &.show
     .top-title,
+    .top-menu,
     .top-social
       +opacity(1)
 

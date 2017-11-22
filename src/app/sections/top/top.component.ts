@@ -4,6 +4,7 @@ import { DataService } from '../../services/data.service';
 import { Path } from '../../interfaces/path.interface';
 import { Gallery } from '../../interfaces/gallery.interface';
 import { AuthorInfo } from '../../interfaces/author-info.interface';
+import { MenuItem } from '../../interfaces/menu-item.interface';
 
 @Component({
   selector: 'aae-top',
@@ -14,6 +15,7 @@ export class TopComponent implements OnInit {
 
   @Input() section: Path;
   @Input() subalias: string;
+  @Input() menu: MenuItem[];
 
   gallery: Gallery;
   authorInfo: AuthorInfo;

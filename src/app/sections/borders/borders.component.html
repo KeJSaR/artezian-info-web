@@ -1,9 +1,20 @@
 <div class="top" [class.show]="showBordersContent">
-  <div class="top-title"><a href="#">Артезианская Археологическая Экспедиция</a></div>
+
+  <div class="top-title">
+    <a href="#">ААЭ</a>
+  </div>
+
+  <div *ngIf="menu" class="top-menu">
+    <nav *ngIf="alias !== 'main'">
+      <a *ngFor="let item of menu" routerLink="/{{ item.alias }}" routerLinkActive="active">{{ item.name }}</a>
+    </nav>
+  </div>
+
   <div class="top-social">
     <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
   </div>
+
 </div>
 
 <div *ngIf="alias !== 'main'" class="right"></div>

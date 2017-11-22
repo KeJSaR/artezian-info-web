@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
+import { MenuItem } from '../../interfaces/menu-item.interface';
+
 @Component({
   selector: 'aae-borders',
   templateUrl: './borders.component.html',
@@ -8,6 +10,7 @@ import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@a
 export class BordersComponent implements OnInit {
 
   @Input() alias: string;
+  @Input() menu: MenuItem[];
 
   @Output() showSidebar = new EventEmitter<boolean>();
 

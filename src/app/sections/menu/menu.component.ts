@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import { DataService } from '../../services/data.service';
 import { MenuItem } from '../../interfaces/menu-item.interface';
 
 @Component({
@@ -8,21 +7,9 @@ import { MenuItem } from '../../interfaces/menu-item.interface';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.sass']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent {
 
   @Input() alias: string;
+  @Input() menu: MenuItem[];
 
-  menu: MenuItem[];
-
-  constructor(private data: DataService) { }
-
-  ngOnInit() {
-    this.setMenu();
-  }
-
-  private setMenu() {
-    this.data.getMenuItems().subscribe((data) => {
-      this.menu = data;
-    });
-  }
 }

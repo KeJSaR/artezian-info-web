@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { MenuItem } from '../../interfaces/menu-item.interface';
 
 @Component({
   selector: 'aae-main',
@@ -6,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.sass']
 })
 export class MainComponent {
+
+  @Input() menu: MenuItem[];
 
   height: string;
 

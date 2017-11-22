@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 import { Path } from '../interfaces/path.interface';
+import { MenuItem } from '../interfaces/menu-item.interface';
 
 @Component({
   selector: 'aae-page',
@@ -31,6 +32,7 @@ export class PageComponent implements OnInit {
   showSidebar: boolean = false;
   height: number;
   pageDownTop: string;
+  menu: MenuItem[];
 
   constructor(
     private route: ActivatedRoute,
@@ -45,6 +47,7 @@ export class PageComponent implements OnInit {
     this.scrollToTop();
     this.setSectionName();
     this.setHeight();
+    this.setMenu();
   }
 
   scrollToTop() {
@@ -90,6 +93,12 @@ export class PageComponent implements OnInit {
 
   private setPageDownTop(): void {
     this.pageDownTop = (this.height - 75).toString() + 'px';
+  }
+
+  private setMenu() {
+    this.data.getMenuItems().subscribe((data) => {
+      this.menu = data;
+    });
   }
 
   switchSidebar(): void {
