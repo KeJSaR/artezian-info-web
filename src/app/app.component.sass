@@ -1,38 +1,37 @@
 @import "../variables"
 
 .scroll-to-top
-  color: $white
+  +transition(all .25s ease-out)
+  +opacity(0)
+  color: $app-scroll
   position: fixed
   bottom: 95px
   right: 95px
-  +opacity(0)
-  +transition(all .25s ease-out)
   z-index: z('scroll-to-top')
 
   div
     span
-      background-color: $secondary-dark
+      +transition(all .5s ease-out)
       +font-size(18px)
+      +opacity(0)
+      color: $app-scroll-span
+      background-color: $app-scroll-span-bg
       padding: 5px 20px 9px
       border-radius: 3px
-      color: $white
       text-shadow: none
       font-weight: 400
       letter-spacing: .5px
       position: relative
       bottom: 10px
       right: 3px
-      +opacity(0)
-      +transition(all .5s ease-out)
 
   &.show-scroll
-    +opacity(1)
     +transition(all .25s ease-out)
-    color: $primary
     +font-size(40px)
-    cursor: pointer
     +opacity(0.3)
-    text-shadow: 1px 2px 3px $blue-grey-900
+    color: $app-show-scroll
+    text-shadow: $app-show-scroll-ts
+    cursor: pointer
 
     &:hover,
     &:active
