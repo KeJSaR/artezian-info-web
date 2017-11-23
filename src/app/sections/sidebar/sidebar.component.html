@@ -1,13 +1,15 @@
 <section *ngIf="menu">
+
   <ul>
-    <li *ngFor="let item of menu" showInfo>
-      <div class="link" routerLink="/{{ item.alias }}" routerLinkActive="active">
-
+    <li *ngFor="let item of menu">
+      <div class="link" routerLink="/{{ item.alias }}" (mouseenter)="showInfo(menu.indexOf(item))">
         <div class="name">{{ item.name }}</div>
-
-        <div class="info" [innerHtml]="item.info"></div>
-
       </div>
     </li>
   </ul>
+
+  <div *ngIf="info" class="info-wrapper">
+    <div class="info" [innerHtml]="info"></div>
+  </div>
+
 </section>
