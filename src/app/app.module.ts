@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { DataService } from './services/data.service';
 
-import { ShowInfoDirective } from './directives/show-info.directive';
-
 import { AppComponent } from './app.component';
 import { PageComponent } from './page/page.component';
 import { AboutComponent } from './content/about/about.component';
@@ -32,7 +30,6 @@ import { TopComponent } from './sections/top/top.component';
 
 @NgModule({
   declarations: [
-    ShowInfoDirective,
     AppComponent,
     PageComponent,
     AboutComponent,
