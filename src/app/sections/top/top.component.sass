@@ -5,8 +5,8 @@ section
   background-color: $top-bg
 
   .gradient
-    +opacity(0.7)
-    +background-gradient($black-opacity-0, $black-opacity-3, $black-opacity-7, horizontal)
+    +opacity(0.5)
+    +background-gradient($black-opacity-7, $black-opacity-3, $black-opacity-7, vertical)
     position: absolute
     top: 195px
     bottom: 0
@@ -36,18 +36,17 @@ section
       padding: 0 60px
 
   .title
-    padding-top: 30px
+    padding-top: 130px
 
     .author
       color: $top-author
-      text-align: right
-      text-shadow: $top-author-ts
+      text-align: center
+      text-shadow: 0 2px 2px $top-author-ts
 
       .name
         font-weight: 500
 
       .title
-        font-style: italic
         font-weight: 400
 
     h1
@@ -55,8 +54,9 @@ section
       font-weight: 500
       color: $top-title
       line-height: 63px
-      text-align: left
-      text-shadow: $top-title-ts
+      text-align: center
+      text-shadow: 0 2px 2px $top-title-ts
+      margin: 0
 
   .intro
     +flex()
@@ -78,5 +78,5 @@ section
         letter-spacing: 1px
         line-height: 1.5
         text-align: center
-        text-shadow: $top-intro-ts
+        text-shadow: 0 2px 2px $top-intro-ts
         text-transform: uppercase
