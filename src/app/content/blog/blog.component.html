@@ -1,6 +1,6 @@
 <section *ngIf="blogItems" class="blog">
 
-  <aae-pagination></aae-pagination>
+  <aae-pagination [currentPage]="currentPage" [lastPage]="lastPage"></aae-pagination>
 
   <div class="wrapper" *ngFor="let item of blogItems">
 
@@ -25,6 +25,6 @@
 
   </div>
 
-  <aae-pagination></aae-pagination>
+  <aae-pagination[currentPage]="currentPage" [lastPage]="lastPage"></aae-pagination>
 
 </section>
