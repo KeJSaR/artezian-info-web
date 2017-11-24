@@ -17,7 +17,7 @@ import { GalleryComponent } from './content/gallery/gallery.component';
 import { MainComponent } from './content/main/main.component';
 import { NotFoundComponent } from './content/not-found/not-found.component';
 import { BlogItemComponent } from './sections/blog-item/blog-item.component';
-import { BordersComponent } from './sections/borders/borders.component';
+import { TopNavComponent } from './sections/top-nav/top-nav.component';
 import { BreadcrumbsComponent } from './sections/breadcrumbs/breadcrumbs.component';
 import { CallComponent } from './sections/call/call.component';
 import { FooterComponent } from './sections/footer/footer.component';
@@ -40,7 +40,7 @@ import { TopComponent } from './sections/top/top.component';
     MainComponent,
     NotFoundComponent,
     BlogItemComponent,
-    BordersComponent,
+    TopNavComponent,
     BreadcrumbsComponent,
     CallComponent,
     FooterComponent,

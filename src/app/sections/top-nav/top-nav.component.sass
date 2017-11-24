@@ -1,6 +1,6 @@
 @import "../../../variables"
 
-.top
+.top-nav
   +flex(space-between)
   +opacity(0)
   +transition(all .5s ease-out)
@@ -23,7 +23,7 @@
     &:active
       color: $borders-hv
 
-  .top-title
+  .top-nav-title
     padding-left: 60px
 
     a
@@ -32,7 +32,7 @@
       height: 30px
       width: 68px
 
-  .top-menu
+  .top-nav-menu
     a
       color: $borders-menu
       display: inline-block
@@ -41,7 +41,7 @@
       &.active
         color: $borders-menu-hv
 
-  .top-social
+  .top-nav-social
     padding-right: 60px
 
     a

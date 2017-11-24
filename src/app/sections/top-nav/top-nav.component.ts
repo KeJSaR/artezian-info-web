@@ -3,16 +3,16 @@ import { Component, OnInit, Input, EventEmitter, HostListener } from '@angular/c
 import { MenuItem } from '../../interfaces/menu-item.interface';
 
 @Component({
-  selector: 'aae-borders',
-  templateUrl: './borders.component.html',
-  styleUrls: ['./borders.component.sass']
+  selector: 'aae-top-nav',
+  templateUrl: './top-nav.component.html',
+  styleUrls: ['./top-nav.component.sass']
 })
-export class BordersComponent implements OnInit {
+export class TopNavComponent implements OnInit {
 
   @Input() alias: string;
   @Input() menu: MenuItem[];
 
-  showBordersContent: boolean = false;
+  showTopNavContent: boolean = false;
   height: number;
 
   ngOnInit() {
@@ -27,10 +27,10 @@ export class BordersComponent implements OnInit {
   @HostListener('window: scroll', [])
   onWindowScroll() {
     if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) >= this.height) {
-      this.showBordersContent = true;
+      this.showTopNavContent = true;
     }
-    else if (this.showBordersContent && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.height) {
-      this.showBordersContent = false;
+    else if (this.showTopNavContent && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.height) {
+      this.showTopNavContent = false;
     }
   }
 

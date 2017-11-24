@@ -1,16 +1,16 @@
-<div class="top" [class.show]="showBordersContent">
+<div class="top-nav" [class.show]="showBordersContent">
 
-  <div class="top-title">
+  <div class="top-nav-title">
     <a href="#"></a>
   </div>
 
-  <div *ngIf="menu" class="top-menu">
+  <div *ngIf="menu" class="top-nav-menu">
     <nav>
       <a *ngFor="let item of menu" routerLink="/{{ item.alias }}" routerLinkActive="active">{{ item.name }}</a>
     </nav>
   </div>
 
-  <div class="top-social">
+  <div class="top-nav-social">
     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
     <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
