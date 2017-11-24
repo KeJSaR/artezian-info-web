@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aae-pagination',
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.sass']
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input() currentPage: number;
+  @Input() lastPage: number;
 
 }
