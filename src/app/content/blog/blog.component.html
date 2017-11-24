@@ -2,7 +2,7 @@
 
   <div class="wrapper" *ngFor="let item of blogItems">
 
-    <h2 class="header"><a routerLink="/articles/{{ item.id }}">{{ item.title }}</a></h2>
+    <h2 class="header"><a routerLink="/{{ alias }}/{{ item.id }}">{{ item.title }}</a></h2>
 
     <p class="author">
       <span class="name">{{ item.author.name }},</span>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="read-more">
-      <a routerLink="/articles/{{ item.id }}">читать</a>
+      <a routerLink="/{{ alias }}/{{ item.id }}">читать</a>
     </div>
 
   </div>
