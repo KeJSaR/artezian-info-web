@@ -26,16 +26,11 @@ section
           font-weight: 900
           text-transform: uppercase
 
-          &.short
-            +font-size(70px)
-            +transition(all .25s ease-out)
-            font-weight: 900
-            color: $header-short
-            cursor: pointer
-
-            &:hover,
-            &:active
-              color: $header-short-hv
+          &.logo
+            background: url("/assets/img/logo.png") center center / contain no-repeat
+            width: 140px
+            height: 82px
+            display: inline-block
 
           &.divider
             +font-size(30px)
@@ -78,7 +73,12 @@ section
           color: $header-main-title
 
           .short
+            +font-size(70px)
+            +transition(all .25s ease-out)
+            font-weight: 900
+            cursor: pointer
             color: $header-main-short
+            background: none
 
             &:hover,
             &:active
