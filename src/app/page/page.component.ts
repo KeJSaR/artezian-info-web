@@ -29,7 +29,6 @@ export class PageComponent implements OnInit {
     name: ''
   }
   subalias: string = '';
-  showSidebar: boolean = false;
   height: number;
   pageDownTop: string;
   menu: MenuItem[];
@@ -99,10 +98,6 @@ export class PageComponent implements OnInit {
     this.data.getMenuItems().subscribe((data) => {
       this.menu = data;
     });
-  }
-
-  switchSidebar(): void {
-    this.showSidebar = !this.showSidebar;
   }
 
 }

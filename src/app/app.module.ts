@@ -24,7 +24,6 @@ import { FooterComponent } from './sections/footer/footer.component';
 import { HeaderComponent } from './sections/header/header.component';
 import { ImgShowComponent } from './sections/img-show/img-show.component';
 import { MenuComponent } from './sections/menu/menu.component';
-import { SidebarComponent } from './sections/sidebar/sidebar.component';
 import { TextComponent } from './sections/text/text.component';
 import { TopComponent } from './sections/top/top.component';
 
@@ -48,7 +47,6 @@ import { TopComponent } from './sections/top/top.component';
     HeaderComponent,
     ImgShowComponent,
     MenuComponent,
-    SidebarComponent,
     TextComponent,
     TopComponent,
   ],

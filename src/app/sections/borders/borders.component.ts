@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, HostListener } from '@angular/core';
 
 import { MenuItem } from '../../interfaces/menu-item.interface';
 
@@ -12,9 +12,6 @@ export class BordersComponent implements OnInit {
   @Input() alias: string;
   @Input() menu: MenuItem[];
 
-  @Output() showSidebar = new EventEmitter<boolean>();
-
-  showSidebarContent: boolean = false;
   showBordersContent: boolean = false;
   height: number;
 
@@ -35,11 +32,6 @@ export class BordersComponent implements OnInit {
     else if (this.showBordersContent && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.height) {
       this.showBordersContent = false;
     }
-  }
-
-  switchSidebar(): void {
-    this.showSidebar.emit();
-    this.showSidebarContent = !this.showSidebarContent;
   }
 
   private setHeight(height: number): void {
