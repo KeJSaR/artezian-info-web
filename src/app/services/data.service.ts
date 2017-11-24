@@ -60,14 +60,24 @@ export class DataService {
   }
 
   /**
-   * Get Article data
+   * Get Blog data
    */
   
-  getBlogItems(alias: string): Observable<BlogItem[]> {
-    return this.http.post(this.url, `get=blog-items&alias=${alias}`, {
+  getLastPage(alias: string): Observable<number> {
+    return this.http.post(this.url, `get=last-page&alias=${alias}`, {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    }).map((resp: number) => resp);
+  }
+  
+  getBlogItems(alias: string, currentPage: string): Observable<BlogItem[]> {
+    return this.http.post(this.url, `get=blog-items&alias=${alias}&page=${currentPage}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }).map((resp: BlogItem[]) => resp);
   }
+
+  /**
+   * Get Article data
+   */
 
   getArticle(alias: string, subalias: string): Observable<Article> {
     return this.http.post(this.url, `get=article&alias=${alias}&subalias=${subalias}`, {
