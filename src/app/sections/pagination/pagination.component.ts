@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-pagination',
+  selector: 'aae-pagination',
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.sass']
 })

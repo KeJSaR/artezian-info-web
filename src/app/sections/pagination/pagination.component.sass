@@ -1,0 +1,24 @@
+@import "../../../variables"
+
+section
+  +flex
+  margin: 100px 0
+
+  a
+    +flex
+    background-color: #ffffff
+    margin: 5px
+    border-radius: 3px
+    border: 1px solid #cccccc
+    text-decoration: none
+    color: $secondary
+    width: 30px
+    height: 30px
+
+    &:hover,
+    &:active
+      color: $primary
+      border-color: $primary
+
+    &.active
+      font-weight: 700
