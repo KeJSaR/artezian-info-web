@@ -1,17 +1,17 @@
 <section [class.main]="section.alias === 'main'">
   <div class="wrapper">
 
-    <!-- Top ================================================================= -->
+    <!-- Top =============================================================== -->
     <aae-top *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias" [menu]="menu"></aae-top>
 
-    <!-- Down Button ========================================================= -->
+    <!-- Down Button ======================================================= -->
     <div class="down" [ngStyle]="{'top': pageDownTop}">
       <div class="down-wrapper">
         <span (click)="scrollDown()"><i class="fa fa-chevron-circle-down"></i></span>
       </div>
     </div>
 
-    <!-- Pages =============================================================== -->
+    <!-- Pages ============================================================= -->
     <aae-main *ngIf="section.alias === 'main'" [menu]="menu"></aae-main>
     <aae-form *ngIf="section.alias === 'form'"></aae-form>
     <aae-not-found *ngIf="section.alias === '404'"></aae-not-found>
@@ -21,10 +21,10 @@
     <aae-gallery *ngIf="section.alias === 'gallery' && subalias === ''"></aae-gallery>
     <aae-album *ngIf="section.alias === 'gallery' && subalias" [subalias]="subalias" [albumName]="section.name"></aae-album>
 
-    <!-- Call ================================================================ -->
+    <!-- Call ============================================================== -->
     <aae-call *ngIf="section.alias !== 'main'" [alias]="section.alias"></aae-call>
 
-    <!-- Footer ============================================================== -->
+    <!-- Footer ============================================================ -->
     <aae-footer *ngIf="section.alias !== 'main'"></aae-footer>
 
   </div>
