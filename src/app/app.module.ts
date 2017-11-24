@@ -26,6 +26,7 @@ import { ImgShowComponent } from './sections/img-show/img-show.component';
 import { MenuComponent } from './sections/menu/menu.component';
 import { TextComponent } from './sections/text/text.component';
 import { TopComponent } from './sections/top/top.component';
+import { PaginationComponent } from './sections/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { TopComponent } from './sections/top/top.component';
     MenuComponent,
     TextComponent,
     TopComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
