@@ -1,5 +1,7 @@
 <section *ngIf="blogItems" class="blog">
 
+  <aae-pagination></aae-pagination>
+
   <div class="wrapper" *ngFor="let item of blogItems">
 
     <h2 class="header"><a routerLink="/{{ alias }}/{{ item.id }}">{{ item.title }}</a></h2>
@@ -22,5 +24,7 @@
     </div>
 
   </div>
+
+  <aae-pagination></aae-pagination>
 
 </section>
