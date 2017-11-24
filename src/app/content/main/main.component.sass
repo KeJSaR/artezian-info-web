@@ -1,65 +1,65 @@
 @import "../../../variables"
 
 section
-  position: relative
-  background: url("http://artezian.zone/pages/main.jpg") center center / cover no-repeat
-  padding: 60px 0
-
-  .mask
-    +opacity(0.7)
-    +background-gradient($black-opacity-9, $black-opacity-6, $black-opacity-9, vertical)
-    position: absolute
-    top: 0
-    bottom: 0
-    left: 0
-    right: 0
-    z-index: z('mask')
-
-  .content
+  &.main
     position: relative
-    color: $main
-    margin: 100px auto
-    text-align: center
-    width: 1200px
-    z-index: z('main')
+    background: url("http://artezian.zone/pages/main.jpg") center center / cover no-repeat
 
-    .header
-      +flex
-      margin: 0 0 30px 0
+    .mask
+      +opacity(0.7)
+      +background-gradient($black-opacity-9, $black-opacity-6, $black-opacity-9, vertical)
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: z('mask')
 
-      .logo
-        background: url("/assets/img/logo.png") center center / contain no-repeat
-        height: 172px
-        width: 380px
+    .content
+      position: relative
+      color: $main
+      margin: 100px auto
+      text-align: center
+      width: 1200px
+      z-index: z('main')
 
-      h1
-        +font-size(60px)
-        font-weight: 900
-        padding: 0 0 0 20px
-        margin: 0 0 0 20px
-        line-height: 0.9
-        text-transform: uppercase
-        text-align: left
+      .header
+        +flex
+        margin: 0 0 30px 0
 
-        span
-          color: $main-span
+        .logo
+          background: url("/assets/img/logo.png") center center / contain no-repeat
+          height: 172px
+          width: 380px
 
-    .buttons
-      +flex
+        h1
+          +font-size(60px)
+          font-weight: 900
+          padding: 0 0 0 20px
+          margin: 0 0 0 20px
+          line-height: 0.9
+          text-transform: uppercase
+          text-align: left
 
-      div
-        +font-size(20px)
-        +transition(all .25s ease-out)
-        font-weight: 400
-        background-color: $main-div-bg
-        color: $main-div
-        cursor: pointer
-        padding: 10px 15px
-        margin: 20px
-        border-radius: 3px
-        text-transform: uppercase
+          span
+            color: $main-span
 
-        &:hover,
-        &:active
-          background-color: $main-div-hv-bg
-          color: $main-div-hv
+      .buttons
+        +flex
+
+        div
+          +font-size(20px)
+          +transition(all .25s ease-out)
+          font-weight: 400
+          background-color: $main-div-bg
+          color: $main-div
+          cursor: pointer
+          padding: 10px 15px
+          margin: 100px 20px
+          border-radius: 3px
+          text-transform: uppercase
+
+          &:hover,
+          &:active
+            background-color: $main-div-hv-bg
+            color: $main-div-hv

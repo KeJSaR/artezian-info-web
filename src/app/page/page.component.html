@@ -5,7 +5,7 @@
     <aae-top *ngIf="section.alias !== 'main'" [section]="section" [subalias]="subalias" [menu]="menu"></aae-top>
 
     <!-- Down Button ========================================================= -->
-    <div *ngIf="section.alias !== 'main'" class="down" [ngStyle]="{'top': pageDownTop}">
+    <div class="down" [ngStyle]="{'top': pageDownTop}">
       <div class="down-wrapper">
         <span (click)="scrollDown()"><i class="fa fa-chevron-circle-down"></i></span>
       </div>

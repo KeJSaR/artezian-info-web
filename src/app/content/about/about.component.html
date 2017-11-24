@@ -1,12 +1,10 @@
-<section *ngIf="about">
+<section *ngIf="blogItems">
 
   <div class="background"></div>
 
-  <div class="wrapper" *ngFor="let item of about">
+  <div class="wrapper" *ngFor="let item of blogItems">
 
-    <aae-text *ngIf="item.type === 'text'" [text]="item.data"></aae-text>
-
-    <aae-blog-item *ngIf="item.type === 'intro'" [blogItem]="item.data" [alias]="alias"></aae-blog-item>
+    <aae-blog-item [blogItem]="item" [alias]="alias"></aae-blog-item>
 
   </div>
 
