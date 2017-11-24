@@ -43,7 +43,7 @@ export class BordersComponent implements OnInit {
   }
 
   private setHeight(height: number): void {
-    this.height = height - 120;
+    this.height = height;
   }
 
 }

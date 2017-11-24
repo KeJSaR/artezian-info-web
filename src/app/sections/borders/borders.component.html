@@ -1,12 +1,3 @@
-<div class="top-shadow"></div>
-
-<div *ngIf="alias !== 'main'" class="right-shadow"></div>
-
-<div class="bottom-shadow"></div>
-
-<div *ngIf="alias !== 'main'" class="left-shadow"></div>
-
-
 <div class="top" [class.show]="showBordersContent">
 
   <div class="top-title">
@@ -14,30 +5,15 @@
   </div>
 
   <div *ngIf="menu" class="top-menu">
-    <nav *ngIf="alias !== 'main'">
+    <nav>
       <a *ngFor="let item of menu" routerLink="/{{ item.alias }}" routerLinkActive="active">{{ item.name }}</a>
     </nav>
   </div>
 
   <div class="top-social">
+    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
     <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
   </div>
 
-</div>
-
-<div *ngIf="alias !== 'main'" class="right"></div>
-
-<div class="bottom" [class.show]="showBordersContent">
-  <div class="bottom-copyright">Артезианская Археологическая Экспедиция <i class="fa fa-copyright" aria-hidden="true"></i> 2017. Все права защищены.</div>
-</div>
-
-<div *ngIf="alias !== 'main'" class="left" [class.show]="showBordersContent">
-  <div class="left-menu" (click)="switchSidebar()">
-    <div>
-      <span>меню</span>
-      <i *ngIf="!showSidebarContent" class="fa fa-bars" aria-hidden="true"></i>
-      <i *ngIf="showSidebarContent" class="fa fa-times" aria-hidden="true"></i>
-    </div>
-  </div>
 </div>

@@ -14,7 +14,7 @@ export class MainComponent {
   height: string;
 
   constructor() {
-    this.height = (window.innerHeight - 120).toString() + 'px';
+    this.height = window.innerHeight.toString() + 'px';
   }
 
 }

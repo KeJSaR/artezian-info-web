@@ -46,7 +46,7 @@ export class TopComponent implements OnInit {
   }
 
   setDimension(num: number): string {
-    return (num - 120).toString() + 'px';
+    return num.toString() + 'px';
   }
 
   @HostListener('window:resize', ['$event'])

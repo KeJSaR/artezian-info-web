@@ -63,9 +63,9 @@ export class PageComponent implements OnInit {
   scrollDown() {
     (function downscroll() {
       var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      if (currentScroll < window.innerHeight - 120) {
+      if (currentScroll < window.innerHeight) {
         window.requestAnimationFrame(downscroll);
-        window.scrollTo(0, window.innerHeight - 120);
+        window.scrollTo(0, window.innerHeight);
       }
     })();
   }
@@ -87,7 +87,7 @@ export class PageComponent implements OnInit {
   }
 
   private setHeight(): void {
-    this.height = window.innerHeight - 120;
+    this.height = window.innerHeight;
     this.setPageDownTop();
   }
 

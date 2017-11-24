@@ -1,32 +1,18 @@
 @import "../../../variables"
 
-.top-shadow,
-.right-shadow,
-.bottom-shadow,
-.left-shadow
-  box-shadow: 0 2px 2px 0 $borders-bs-1, 0 0 0 1px $borders-bs-2
-  position: fixed
-  z-index: z('bg-shadow')
-
-.top-shadow,
-.right-shadow,
-.bottom-shadow,
-.left-shadow,
-.top,
-.right,
-.bottom,
-.left
+.top
+  +flex(space-between)
+  +opacity(0)
+  +transition(all .5s ease-out)
   position: fixed
   background-color: $borders-bg
   z-index: z('bg')
-
-.top-title,
-.top-menu,
-.top-social,
-.bottom-copyright,
-.left-menu
-  +opacity(0)
-  +transition(all .5s ease-out)
+  box-shadow: 0 2px 2px 0 $borders-bs-1, 0 0 0 1px $borders-bs-2
+  top: 0
+  left: 0
+  right: 0
+  width: 100%
+  height: 60px
 
   a
     +transition(all .25s ease-out)
@@ -36,15 +22,6 @@
     &:hover,
     &:active
       color: $borders-hv
-
-.top-shadow,
-.top
-  +flex(space-between)
-  top: 0
-  left: 0
-  right: 0
-  width: 100%
-  height: 60px
 
   .top-title
     padding-left: 60px
@@ -71,79 +48,4 @@
       margin-left: 15px
 
   &.show
-    .top-title,
-    .top-menu,
-    .top-social
-      +opacity(1)
-
-.right-shadow,
-.right
-  top: 0
-  bottom: 0
-  right: 0
-  width: 60px
-  height: 100%
-
-.bottom-shadow,
-.bottom
-  +flex(flex-end)
-  bottom: 0
-  left: 0
-  right: 0
-  width: 100%
-  height: 60px
-
-  .bottom-copyright
-    +font-size(12px)
-    +opacity(0.5)
-    font-weight: 300
-    color: $borders-copy
-    padding-right: 60px
-    letter-spacing: 1px
-    text-transform: uppercase
-
-    i
-      +font-size(10px)
-      position: relative
-      top: 1px
-      margin: 0 5px
-
-  &.show
-    .bottom-copyright
-      +opacity(1)
-
-.left-shadow,
-.left
-  +flex(center)
-  top: 0
-  bottom: 0
-  left: 0
-  width: 60px
-  height: 100%
-
-  .left-menu
-    +font-size(21px)
-    +transition(all .25s ease-out)
-    color: $borders-left
-    cursor: pointer
-
-    &:hover,
-    &:active
-      color: $borders-left-hv
-
-    div
-      position: relative
-
-      span
-        +font-size(24px)
-        position: absolute
-        top: -63px
-        left: -31px
-        font-weight: 300
-        letter-spacing: 2px
-        transform: rotate(-90deg)
-        text-transform: uppercase
-
-  &.show
-    .left-menu
-      +opacity(1)
+    +opacity(1)

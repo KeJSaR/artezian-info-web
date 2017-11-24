@@ -35,8 +35,8 @@ export class ImgShowComponent implements OnInit {
     this.setArrays();
     this.setIndex();
     this.setImage(this.index);
-    this.height = this.setDimension(window.innerHeight);
-    this.width  = this.setDimension(window.innerWidth);
+    this.height = window.innerHeight;
+    this.width  = window.innerWidth;
   }
 
   setArrays(): void {
@@ -62,10 +62,6 @@ export class ImgShowComponent implements OnInit {
 
   setImage(index: number): void {
     this.image = this.aliases[index];
-  }
-
-  setDimension(num: number): number {
-    return num - 120;
   }
 
   showNext(): void {
@@ -102,8 +98,8 @@ export class ImgShowComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any): void {
-    this.height = this.setDimension(event.target.innerHeight);
-    this.width  = this.setDimension(event.target.innerWidth);
+    this.height = event.target.innerHeight;
+    this.width  = event.target.innerWidth;
     this.setSize();
   }
 
