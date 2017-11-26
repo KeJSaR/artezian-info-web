@@ -13,7 +13,7 @@ export class AboutComponent implements OnInit {
 
   @Input() alias: string;
 
-  private blogItems: BlogItem[];
+  blogItems: BlogItem[];
 
   constructor(private dataService: DataService) { }
 
@@ -22,7 +22,7 @@ export class AboutComponent implements OnInit {
   }
 
   private setBlogItems(): void {
-    this.dataService.getBlogItems(this.alias).subscribe((data) => {
+    this.dataService.getBlogItems(this.alias, 'all').subscribe((data) => {
       this.blogItems = data;
     });
   }
