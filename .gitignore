@@ -43,6 +43,3 @@ Thumbs.db
 
 # Database login data
 /src/assets/php/access.php
-
-# Gallery folders
-/src/assets/img/
