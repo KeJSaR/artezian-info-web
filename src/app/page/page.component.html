@@ -22,10 +22,10 @@
     <aae-album *ngIf="section.alias === 'gallery' && subalias" [subalias]="subalias" [albumName]="section.name"></aae-album>
 
     <!-- Call ============================================================== -->
-    <aae-call *ngIf="section.alias !== 'main'" [alias]="section.alias"></aae-call>
+    <aae-call [alias]="section.alias"></aae-call>
 
     <!-- Footer ============================================================ -->
-    <aae-footer *ngIf="section.alias !== 'main'"></aae-footer>
+    <aae-footer></aae-footer>
 
   </div>
 </section>
