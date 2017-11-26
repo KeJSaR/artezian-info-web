@@ -56,6 +56,13 @@ $breakpoints: join($br-b, $br-a, comma)
   -o-animation: #{$str}
   animation: #{$str}
 
+=transform($str)
+  -webkit-transform: #{$str}
+  -moz-transform: #{$str}
+  -ms-transform: #{$str}
+  -o-transform: #{$str}
+  transform: #{$str}
+
 // Z-index
 @function z($name)
   @if index($z-indexes, $name)
@@ -64,7 +71,7 @@ $breakpoints: join($br-b, $br-a, comma)
     @warn 'There is no item "#{$name}", choose one of: #{$z-indexes}'
     @return null
 
-$z-a: (menu, h2, map, about, background, pattern, img, gradient, bg-image, mask)
+$z-a: (menu, h2, map, about, background, pattern, content, img, text, gradient, bg-image, mask)
 $z-b: (article, gallery, main, breadcrumbs, footer-wrapper, header, intro, title)
 $z-c: (bg, sidebar, img-show, scroll-to-top, down-c, down-b, down-a)
 $z-d: join($z-b, $z-a, comma)
