@@ -14,6 +14,19 @@ export class AboutComponent implements OnInit {
   @Input() alias: string;
 
   blogItems: BlogItem[];
+  texts: string[] = [
+    'Артезиан',
+    'Условия',
+    'История',
+    'Задачи',
+    'Наука',
+    'Раскопки',
+    'Практика',
+    'Статья',
+    'Список',
+    'Вещи',
+    'Правила'
+  ];
 
   constructor(private dataService: DataService) { }
 

@@ -4,6 +4,8 @@
 
   <div class="wrapper" *ngFor="let item of blogItems">
 
+    <div class="text" [innerHtml]="texts[blogItems.indexOf(item)]"></div>
+
     <aae-blog-item [blogItem]="item" [alias]="alias"></aae-blog-item>
 
   </div>
