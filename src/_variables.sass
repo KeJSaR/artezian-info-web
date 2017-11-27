@@ -71,11 +71,14 @@ $breakpoints: join($br-b, $br-a, comma)
     @warn 'There is no item "#{$name}", choose one of: #{$z-indexes}'
     @return null
 
-$z-a: (menu, h2, map, about, background, pattern, content, img, text, gradient, bg-image, mask)
-$z-b: (article, gallery, main, breadcrumbs, footer-wrapper, header, intro, title)
-$z-c: (bg, sidebar, img-show, scroll-to-top, down-c, down-b, down-a)
-$z-d: join($z-b, $z-a, comma)
-$z-indexes: join($z-c, $z-d, comma)
+$z-a: (pattern, content, img, text, gradient, bg-image, mask)
+$z-b: (header, intro, title, menu, h2, map, about, background)
+$z-c: (article, gallery, main, breadcrumbs, footer-wrapper)
+$z-d: (bg, sidebar, img-show, scroll-to-top, down-c, down-b, down-a)
+
+$z-e: join($z-b, $z-a, comma)
+$z-f: join($z-d, $z-c, comma)
+$z-indexes: join($z-f, $z-e, comma)
 
 // Flex
 =flex($justify: center, $align: center, $wrap: nowrap)
