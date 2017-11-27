@@ -24,11 +24,11 @@ $breakpoints: join($br-b, $br-a, comma)
 
 // Transition
 =transition($args...)
+  transition: $args
   -webkit-transition: $args
   -moz-transition: $args
   -ms-transition: $args
   -o-transition: $args
-  transition: $args
 
 // Cross browser opacity
 =opacity($opacity)
@@ -50,18 +50,18 @@ $breakpoints: join($br-b, $br-a, comma)
     @content
 
 =animation($str)
+  animation: #{$str}
   -webkit-animation: #{$str}
   -moz-animation: #{$str}
   -ms-animation: #{$str}
   -o-animation: #{$str}
-  animation: #{$str}
 
 =transform($str)
+  transform: #{$str}
   -webkit-transform: #{$str}
   -moz-transform: #{$str}
   -ms-transform: #{$str}
   -o-transform: #{$str}
-  transform: #{$str}
 
 // Z-index
 @function z($name)
@@ -81,28 +81,19 @@ $z-f: join($z-d, $z-c, comma)
 $z-indexes: join($z-f, $z-e, comma)
 
 // Flex
-=flex($justify: center, $align: center, $wrap: nowrap)
-  display: -webkit-box
-  display: -ms-flexbox
+=flex($justify: center, $align: center, $wrap: nowrap, $direction: row)
   display: flex
-  -ms-flex-wrap: $wrap
-  flex-wrap: $wrap
-  -webkit-box-pack: $justify
-  -ms-flex-pack: $justify
-  justify-content: $justify
-  -webkit-box-align: $align
-  -ms-flex-align: $align
   align-items: $align
+  justify-content: $justify
+  flex-direction: $direction
+  flex-wrap: $wrap
 
 // Gradients
 =background-gradient($start, $middle, $end, $orientation)
   background: $middle
   @if $orientation == 'vertical'
-    background: -webkit-linear-gradient(top, $start, $middle, $end)
     background: linear-gradient(to bottom, $start, $middle, $end)
   @else if $orientation == 'horizontal'
-    background: -webkit-linear-gradient(left, $start, $middle, $end)
     background: linear-gradient(to right, $start, $middle, $end)
   @else
-    background: -webkit-radial-gradient(center, ellipse cover, $start, $middle)
     background: radial-gradient(ellipse at center, $start, $middle)

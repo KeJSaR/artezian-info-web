@@ -27,10 +27,10 @@ section
           text-transform: uppercase
 
           &.logo
+            display: inline-block
             background: url("/assets/img/logo.png") center center / contain no-repeat
             width: 140px
             height: 82px
-            display: inline-block
 
           &.divider
             +font-size(30px)
@@ -76,9 +76,9 @@ section
             +font-size(70px)
             +transition(all .25s ease-out)
             font-weight: 900
-            cursor: pointer
-            color: $header-main-short
             background: none
+            color: $header-main-short
+            cursor: pointer
 
             &:hover,
             &:active
