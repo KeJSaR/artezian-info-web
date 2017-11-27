@@ -29,48 +29,71 @@
 
 <section *ngIf="texts" class="main-texts">
 
-  <div class="wrapper welcome">
+  <div class="waves-bg-1"></div>
+
+  <div class="waves-bg-2"></div>
+
+  <div class="welcome">
     <div class="content">
       <aae-text [text]="texts[0]"></aae-text>
+    </div>
+    <div class="text">Добро<br>пожаловать</div>
+    <div class="icon">
+      <i class="fa fa-university" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="wrapper dark right">
+    <div class="content">
+      <aae-text [text]="texts[1]"></aae-text>
+    </div>
+    <div class="img-wrapper">
+      <div class="img-bg"></div>
+      <div class="img img-1"></div>
+    </div>
+  </div>
+
+  <div class="wrapper left">
+    <div class="img-wrapper">
+      <div class="img-bg"></div>
+      <div class="img img-2"></div>
+    </div>
+    <div class="content">
+      <aae-text [text]="texts[2]"></aae-text>
     </div>
   </div>
 
   <div class="parallax p-1"></div>
 
-  <div class="wrapper">
-    <div class="img img-1"></div>
-    <div class="content">
-      <aae-text [text]="texts[1]"></aae-text>
-    </div>
-  </div>
-
-  <div class="wrapper">
-    <div class="content">
-      <aae-text [text]="texts[2]"></aae-text>
-    </div>
-    <div class="img img-2"></div>
-  </div>
-
-  <div class="wrapper">
-    <div class="img img-3"></div>
+  <div class="wrapper right">
     <div class="content">
       <aae-text [text]="texts[3]"></aae-text>
+    </div>
+    <div class="img-wrapper">
+      <div class="img-bg"></div>
+      <div class="img img-3"></div>
+    </div>
+  </div>
+
+  <div class="wrapper left">
+    <div class="img-wrapper">
+      <div class="img-bg"></div>
+      <div class="img img-4"></div>
+    </div>
+    <div class="content">
+      <aae-text [text]="texts[4]"></aae-text>
     </div>
   </div>
 
   <div class="parallax p-2"></div>
 
-  <div class="wrapper">
-    <div class="content">
-      <aae-text [text]="texts[4]"></aae-text>
-    </div>
-    <div class="img img-4"></div>
-  </div>
-
-  <div class="wrapper">
-    <div class="img img-5"></div>
+  <div class="wrapper right">
     <div class="content">
       <aae-text [text]="texts[5]"></aae-text>
+    </div>
+    <div class="img-wrapper">
+      <div class="img-bg"></div>
+      <div class="img img-5"></div>
     </div>
   </div>
 

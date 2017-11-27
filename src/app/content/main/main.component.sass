@@ -70,33 +70,108 @@ section
     margin: 0 auto
     background-color: $white
     box-shadow: 0 0 200px $blue-grey-900
+    position: relative
+
+    .waves-bg-1
+      position: absolute
+      top: 500px
+      left: 0
+      width: 100%
+      height: 320px
+      background: url("/assets/img/waves.png") 0 0 repeat-x
+      +opacity(0.2)
+
+    .waves-bg-2
+      position: absolute
+      top: 528px
+      left: 0
+      width: 100%
+      height: 292px
+      background: url("/assets/img/waves.png") 480px 0 repeat-x
+      +opacity(0.2)
+
+    .welcome
+      padding: 100px
+      position: relative
+      margin-bottom: 330px
+
+      .text
+        +font-size(30px)
+        +transform(rotate(270deg))
+        font-weight: 500
+        position: absolute
+        width: 400px
+        text-align: center
+        top: 145px
+        left: -130px
+        background-color: #fec900
+        text-transform: uppercase
+        height: 150px
+        color: #fff
+        line-height: 1.25
+        padding: 20px 0 0 0
+
+      .icon
+        +font-size(50px)
+        position: absolute
+        top: 180px
+        left: 105px
+        width: 100px
+        height: 100px
+        background-color: $white
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2)
+        +flex
+
+      .content
+        padding: 0 0 0 180px
+        text-align: center
+        font-size: 24px
+        font-weight: 300
 
     .wrapper
       +flex
-      padding: 100px 0
+      padding: 50px 0
 
-      &.welcome
-        padding: 100px
+      &.dark
+        +background-gradient(rgba(37,40,48,.37), rgba(37,40,48,.29), rgba(37,40,48,.21), vertical)
 
-      .img,
+      &.right
+        .img-wrapper
+          box-shadow: -5px 15px 150px 0px rgba(0, 0, 0, 0.2)
+          
+          .img-bg
+            right: -20px
+
+      &.left
+        .img-wrapper
+          box-shadow: 5px 15px 150px 0px rgba(0, 0, 0, 0.2)
+          
+          .img-bg
+            left: -20px
+
+      .img-wrapper,
       .content
         width: 400px
+        margin: 25px
 
-      .img
-        height: 300px
-        border-radius: 3px
-        box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08)
+      .img-wrapper
+        height: 400px
         position: relative
+        overflow: none
+        border-radius: 5px
 
-        &::before
-          content: ""
+        .img-bg
           position: absolute
           top: 50px
-          right: -20px
-          background-color: $primary
-          height: 200px
+          background-color: #fec900
+          height: 300px
           width: 200px
-          z-index: -1
+
+        .img
+          position: relative
+          width: 400px
+          height: 400px
+          border-radius: 5px
 
       .img-1
         background: url("http://artezian.zone/pages/main-1.jpg") center center / cover no-repeat
