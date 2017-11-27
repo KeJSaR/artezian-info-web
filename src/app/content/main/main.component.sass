@@ -7,7 +7,7 @@ section
 
     .mask
       +opacity(0.7)
-      +background-gradient($black-opacity-9, $black-opacity-6, $black-opacity-9, vertical)
+      +background-gradient($black-opacity-6, $black-opacity-4, $black-opacity-2, vertical)
       position: absolute
       top: 0
       bottom: 0
@@ -67,10 +67,12 @@ section
 section
   &.main-texts
     width: 1000px
-    margin: 0 auto
-    background-color: $white
-    box-shadow: 0 0 200px $blue-grey-900
+    margin: 0 auto 200px
+    background-color: $main-texts-bg
+    box-shadow: 0px 0px 100px 0px $main-texts-bs-1, 0px 0px 1px 0px $main-texts-bs-1
     position: relative
+    border-radius: 3px
+    padding: 0 0 50px 0
 
     .waves-bg-1
       position: absolute
@@ -79,7 +81,7 @@ section
       width: 100%
       height: 320px
       background: url("/assets/img/waves.png") 0 0 repeat-x
-      +opacity(0.2)
+      +opacity(0.025)
 
     .waves-bg-2
       position: absolute
@@ -88,7 +90,7 @@ section
       width: 100%
       height: 292px
       background: url("/assets/img/waves.png") 480px 0 repeat-x
-      +opacity(0.2)
+      +opacity(0.025)
 
     .welcome
       padding: 100px
@@ -104,12 +106,13 @@ section
         text-align: center
         top: 145px
         left: -130px
-        background-color: #fec900
+        background-color: $main-texts-text-bg
         text-transform: uppercase
         height: 150px
-        color: #fff
+        color: $main-texts-text
         line-height: 1.25
         padding: 20px 0 0 0
+        border-radius: 1px
 
       .icon
         +font-size(50px)
@@ -118,43 +121,61 @@ section
         left: 105px
         width: 100px
         height: 100px
-        background-color: $white
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2)
+        background-color: $main-texts-icon-bg
+        box-shadow: 3px 3px 10px $main-texts-icon-bs
         +flex
+        border-radius: 1px
 
       .content
         padding: 0 0 0 180px
         text-align: center
-        font-size: 24px
+        +font-size(24px)
         font-weight: 300
+        line-height: 1.35
 
     .wrapper
       +flex
-      padding: 50px 0
+      margin: 150px 0
 
       &.dark
-        +background-gradient(rgba(37,40,48,.37), rgba(37,40,48,.29), rgba(37,40,48,.21), vertical)
+        +background-gradient($main-texts-dark-bg-1, $main-texts-dark-bg-2, $main-texts-dark-bg-3, vertical)
+        margin: 0
 
       &.right
+        .content
+          text-align: left
+          border-left: 5px solid $main-texts-content-bd
+          padding: 0 0 0 25px
+
         .img-wrapper
-          box-shadow: -5px 15px 150px 0px rgba(0, 0, 0, 0.2)
+          box-shadow: -5px 15px 150px 0px $main-texts-img-bs
           
           .img-bg
             right: -20px
 
       &.left
+        .content
+          text-align: right
+          border-right: 5px solid $main-texts-content-bd
+          padding: 0 25px 0 0
+          
         .img-wrapper
-          box-shadow: 5px 15px 150px 0px rgba(0, 0, 0, 0.2)
+          box-shadow: 5px 15px 150px 0px $main-texts-img-bs
           
           .img-bg
             left: -20px
 
       .img-wrapper,
       .content
-        width: 400px
         margin: 25px
 
+      .content
+        width: 375px
+        +font-size(18px)
+        line-height: 1.5
+
       .img-wrapper
+        width: 400px
         height: 400px
         position: relative
         overflow: none
@@ -163,7 +184,7 @@ section
         .img-bg
           position: absolute
           top: 50px
-          background-color: #fec900
+          background-color: $main-texts-img-bg
           height: 300px
           width: 200px
 
@@ -190,7 +211,7 @@ section
 
     .parallax
       width: 100%
-      height: 200px
+      height: 400px
       
       &.p-1
         background: url("http://artezian.zone/pages/main.jpg") center center / cover no-repeat
