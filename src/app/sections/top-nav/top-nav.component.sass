@@ -2,17 +2,17 @@
 
 .top-nav
   +flex(space-between)
-  +opacity(0)
   +transition(all .5s ease-out)
+  +opacity(0)
   position: fixed
-  background-color: $borders-bg
-  z-index: z('bg')
-  box-shadow: 0 2px 2px 0 $borders-bs-1, 0 0 0 1px $borders-bs-2
   top: 0
   left: 0
   right: 0
+  background-color: $borders-bg
+  box-shadow: 0 2px 2px 0 $borders-bs-1, 0 0 0 1px $borders-bs-2
   width: 100%
   height: 60px
+  z-index: z('bg')
 
   a
     +transition(all .25s ease-out)
@@ -27,15 +27,15 @@
     padding-left: 60px
 
     a
-      background: url("/assets/img/logo.png") center center / contain no-repeat
       display: inline-block
-      height: 30px
+      background: url("/assets/img/logo.png") center center / contain no-repeat
       width: 68px
+      height: 30px
 
   .top-nav-menu
     a
-      color: $borders-menu
       display: inline-block
+      color: $borders-menu
       padding: 3px 10px
 
       &.active
