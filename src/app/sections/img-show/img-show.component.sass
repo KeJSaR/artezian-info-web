@@ -3,12 +3,11 @@
 section
   display: inherit
   position: fixed
-  top: 60px
-  bottom: 60px
-  left: 60px
-  right: 60px
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
   background-color: $show-bg
-  padding: 10px
   z-index: z('img-show')
 
   .wrapper
@@ -21,10 +20,13 @@ section
     position: absolute
     top: 20px
     left: 35px
+    background: url("/assets/img/logo.png") 0 0 / contain no-repeat
     color: $show-current
     cursor: pointer
-    padding: 20px
-    line-height: 1
+    padding: 0 0 0 90px
+    line-height: 1.5
+    height: 36px
+    text-shadow: 1px 1px 1px $show-current-sh
 
   .close
     +font-size(0px)
@@ -35,6 +37,7 @@ section
     padding: 20px
     border-radius: 100%
     line-height: 0
+    text-shadow: 1px 1px 1px $show-close-sh
 
     i
       +font-size(24px)
@@ -55,6 +58,7 @@ section
     cursor: pointer
     width: 50%
     height: 100%
+    text-shadow: 1px 1px 1px $show-dir-sh
 
     &:hover,
     &:active
