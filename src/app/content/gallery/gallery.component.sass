@@ -10,7 +10,8 @@ section
     margin: 0 auto
 
     .container
-      padding-bottom: 50px
+      background-color: $gallery-container-bg
+      padding-bottom: 15px
       margin: 20px
       width: 280px
 
@@ -22,15 +23,16 @@ section
         a
           +font-size(0px)
           position: absolute
-          top: 0
-          left: 0
+          top: 10px
+          left: 10px
           background-position: center center
           background-size: cover
+          box-shadow: 0 0 5px $gallery-img-sh inset
           border: none
           line-height: 0
           outline: none
-          width: 280px
-          height: 280px
+          width: 260px
+          height: 260px
           text-decoration: none
 
           &.img
@@ -45,8 +47,8 @@ section
             padding: 20px
             line-height: 17px
             overflow: hidden
-            width: 240px
-            height: 240px
+            width: 220px
+            height: 220px
             z-index: z('gallery')
 
             &:hover,
