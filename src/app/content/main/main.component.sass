@@ -4,6 +4,7 @@ section
   &.main
     position: relative
     background: url("http://artezian.zone/pages/main.jpg") center center / cover no-repeat
+    margin: 0 0 150px 0
 
     .mask
       +opacity(0.7)
@@ -16,11 +17,13 @@ section
       z-index: z('mask')
 
     .content
-      position: relative
+      +flex(space-around, center, nowrap, column)
+      position: absolute
+      top: 300px
+      left: 0
       color: $main
-      margin: 100px auto
       text-align: center
-      width: 1200px
+      width: 100%
       z-index: z('main')
 
       .header
@@ -29,8 +32,8 @@ section
 
         .logo
           background: url("/assets/img/logo.png") center center / contain no-repeat
-          height: 172px
           width: 380px
+          height: 172px
 
         h1
           +font-size(60px)
@@ -38,8 +41,8 @@ section
           padding: 0 0 0 20px
           margin: 0 0 0 20px
           line-height: 0.9
-          text-transform: uppercase
           text-align: left
+          text-transform: uppercase
 
           span
             color: $main-span
@@ -66,159 +69,77 @@ section
 
 section
   &.main-texts
-    width: 1000px
-    margin: 0 auto 200px
+    position: relative
     background-color: $main-texts-bg
     box-shadow: 0px 0px 100px 0px $main-texts-bs-1, 0px 0px 1px 0px $main-texts-bs-1
-    position: relative
-    border-radius: 3px
     padding: 0 0 50px 0
+    margin: 0 auto 200px
+    border-radius: 3px
+    width: 1000px
 
     .waves-bg-1
+      +opacity(0.025)
       position: absolute
       top: 500px
       left: 0
+      background: url("/assets/img/waves.png") 0 0 repeat-x
       width: 100%
       height: 320px
-      background: url("/assets/img/waves.png") 0 0 repeat-x
-      +opacity(0.025)
 
     .waves-bg-2
+      +opacity(0.025)
       position: absolute
       top: 528px
       left: 0
+      background: url("/assets/img/waves.png") 480px 0 repeat-x
       width: 100%
       height: 292px
-      background: url("/assets/img/waves.png") 480px 0 repeat-x
-      +opacity(0.025)
 
     .welcome
-      padding: 100px
       position: relative
-      margin-bottom: 330px
+      padding: 100px
+      margin-bottom: 350px
 
       .text
         +font-size(30px)
         +transform(rotate(270deg))
-        font-weight: 500
         position: absolute
-        width: 400px
-        text-align: center
         top: 145px
         left: -130px
+        font-weight: 500
         background-color: $main-texts-text-bg
-        text-transform: uppercase
-        height: 150px
         color: $main-texts-text
-        line-height: 1.25
         padding: 20px 0 0 0
         border-radius: 1px
+        line-height: 1.25
+        text-align: center
+        width: 400px
+        height: 150px
+        text-transform: uppercase
 
       .icon
         +font-size(50px)
+        +flex
         position: absolute
         top: 180px
         left: 105px
-        width: 100px
-        height: 100px
         background-color: $main-texts-icon-bg
         box-shadow: 3px 3px 10px $main-texts-icon-bs
-        +flex
         border-radius: 1px
+        width: 100px
+        height: 100px
 
       .content
-        padding: 0 0 0 180px
-        text-align: center
         +font-size(24px)
         font-weight: 300
+        padding: 0 0 0 180px
         line-height: 1.35
-
-    .wrapper
-      +flex
-      margin: 150px 0
-
-      &.dark
-        +background-gradient($main-texts-dark-bg-1, $main-texts-dark-bg-2, $main-texts-dark-bg-3, vertical)
-        margin: 0
-
-      &.right
-        .content
-          text-align: left
-          border-left: 5px solid $main-texts-content-bd
-          padding: 0 0 0 25px
-
-        .img-wrapper
-          box-shadow: -5px 15px 150px 0px $main-texts-img-bs
-          
-          .img-bg
-            right: -20px
-
-      &.left
-        .content
-          text-align: right
-          border-right: 5px solid $main-texts-content-bd
-          padding: 0 25px 0 0
-          
-        .img-wrapper
-          box-shadow: 5px 15px 150px 0px $main-texts-img-bs
-          
-          .img-bg
-            left: -20px
-
-      .img-wrapper,
-      .content
-        margin: 25px
-
-      .content
-        width: 375px
-        +font-size(18px)
-        line-height: 1.5
-
-      .img-wrapper
-        width: 400px
-        height: 400px
-        position: relative
-        overflow: none
-        border-radius: 5px
-
-        .img-bg
-          position: absolute
-          top: 50px
-          background-color: $main-texts-img-bg
-          height: 300px
-          width: 200px
-
-        .img
-          position: relative
-          width: 400px
-          height: 400px
-          border-radius: 5px
-
-      .img-1
-        background: url("http://artezian.zone/pages/main-1.jpg") center center / cover no-repeat
-
-      .img-2
-        background: url("http://artezian.zone/pages/main-2.jpg") center center / cover no-repeat
-
-      .img-3
-        background: url("http://artezian.zone/pages/main-3.jpg") center center / cover no-repeat
-
-      .img-4
-        background: url("http://artezian.zone/pages/main-4.jpg") center center / cover no-repeat
-
-      .img-5
-        background: url("http://artezian.zone/pages/main.jpg") center center / cover no-repeat
+        text-align: center
 
     .parallax
-      width: 100%
-      height: 400px
       background-attachment: fixed
       background-position: center
       background-repeat: no-repeat
       background-size: cover
-      
-      &.p-1
-        background-image: url("http://artezian.zone/pages/main.jpg")
-      
-      &.p-2
-        background-image: url("http://artezian.zone/pages/main-2.jpg")
+      width: 100%
+      height: 400px

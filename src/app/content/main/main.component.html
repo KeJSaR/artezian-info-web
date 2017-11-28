@@ -6,7 +6,7 @@
 
   <aae-menu [alias]="'main'" [menu]="menu"></aae-menu>
 
-  <div class="content">
+  <div class="content" [ngStyle]="{'min-height': contentHeight}">
 
     <div class="header">
 
@@ -34,67 +34,19 @@
   <div class="waves-bg-2"></div>
 
   <div class="welcome">
-    <div class="content">
-      <aae-text [text]="texts[0]"></aae-text>
-    </div>
     <div class="text">Добро<br>пожаловать</div>
     <div class="icon">
       <i class="fa fa-university" aria-hidden="true"></i>
     </div>
+    <div class="content" [innerHtml]="intro"></div>
   </div>
 
-  <div class="wrapper dark right">
-    <div class="content">
-      <aae-text [text]="texts[1]"></aae-text>
-    </div>
-    <div class="img-wrapper">
-      <div class="img-bg"></div>
-      <div class="img img-1"></div>
-    </div>
-  </div>
+  <div *ngFor="let text of texts">
 
-  <div class="wrapper left">
-    <div class="img-wrapper">
-      <div class="img-bg"></div>
-      <div class="img img-2"></div>
-    </div>
-    <div class="content">
-      <aae-text [text]="texts[2]"></aae-text>
-    </div>
-  </div>
+    <div class="parallax" [ngStyle]="{'background-image': 'url(http://artezian.zone/pages/parallax-' + text.img + '.jpg)'}"></div>
 
-  <div class="parallax p-1"></div>
+    <aae-text [text]="text"></aae-text>
 
-  <div class="wrapper right">
-    <div class="content">
-      <aae-text [text]="texts[3]"></aae-text>
-    </div>
-    <div class="img-wrapper">
-      <div class="img-bg"></div>
-      <div class="img img-3"></div>
-    </div>
-  </div>
-
-  <div class="wrapper left">
-    <div class="img-wrapper">
-      <div class="img-bg"></div>
-      <div class="img img-4"></div>
-    </div>
-    <div class="content">
-      <aae-text [text]="texts[4]"></aae-text>
-    </div>
-  </div>
-
-  <div class="parallax p-2"></div>
-
-  <div class="wrapper right">
-    <div class="content">
-      <aae-text [text]="texts[5]"></aae-text>
-    </div>
-    <div class="img-wrapper">
-      <div class="img-bg"></div>
-      <div class="img img-5"></div>
-    </div>
   </div>
 
 </section>
