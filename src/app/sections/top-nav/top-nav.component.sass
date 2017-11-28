@@ -2,26 +2,26 @@
 
 .top-nav
   +flex(space-between)
-  +transition(all .5s ease-out)
   +opacity(0)
+  +transition(all .5s ease-out)
   position: fixed
   top: 0
   left: 0
   right: 0
-  background-color: $borders-bg
-  box-shadow: 0 2px 2px 0 $borders-bs-1, 0 0 0 1px $borders-bs-2
+  background-color: $top-nav-bg
+  box-shadow: 0 2px 2px 0 $top-nav-bs-1, 0 0 0 1px $top-nav-bs-2
   width: 100%
   height: 60px
   z-index: z('bg')
 
   a
     +transition(all .25s ease-out)
-    color: $borders
+    color: $top-nav
     text-decoration: none
 
     &:hover,
     &:active
-      color: $borders-hv
+      color: $top-nav-hv
 
   .top-nav-title
     padding-left: 60px
@@ -35,11 +35,11 @@
   .top-nav-menu
     a
       display: inline-block
-      color: $borders-menu
+      color: $top-nav-menu
       padding: 3px 10px
 
       &.active
-        color: $borders-menu-hv
+        color: $top-nav-menu-hv
 
   .top-nav-social
     padding-right: 60px
