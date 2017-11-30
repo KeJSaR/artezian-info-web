@@ -20,6 +20,7 @@
     <aae-article *ngIf="(section.alias === 'about' && subalias) || (section.alias === 'articles' && subalias) || (section.alias === 'news' && subalias)" [alias]="section.alias" [subalias]="subalias"></aae-article>
     <aae-gallery *ngIf="section.alias === 'gallery' && subalias === ''"></aae-gallery>
     <aae-album *ngIf="section.alias === 'gallery' && subalias" [subalias]="subalias" [albumName]="section.name"></aae-album>
+    <aae-contact *ngIf="section.alias === 'contact'"></aae-contact>
 
     <!-- Call ============================================================== -->
     <aae-call [alias]="section.alias"></aae-call>
