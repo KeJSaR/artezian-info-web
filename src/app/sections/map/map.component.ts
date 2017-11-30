@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-map',
+  selector: 'aae-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.sass']
 })
