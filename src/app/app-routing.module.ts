@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'news',                 component: PageComponent, data: {section: 'news'} },
   { path: 'news/:subsection',     component: PageComponent, data: {section: 'news'} },
   { path: 'form',                 component: PageComponent, data: {section: 'form'} },
+  { path: 'contact',              component: PageComponent, data: {section: 'contact'} },
   { path: '**',                   component: PageComponent, data: {section: '404'} }
 ];
 
