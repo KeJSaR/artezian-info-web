@@ -48,24 +48,30 @@ section
             color: $main-span
 
       .buttons
-        +flex
+        margin: 100px 20px
 
-        div
-          +font-size(20px)
-          +transition(all .25s ease-out)
-          font-weight: 400
-          background-color: $main-div-bg
-          color: $main-div
-          cursor: pointer
-          padding: 10px 15px
-          margin: 100px 20px
-          border-radius: 3px
-          text-transform: uppercase
+        .row
+          +flex
 
-          &:hover,
-          &:active
-            background-color: $main-div-hv-bg
-            color: $main-div-hv
+          div
+            +font-size(20px)
+            +transition(all .25s ease-out)
+            font-weight: 400
+            background-color: $main-div-bg
+            color: $main-div
+            cursor: pointer
+            padding: 10px 15px
+            margin: 10px
+            border: 1px solid $main-div-bd
+            border-radius: 3px
+            width: 325px
+            text-transform: uppercase
+
+            &:hover,
+            &:active
+              background-color: $main-div-hv-bg
+              color: $main-div-hv
+              border-color: $main-div-hv-bd
 
 section
   &.main-texts
