@@ -12,6 +12,7 @@ import { AboutComponent } from './content/about/about.component';
 import { AlbumComponent } from './content/album/album.component';
 import { ArticleComponent } from './content/article/article.component';
 import { BlogComponent } from './content/blog/blog.component';
+import { ContactComponent } from './content/contact/contact.component';
 import { FormComponent } from './content/form/form.component';
 import { GalleryComponent } from './content/gallery/gallery.component';
 import { MainComponent } from './content/main/main.component';
@@ -36,6 +37,7 @@ import { TopComponent } from './sections/top/top.component';
     AlbumComponent,
     ArticleComponent,
     BlogComponent,
+    ContactComponent,
     FormComponent,
     GalleryComponent,
     MainComponent,
