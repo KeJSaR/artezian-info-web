@@ -18,7 +18,6 @@ import { GalleryComponent } from './content/gallery/gallery.component';
 import { MainComponent } from './content/main/main.component';
 import { NotFoundComponent } from './content/not-found/not-found.component';
 import { BlogItemComponent } from './sections/blog-item/blog-item.component';
-import { TopNavComponent } from './sections/top-nav/top-nav.component';
 import { BreadcrumbsComponent } from './sections/breadcrumbs/breadcrumbs.component';
 import { CallComponent } from './sections/call/call.component';
 import { FooterComponent } from './sections/footer/footer.component';
@@ -27,8 +26,10 @@ import { ImgShowComponent } from './sections/img-show/img-show.component';
 import { MapComponent } from './sections/map/map.component';
 import { MenuComponent } from './sections/menu/menu.component';
 import { PaginationComponent } from './sections/pagination/pagination.component';
+import { QuestionComponent } from './sections/question/question.component';
 import { TextComponent } from './sections/text/text.component';
 import { TopComponent } from './sections/top/top.component';
+import { TopNavComponent } from './sections/top-nav/top-nav.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,6 @@ import { TopComponent } from './sections/top/top.component';
     MainComponent,
     NotFoundComponent,
     BlogItemComponent,
-    TopNavComponent,
     BreadcrumbsComponent,
     CallComponent,
     FooterComponent,
@@ -53,8 +53,10 @@ import { TopComponent } from './sections/top/top.component';
     MapComponent,
     MenuComponent,
     PaginationComponent,
+    QuestionComponent,
     TextComponent,
-    TopComponent
+    TopComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,
