@@ -24,6 +24,7 @@ import { CallComponent } from './sections/call/call.component';
 import { FooterComponent } from './sections/footer/footer.component';
 import { HeaderComponent } from './sections/header/header.component';
 import { ImgShowComponent } from './sections/img-show/img-show.component';
+import { MapComponent } from './sections/map/map.component';
 import { MenuComponent } from './sections/menu/menu.component';
 import { PaginationComponent } from './sections/pagination/pagination.component';
 import { TextComponent } from './sections/text/text.component';
@@ -49,6 +50,7 @@ import { TopComponent } from './sections/top/top.component';
     FooterComponent,
     HeaderComponent,
     ImgShowComponent,
+    MapComponent,
     MenuComponent,
     PaginationComponent,
     TextComponent,
