@@ -2,7 +2,7 @@
 
   <div class="wrapper">
     <img #img *ngIf="image"
-      src="http://artezian.zone/gallery/{{ subalias }}/{{ image }}.jpg"
+      src="/gallery/{{ subalias }}/{{ image }}.jpg"
       alt="{{ albumName }} {{ names[index] }}"
       (load)="getSize(img)"
       [ngStyle]="{'width': currImgWidth, 'height': currImgHeight}">

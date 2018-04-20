@@ -4,7 +4,7 @@
 
     <div *ngFor="let gallery of galleries" class="container">
 			<div class="image">
-				<a class="img" routerLink="/gallery/{{ gallery.id }}" [ngStyle]="{'background-image': 'url(http://artezian.zone/gallery/' + gallery.id + '/pics/' + gallery.image_id + '.jpg)'}"></a>
+				<a class="img" routerLink="/gallery/{{ gallery.id }}" [ngStyle]="{'background-image': 'url(/gallery-photos/' + gallery.id + '/pics/' + gallery.image_id + '.jpg)'}"></a>
 				<a class="info" routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.info"></a>
 			</div>
 			<p class="name"><a routerLink="/gallery/{{ gallery.id }}" [innerHtml]="gallery.name"></a></p>

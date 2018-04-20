@@ -294,7 +294,7 @@ class Queries
 
     public function is_image_exist($image)
     {
-        $url = "../../articles/" . $image . ".jpg";
+        $url = "../../articles-photos/" . $image . ".jpg";
         return file_exists($url) ? "true" : "false";
     }
 

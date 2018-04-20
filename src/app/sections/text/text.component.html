@@ -6,7 +6,7 @@
     </div>
     <div class="img-wrapper">
       <div class="img-bg"></div>
-      <div class="img" [ngStyle]="{'background-image': 'url(http://artezian.zone/pages/main-' + text.img + '.jpg)'}"></div>
+      <div class="img" [ngStyle]="{'background-image': 'url(/pages-photos/main-' + text.img + '.jpg)'}"></div>
     </div>
     <div *ngIf="text.type === 'right'" class="content">
       <div [innerHtml]="text.content"></div>

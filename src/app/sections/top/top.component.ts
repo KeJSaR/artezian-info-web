@@ -119,16 +119,16 @@ export class TopComponent implements OnInit {
 
   private setTopImage(): void {
     if (this.galleryImageExist) {
-      this.topImgUrl = 'http://artezian.zone/gallery/' + this.subalias + '/' + this.image + '.jpg';
+      this.topImgUrl = '/gallery/' + this.subalias + '/' + this.image + '.jpg';
     }
     else if (this.imageExist) {
-      this.topImgUrl = 'http://artezian.zone/articles/' + this.image + '.jpg';
+      this.topImgUrl = '/articles-photos/' + this.image + '.jpg';
     }
     else if (this.path === 'pages') {
-      this.topImgUrl = 'http://artezian.zone/pages/' + this.section.alias + '.jpg';
+      this.topImgUrl = '/pages-photos/' + this.section.alias + '.jpg';
     }
     else {
-      this.topImgUrl = 'http://artezian.zone/pages/' + this.section.alias + '-default.jpg';
+      this.topImgUrl = '/pages-photos/' + this.section.alias + '-default.jpg';
     }
   }
 
