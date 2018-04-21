@@ -30,22 +30,22 @@ section
         +flex
         margin: 0 0 30px 0
 
-        .logo
-          background: url("/assets/img/logo.png") center center / contain no-repeat
-          width: 380px
-          height: 172px
-
         h1
           +font-size(60px)
-          font-weight: 900
+          font-weight: 300
           padding: 0 0 0 20px
           margin: 0 0 0 20px
-          line-height: 0.9
-          text-align: left
+          line-height: 1.2
+          text-align: center
           text-transform: uppercase
+          color: $main-span
 
-          span
-            color: $main-span
+          .header-b
+            color: $main-span-accent
+
+          .header-c
+            +font-size(110px)
+            font-weight: 900
 
       .buttons
         margin: 100px 20px
@@ -54,18 +54,25 @@ section
           +flex
 
           div
-            +font-size(20px)
+            +flex
+            +font-size(14px)
             +transition(all .25s ease-out)
-            font-weight: 400
-            background-color: $main-div-bg
-            color: $main-div
+            font-weight: 500
             cursor: pointer
-            padding: 10px 15px
-            margin: 10px
-            border: 1px solid $main-div-bd
-            border-radius: 3px
-            width: 325px
+            border: 2px solid $main-div-bd
+            border-radius: 42px
             text-transform: uppercase
+            width: 260px
+            height: 42px
+            margin: 0 20px
+
+            &.button-left
+              color: $main-div-left
+              background-color: $main-div-bg-left
+
+            &.button-right
+              color: $main-div-right
+              background-color: $main-div-bg-right
 
             &:hover,
             &:active
