@@ -48,13 +48,16 @@ section
       .form
         +transition(all .25s ease-out)
         +font-size(14px)
+        +flex()
         font-weight: 500
         color: $header-form
         cursor: pointer
-        padding: 10px 15px
         border: 1px solid $header-form-bd
-        border-radius: 2px
         text-transform: uppercase
+        background-color: $header-form-bg
+        border-radius: 40px
+        width: 190px
+        height: 40px
 
         &:hover,
         &:active
@@ -73,11 +76,10 @@ section
           color: $header-main-title
 
           .short
-            +font-size(70px)
-            +transition(all .25s ease-out)
-            font-weight: 900
-            background: none
-            color: $header-main-short
+            background: url("/assets/img/logo-small.png") 50%/contain no-repeat
+            cursor: pointer
+            width: 118px
+            height: 52px
             cursor: pointer
 
             &:hover,
@@ -92,15 +94,3 @@ section
 
           .page
             display: none
-
-        .form
-          font-weight: 600
-          background-color: $header-main-form-bg
-          color: $header-main-form
-          border: 1px solid $header-main-form-bd
-
-          &:hover,
-          &:active
-            background-color: $header-main-form-hv-bg
-            color: $header-main-form-hv
-            border-color: $header-main-form-hv-bd

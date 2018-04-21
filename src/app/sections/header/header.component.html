@@ -4,10 +4,10 @@
     <div class="row">
 
       <div class="title">
-        <span *ngIf="section.alias === 'main'" class="short" routerLink="/">ААЭ</span>
+        <span *ngIf="section.alias === 'main'" class="short" routerLink="/"></span>
         <span *ngIf="section.alias !== 'main'" class="logo" routerLink="/"></span>
         <span class="divider"> | </span>
-        <span *ngIf="section.alias === 'main'" class="full">Российско-Крымская<br>экспедиция МПГУ</span>
+        <span *ngIf="section.alias === 'main'" class="full">Крымская Археологическая<br>Экспедиция МПГУ</span>
         <span *ngIf="section.alias !== 'main'" class="page" [innerHtml]="section.name"></span>
       </div>
 
