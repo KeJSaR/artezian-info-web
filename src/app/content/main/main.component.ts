@@ -46,7 +46,7 @@ export class MainComponent implements OnInit {
   private prepareTexts(texts: Text[]) {
     this.intro = texts[0].content;
     texts.forEach((text) => {
-      if (text.id > 1) {
+      if (text.id > 0) {
         this.texts.push({
           img: text.id,
           content: text.content,
