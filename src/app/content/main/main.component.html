@@ -49,6 +49,8 @@
 
     <aae-text [text]="text"></aae-text>
 
+    <div *ngIf="text.img === 1 || text.img === 2 || text.img === 3" class="text-block-{{ text.img }}"></div>
+
   </div>
 
 </section>

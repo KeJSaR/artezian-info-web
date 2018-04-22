@@ -46,11 +46,12 @@ export class MainComponent implements OnInit {
   private prepareTexts(texts: Text[]) {
     this.intro = texts[0].content;
     texts.forEach((text) => {
-      if (text.id > 0) {
+      if (text.id > 1) {
+        let textId = text.id - 1;
         this.texts.push({
-          img: text.id,
+          img: textId,
           content: text.content,
-          type: text.id % 2 === 0 ? 'left' : 'right'
+          type: textId % 2 === 0 ? 'left' : 'right'
         });
       }
     });
