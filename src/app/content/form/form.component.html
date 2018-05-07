@@ -35,7 +35,7 @@
       <div class="row">
         <div class="title">Фамилия:</div>
         <div class="input">
-          <input type="text">
+          <input required type="text">
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
@@ -45,7 +45,7 @@
       <div class="row">
         <div class="title">Имя:</div>
         <div class="input">
-          <input type="text">
+          <input required type="text">
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
@@ -55,7 +55,7 @@
       <div class="row">
         <div class="title">Отчество:</div>
         <div class="input">
-          <input type="text">
+          <input required type="text">
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
@@ -65,7 +65,7 @@
       <div class="row">
         <div class="title">Дата рождения:</div>
         <div class="input">
-          <input type="text">
+          <input required type="text">
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
@@ -75,7 +75,7 @@
       <div class="row">
         <div class="title">Место рождения:</div>
         <div class="input">
-          <input type="text">
+          <input required type="text">
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
@@ -85,7 +85,7 @@
       <div class="row">
         <div class="title">Ваш e-mail:</div>
         <div class="input">
-          <input type="text">
+          <input required type="text">
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
@@ -95,7 +95,7 @@
       <div class="row">
         <div class="title">Ваш город проживания:</div>
         <div class="input">
-          <input type="text">
+          <input required type="text">
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
@@ -129,9 +129,11 @@
       <div class="row">
         <div class="title">Ваш сотовый телефон:</div>
         <div class="input">
-          <input type="text">
+          <input required type="text">
         </div>
-        <div class="check"></div>
+        <div class="check">
+          <i class="fa fa-check"></i>
+        </div>
       </div>
 
       <div class="row">
@@ -153,7 +155,7 @@
       <div class="row">
         <div class="title">Дата желаемого прибытия в ААЭ:</div>
         <div class="input">
-          <input type="text">
+          <input required type="text">
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
@@ -163,7 +165,7 @@
       <div class="row">
         <div class="title">Дата желаемого отъезда из ААЭ:</div>
         <div class="input">
-          <input type="text">
+          <input required type="text">
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
@@ -205,7 +207,7 @@
       <div class="row">
         <div class="title">Какими языками вы владеете:</div>
         <div class="input">
-          <input type="text">
+          <input required type="text">
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
@@ -215,7 +217,7 @@
       <div class="row">
         <div class="title">Из каких источников вы узнали об экспедиции:</div>
         <div class="input">
-          <textarea rows="10"></textarea>
+          <textarea required rows="10"></textarea>
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
@@ -233,26 +235,40 @@
       <div class="row">
         <div class="title">Контакты на случай критической ситуации (родственники, друзья). Желательно мобильные телефоны, телефоны основного места работы, адреса:</div>
         <div class="input">
-          <textarea rows="10"></textarea>
+          <textarea required rows="10"></textarea>
         </div>
         <div class="check">
           <i class="fa fa-check"></i>
         </div>
       </div>
 
-      <div class="row agree">
-        <div class="checkbox">
-          <input type="checkbox">
+      <div class="agree">
+        <div class="row">
+          <div class="checkbox">
+            <input type="checkbox">
+          </div>
+          <div class="text">
+            <p>Отправляя данную заявку я подтвеждаю:</p>
+            <ul>
+              <li>что мною прочитан <a href="about/9">список документов для участников археологической экспедиции</a> и <a href="about/10">примерный список вещей для экспедиции</a>,</li>
+            </ul>
+          </div>
+          <div class="check">
+            <i class="fa fa-check"></i>
+          </div>
         </div>
-        <div class="text">
-          <p>Отправляя данную заявку я подтвеждаю:</p>
-          <ul>
-            <li>что мною прочитан список документов для участников археологической экспедиции и примерный список вещей для экспедиции,</li>
-            <li>а также прочитаны правила поведения в экспедиции с которыми я выражаю своё полное согласие.</li>
-          </ul>
-        </div>
-        <div class="check">
-          <i class="fa fa-check"></i>
+        <div class="row">
+          <div class="checkbox">
+            <input type="checkbox">
+          </div>
+          <div class="text">
+            <ul>
+              <li>а также прочитаны <a href="about/11">правила поведения в экспедиции</a> с которыми я выражаю своё полное согласие.</li>
+            </ul>
+          </div>
+          <div class="check">
+            <i class="fa fa-check"></i>
+          </div>
         </div>
       </div>
 
